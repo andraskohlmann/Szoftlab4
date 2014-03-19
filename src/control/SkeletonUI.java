@@ -84,7 +84,7 @@ public class SkeletonUI {
 		indentation--;
 
 		indent();
-		System.out.println("[LEFT] with the returning value of: "
+		System.out.println("[LEFT] with the returning value of "
 				+ writeObject(ret));
 	}
 
@@ -199,7 +199,19 @@ public class SkeletonUI {
 	}
 
 	private static String writeObject(Object o) {
-		return objects.get(o) + " : " + o.getClass().getSimpleName();
+		StringBuilder sb = new StringBuilder();
+		
+		if (objects.get(o) != null) {
+			sb.append(objects.get(o));
+		}
+		else {
+			sb.append(o);
+		}
+		
+		sb.append(" : ");
+		sb.append(o.getClass().getSimpleName());
+		
+		return sb.toString();
 	}
 
 }
