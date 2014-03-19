@@ -4,6 +4,7 @@ import model.Game;
 import model.Ticker;
 import model.enemies.Dwarf;
 import model.enemies.Elf;
+import model.enemies.EnemyUnit;
 import model.enemies.Hobbit;
 import model.enemies.Man;
 import model.friendly.Swamp;
@@ -28,7 +29,7 @@ public class SkeletonManager {
 		 * legyen benne.
 		 */
 
-		// INNEN A KITÖRLENDÕ KÓD		
+		// INNEN A KITÖRLENDÕ KÓD
 		// IDÁIG
 
 		SkeletonUI.cleanUp();
@@ -99,6 +100,23 @@ public class SkeletonManager {
 		}
 		
 		ticker.tick();
+	}
+	
+	public static void EnemyUnitTick(Ticker ticker, EnemyUnit e) {
+		
+		Road from = new Road();
+		SkeletonUI.addObject(from, "from", true);
+		Road to = new Road();
+		SkeletonUI.addObject(to, "to", true);
+		
+		Tower t = new Tower();
+		SkeletonUI.addObject(t, "t", true);
+		
+		Swamp s = new Swamp();
+		SkeletonUI.addObject(s, "s", true);
+		
+		ticker.tick();
+		
 	}
 
 	public static void PutRune() {

@@ -1,5 +1,6 @@
 package model.enemies;
 
+import control.SkeletonUI;
 import model.ActiveUnit;
 import model.Game;
 import model.mapitem.Road;
@@ -30,6 +31,10 @@ public abstract class EnemyUnit implements ActiveUnit {
 	}
 
 	public void tick() {
-
+		SkeletonUI.enterFunction(this, "tick");
+		
+		roadToNotice.stepMe(this);
+		
+		SkeletonUI.leaveFunction();
 	}
 }
