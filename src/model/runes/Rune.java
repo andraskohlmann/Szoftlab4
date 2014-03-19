@@ -22,6 +22,8 @@ public class Rune {
 	public void modifyProjectile(Projectile p) {
 		SkeletonUI.enterFunction(this, "modifyProjectile", p);
 
+		p.setDamage(this);
+		
 		SkeletonUI.leaveFunction();
 	}
 
