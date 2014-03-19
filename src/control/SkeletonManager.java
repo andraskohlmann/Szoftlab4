@@ -1,5 +1,8 @@
 package control;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.Game;
 import model.Ticker;
 import model.enemies.Dwarf;
@@ -12,6 +15,7 @@ import model.friendly.Tower;
 import model.mapitem.Field;
 import model.mapitem.Map;
 import model.mapitem.Road;
+import model.mapitem.Tile;
 import model.runes.Rune;
 
 public class SkeletonManager {
@@ -30,6 +34,7 @@ public class SkeletonManager {
 		 */
 
 		// INNEN A KITÖRLENDÕ KÓD
+	
 		// IDÁIG
 
 		SkeletonUI.cleanUp();
@@ -108,12 +113,21 @@ public class SkeletonManager {
 		SkeletonUI.addObject(from, "from", true);
 		Road to = new Road();
 		SkeletonUI.addObject(to, "to", true);
+		from.Skeleton_addNextRoad(to);
+		
+		ticker.Skeleton_addUnit(e);
+		e.setRoad(from);
 		
 		Tower t = new Tower();
 		SkeletonUI.addObject(t, "t", true);
 		
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
+		
+		if(SkeletonUI.booleanQuestion("Are there a swamps on the road?")) {
+			from.Skeleton_SwampSetter(s);
+			to.Skeleton_SwampSetter(s);
+		}
 		
 		ticker.tick();
 		

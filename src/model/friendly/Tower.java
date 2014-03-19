@@ -57,8 +57,11 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public void addUnit(EnemyUnit enemyUnit) {
-		// TODO Auto-generated method stub
-
+		SkeletonUI.enterFunction(this, "addUnit", enemyUnit);
+	
+		enemyUnits.add(enemyUnit);
+		
+		SkeletonUI.leaveFunction();		
 	}
 
 	@Override
