@@ -51,7 +51,7 @@ public class SkeletonManager {
 			rd.Skeleton_SwampSetter(s);
 
 		String answer = SkeletonUI.stringQuestion(
-				"What kind of enemy would you create?", "Dwarf", "Elf", "Hobbit", "Man");
+				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?", "D", "E", "H", "M");
 		if (answer.equals("DWARF")) {
 			Dwarf d = new Dwarf(rd, g);
 			SkeletonUI.addObject(d, "d", true);
@@ -71,7 +71,35 @@ public class SkeletonManager {
 		}
 
 		ticker.tick();
-
+	}
+	
+	public static void SwampTick(Ticker ticker, Swamp s) {
+		
+		Rune r = new Rune();
+		SkeletonUI.addObject(r, "r", true);
+		s.Skeleton_addRune(r);
+		
+		String answer = SkeletonUI.stringQuestion(
+				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?", "D", "E", "H", "M");
+		if (answer.equals("DWARF")) {
+			Dwarf d = new Dwarf();
+			SkeletonUI.addObject(d, "d", true);
+			s.Skeleton_addUnit(d);
+		} else if (answer.equals("ELF")) {
+			Elf e = new Elf();
+			SkeletonUI.addObject(e, "e", true);
+			s.Skeleton_addUnit(e);
+		} else if (answer.equals("HOBBIT")) {
+			Hobbit h = new Hobbit();
+			SkeletonUI.addObject(h, "h", true);
+			s.Skeleton_addUnit(h);
+		} else if (answer.equals("MAN")) {
+			Man m = new Man();
+			SkeletonUI.addObject(m, "m", true);
+			s.Skeleton_addUnit(m);
+		}
+		
+		ticker.tick();
 	}
 
 	public static void PutRune() {
