@@ -17,6 +17,7 @@ public class Field extends Tile {
 	private Tower tower;
 
 	public boolean checkTower() {
+		return false;
 
 	}
 
