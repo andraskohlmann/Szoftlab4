@@ -28,17 +28,7 @@ public class SkeletonManager {
 		 * legyen benne.
 		 */
 
-		// INNEN A KITÖRLENDÕ KÓD
-		
-		Ticker ticker = new Ticker();
-		SkeletonUI.addObject(ticker, "ticker", true);
-		
-		Swamp s = new Swamp();
-		SkeletonUI.addObject(s, "s", true);
-		ticker.Skeleton_addUnit(s);
-		
-		SwampTick(ticker, s);
-		
+		// INNEN A KITÖRLENDÕ KÓD		
 		// IDÁIG
 
 		SkeletonUI.cleanUp();
