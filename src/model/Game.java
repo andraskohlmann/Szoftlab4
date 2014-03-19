@@ -1,7 +1,9 @@
 package model;
 
 import model.enemies.EnemyUnit;
+import model.friendly.Swamp;
 import model.mapitem.Map;
+import model.runes.Rune;
 import control.SkeletonUI;
 
 //
@@ -48,6 +50,18 @@ public class Game {
 		map.checkRune(0, 0);
 	}
 	public void Skeleton_MouseOnTile_Swamp() {
-		map.checkSwamp(0, 0);
+		boolean available =  map.checkSwamp(0, 0);
+		if (available) {
+			Rune r = new Rune();
+			SkeletonUI.addObject(r, "r", true);
+			
+			Swamp s = new Swamp();
+			SkeletonUI.addObject(s, "s", true);
+			
+			map.putSwamp(0, 0,s);
+			
+		}
+	
+		
 	}
 }

@@ -28,7 +28,10 @@ public class Road extends Tile {
 	private Road nextRoad;
 
 	public boolean checkSwamp() {
-		return false;
+		SkeletonUI.enterFunction(this, "checkSwamp");
+		
+		SkeletonUI.leaveFunction(true);
+		return true;
 	}
 
 	public void addTower(int distance, Tower t) {
@@ -55,7 +58,9 @@ public class Road extends Tile {
 	}
 
 	public void putSwamp(Swamp s) {
-
+		SkeletonUI.enterFunction(this, "putSwamp", s);
+           
+		SkeletonUI.leaveFunction();
 	}
 
 	public boolean addUnit(EnemyUnit e) {
