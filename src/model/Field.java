@@ -30,6 +30,7 @@ public class Field extends Tile {
 	}
 
 	public boolean checkRune() {
+		return false;
 
 	}
 }
