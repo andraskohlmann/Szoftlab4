@@ -36,5 +36,8 @@ public class Ticker {
 		SkeletonUI.leaveFunction();
 	}
 	
+	public void Skeleton_addUnit(ActiveUnit a) {
+		unitList.add(a);
+	}
 	
 }
