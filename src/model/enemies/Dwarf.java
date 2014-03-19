@@ -23,6 +23,10 @@ public class Dwarf extends EnemyUnit {
 		gameToNotice = g;
 	}
 	
+	public Dwarf() {
+		
+	}
+	
 	public void gotHit(Projectile p) {
 		SkeletonUI.enterFunction(this, "gotHit", p);
 		
