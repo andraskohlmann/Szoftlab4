@@ -1,5 +1,8 @@
 package control;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
@@ -16,9 +19,9 @@ public class SkeletonManager {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Game game = new Game();
-//		addObject(game, "game", true);
-//		game.tick();
+		Game game = new Game();
+		addObject(game, "game", true);
+		game.tick();
 
 	}
 
@@ -96,6 +99,56 @@ public class SkeletonManager {
 		indent();
 		System.out.println("[LEFT] with the returning value of: "
 				+ writeObject(ret));
+	}
+	
+	/**
+	 * A függvény amit eldöntendõ kérdések feltételénél kell meghívni.
+	 * 
+	 * @param question - a kérdés
+	 * @return a kapott válasz
+	 */
+	public static boolean booleanQuestion(String question) {
+		boolean ret = false;
+		
+		questionStart();
+		
+		System.out.println(question + " (Y/N)");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			String answer = br.readLine().toUpperCase();
+			
+			while (!answer.equals("Y") && !answer.equals("N")) {
+				System.out.println("Wrong answer format, try again! (Y/N)");
+				answer = br.readLine().toUpperCase();
+			}
+			
+			if (answer.equals("Y")) {
+				ret = true;
+			}
+			
+			br.close();
+		} catch (IOException e) {
+			System.err.println("Unhandled I/O exception...");
+			e.printStackTrace();
+		}
+		
+		questionEnd();
+		return ret;
+	}
+	
+	public static String stringQuestion(String question, String[] answers) {
+		questionStart();
+		questionEnd();
+		return null;
+	}
+	
+	private static void questionStart() {
+		System.out.println("-------------------- QUESTION --------------------");
+	}
+	
+	private static void questionEnd() {
+		System.out.println("--------------------------------------------------");
 	}
 
 	private static void indent() {
