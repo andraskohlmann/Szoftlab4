@@ -18,19 +18,13 @@ import model.runes.Slime;
 //
 //
 
-public class EnemyUnit implements ActiveUnit {
-	private Road roadToNotice;
-	private Game gameToNotice;
+public abstract class EnemyUnit implements ActiveUnit {
+	protected Road roadToNotice;
+	protected Game gameToNotice;
 
-	public void gotHit(Projectile p) {
-		SkeletonUI.enterFunction(this, "gotHit", p);
+	public abstract void gotHit(Projectile p);
 
-		SkeletonUI.leaveFunction();
-	}
-
-	public void gotSlowed(Slime s) {
-
-	}
+	public abstract void gotSlowed(Slime s);
 
 	public void setRoad() {
 

@@ -44,7 +44,7 @@ public class Road extends Tile {
 		SkeletonUI.leaveFunction(false);
 	}
 
-	public void deadNotice() {
+	public void deadNotice(EnemyUnit e) {
 		SkeletonUI.enterFunction(this, "deadNotice");
 
 		SkeletonUI.leaveFunction();

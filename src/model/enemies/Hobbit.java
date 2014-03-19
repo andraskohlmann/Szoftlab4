@@ -16,11 +16,22 @@ import model.runes.Slime;
 //
 
 public class Hobbit extends EnemyUnit {
-//	public void gotHit(Projectile p) {
-//
-//	}
-//
-//	public void gotSlowed(Slime s) {
-//
-//	}
+	public void gotHit(Projectile p) {
+		SkeletonUI.enterFunction(this, "gotHit", p);
+		
+		p.damageMe(this);
+		
+		if (SkeletonUI.booleanQuestion("Is the enemy unit dead?")) {
+			roadToNotice.deadNotice(this);
+			gameToNotice.notifyIfDead(this);
+		}
+		
+		SkeletonUI.leaveFunction();
+	}
+
+	public void gotSlowed(Slime s) {
+		SkeletonUI.enterFunction(this, "gotSlowed", s);
+		
+		SkeletonUI.leaveFunction();
+	}
 }
