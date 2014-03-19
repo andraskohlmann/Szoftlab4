@@ -11,18 +11,39 @@ package model;
 //
 //
 
-
-
-
 public class Tower implements ActiveUnit, FriendlyUnit {
-	
+
 	private EnemyUnit enemyUnits;
-	
+
 	private EnemyUnit lastTarget;
-	
+
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public boolean checkRune() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void putRune(Rune r) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void addUnit(EnemyUnit enemyUnit) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void removeUnit(EnemyUnit enemyUnit) {
+		// TODO Auto-generated method stub
+
 	}
 }

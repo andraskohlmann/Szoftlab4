@@ -13,43 +13,40 @@ import java.util.List;
 //
 //
 
-
-
-
 public class Tile {
 	public boolean checkTower() {
 		return false;
 	}
-	
+
 	public void putTower(Tower t) {
-	
+
 	}
-	
+
 	public boolean checkRune() {
 		return false;
 	}
-	
+
 	public void putRune(Rune r) {
-	
+
 	}
-	
+
 	public boolean checkSwamp() {
 		return false;
 	}
-	
+
 	public void putSwamp(Swamp s) {
-	
+
 	}
-	
+
 	public void addTower(int distance, Tower t) {
-	
+
 	}
-	
+
 	public void addNeighbours(List<Tile> neighbourList) {
-	
+
 	}
-	
+
 	public void setSucceedingRoads(List<Tile> nextRoads) {
-	
+
 	}
 }

@@ -13,18 +13,15 @@ import java.util.List;
 //
 //
 
-
-
-
 public class Ticker {
-	
+
 	private ActiveUnit unitList;
-	
+
 	public void tick() {
-	
+
 	}
-	
+
 	public void remove(List<EnemyUnit> unitList) {
-	
+
 	}
 }
