@@ -10,14 +10,12 @@
 //
 package model;
 
-
-
 public class Dwarf extends EnemyUnit {
 	public void dealDamage(Projectile p) {
-	
+
 	}
-	
+
 	public void gotSlowed(Slime s) {
-	
+
 	}
 }
