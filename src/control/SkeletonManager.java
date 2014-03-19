@@ -29,9 +29,9 @@ public class SkeletonManager {
 		Road rd = new Road();
 		SkeletonUI.addObject(rd, "rd", true);
 		
-		EnemyUnit e = new EnemyUnit();
-		SkeletonUI.addObject(e, "e", true);
-		t.Skeleton_AddUnit(e);
+//		EnemyUnit e = new EnemyUnit();
+//		SkeletonUI.addObject(e, "e", true);
+//		t.Skeleton_AddUnit(e);
 		
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s,  "s",  true);

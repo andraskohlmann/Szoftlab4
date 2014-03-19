@@ -47,6 +47,8 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		// TODO Auto-generated method stub
 		SkeletonUI.enterFunction(this, "putRune", r);
 
+			
+		
 		SkeletonUI.leaveFunction();
 	}
 
