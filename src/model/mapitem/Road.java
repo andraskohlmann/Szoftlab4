@@ -1,10 +1,13 @@
 package model.mapitem;
 
-import control.SkeletonUI;
+import java.util.ArrayList;
+import java.util.List;
+
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
+import control.SkeletonUI;
 
 //
 //
@@ -23,7 +26,7 @@ public class Road extends Tile {
 
 	private Swamp swamp;
 
-	private Tower towersToNotify;
+	private List<Tower> towersToNotify = new ArrayList<Tower>();
 
 	private Road nextRoad;
 	
@@ -53,6 +56,12 @@ public class Road extends Tile {
 	public void deadNotice(EnemyUnit e) {
 		SkeletonUI.enterFunction(this, "deadNotice");
 
+		for (Tower t : towersToNotify)
+			t.removeUnit(e);
+		
+		if (SkeletonUI.booleanQuestion("Do this road segment have a swamp on it?"))
+			swamp.removeUnit(e);
+		
 		SkeletonUI.leaveFunction();
 	}
 
