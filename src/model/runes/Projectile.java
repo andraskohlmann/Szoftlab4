@@ -18,28 +18,32 @@ import model.enemies.Man;
 //
 
 public class Projectile {
-	public void damageMe(Dwarf d) {
+	public int damageMe(Dwarf d) {
 		SkeletonUI.enterFunction(this, "damageMe", d);
 
-		SkeletonUI.leaveFunction();
+		SkeletonUI.leaveFunction(0);
+		return 0;
 	}
 
-	public void damageMe(Hobbit h) {
+	public int damageMe(Hobbit h) {
 		SkeletonUI.enterFunction(this, "damageMe", h);
 
-		SkeletonUI.leaveFunction();
+		SkeletonUI.leaveFunction(0);
+		return 0;
 	}
 
-	public void damageMe(Elf e) {
+	public int damageMe(Elf e) {
 		SkeletonUI.enterFunction(this, "damageMe", e);
 
-		SkeletonUI.leaveFunction();
+		SkeletonUI.leaveFunction(0);
+		return 0;
 	}
 
-	public void damageMe(Man m) {
+	public int damageMe(Man m) {
 		SkeletonUI.enterFunction(this, "damageMe", m);
 
-		SkeletonUI.leaveFunction();
+		SkeletonUI.leaveFunction(0);
+		return 0;
 
 	}
 
