@@ -71,7 +71,7 @@ public class Map {
 		if (SkeletonUI
 				.stringQuestion(
 						"Is it a Road or a Field you want to put a Swamp on it? (Road, Field)?",
-						"R", "S").equals("R"))
+						"R", "F").equals("R"))
 			available = road.checkSwamp();
 		else
 			available = field.checkSwamp();
@@ -81,7 +81,9 @@ public class Map {
 	}
 
 	public void putSwamp(int x, int y, Swamp s) {
-
+		SkeletonUI.enterFunction(this, "putSwamp", x, y,s);
+         road.putSwamp(s);
+		SkeletonUI.leaveFunction();
 	}
 
 	public void setConnections() {

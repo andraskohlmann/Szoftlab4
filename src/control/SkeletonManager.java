@@ -17,9 +17,7 @@ public class SkeletonManager {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Game game = new Game();
-//		SkeletonUI.addObject(game, "game", true);
-//		game.tick();
+		PutSwamp();
 
 	}
 	
@@ -71,13 +69,16 @@ public class SkeletonManager {
 		
 		Map m = new Map();
 		SkeletonUI.addObject(m, "m", true);
+		g.Skeleton_MapSetter(m);
 		
 		Field f = new Field();
 		SkeletonUI.addObject(f, "f", true);
+		m.Skeleton_FieldSetter(f);
 		
 		Road r = new Road();
 		SkeletonUI.addObject(r, "r", true);
-		 
+		m.Skeleton_RoadSetter(r);
+		
 		g.Skeleton_MouseOnTile_Swamp();
 	}
 
