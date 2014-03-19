@@ -24,6 +24,7 @@ public class Map {
 
 	private Field field;
 	private Road road;
+	private String Skeleton_answer;
 
 	public void Skeleton_FieldSetter(Field f) {
 		field = f;
@@ -45,11 +46,11 @@ public class Map {
 	public boolean checkRune(int x, int y) {
 		SkeletonUI.enterFunction(this, "checkRune", x, y);
 
-		String answer = SkeletonUI.stringQuestion(
+		Skeleton_answer = SkeletonUI.stringQuestion(
 				"Is that tile a Field or a Road?", "F", "R");
 		boolean available = false;
 
-		if (answer == "F")
+		if (Skeleton_answer.equals("F"))
 			available = field.checkRune();
 		else
 			available = road.checkRune();
@@ -61,6 +62,11 @@ public class Map {
 
 	public void putRune(int x, int y, Rune r) {
 		SkeletonUI.enterFunction(this, "putRune", x, y, r);
+
+		if (Skeleton_answer.equals("F"))
+			field.putRune(r);
+		else
+			road.putRune(r);
 
 		SkeletonUI.leaveFunction();
 	}
@@ -81,8 +87,8 @@ public class Map {
 	}
 
 	public void putSwamp(int x, int y, Swamp s) {
-		SkeletonUI.enterFunction(this, "putSwamp", x, y,s);
-         road.putSwamp(s);
+		SkeletonUI.enterFunction(this, "putSwamp", x, y, s);
+		road.putSwamp(s);
 		SkeletonUI.leaveFunction();
 	}
 
