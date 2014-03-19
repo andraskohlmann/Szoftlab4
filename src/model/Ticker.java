@@ -22,12 +22,14 @@ public class Ticker {
 	private ActiveUnit unitList;
 
 	public void tick() {
-
+		SkeletonUI.enterFunction(this, "tick");
+		
+        SkeletonUI.leaveFunction();
 	}
 
 	public void remove(List<EnemyUnit> unitList) {
-//		SkeletonUI.enterFunction(this, "remove", unitList);
-//
-//		SkeletonUI.leaveFunction();
+		SkeletonUI.enterFunction(this, "remove", unitList);
+
+		SkeletonUI.leaveFunction();
 	}
 }

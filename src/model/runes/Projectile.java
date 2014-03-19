@@ -1,5 +1,6 @@
 package model.runes;
 
+import control.SkeletonUI;
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
@@ -18,22 +19,34 @@ import model.enemies.Man;
 
 public class Projectile {
 	public void damageMe(Dwarf d) {
+		SkeletonUI.enterFunction(this, "damageMe", d);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	public void damageMe(Hobbit h) {
+		SkeletonUI.enterFunction(this, "damageMe", h);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	public void damageMe(Elf e) {
+		SkeletonUI.enterFunction(this, "damageMe", e);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	public void damageMe(Man m) {
+		SkeletonUI.enterFunction(this, "damageMe", m);
+
+		SkeletonUI.leaveFunction();
 
 	}
 
 	public void setDamage() {
+		SkeletonUI.enterFunction(this, "setDamage");
+
+		SkeletonUI.leaveFunction();
 
 	}
 }

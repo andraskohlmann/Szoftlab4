@@ -1,5 +1,6 @@
 package model.enemies;
 
+import control.SkeletonUI;
 import model.runes.Projectile;
 import model.runes.Slime;
 
@@ -15,11 +16,11 @@ import model.runes.Slime;
 //
 
 public class Hobbit extends EnemyUnit {
-	public void dealDamage(Projectile p) {
-
-	}
-
-	public void gotSlowed(Slime s) {
-
-	}
+//	public void gotHit(Projectile p) {
+//
+//	}
+//
+//	public void gotSlowed(Slime s) {
+//
+//	}
 }

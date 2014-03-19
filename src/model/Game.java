@@ -34,6 +34,8 @@ public class Game {
 	}
 
 	public void notifyIfDead(EnemyUnit e) {
+		SkeletonUI.enterFunction(this, "notifyIfDead", e);
 
+		SkeletonUI.leaveFunction();
 	}
 }

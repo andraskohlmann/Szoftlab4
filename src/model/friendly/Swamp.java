@@ -1,5 +1,6 @@
 package model.friendly;
 
+import control.SkeletonUI;
 import model.ActiveUnit;
 import model.enemies.EnemyUnit;
 import model.runes.Rune;
@@ -44,8 +45,10 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	}
 
 	@Override
-	public void removeUnit(EnemyUnit enemyUnit) {
+	public void removeUnit(EnemyUnit e) {
 		// TODO Auto-generated method stub
+		SkeletonUI.enterFunction(this, "removeUnit", e);
 
+		SkeletonUI.leaveFunction();
 	}
 }

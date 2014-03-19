@@ -1,5 +1,6 @@
 package model.mapitem;
 
+import control.SkeletonUI;
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
@@ -39,7 +40,9 @@ public class Road extends Tile {
 	}
 
 	public void deadNotice() {
+		SkeletonUI.enterFunction(this, "deadNotice");
 
+		SkeletonUI.leaveFunction();
 	}
 
 	public boolean checkRune() {

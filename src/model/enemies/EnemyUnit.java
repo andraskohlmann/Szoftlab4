@@ -1,5 +1,6 @@
 package model.enemies;
 
+import control.SkeletonUI;
 import model.ActiveUnit;
 import model.Game;
 import model.mapitem.Road;
@@ -21,8 +22,10 @@ public class EnemyUnit implements ActiveUnit {
 	private Road roadToNotice;
 	private Game gameToNotice;
 
-	public void dealDamage(Projectile p) {
+	public void gotHit(Projectile p) {
+		SkeletonUI.enterFunction(this, "gotHit", p);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	public void gotSlowed(Slime s) {

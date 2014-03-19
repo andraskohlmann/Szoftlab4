@@ -1,5 +1,6 @@
 package model.friendly;
 
+import control.SkeletonUI;
 import model.ActiveUnit;
 import model.enemies.EnemyUnit;
 import model.runes.Rune;
@@ -24,7 +25,12 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub
-
+		SkeletonUI.enterFunction(this, "tick");
+		
+		
+		
+		
+		SkeletonUI.leaveFunction();
 	}
 
 	@Override
@@ -46,8 +52,10 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	}
 
 	@Override
-	public void removeUnit(EnemyUnit enemyUnit) {
+	public void removeUnit(EnemyUnit e) {
 		// TODO Auto-generated method stub
+		SkeletonUI.enterFunction(this, "removeUnit", e);
 
+		SkeletonUI.leaveFunction();
 	}
 }
