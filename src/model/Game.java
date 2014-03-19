@@ -47,4 +47,7 @@ public class Game {
 	public void Skeleton_MouseOnTile_Rune() {
 		map.checkRune(0, 0);
 	}
+	public void Skeleton_MouseOnTile_Swamp() {
+		map.checkSwamp(0, 0);
+	}
 }

@@ -78,6 +78,7 @@ public class SkeletonManager {
 		Road r = new Road();
 		SkeletonUI.addObject(r, "r", true);
 		 
+		g.Skeleton_MouseOnTile_Swamp();
 	}
 
 }
