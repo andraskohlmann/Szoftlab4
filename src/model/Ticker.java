@@ -1,10 +1,11 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import control.SkeletonUI;
-
 import model.enemies.EnemyUnit;
+import control.SkeletonUI;
+import model.friendly.Tower;
 
 //
 //
@@ -19,10 +20,12 @@ import model.enemies.EnemyUnit;
 
 public class Ticker {
 
-	private ActiveUnit unitList;
+	private List<ActiveUnit> unitList = new ArrayList<ActiveUnit>();
 
 	public void tick() {
-		SkeletonUI.enterFunction(this, "tick");
+		SkeletonUI.enterFunction(this, "tick");			
+		
+		unitList.get(0).tick();
 		
         SkeletonUI.leaveFunction();
 	}
@@ -32,4 +35,6 @@ public class Ticker {
 
 		SkeletonUI.leaveFunction();
 	}
+	
+	
 }

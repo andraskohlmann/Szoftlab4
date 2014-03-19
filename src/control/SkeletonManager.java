@@ -33,6 +33,7 @@ public class SkeletonManager {
 		
 		EnemyUnit e = new EnemyUnit();
 		SkeletonUI.addObject(e, "e", true);
+		t.Skeleton_AddUnit(e);
 		
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s,  "s",  true);

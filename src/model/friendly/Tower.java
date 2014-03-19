@@ -1,9 +1,12 @@
 package model.friendly;
 
-import control.SkeletonUI;
+import java.util.ArrayList;
+import java.util.List;
+
 import model.ActiveUnit;
 import model.enemies.EnemyUnit;
 import model.runes.Rune;
+import control.SkeletonUI;
 
 //
 //
@@ -18,7 +21,7 @@ import model.runes.Rune;
 
 public class Tower implements ActiveUnit, FriendlyUnit {
 
-	private EnemyUnit enemyUnits;
+	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
 
 	private EnemyUnit lastTarget;
 
@@ -59,5 +62,9 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 		SkeletonUI.enterFunction(this, "removeUnit", e);
 
 		SkeletonUI.leaveFunction();
+	}
+	
+	public void Skeleton_AddUnit(EnemyUnit enemyUnit) {
+		enemyUnits.add(enemyUnit);
 	}
 }
