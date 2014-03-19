@@ -66,15 +66,18 @@ public class Map {
 	}
 
 	public boolean checkSwamp(int x, int y) {
+		boolean available;
 		SkeletonUI.enterFunction(this, "checkSwamp", x, y);
 		if (SkeletonUI
 				.stringQuestion(
 						"Is it a Road or a Field you want to put a Swamp on it? (Road, Field)?",
 						"R", "S").equals("R"))
+			available = road.checkSwamp();
+		else
+			available = field.checkSwamp();
 
-			SkeletonUI.leaveFunction();
-		return false;
-
+		SkeletonUI.leaveFunction(available);
+		return available;
 	}
 
 	public void putSwamp(int x, int y, Swamp s) {
