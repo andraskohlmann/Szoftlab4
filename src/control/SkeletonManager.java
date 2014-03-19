@@ -81,6 +81,8 @@ public class SkeletonManager {
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
 		
+		g.Skeleton_MapSetter(m);
+		
 		m.Skeleton_FieldSetter(f);
 		m.Skeleton_RoadSetter(r);
 		
