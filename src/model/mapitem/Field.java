@@ -25,10 +25,13 @@ public class Field extends Tile {
 
 	public void putRune(Rune r) {
 		SkeletonUI.enterFunction(this, "putRune", r);
-		
-			int distance = r.getDistance();
-			
-		
+
+		int distance = r.getDistance();
+
+		tower.putRune(r);
+
+		this.addTower(distance, tower);
+
 		SkeletonUI.leaveFunction();
 	}
 
@@ -40,7 +43,7 @@ public class Field extends Tile {
 		SkeletonUI.enterFunction(this, "checkRune");
 
 		boolean available = tower.checkRune();
-		
+
 		SkeletonUI.leaveFunction(available);
 		return available;
 

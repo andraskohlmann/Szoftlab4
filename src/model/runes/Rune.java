@@ -15,8 +15,11 @@ import control.SkeletonUI;
 
 public class Rune {
 
-	public Rune() {
+	private int distance;
 
+	// Csak default konstruktor! További módosítás szükséges!!!
+	public Rune() {
+		distance = 4;
 	}
 
 	public void modifyProjectile(Projectile p) {
@@ -36,7 +39,7 @@ public class Rune {
 	public int getDistance() {
 		SkeletonUI.enterFunction(this, "getDistance");
 
-		SkeletonUI.leaveFunction(0);
-		return 0;
+		SkeletonUI.leaveFunction(distance);
+		return distance;
 	}
 }
