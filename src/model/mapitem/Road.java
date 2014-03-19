@@ -26,6 +26,10 @@ public class Road extends Tile {
 	private Tower towersToNotify;
 
 	private Road nextRoad;
+	
+	public void Skeleton_SwampSetter(Swamp s) {
+		swamp = s;
+	}
 
 	public boolean checkSwamp() {
 		SkeletonUI.enterFunction(this, "checkSwamp");

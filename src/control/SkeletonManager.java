@@ -62,6 +62,9 @@ public class SkeletonManager {
 		m.Skeleton_FieldSetter(f);
 		m.Skeleton_RoadSetter(r);
 		
+		f.Skeleton_TowerSetter(t);
+		r.Skeleton_SwampSetter(s);
+		
 		
 		g.Skeleton_MouseOnTile_Rune();
 	}
