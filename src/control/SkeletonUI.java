@@ -6,11 +6,17 @@ import java.io.InputStreamReader;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+/**
+ * Utility class, ami a szkeleton UI-hoz használandó API-t tartalmazza.
+ */
 public class SkeletonUI {
 
 	private static int indentation = 0;
 
 	private static Dictionary<Object, String> objects = new Hashtable<Object, String>();
+
+	private static BufferedReader reader = new BufferedReader(
+			new InputStreamReader(System.in));
 
 	/**
 	 * A függvény ami a létrehozott objektumokat regisztrálja be a nevükkel.
@@ -101,21 +107,18 @@ public class SkeletonUI {
 		questionStart();
 
 		System.out.println(question + " (Y/N)");
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		try {
-			String answer = br.readLine().toUpperCase();
+			String answer = reader.readLine().toUpperCase();
 
 			while (!answer.equals("Y") && !answer.equals("N")) {
 				System.out.println("Wrong answer format, try again! (Y/N)");
-				answer = br.readLine().toUpperCase();
+				answer = reader.readLine().toUpperCase();
 			}
 
 			if (answer.equals("Y")) {
 				ret = true;
 			}
-
-			br.close();
 		} catch (IOException e) {
 			System.err.println("Unhandled I/O exception...");
 			e.printStackTrace();
@@ -147,20 +150,16 @@ public class SkeletonUI {
 
 		System.out.println(question + " " + optionsList(possibleAnswers));
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 		try {
-			String answer = br.readLine().toUpperCase();
+			String answer = reader.readLine().toUpperCase();
 
 			while (!contains(possibleAnswers, answer)) {
 				System.out.println("Wrong answer format, try again! "
 						+ optionsList(possibleAnswers));
-				answer = br.readLine().toUpperCase();
+				answer = reader.readLine().toUpperCase();
 			}
 
 			ret = answer;
-
-			br.close();
 		} catch (IOException e) {
 			System.err.println("Unhandled I/O exception...");
 			e.printStackTrace();
@@ -226,6 +225,18 @@ public class SkeletonUI {
 		sb.append(o.getClass().getSimpleName());
 
 		return sb.toString();
+	}
+
+	/**
+	 * Hívd meg a program végén, hogy felszabaduljanak az erõforrások.
+	 */
+	public static void cleanUp() {
+		try {
+			reader.close();
+		} catch (IOException e) {
+			System.err.println("Unhandled I/O exception...");
+			e.printStackTrace();
+		}
 	}
 
 }
