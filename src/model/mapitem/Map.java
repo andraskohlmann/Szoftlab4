@@ -21,18 +21,18 @@ import model.runes.Rune;
 //
 
 public class Map {
-	
+
 	private Field field;
 	private Road road;
-	
+
 	public void Skeleton_FieldSetter(Field f) {
 		field = f;
 	}
-	
+
 	public void Skeleton_RoadSetter(Road r) {
 		road = r;
 	}
-	
+
 	public boolean checkTower(int x, int y) {
 		return false;
 
@@ -44,15 +44,16 @@ public class Map {
 
 	public boolean checkRune(int x, int y) {
 		SkeletonUI.enterFunction(this, "checkRune", x, y);
-		
-		String answer = SkeletonUI.stringQuestion("Is that tile a Field or a Road?", "F", "R");
+
+		String answer = SkeletonUI.stringQuestion(
+				"Is that tile a Field or a Road?", "F", "R");
 		boolean available = false;
-		
-		if(answer == "F")
+
+		if (answer == "F")
 			available = field.checkRune();
 		else
 			available = road.checkRune();
-			
+
 		SkeletonUI.leaveFunction(available);
 		return available;
 
@@ -66,9 +67,12 @@ public class Map {
 
 	public boolean checkSwamp(int x, int y) {
 		SkeletonUI.enterFunction(this, "checkSwamp", x, y);
-		if(SkeletonUI.stringQuestion("Is it a Road or a Field you want to put a Swamp on it? (Road, Field)?", "R", "S").equals("R"))
-		
-		SkeletonUI.leaveFunction();
+		if (SkeletonUI
+				.stringQuestion(
+						"Is it a Road or a Field you want to put a Swamp on it? (Road, Field)?",
+						"R", "S").equals("R"))
+
+			SkeletonUI.leaveFunction();
 		return false;
 
 	}
