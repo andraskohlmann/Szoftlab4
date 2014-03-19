@@ -1,6 +1,5 @@
 package model.enemies;
 
-import control.SkeletonUI;
 import model.ActiveUnit;
 import model.Game;
 import model.mapitem.Road;

@@ -5,7 +5,6 @@ import java.util.List;
 
 import model.enemies.EnemyUnit;
 import control.SkeletonUI;
-import model.friendly.Tower;
 
 public class Ticker {
 

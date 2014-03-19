@@ -10,7 +10,6 @@
 //
 package model.runes;
 
-import control.SkeletonUI;
 
 public class DwarfRune extends Rune {
 

@@ -1,10 +1,10 @@
 package model.runes;
 
-import control.SkeletonUI;
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
 import model.enemies.Man;
+import control.SkeletonUI;
 
 public class Projectile {
 	public int damageMe(Dwarf d) {

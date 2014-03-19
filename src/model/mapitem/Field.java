@@ -1,8 +1,8 @@
 package model.mapitem;
 
-import control.SkeletonUI;
 import model.friendly.Tower;
 import model.runes.Rune;
+import control.SkeletonUI;
 
 //
 //

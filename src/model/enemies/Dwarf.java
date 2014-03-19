@@ -10,11 +10,11 @@
 //
 package model.enemies;
 
-import control.SkeletonUI;
 import model.Game;
 import model.mapitem.Road;
 import model.runes.Projectile;
 import model.runes.Slime;
+import control.SkeletonUI;
 
 public class Dwarf extends EnemyUnit {
 	
