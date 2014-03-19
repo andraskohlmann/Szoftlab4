@@ -28,7 +28,9 @@ public class Rune {
 
 	public int getDistance() {
 		SkeletonUI.enterFunction(this, "getDistance");
-
+		
+		// I'm addicted to you, shame on me... Hollywood Newsagency!
+		
 		SkeletonUI.leaveFunction(0);
 		return 0;
 	}
