@@ -2,6 +2,8 @@ package model;
 
 import java.util.List;
 
+import control.SkeletonUI;
+
 import model.enemies.EnemyUnit;
 
 //
@@ -24,6 +26,8 @@ public class Ticker {
 	}
 
 	public void remove(List<EnemyUnit> unitList) {
-
+//		SkeletonUI.enterFunction(this, "remove", unitList);
+//
+//		SkeletonUI.leaveFunction();
 	}
 }

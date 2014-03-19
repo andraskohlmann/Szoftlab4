@@ -1,6 +1,10 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.enemies.EnemyUnit;
+import control.SkeletonUI;
 
 //
 //
@@ -15,7 +19,18 @@ import model.enemies.EnemyUnit;
 
 public class Game {
 	public void tick() {
-
+//		SkeletonUI.enterFunction(this, "tick");
+//		
+//		Ticker t = new Ticker();
+//		SkeletonUI.addObject(t, "ticker", true);
+//		
+//		List<EnemyUnit> l = new ArrayList<EnemyUnit>();
+//		SkeletonUI.addObject(l, "enemylist", false);
+//		
+//		if(SkeletonUI.booleanQuestion("Dugnád az anyámat?")) 
+//			t.remove(l);
+//		
+//		SkeletonUI.leaveFunction();
 	}
 
 	public void notifyIfDead(EnemyUnit e) {
