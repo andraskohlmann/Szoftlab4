@@ -11,10 +11,18 @@
 package model.enemies;
 
 import control.SkeletonUI;
+import model.Game;
+import model.mapitem.Road;
 import model.runes.Projectile;
 import model.runes.Slime;
 
 public class Dwarf extends EnemyUnit {
+	
+	public Dwarf(Road r, Game g) {
+		roadToNotice = r;
+		gameToNotice = g;
+	}
+	
 	public void gotHit(Projectile p) {
 		SkeletonUI.enterFunction(this, "gotHit", p);
 		

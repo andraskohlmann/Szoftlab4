@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.enemies.EnemyUnit;
+import model.enemies.Man;
 import model.friendly.Swamp;
 import model.mapitem.Map;
 import model.runes.Rune;
@@ -50,7 +51,10 @@ public class Game {
 		SkeletonUI.enterFunction(this, "notifyIfDead", e);
 
 		List<EnemyUnit> units = new ArrayList<EnemyUnit>();
+		SkeletonUI.addObject(units, "units", true);
+		
 		units.add(e);
+		units.add(new Man());
 		ticker.remove(units);
 		
 		SkeletonUI.leaveFunction();

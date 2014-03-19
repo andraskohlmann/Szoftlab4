@@ -29,7 +29,7 @@ public class SkeletonManager {
 		 */
 
 		// INNEN A KITÖRLENDÕ KÓD
-
+		
 		// IDÁIG
 
 		SkeletonUI.cleanUp();
@@ -43,11 +43,17 @@ public class SkeletonManager {
 
 		Road rd = new Road();
 		SkeletonUI.addObject(rd, "rd", true);
+		
+		Swamp s = new Swamp();
+		SkeletonUI.addObject(s, "s", true);
+		
+		if (SkeletonUI.booleanQuestion("Do you want a swamp on the road?"))
+			rd.Skeleton_SwampSetter(s);
 
 		String answer = SkeletonUI.stringQuestion(
-				"What kind of enemy would you create?", "D", "E", "H", "M");
+				"What kind of enemy would you create?", "Dwarf", "Elf", "Hobbit", "Man");
 		if (answer.equals("DWARF")) {
-			Dwarf d = new Dwarf();
+			Dwarf d = new Dwarf(rd, g);
 			SkeletonUI.addObject(d, "d", true);
 			t.Skeleton_addUnit(d);
 		} else if (answer.equals("ELF")) {
@@ -63,9 +69,6 @@ public class SkeletonManager {
 			SkeletonUI.addObject(m, "m", true);
 			t.Skeleton_addUnit(m);
 		}
-
-		Swamp s = new Swamp();
-		SkeletonUI.addObject(s, "s", true);
 
 		ticker.tick();
 
