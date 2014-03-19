@@ -89,7 +89,7 @@ public class SkeletonUI {
 	}
 
 	/**
-	 * A függvény amit eldöntendõ kérdések feltételénél kell meghívni.
+	 * A függvény amit eldöntendõ kérdések feltételénél kell hívni.
 	 * 
 	 * @param question
 	 *            - a kérdés
@@ -125,10 +125,62 @@ public class SkeletonUI {
 		return ret;
 	}
 
-	public static String stringQuestion(String question, String[] answers) {
+	/**
+	 * A függvény amit a többválaszos kérdések feltételénél kell hívni.
+	 * 
+	 * @param question - a kérdés: tartalmazza a lehetséges válaszok teljes alakját!
+	 * @param possibleAnswers - a lehetséges válaszok felsorolva (általában betûk...)
+	 * @return a kapott válasz (FONTOS: mindig nagybetû!)
+	 */
+	public static String stringQuestion(String question,
+			String... possibleAnswers) {
+		
+		for (int i = 0; i < possibleAnswers.length; i++) {
+			possibleAnswers[i] = possibleAnswers[i].toUpperCase();
+		}
+		
+		String ret = null;
+
 		questionStart();
+
+		System.out.print(question + " (");
+		for (int i = 0; i < possibleAnswers.length; i++) {
+			System.out.print(possibleAnswers[i]);
+			if (i < possibleAnswers.length - 1) {
+				System.out.print("/");
+			}
+		}
+		System.out.println(")");
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		try {
+			String answer = br.readLine().toUpperCase();
+
+			while (!contains(possibleAnswers, answer)) {
+				System.out.println("Wrong answer format, try again! (Y/N)");
+				answer = br.readLine().toUpperCase();
+			}
+			
+			ret = answer;
+
+			br.close();
+		} catch (IOException e) {
+			System.err.println("Unhandled I/O exception...");
+			e.printStackTrace();
+		}
+
 		questionEnd();
-		return null;
+		return ret;
+	}
+	
+	private static boolean contains(String[] list, String a) {
+		for (String unit : list) {
+			if (a.equals(unit))
+				return true;
+		}
+		
+		return false;
 	}
 
 	private static void questionStart() {

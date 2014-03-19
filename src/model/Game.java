@@ -27,7 +27,7 @@ public class Game {
 //		List<EnemyUnit> l = new ArrayList<EnemyUnit>();
 //		SkeletonUI.addObject(l, "enemylist", false);
 //		
-//		if(SkeletonUI.booleanQuestion("Dugnád az anyámat?")) 
+//		if(SkeletonUI.stringQuestion("Hogy dugnád (Orálisan, Análisan, Vaginálisan)?", "O", "a", "v").equals("V")) 
 //			t.remove(l);
 //		
 //		SkeletonUI.leaveFunction();
