@@ -61,9 +61,7 @@ public class SkeletonManager {
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
 		
-		String answer = SkeletonUI.stringQuestion("Az adott Tile Field vagy Swamp?", "F", "S");
-		
-		//if(answer == "F")
+		g.Skeleton_MouseOnTile();
 	}
 
 }

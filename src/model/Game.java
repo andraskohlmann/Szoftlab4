@@ -1,9 +1,7 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import model.enemies.EnemyUnit;
+import model.mapitem.Map;
 import control.SkeletonUI;
 
 //
@@ -18,6 +16,13 @@ import control.SkeletonUI;
 //
 
 public class Game {
+	
+	private Map map;
+	
+	public void Skeleton_MapSetter(Map m) {
+		map = m;
+	}
+	
 	public void tick() {
 //		SkeletonUI.enterFunction(this, "tick");
 //		
@@ -37,5 +42,9 @@ public class Game {
 		SkeletonUI.enterFunction(this, "notifyIfDead", e);
 
 		SkeletonUI.leaveFunction();
+	}
+	
+	public void Skeleton_MouseOnTile() {
+		map.checkRune(0, 0);
 	}
 }

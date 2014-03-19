@@ -21,6 +21,18 @@ import model.runes.Rune;
 //
 
 public class Map {
+	
+	private Field field;
+	private Road road;
+	
+	public void Skeleton_FieldSetter(Field f) {
+		field = f;
+	}
+	
+	public void Skeleton_RoadSetter(Road r) {
+		road = r;
+	}
+	
 	public boolean checkTower(int x, int y) {
 		return false;
 
@@ -32,7 +44,15 @@ public class Map {
 
 	public boolean checkRune(int x, int y) {
 		SkeletonUI.enterFunction(this, "checkRune", x, y);
-
+		
+		String answer = SkeletonUI.stringQuestion("Is that Tile a Field or a Road?", "F", "S");
+		
+		if(answer == "F")
+			field.checkRune();
+		else
+			road.checkRune();
+			
+		
 		SkeletonUI.leaveFunction(false);
 		return false;
 
