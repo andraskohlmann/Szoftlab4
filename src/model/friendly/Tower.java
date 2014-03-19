@@ -5,6 +5,7 @@ import java.util.List;
 
 import model.ActiveUnit;
 import model.enemies.EnemyUnit;
+import model.runes.Projectile;
 import model.runes.Rune;
 import control.SkeletonUI;
 
@@ -22,7 +23,7 @@ import control.SkeletonUI;
 public class Tower implements ActiveUnit, FriendlyUnit {
 
 	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
-
+	private Rune rune;
 	private EnemyUnit lastTarget;
 
 	@Override
@@ -30,6 +31,16 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 		// TODO Auto-generated method stub
 		SkeletonUI.enterFunction(this, "tick");
 
+		boolean answer =  SkeletonUI.booleanQuestion("Are there any enemies to shoot?");
+		if (answer) {
+			
+			Projectile p = new Projectile();
+			SkeletonUI.addObject(p, "p", true);
+			rune.modifyProjectile(p);
+			
+			enemyUnits.get(0).gotHit(p);			
+		}
+		
 		SkeletonUI.leaveFunction();
 	}
 
@@ -71,7 +82,11 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 		SkeletonUI.leaveFunction();
 	}
 
-	public void Skeleton_AddUnit(EnemyUnit enemyUnit) {
+	public void Skeleton_addUnit(EnemyUnit enemyUnit) {
 		enemyUnits.add(enemyUnit);
+	}
+	
+	public void Skeleton_addRune(Rune r) {
+		rune = r;
 	}
 }
