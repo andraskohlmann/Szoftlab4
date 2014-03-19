@@ -40,11 +40,11 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 		String answer = SkeletonUI
 				.stringQuestion(
-						"What kind of rune is in the tower? (Default, dWarf, Elf, Man, Hobbit) //",
-						"D", "W", "E", "M", "H");
-		
-		boolean available = (answer == "D");
-		
+						"What kind of rune is in the tower? (Default, dWarf, Elf, Man, Hobbit, Range, reLoad) /Rune can be put only to tower with default rune./",
+						"D", "W", "E", "M", "H", "R", "L");
+
+		boolean available = (answer.equals("D"));
+
 		SkeletonUI.leaveFunction(available);
 		return available;
 	}
@@ -70,7 +70,7 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 		SkeletonUI.leaveFunction();
 	}
-	
+
 	public void Skeleton_AddUnit(EnemyUnit enemyUnit) {
 		enemyUnits.add(enemyUnit);
 	}

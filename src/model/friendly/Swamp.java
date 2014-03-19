@@ -31,8 +31,15 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		// TODO Auto-generated method stub
 		SkeletonUI.enterFunction(this, "checkRune");
 
-		SkeletonUI.leaveFunction(false);
-		return false;
+		String answer = SkeletonUI
+				.stringQuestion(
+						"What kind of rune is in the swamp? (Default, dWarf, Elf, Man, Hobbit) /Rune can be put only to swamp with default rune./",
+						"D", "W", "E", "M", "H");
+
+		boolean available = (answer.equals("D"));
+
+		SkeletonUI.leaveFunction(available);
+		return available;
 	}
 
 	@Override
