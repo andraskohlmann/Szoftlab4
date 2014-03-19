@@ -63,8 +63,7 @@ public class SkeletonManager {
 		
 		String answer = SkeletonUI.stringQuestion("Az adott Tile Field vagy Swamp?", "F", "S");
 		
-		if(answer == "F")
-			g.
+		//if(answer == "F")
 	}
 
 }
