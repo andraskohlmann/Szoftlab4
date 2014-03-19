@@ -1,6 +1,10 @@
-package model;
+package model.mapitem;
 
 import java.util.List;
+
+import model.friendly.Swamp;
+import model.friendly.Tower;
+import model.runes.Rune;
 
 //
 //

@@ -1,5 +1,8 @@
-package model;
+package model.mapitem;
+
 import java.util.List;
+
+import model.enemies.EnemyUnit;
 
 //
 //
@@ -12,15 +15,13 @@ import java.util.List;
 //
 //
 
-
-
 public class FinishedRoad extends Road {
 	public List<EnemyUnit> getFinishedUnits() {
 		return null;
-	
+
 	}
-	
+
 	public void deleteFinishedUnits() {
-	
+
 	}
 }

@@ -1,4 +1,8 @@
-package model;
+package model.friendly;
+
+import model.ActiveUnit;
+import model.enemies.EnemyUnit;
+import model.runes.Rune;
 
 //
 //
@@ -11,15 +15,12 @@ package model;
 //
 //
 
-
-
-
 public interface FriendlyUnit extends ActiveUnit {
 	public boolean checkRune();
-	
+
 	public void putRune(Rune r);
-	
+
 	public void addUnit(EnemyUnit enemyUnit);
-	
+
 	public void removeUnit(EnemyUnit enemyUnit);
 }

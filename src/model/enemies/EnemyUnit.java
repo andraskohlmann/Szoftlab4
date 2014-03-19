@@ -1,4 +1,10 @@
-package model;
+package model.enemies;
+
+import model.ActiveUnit;
+import model.Game;
+import model.mapitem.Road;
+import model.runes.Projectile;
+import model.runes.Slime;
 
 //
 //
@@ -10,8 +16,6 @@ package model;
 //  @ Author : 
 //
 //
-
-
 
 public class EnemyUnit implements ActiveUnit {
 	private Road roadToNotice;

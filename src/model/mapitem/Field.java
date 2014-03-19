@@ -1,4 +1,7 @@
-package model;
+package model.mapitem;
+
+import model.friendly.Tower;
+import model.runes.Rune;
 
 //
 //
@@ -10,8 +13,6 @@ package model;
 //  @ Author : 
 //
 //
-
-
 
 public class Field extends Tile {
 	private Tower tower;

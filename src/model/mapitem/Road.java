@@ -1,4 +1,9 @@
-package model;
+package model.mapitem;
+
+import model.enemies.EnemyUnit;
+import model.friendly.Swamp;
+import model.friendly.Tower;
+import model.runes.Rune;
 
 //
 //
@@ -12,13 +17,13 @@ package model;
 //
 
 public class Road extends Tile {
-	
+
 	private EnemyUnit enemyList;
-	
+
 	private Swamp swamp;
-	
+
 	private Tower towersToNotify;
-	
+
 	private Road nextRoad;
 
 	public boolean checkSwamp() {

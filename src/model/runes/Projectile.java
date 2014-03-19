@@ -1,4 +1,9 @@
-package model;
+package model.runes;
+
+import model.enemies.Dwarf;
+import model.enemies.Elf;
+import model.enemies.Hobbit;
+import model.enemies.Man;
 
 //
 //
@@ -11,27 +16,24 @@ package model;
 //
 //
 
-
-
-
 public class Projectile {
 	public void damageMe(Dwarf d) {
-	
+
 	}
-	
+
 	public void damageMe(Hobbit h) {
-	
+
 	}
-	
+
 	public void damageMe(Elf e) {
-	
+
 	}
-	
+
 	public void damageMe(Man m) {
-	
+
 	}
-	
+
 	public void setDamage() {
-	
+
 	}
 }

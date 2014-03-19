@@ -1,4 +1,9 @@
-package model;
+package model.runes;
+
+import model.enemies.Dwarf;
+import model.enemies.Elf;
+import model.enemies.Hobbit;
+import model.enemies.Man;
 
 //
 //

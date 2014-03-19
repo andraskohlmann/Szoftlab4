@@ -1,4 +1,7 @@
-package model;
+package model.enemies;
+
+import model.runes.Projectile;
+import model.runes.Slime;
 
 //
 //
@@ -10,8 +13,6 @@ package model;
 //  @ Author : 
 //
 //
-
-
 
 public class Elf extends EnemyUnit {
 	public void dealDamage(Projectile p) {
