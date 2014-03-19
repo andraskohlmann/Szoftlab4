@@ -38,8 +38,15 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 		// TODO Auto-generated method stub
 		SkeletonUI.enterFunction(this, "checkRune");
 
-		SkeletonUI.leaveFunction(false);
-		return false;
+		String answer = SkeletonUI
+				.stringQuestion(
+						"What kind of rune is in the tower? (Default, dWarf, Elf, Man, Hobbit) //",
+						"D", "W", "E", "M", "H");
+		
+		boolean available = (answer == "D");
+		
+		SkeletonUI.leaveFunction(available);
+		return available;
 	}
 
 	@Override

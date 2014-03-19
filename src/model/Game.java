@@ -44,7 +44,7 @@ public class Game {
 		SkeletonUI.leaveFunction();
 	}
 	
-	public void Skeleton_MouseOnTile() {
+	public void Skeleton_MouseOnTile_Rune() {
 		map.checkRune(0, 0);
 	}
 }

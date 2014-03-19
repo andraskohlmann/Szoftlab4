@@ -62,7 +62,7 @@ public class SkeletonManager {
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
 		
-		g.Skeleton_MouseOnTile();
+		g.Skeleton_MouseOnTile_Rune();
 	}
 	
 	public static void PutSwamp(){

@@ -45,14 +45,13 @@ public class Map {
 	public boolean checkRune(int x, int y) {
 		SkeletonUI.enterFunction(this, "checkRune", x, y);
 		
-		String answer = SkeletonUI.stringQuestion("Is that Tile a Field or a Road?", "F", "S");
+		String answer = SkeletonUI.stringQuestion("Is that tile a Field or a Road?", "F", "R");
 		
 		if(answer == "F")
 			field.checkRune();
 		else
 			road.checkRune();
 			
-		
 		SkeletonUI.leaveFunction(false);
 		return false;
 

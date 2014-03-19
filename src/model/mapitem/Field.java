@@ -36,6 +36,8 @@ public class Field extends Tile {
 	public boolean checkRune() {
 		SkeletonUI.enterFunction(this, "checkRune");
 
+		tower.checkRune();
+		
 		SkeletonUI.leaveFunction(false);
 		return false;
 
