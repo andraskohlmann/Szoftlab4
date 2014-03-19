@@ -25,7 +25,10 @@ public class Field extends Tile {
 
 	public void putRune(Rune r) {
 		SkeletonUI.enterFunction(this, "putRune", r);
-
+		
+			int distance = r.getDistance();
+			
+		
 		SkeletonUI.leaveFunction();
 	}
 

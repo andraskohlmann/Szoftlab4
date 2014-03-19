@@ -52,6 +52,8 @@ public class Game {
 
 		if (available) {
 
+			
+			
 			Rune rune = new Rune();
 			SkeletonUI.addObject(rune, "rune", true);
 

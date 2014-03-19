@@ -15,24 +15,25 @@ import control.SkeletonUI;
 
 public class Rune {
 
+	public Rune() {
+
+	}
+
 	public void modifyProjectile(Projectile p) {
 		SkeletonUI.enterFunction(this, "modifyProjectile", p);
-		
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
 	public void modifySlime(Slime s) {
 		SkeletonUI.enterFunction(this, "modifySlime", s);
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
 	public int getDistance() {
 		SkeletonUI.enterFunction(this, "getDistance");
-		
-		// I'm addicted to you, shame on me... Hollywood Newsagency!
-		
+
 		SkeletonUI.leaveFunction(0);
 		return 0;
 	}
