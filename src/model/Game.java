@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.mapitem.Map;
@@ -20,6 +23,8 @@ import control.SkeletonUI;
 public class Game {
 
 	private Map map;
+	
+	private Ticker ticker;
 
 	public void Skeleton_MapSetter(Map m) {
 		map = m;
@@ -44,6 +49,10 @@ public class Game {
 	public void notifyIfDead(EnemyUnit e) {
 		SkeletonUI.enterFunction(this, "notifyIfDead", e);
 
+		List<EnemyUnit> units = new ArrayList<EnemyUnit>();
+		units.add(e);
+		ticker.remove(units);
+		
 		SkeletonUI.leaveFunction();
 	}
 
@@ -72,5 +81,9 @@ public class Game {
 
 		}
 
+	}
+	
+	public void Skeleton_addTicker(Ticker t) {
+		ticker = t;
 	}
 }
