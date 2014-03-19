@@ -2,7 +2,10 @@ package control;
 
 import model.Game;
 import model.Ticker;
-import model.enemies.EnemyUnit;
+import model.enemies.Dwarf;
+import model.enemies.Elf;
+import model.enemies.Hobbit;
+import model.enemies.Man;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.mapitem.Field;
@@ -17,20 +20,39 @@ public class SkeletonManager {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 	}
 	
 	public static void TowerTick(Ticker ticker, Tower t, Game g) {
 		
 		Rune r = new Rune();
 		SkeletonUI.addObject(r, "r", true);
+		t.Skeleton_addRune(r);
 		
 		Road rd = new Road();
 		SkeletonUI.addObject(rd, "rd", true);
 		
-//		EnemyUnit e = new EnemyUnit();
-//		SkeletonUI.addObject(e, "e", true);
-//		t.Skeleton_AddUnit(e);
+		String answer = SkeletonUI.stringQuestion("What kind of enemy would you create?"
+				, "D", "E", "H", "M");
+		if (answer.equals("DWARF")) {
+			Dwarf d = new Dwarf();
+			SkeletonUI.addObject(d, "d", true);
+			t.Skeleton_addUnit(d);
+		}
+		else if (answer.equals("ELF")) {
+			Elf e = new Elf();
+			SkeletonUI.addObject(e, "e", true);
+			t.Skeleton_addUnit(e);
+		}
+		else if (answer.equals("HOBBIT")) {
+			Hobbit h = new Hobbit();
+			SkeletonUI.addObject(h, "h", true);
+			t.Skeleton_addUnit(h);
+		}
+		else if (answer.equals("MAN")) {
+			Man m = new Man();
+			SkeletonUI.addObject(m, "m", true);
+			t.Skeleton_addUnit(m);
+		}
 		
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s,  "s",  true);
