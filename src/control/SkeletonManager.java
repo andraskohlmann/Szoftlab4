@@ -64,5 +64,20 @@ public class SkeletonManager {
 		
 		g.Skeleton_MouseOnTile();
 	}
+	
+	public static void PutSwamp(){
+		Game g = new Game();
+		SkeletonUI.addObject(g, "g", true);
+		
+		Map m = new Map();
+		SkeletonUI.addObject(m, "m", true);
+		
+		Field f = new Field();
+		SkeletonUI.addObject(f, "f", true);
+		
+		Road r = new Road();
+		SkeletonUI.addObject(r, "r", true);
+		 
+	}
 
 }
