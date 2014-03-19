@@ -22,6 +22,8 @@ public class Rune {
 	public void modifySlime(Slime s) {
 		SkeletonUI.enterFunction(this, "modifySlime", s);
 
+		s.setNumbers(this);
+		
 		SkeletonUI.leaveFunction();
 	}
 

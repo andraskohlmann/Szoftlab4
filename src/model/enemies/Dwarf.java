@@ -43,6 +43,8 @@ public class Dwarf extends EnemyUnit {
 	public void gotSlowed(Slime s) {
 		SkeletonUI.enterFunction(this, "gotSlowed", s);
 		
+		s.slowMe(this);
+		
 		SkeletonUI.leaveFunction();
 	}
 }

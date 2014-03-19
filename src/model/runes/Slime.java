@@ -1,5 +1,6 @@
 package model.runes;
 
+import control.SkeletonUI;
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
@@ -17,23 +18,37 @@ import model.enemies.Man;
 //
 
 public class Slime {
-	public void slowMe(Dwarf d) {
+	public int slowMe(Dwarf d) {
+		SkeletonUI.enterFunction(this, "slowMe");
 
+		SkeletonUI.leaveFunction(0);
+		return 0;
 	}
 
-	public void slowMe(Hobbit h) {
+	public int slowMe(Hobbit h) {
+		SkeletonUI.enterFunction(this, "slowMe");
 
+		SkeletonUI.leaveFunction(0);
+		return 0;
 	}
 
-	public void slowMe(Elf e) {
+	public int slowMe(Elf e) {
+		SkeletonUI.enterFunction(this, "slowMe");
 
+		SkeletonUI.leaveFunction(0);
+		return 0;
 	}
 
-	public void setNumbers() {
+	public void setNumbers(Rune r) {
+		SkeletonUI.enterFunction(this, "setNumbers");
 
+		SkeletonUI.leaveFunction();
 	}
 
-	public void slowMe(Man m) {
+	public int slowMe(Man m) {
+		SkeletonUI.enterFunction(this, "slowMe");
 
+		SkeletonUI.leaveFunction(0);
+		return 0;
 	}
 }
