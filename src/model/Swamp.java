@@ -13,5 +13,12 @@
 
 
 public class Swamp implements ActiveUnit, FriendlyUnit {
+	
 	private EnemyUnit enemyUnits;
+
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		
+	}
 }
