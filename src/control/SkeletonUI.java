@@ -21,6 +21,9 @@ public class SkeletonUI {
 	/**
 	 * A függvény ami a létrehozott objektumokat regisztrálja be a nevükkel.
 	 * 
+	 * FONTOS: ha listát adsz hozzá, akkor az utolsó módosítás után tedd ezt,
+	 * mert amúgy az már nem ugyanaz az objektum és elromlik a dolog.
+	 * 
 	 * @param object
 	 *            - az új objektum
 	 * @param name
