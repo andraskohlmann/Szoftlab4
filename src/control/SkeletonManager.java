@@ -17,7 +17,6 @@ public class SkeletonManager {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		PutSwamp();
 
 	}
 	
@@ -59,6 +58,10 @@ public class SkeletonManager {
 		
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
+		
+		m.Skeleton_FieldSetter(f);
+		m.Skeleton_RoadSetter(r);
+		
 		
 		g.Skeleton_MouseOnTile_Rune();
 	}

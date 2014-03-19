@@ -18,6 +18,10 @@ import model.runes.Rune;
 public class Field extends Tile {
 	private Tower tower;
 
+	public void Skeleton_TowerSetter(Tower t) {
+		tower = t;
+	}
+	
 	public boolean checkTower() {
 		return false;
 
