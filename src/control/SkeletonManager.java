@@ -30,6 +30,15 @@ public class SkeletonManager {
 
 		// INNEN A KITÖRLENDÕ KÓD
 		
+		Ticker ticker = new Ticker();
+		SkeletonUI.addObject(ticker, "ticker", true);
+		
+		Swamp s = new Swamp();
+		SkeletonUI.addObject(s, "s", true);
+		ticker.Skeleton_addUnit(s);
+		
+		SwampTick(ticker, s);
+		
 		// IDÁIG
 
 		SkeletonUI.cleanUp();
@@ -52,19 +61,19 @@ public class SkeletonManager {
 
 		String answer = SkeletonUI.stringQuestion(
 				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?", "D", "E", "H", "M");
-		if (answer.equals("DWARF")) {
+		if (answer.equals("D")) {
 			Dwarf d = new Dwarf(rd, g);
 			SkeletonUI.addObject(d, "d", true);
 			t.Skeleton_addUnit(d);
-		} else if (answer.equals("ELF")) {
+		} else if (answer.equals("E")) {
 			Elf e = new Elf();
 			SkeletonUI.addObject(e, "e", true);
 			t.Skeleton_addUnit(e);
-		} else if (answer.equals("HOBBIT")) {
+		} else if (answer.equals("H")) {
 			Hobbit h = new Hobbit();
 			SkeletonUI.addObject(h, "h", true);
 			t.Skeleton_addUnit(h);
-		} else if (answer.equals("MAN")) {
+		} else if (answer.equals("M")) {
 			Man m = new Man();
 			SkeletonUI.addObject(m, "m", true);
 			t.Skeleton_addUnit(m);
@@ -81,19 +90,19 @@ public class SkeletonManager {
 		
 		String answer = SkeletonUI.stringQuestion(
 				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?", "D", "E", "H", "M");
-		if (answer.equals("DWARF")) {
+		if (answer.equals("D")) {
 			Dwarf d = new Dwarf();
 			SkeletonUI.addObject(d, "d", true);
 			s.Skeleton_addUnit(d);
-		} else if (answer.equals("ELF")) {
+		} else if (answer.equals("E")) {
 			Elf e = new Elf();
 			SkeletonUI.addObject(e, "e", true);
 			s.Skeleton_addUnit(e);
-		} else if (answer.equals("HOBBIT")) {
+		} else if (answer.equals("H")) {
 			Hobbit h = new Hobbit();
 			SkeletonUI.addObject(h, "h", true);
 			s.Skeleton_addUnit(h);
-		} else if (answer.equals("MAN")) {
+		} else if (answer.equals("M")) {
 			Man m = new Man();
 			SkeletonUI.addObject(m, "m", true);
 			s.Skeleton_addUnit(m);

@@ -25,7 +25,6 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 			rune.modifySlime(s);
 			
 			enemyUnits.get(0).gotSlowed(s);
-			
 		}
 		
 		SkeletonUI.leaveFunction();
