@@ -12,7 +12,7 @@
 
 
 
-public class Elf extends EnemyUnit, EnemyUnit, EnemyUnit, EnemyUnit {
+public class Elf extends EnemyUnit {
 	public void dealDamage(Projectile p) {
 	
 	}

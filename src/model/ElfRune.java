@@ -12,7 +12,8 @@
 
 
 
-public class ElfRune extends Rune, Rune {
+public class ElfRune extends Rune 
+{
 	public void modifyProjectile(Projectile p) {
 	
 	}

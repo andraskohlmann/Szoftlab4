@@ -12,7 +12,7 @@
 
 
 
-public class EnemyUnit implements ActiveUnit, ActiveUnit {
+public class EnemyUnit implements ActiveUnit {
 	private Road roadToNotice;
 	private Game gameToNotice;
 	public void dealDamage(Projectile p) {

@@ -12,7 +12,7 @@
 
 
 
-public class DwarfRune extends Rune, Rune, Rune {
+public class DwarfRune extends Rune {
 	public void modifyProjectile(Projectile p) {
 	
 	}

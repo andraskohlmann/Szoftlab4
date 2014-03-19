@@ -8,11 +8,11 @@
 //  @ Author : 
 //
 //
+package model;
 
 
 
-
-public class Dwarf extends EnemyUnit, EnemyUnit, EnemyUnit, EnemyUnit {
+public class Dwarf extends EnemyUnit {
 	public void dealDamage(Projectile p) {
 	
 	}

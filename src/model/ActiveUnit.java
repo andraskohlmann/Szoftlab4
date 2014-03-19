@@ -12,8 +12,6 @@
 
 
 
-public class ActiveUnit {
-	public void tick() {
-	
-	}
+public interface ActiveUnit {
+	public void tick();
 }
