@@ -23,7 +23,9 @@ public class Rune {
 	}
 
 	public void modifySlime(Slime s) {
-
+		SkeletonUI.enterFunction(this, "modifySlime", s);
+		
+		SkeletonUI.leaveFunction();
 	}
 
 	public int getDistance() {
