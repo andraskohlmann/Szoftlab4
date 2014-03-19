@@ -128,29 +128,24 @@ public class SkeletonUI {
 	/**
 	 * A függvény amit a többválaszos kérdések feltételénél kell hívni.
 	 * 
-	 * @param question - a kérdés: tartalmazza a lehetséges válaszok teljes alakját!
-	 * @param possibleAnswers - a lehetséges válaszok felsorolva (általában betûk...)
+	 * @param question
+	 *            - a kérdés: tartalmazza a lehetséges válaszok teljes alakját!
+	 * @param possibleAnswers
+	 *            - a lehetséges válaszok felsorolva (általában betûk...)
 	 * @return a kapott válasz (FONTOS: mindig nagybetû!)
 	 */
 	public static String stringQuestion(String question,
 			String... possibleAnswers) {
-		
+
 		for (int i = 0; i < possibleAnswers.length; i++) {
 			possibleAnswers[i] = possibleAnswers[i].toUpperCase();
 		}
-		
+
 		String ret = null;
 
 		questionStart();
 
-		System.out.print(question + " (");
-		for (int i = 0; i < possibleAnswers.length; i++) {
-			System.out.print(possibleAnswers[i]);
-			if (i < possibleAnswers.length - 1) {
-				System.out.print("/");
-			}
-		}
-		System.out.println(")");
+		System.out.println(question + " " + optionsList(possibleAnswers));
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -158,10 +153,11 @@ public class SkeletonUI {
 			String answer = br.readLine().toUpperCase();
 
 			while (!contains(possibleAnswers, answer)) {
-				System.out.println("Wrong answer format, try again! (Y/N)");
+				System.out.println("Wrong answer format, try again! "
+						+ optionsList(possibleAnswers));
 				answer = br.readLine().toUpperCase();
 			}
-			
+
 			ret = answer;
 
 			br.close();
@@ -173,13 +169,32 @@ public class SkeletonUI {
 		questionEnd();
 		return ret;
 	}
-	
+
+	private static String optionsList(String[] options) {
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("(");
+
+		for (int i = 0; i < options.length; i++) {
+
+			sb.append(options[i]);
+
+			if (i < options.length - 1) {
+				sb.append("/");
+			}
+		}
+
+		sb.append(")");
+
+		return sb.toString();
+	}
+
 	private static boolean contains(String[] list, String a) {
 		for (String unit : list) {
 			if (a.equals(unit))
 				return true;
 		}
-		
+
 		return false;
 	}
 
@@ -200,17 +215,16 @@ public class SkeletonUI {
 
 	private static String writeObject(Object o) {
 		StringBuilder sb = new StringBuilder();
-		
+
 		if (objects.get(o) != null) {
 			sb.append(objects.get(o));
-		}
-		else {
+		} else {
 			sb.append(o);
 		}
-		
+
 		sb.append(" : ");
 		sb.append(o.getClass().getSimpleName());
-		
+
 		return sb.toString();
 	}
 
