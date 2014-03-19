@@ -24,6 +24,12 @@ public class Ticker {
 		SkeletonUI.leaveFunction();
 	}
 	
+	public void remove(EnemyUnit e) {
+		SkeletonUI.enterFunction(this, "remove", e);
+		
+		SkeletonUI.leaveFunction();
+	}
+	
 	public void Skeleton_addUnit(ActiveUnit a) {
 		unitList.add(a);
 	}
