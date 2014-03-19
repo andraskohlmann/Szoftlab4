@@ -2,6 +2,8 @@ package model.mapitem;
 
 import java.util.List;
 
+import control.SkeletonUI;
+
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
@@ -29,12 +31,17 @@ public class Map {
 	}
 
 	public boolean checkRune(int x, int y) {
+		SkeletonUI.enterFunction(this, "checkRune", x, y);
+
+		SkeletonUI.leaveFunction(false);
 		return false;
 
 	}
 
 	public void putRune(int x, int y, Rune r) {
+		SkeletonUI.enterFunction(this, "putRune", x, y, r);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	public boolean checkSwamp(int x, int y) {

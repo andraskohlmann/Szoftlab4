@@ -36,7 +36,9 @@ public class Road extends Tile {
 	}
 
 	public void putRune(Rune r) {
+		SkeletonUI.enterFunction(this, "putRune", r);
 
+		SkeletonUI.leaveFunction(false);
 	}
 
 	public void deadNotice() {
@@ -46,6 +48,9 @@ public class Road extends Tile {
 	}
 
 	public boolean checkRune() {
+		SkeletonUI.enterFunction(this, "checkRune");
+
+		SkeletonUI.leaveFunction(false);
 		return false;
 	}
 

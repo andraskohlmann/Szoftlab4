@@ -26,23 +26,25 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	public void tick() {
 		// TODO Auto-generated method stub
 		SkeletonUI.enterFunction(this, "tick");
-		
-		
-		
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
 	@Override
 	public boolean checkRune() {
 		// TODO Auto-generated method stub
+		SkeletonUI.enterFunction(this, "checkRune");
+
+		SkeletonUI.leaveFunction(false);
 		return false;
 	}
 
 	@Override
 	public void putRune(Rune r) {
 		// TODO Auto-generated method stub
+		SkeletonUI.enterFunction(this, "putRune", r);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	@Override

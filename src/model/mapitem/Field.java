@@ -1,5 +1,6 @@
 package model.mapitem;
 
+import control.SkeletonUI;
 import model.friendly.Tower;
 import model.runes.Rune;
 
@@ -23,7 +24,9 @@ public class Field extends Tile {
 	}
 
 	public void putRune(Rune r) {
+		SkeletonUI.enterFunction(this, "putRune", r);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	public void putTower(Tower t) {
@@ -31,6 +34,9 @@ public class Field extends Tile {
 	}
 
 	public boolean checkRune() {
+		SkeletonUI.enterFunction(this, "checkRune");
+
+		SkeletonUI.leaveFunction(false);
 		return false;
 
 	}

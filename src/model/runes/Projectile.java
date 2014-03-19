@@ -46,7 +46,7 @@ public class Projectile {
 	public void setDamage() {
 		SkeletonUI.enterFunction(this, "setDamage");
 
-		SkeletonUI.leaveFunction();
+		SkeletonUI.leaveFunction(0);
 
 	}
 }

@@ -2,6 +2,8 @@ package model.mapitem;
 
 import java.util.List;
 
+import control.SkeletonUI;
+
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
@@ -43,7 +45,9 @@ public class Tile {
 	}
 
 	public void addTower(int distance, Tower t) {
+		SkeletonUI.enterFunction(this, "addTower",distance,t);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	public void addNeighbours(List<Tile> neighbourList) {

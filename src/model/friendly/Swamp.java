@@ -29,13 +29,18 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	@Override
 	public boolean checkRune() {
 		// TODO Auto-generated method stub
+		SkeletonUI.enterFunction(this, "checkRune");
+
+		SkeletonUI.leaveFunction(false);
 		return false;
 	}
 
 	@Override
 	public void putRune(Rune r) {
 		// TODO Auto-generated method stub
+		SkeletonUI.enterFunction(this, "putRune", r);
 
+		SkeletonUI.leaveFunction();
 	}
 
 	@Override
