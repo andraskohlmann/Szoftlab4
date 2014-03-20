@@ -39,6 +39,37 @@ public class SkeletonManager {
 		SkeletonUI.cleanUp();
 	}
 
+	public static void menu() {
+		boolean isLoop = true;
+
+		while (isLoop) {
+			switch (SkeletonUI.menuQuestion("What do you want to do?",
+					"start Game Tick sequence", "start Put Rune sequence",
+					"start Put Swamp sequence", "start Put Tower sequence",
+					"quit skeleton")) {
+			case 1:
+				GameTick();
+				break;
+			case 2:
+				PutRune();
+				break;
+			case 3:
+				PutSwamp();
+				break;
+			case 4:
+				PutTower();
+				break;
+			case 5:
+				isLoop = false;
+				break;
+			}
+		}
+
+	}
+
+	public static void GameTick() {
+	}
+
 	public static void TowerTick(Ticker ticker, Tower t, Game g) {
 
 		Rune r = new Rune();
@@ -47,15 +78,16 @@ public class SkeletonManager {
 
 		Road rd = new Road();
 		SkeletonUI.addObject(rd, "rd", true);
-		
+
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
-		
+
 		if (SkeletonUI.booleanQuestion("Do you want a swamp on the road?"))
 			rd.Skeleton_SwampSetter(s);
 
 		String answer = SkeletonUI.stringQuestion(
-				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?", "D", "E", "H", "M");
+				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?",
+				"D", "E", "H", "M");
 		if (answer.equals("D")) {
 			Dwarf d = new Dwarf(rd, g);
 			SkeletonUI.addObject(d, "d", true);
@@ -76,15 +108,16 @@ public class SkeletonManager {
 
 		ticker.tick();
 	}
-	
+
 	public static void SwampTick(Ticker ticker, Swamp s) {
-		
+
 		Rune r = new Rune();
 		SkeletonUI.addObject(r, "r", true);
 		s.Skeleton_addRune(r);
-		
+
 		String answer = SkeletonUI.stringQuestion(
-				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?", "D", "E", "H", "M");
+				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?",
+				"D", "E", "H", "M");
 		if (answer.equals("D")) {
 			Dwarf d = new Dwarf();
 			SkeletonUI.addObject(d, "d", true);
@@ -102,34 +135,34 @@ public class SkeletonManager {
 			SkeletonUI.addObject(m, "m", true);
 			s.Skeleton_addUnit(m);
 		}
-		
+
 		ticker.tick();
 	}
-	
+
 	public static void EnemyUnitTick(Ticker ticker, EnemyUnit e) {
-		
+
 		Road from = new Road();
 		SkeletonUI.addObject(from, "from", true);
 		Road to = new Road();
 		SkeletonUI.addObject(to, "to", true);
 		from.Skeleton_addNextRoad(to);
-		
+
 		ticker.Skeleton_addUnit(e);
 		e.setRoad(from);
-		
+
 		Tower t = new Tower();
 		SkeletonUI.addObject(t, "t", true);
-		
+
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
-		
-		if(SkeletonUI.booleanQuestion("Are there a swamps on the road?")) {
+
+		if (SkeletonUI.booleanQuestion("Are there a swamps on the road?")) {
 			from.Skeleton_SwampSetter(s);
 			to.Skeleton_SwampSetter(s);
 		}
-		
+
 		ticker.tick();
-		
+
 	}
 
 	public static void PutRune() {
@@ -181,6 +214,7 @@ public class SkeletonManager {
 
 		g.Skeleton_MouseOnTile_Swamp();
 	}
+
 	public static void PutTower() {
 		Game g = new Game();
 		SkeletonUI.addObject(g, "g", true);
@@ -199,6 +233,5 @@ public class SkeletonManager {
 
 		g.Skeleton_MouseOnTile_Tower();
 	}
-	
 
 }
