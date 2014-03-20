@@ -132,6 +132,60 @@ public class SkeletonUI {
 	}
 
 	/**
+	 * A függvény amit a menü kiírásánál kell hívni.
+	 * 
+	 * @param question
+	 *            - a kérdés: tartalmazza a lehetséges válaszok teljes alakját!
+	 * @param possibleAnswers
+	 *            - a lehetséges válaszok felsorolva (általában betûk...)
+	 * @return a kapott válasz (FONTOS: mindig nagybetû!)
+	 */
+	public static int menuQuestion(String question, String... possibleAnswers) {
+
+		int ret = 0;
+
+		menuStart();
+
+		System.out.println(question);
+
+		for (int i = 0; i < possibleAnswers.length; i++) {
+			System.out.println((i + 1) + " : " + possibleAnswers[i]);
+		}
+
+		try {
+			String answer = reader.readLine();
+
+			while (true) {
+				try {
+
+					ret = Integer.parseInt(answer);
+
+					if (ret > 0 && ret <= possibleAnswers.length) {
+						break;
+					}
+
+				} catch (NumberFormatException e) {
+				}
+
+				System.out.println("Wrong answer format, try again!");
+
+				for (int i = 0; i < possibleAnswers.length; i++) {
+					System.out.println((i + 1) + " : " + possibleAnswers[i]);
+				}
+
+				answer = reader.readLine();
+			}
+
+		} catch (IOException e) {
+			System.err.println("Unhandled I/O exception...");
+			e.printStackTrace();
+		}
+
+		questionEnd();
+		return ret;
+	}
+
+	/**
 	 * A függvény amit a többválaszos kérdések feltételénél kell hívni.
 	 * 
 	 * @param question
@@ -203,6 +257,11 @@ public class SkeletonUI {
 	private static void questionStart() {
 		System.out
 				.println("-------------------- QUESTION --------------------");
+	}
+
+	private static void menuStart() {
+		System.out
+				.println("---------------------- MENU ----------------------");
 	}
 
 	private static void questionEnd() {
