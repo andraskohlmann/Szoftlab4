@@ -34,6 +34,8 @@ public class Map {
 	}
 
 	public boolean checkTower(int x, int y) {
+		SkeletonUI.enterFunction(this, "checkTower", x, y);
+		
 		boolean available = false;
 
 		Skeleton_answer = SkeletonUI.stringQuestion(
@@ -85,6 +87,8 @@ public class Map {
 	}
 
 	public boolean checkSwamp(int x, int y) {
+		SkeletonUI.enterFunction(this, "checkSwamp", x, y);
+		
 		boolean available = false;
 
 		Skeleton_answer = SkeletonUI.stringQuestion(
