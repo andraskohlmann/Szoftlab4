@@ -135,10 +135,10 @@ public class SkeletonUI {
 	 * A függvény amit a menü kiírásánál kell hívni.
 	 * 
 	 * @param question
-	 *            - a kérdés: tartalmazza a lehetséges válaszok teljes alakját!
+	 *            - a kérdés
 	 * @param possibleAnswers
-	 *            - a lehetséges válaszok felsorolva (általában betûk...)
-	 * @return a kapott válasz (FONTOS: mindig nagybetû!)
+	 *            - a lehetséges válaszok felsorolva
+	 * @return a kapott válasz sorszáma (1-tõl kezdve)
 	 */
 	public static int menuQuestion(String question, String... possibleAnswers) {
 
@@ -256,17 +256,17 @@ public class SkeletonUI {
 
 	private static void questionStart() {
 		System.out
-				.println("-------------------- QUESTION --------------------");
+				.println("\n-------------------- QUESTION --------------------");
 	}
 
 	private static void menuStart() {
 		System.out
-				.println("---------------------- MENU ----------------------");
+				.println("\n---------------------- MENU ----------------------");
 	}
 
 	private static void questionEnd() {
 		System.out
-				.println("--------------------------------------------------");
+				.println("--------------------------------------------------\n");
 	}
 
 	private static void indent() {
