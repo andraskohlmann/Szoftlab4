@@ -21,26 +21,29 @@ public class Field extends Tile {
 	public void Skeleton_TowerSetter(Tower t) {
 		tower = t;
 	}
-	
+
 	public boolean checkTower() {
-		return false;
+		SkeletonUI.enterFunction(this, "checkTower");
+
+		SkeletonUI.leaveFunction(true);
+		return true;
 
 	}
 
 	public void putRune(Rune r) {
 		SkeletonUI.enterFunction(this, "putRune", r);
 
-		int distance = r.getDistance();
-
 		tower.putRune(r);
-
+		int distance = r.getDistance();
 		this.addTower(distance, tower);
 
 		SkeletonUI.leaveFunction();
 	}
 
 	public void putTower(Tower t) {
-
+		SkeletonUI.enterFunction(this, "putTower", t);
+		Skeleton_TowerSetter(t);
+		SkeletonUI.leaveFunction();
 	}
 
 	public boolean checkRune() {

@@ -34,12 +34,26 @@ public class Map {
 	}
 
 	public boolean checkTower(int x, int y) {
-		return false;
+		boolean available = false;
+
+		Skeleton_answer = SkeletonUI.stringQuestion(
+				"Is that tile a Field or a Road? you want to put a Tower on it", "F", "R");
+	
+
+		if (Skeleton_answer.equals("F"))
+			available = field.checkTower();
+		else
+			available = road.checkTower();
+
+		SkeletonUI.leaveFunction(available);
+		return available;
 
 	}
 
 	public void putTower(int x, int y, Tower t) {
-
+		SkeletonUI.enterFunction(this, "putTower", x, y, t);
+		field.putTower(t);
+		SkeletonUI.leaveFunction();
 	}
 
 	public boolean checkRune(int x, int y) {
@@ -71,15 +85,16 @@ public class Map {
 	}
 
 	public boolean checkSwamp(int x, int y) {
-		boolean available;
-		SkeletonUI.enterFunction(this, "checkSwamp", x, y);
-		if (SkeletonUI
-				.stringQuestion(
-						"Is it a Road or a Field you want to put a Swamp on it? (Road, Field)?",
-						"R", "F").equals("R"))
-			available = road.checkSwamp();
-		else
+		boolean available = false;
+
+		Skeleton_answer = SkeletonUI.stringQuestion(
+				"Is that tile a Field or a Road? you want to put a Swamp on it", "F", "R");
+	
+
+		if (Skeleton_answer.equals("F"))
 			available = field.checkSwamp();
+		else
+			available = road.checkSwamp();
 
 		SkeletonUI.leaveFunction(available);
 		return available;

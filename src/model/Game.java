@@ -6,6 +6,7 @@ import java.util.List;
 import model.enemies.EnemyUnit;
 import model.enemies.Man;
 import model.friendly.Swamp;
+import model.friendly.Tower;
 import model.mapitem.Map;
 import model.runes.Rune;
 import control.SkeletonUI;
@@ -13,7 +14,7 @@ import control.SkeletonUI;
 public class Game {
 
 	private Map map;
-	
+
 	private Ticker ticker;
 
 	public void Skeleton_MapSetter(Map m) {
@@ -38,9 +39,9 @@ public class Game {
 
 	public void notifyIfDead(EnemyUnit e) {
 		SkeletonUI.enterFunction(this, "notifyIfDead", e);
-		
+
 		ticker.remove(e);
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
@@ -66,11 +67,28 @@ public class Game {
 			SkeletonUI.addObject(s, "s", true);
 
 			map.putSwamp(0, 0, s);
+			map.putRune(0, 0, r);
 
 		}
 
 	}
-	
+
+	public void Skeleton_MouseOnTile_Tower() {
+		boolean available = map.checkTower(0, 0);
+		if (available) {
+			Rune r = new Rune();
+			SkeletonUI.addObject(r, "r", true);
+
+			Tower t = new Tower();
+			SkeletonUI.addObject(t, "t", true);
+
+			map.putTower(0, 0, t);
+			map.putRune(0, 0, r);
+
+		}
+
+	}
+
 	public void Skeleton_addTicker(Ticker t) {
 		ticker = t;
 	}
