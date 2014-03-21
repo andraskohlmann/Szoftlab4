@@ -30,6 +30,7 @@ public class SkeletonManager {
 		 */
 
 		// INNEN A KITÖRLENDÕ KÓD
+		menu();
 		// IDÁIG
 
 		SkeletonUI.cleanUp();

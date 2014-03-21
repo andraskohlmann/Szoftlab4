@@ -79,7 +79,7 @@ public class Road extends Tile {
 			for (Tower t : towersToNotify)
 				t.addUnit(e);
 
-		if (swamp != null)
+		if (SkeletonUI.booleanQuestion("Is there a swamp on the road?"))
 			swamp.addUnit(e);
 
 		e.setRoad(this);

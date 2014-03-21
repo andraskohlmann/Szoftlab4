@@ -126,6 +126,8 @@ public class Map {
 	}
 
 	public void addUnit(EnemyUnit e) {
-
+		SkeletonUI.enterFunction(this, "addUnit", e);
+		road.addUnit(e);
+		SkeletonUI.leaveFunction();
 	}
 }

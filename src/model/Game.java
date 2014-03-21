@@ -29,28 +29,35 @@ public class Game {
 
 		List<EnemyUnit> l = new ArrayList<EnemyUnit>();
 		SkeletonUI.addObject(l, "enemylist", false);
-
+		
+		EnemyUnit e = null;
+		
 		String answer = SkeletonUI
 				.stringQuestion(
 						"Do you want any kind of enemy to start? (Dwarf/Elf/Hobbit/Man/None)?",
 						"D", "E", "H", "M", "N");
 		if (answer.equals("D")) {
-			Dwarf d = new Dwarf(this);
-			SkeletonUI.addObject(d, "d", true);
-			ticker.Skeleton_addUnit(d);
-		} else if (answer.equals("E")) {
-			Elf e = new Elf(this);
+			e = new Dwarf(this);
 			SkeletonUI.addObject(e, "e", true);
-			ticker.Skeleton_addUnit(e);
+			ticker.Skeleton_remove(e);
+		} else if (answer.equals("E")) {
+			e = new Elf(this);
+			SkeletonUI.addObject(e, "e", true);
 		} else if (answer.equals("H")) {
-			Hobbit h = new Hobbit(this);
-			SkeletonUI.addObject(h, "h", true);
-			ticker.Skeleton_addUnit(h);
+			e = new Hobbit(this);
+			SkeletonUI.addObject(e, "e", true);
 		} else if (answer.equals("M")) {
-			Man m = new Man(this);
-			SkeletonUI.addObject(m, "m", true);
-			ticker.Skeleton_addUnit(m);
+			e = new Man(this);
+			SkeletonUI.addObject(e, "e", true);
 		}
+		
+		if (!answer.equals("N")) {
+			map.addUnit(e);
+			ticker.Skeleton_remove(e);
+			ticker.addUnit(e);
+		}
+		
+		
 
 		/* ... */
 
