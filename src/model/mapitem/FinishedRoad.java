@@ -18,9 +18,9 @@ import control.SkeletonUI;
 //
 
 public class FinishedRoad extends Road {
-	
+
 	List<EnemyUnit> unitList = new ArrayList<EnemyUnit>();
-	
+
 	public List<EnemyUnit> getFinishedUnits() {
 		SkeletonUI.enterFunction(this, "getFinishedUnits");
 
@@ -28,7 +28,7 @@ public class FinishedRoad extends Road {
 				.booleanQuestion("Is there a group of enemies who made it to the end?")) {
 			// dontcare
 		}
-		
+
 		SkeletonUI.leaveFunction(unitList);
 		return unitList;
 	}

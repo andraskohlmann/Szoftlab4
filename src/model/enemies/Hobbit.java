@@ -18,12 +18,12 @@ import control.SkeletonUI;
 //
 
 public class Hobbit extends EnemyUnit {
-	
+
 	public Hobbit(Road r, Game g) {
 		roadToNotice = r;
 		gameToNotice = g;
 	}
-	
+
 	public Hobbit(Game g) {
 		gameToNotice = g;
 	}

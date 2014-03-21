@@ -90,12 +90,12 @@ public class Game {
 
 	public void Skeleton_tick_FirstSegment() {
 		SkeletonUI.enterFunction(this, "tick");
-		
+
 		List<EnemyUnit> l = new ArrayList<EnemyUnit>();
 		SkeletonUI.addObject(l, "enemylist", false);
-		
+
 		EnemyUnit e = null;
-		
+
 		String answer = SkeletonUI
 				.stringQuestion(
 						"Do you want any kind of enemy to start? (Dwarf/Elf/Hobbit/Man/None)?",
@@ -114,25 +114,23 @@ public class Game {
 			e = new Man(this);
 			SkeletonUI.addObject(e, "e", true);
 		}
-		
+
 		if (!answer.equals("N")) {
 			map.addUnit(e);
 			ticker.addUnit(e);
 			ticker.Skeleton_remove(e);
 		}
-		
-		
+
 	}
 
-
 	public void Skeleton_tick_SecondSegment() {
-		
+
 		List<EnemyUnit> unitList = map.getFinishedUnits();
-		
+
 		map.deleteFinishedUnits();
-		
+
 		ticker.remove(unitList);
-		
+
 		SkeletonUI.leaveFunction();
 	}
 }

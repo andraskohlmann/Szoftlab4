@@ -29,7 +29,7 @@ public class Ticker {
 		unitList.remove(e);
 		SkeletonUI.leaveFunction();
 	}
-	
+
 	public void Skeleton_remove(ActiveUnit e) {
 		unitList.remove(e);
 	}

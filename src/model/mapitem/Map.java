@@ -33,7 +33,7 @@ public class Map {
 	public void Skeleton_RoadSetter(Road r) {
 		road = r;
 	}
-	
+
 	public void Skeleton_FinishedRoadSetter(FinishedRoad f) {
 		finishedRoad = f;
 	}
@@ -123,9 +123,9 @@ public class Map {
 
 	public List<EnemyUnit> getFinishedUnits() {
 		SkeletonUI.enterFunction(this, "getFinishedUnits");
-		
+
 		List<EnemyUnit> unitList = finishedRoad.getFinishedUnits();
-		
+
 		SkeletonUI.leaveFunction(unitList);
 		return unitList;
 	}

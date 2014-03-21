@@ -17,12 +17,12 @@ import control.SkeletonUI;
 //
 
 public class Man extends EnemyUnit {
-	
+
 	public Man(Road r, Game g) {
 		roadToNotice = r;
 		gameToNotice = g;
 	}
-	
+
 	public Man(Game g) {
 		gameToNotice = g;
 	}

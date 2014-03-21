@@ -18,12 +18,12 @@ import control.SkeletonUI;
 //
 
 public class Elf extends EnemyUnit {
-	
+
 	public Elf(Road r, Game g) {
 		roadToNotice = r;
 		gameToNotice = g;
 	}
-	
+
 	public Elf(Game g) {
 		gameToNotice = g;
 	}
