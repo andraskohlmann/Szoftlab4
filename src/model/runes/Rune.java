@@ -15,7 +15,7 @@ public class Rune {
 		SkeletonUI.enterFunction(this, "modifyProjectile", p);
 
 		p.setDamage(this);
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
@@ -23,7 +23,7 @@ public class Rune {
 		SkeletonUI.enterFunction(this, "modifySlime", s);
 
 		s.setNumbers(this);
-		
+
 		SkeletonUI.leaveFunction();
 	}
 

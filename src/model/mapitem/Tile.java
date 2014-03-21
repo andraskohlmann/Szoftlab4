@@ -21,7 +21,7 @@ import control.SkeletonUI;
 public class Tile {
 	public boolean checkTower() {
 		SkeletonUI.enterFunction(this, "checkTower");
-		
+
 		SkeletonUI.leaveFunction(false);
 		return false;
 	}
@@ -40,7 +40,7 @@ public class Tile {
 
 	public boolean checkSwamp() {
 		SkeletonUI.enterFunction(this, "checkSwamp");
-		
+
 		SkeletonUI.leaveFunction(false);
 		return false;
 	}
@@ -50,7 +50,7 @@ public class Tile {
 	}
 
 	public void addTower(int distance, Tower t) {
-		SkeletonUI.enterFunction(this, "addTower",distance,t);
+		SkeletonUI.enterFunction(this, "addTower", distance, t);
 
 		SkeletonUI.leaveFunction();
 	}

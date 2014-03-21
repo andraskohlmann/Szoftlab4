@@ -20,14 +20,14 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 		SkeletonUI.enterFunction(this, "tick");
 
 		if (SkeletonUI.booleanQuestion("Are there any enemies to shoot?")) {
-			
+
 			Projectile p = new Projectile();
 			SkeletonUI.addObject(p, "p", true);
 			rune.modifyProjectile(p);
-			
-			enemyUnits.get(0).gotHit(p);			
+
+			enemyUnits.get(0).gotHit(p);
 		}
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
@@ -58,10 +58,10 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	@Override
 	public void addUnit(EnemyUnit enemyUnit) {
 		SkeletonUI.enterFunction(this, "addUnit", enemyUnit);
-	
+
 		enemyUnits.add(enemyUnit);
-		
-		SkeletonUI.leaveFunction();		
+
+		SkeletonUI.leaveFunction();
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	public void Skeleton_addUnit(EnemyUnit enemyUnit) {
 		enemyUnits.add(enemyUnit);
 	}
-	
+
 	public void Skeleton_addRune(Rune r) {
 		rune = r;
 	}

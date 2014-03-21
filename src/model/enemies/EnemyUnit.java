@@ -16,18 +16,18 @@ public abstract class EnemyUnit implements ActiveUnit {
 	public abstract void gotSlowed(Slime s);
 
 	public void setRoad(Road r) {
-		SkeletonUI.enterFunction(this, "setRoad");		
-				
+		SkeletonUI.enterFunction(this, "setRoad");
+
 		roadToNotice = r;
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
 	public void tick() {
 		SkeletonUI.enterFunction(this, "tick");
-		
+
 		roadToNotice.stepMe(this);
-		
+
 		SkeletonUI.leaveFunction();
 	}
 }

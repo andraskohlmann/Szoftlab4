@@ -1,8 +1,5 @@
 package control;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import model.Game;
 import model.Ticker;
 import model.enemies.Dwarf;
@@ -15,7 +12,6 @@ import model.friendly.Tower;
 import model.mapitem.Field;
 import model.mapitem.Map;
 import model.mapitem.Road;
-import model.mapitem.Tile;
 import model.runes.Rune;
 
 public class SkeletonManager {
@@ -68,6 +64,33 @@ public class SkeletonManager {
 	}
 
 	public static void GameTick() {
+
+		Game g = new Game();
+		SkeletonUI.addObject(g, "g", true);
+
+		Map m = new Map();
+		SkeletonUI.addObject(m, "m", true);
+
+		Road r = new Road();
+		SkeletonUI.addObject(r, "r", true);
+
+		Ticker ticker = new Ticker();
+		SkeletonUI.addObject(ticker, "ticker", true);
+
+		Tower t = new Tower();
+		SkeletonUI.addObject(t, "t", false);
+
+		Swamp s = new Swamp();
+		SkeletonUI.addObject(s, "s", false);
+
+		g.Skeleton_MapSetter(m);
+		g.Skeleton_addTicker(ticker);
+		m.Skeleton_RoadSetter(r);
+		r.Skeleton_SwampSetter(s);
+		r.Skeleton_addTower(t);
+
+		g.tick();
+
 	}
 
 	public static void TowerTick(Ticker ticker, Tower t, Game g) {
@@ -93,15 +116,15 @@ public class SkeletonManager {
 			SkeletonUI.addObject(d, "d", true);
 			t.Skeleton_addUnit(d);
 		} else if (answer.equals("E")) {
-			Elf e = new Elf();
+			Elf e = new Elf(g);
 			SkeletonUI.addObject(e, "e", true);
 			t.Skeleton_addUnit(e);
 		} else if (answer.equals("H")) {
-			Hobbit h = new Hobbit();
+			Hobbit h = new Hobbit(g);
 			SkeletonUI.addObject(h, "h", true);
 			t.Skeleton_addUnit(h);
 		} else if (answer.equals("M")) {
-			Man m = new Man();
+			Man m = new Man(g);
 			SkeletonUI.addObject(m, "m", true);
 			t.Skeleton_addUnit(m);
 		}

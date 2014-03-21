@@ -11,11 +11,11 @@ public class Ticker {
 	private List<ActiveUnit> unitList = new ArrayList<ActiveUnit>();
 
 	public void tick() {
-		SkeletonUI.enterFunction(this, "tick");			
-		
+		SkeletonUI.enterFunction(this, "tick");
+
 		unitList.get(0).tick();
-		
-        SkeletonUI.leaveFunction();
+
+		SkeletonUI.leaveFunction();
 	}
 
 	public void remove(List<EnemyUnit> unitList) {
@@ -23,15 +23,15 @@ public class Ticker {
 
 		SkeletonUI.leaveFunction();
 	}
-	
+
 	public void remove(EnemyUnit e) {
 		SkeletonUI.enterFunction(this, "remove", e);
-		
+
 		SkeletonUI.leaveFunction();
 	}
-	
+
 	public void Skeleton_addUnit(ActiveUnit a) {
 		unitList.add(a);
 	}
-	
+
 }

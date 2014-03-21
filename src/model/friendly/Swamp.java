@@ -17,16 +17,16 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	@Override
 	public void tick() {
 		SkeletonUI.enterFunction(this, "tick");
-		
+
 		if (SkeletonUI.booleanQuestion("Are there any units in the swamp?")) {
-			
+
 			Slime s = new Slime();
 			SkeletonUI.addObject(s, "s", true);
 			rune.modifySlime(s);
-			
+
 			enemyUnits.get(0).gotSlowed(s);
 		}
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
@@ -51,8 +51,6 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		// TODO Auto-generated method stub
 		SkeletonUI.enterFunction(this, "putRune", r);
 
-			
-		
 		SkeletonUI.leaveFunction();
 	}
 
@@ -69,11 +67,11 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 		SkeletonUI.leaveFunction();
 	}
-	
+
 	public void Skeleton_addUnit(EnemyUnit e) {
 		enemyUnits.add(e);
 	}
-	
+
 	public void Skeleton_addRune(Rune r) {
 		rune = r;
 	}

@@ -3,7 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.enemies.Dwarf;
+import model.enemies.Elf;
 import model.enemies.EnemyUnit;
+import model.enemies.Hobbit;
 import model.enemies.Man;
 import model.friendly.Swamp;
 import model.friendly.Tower;
@@ -22,19 +25,36 @@ public class Game {
 	}
 
 	public void tick() {
-		// SkeletonUI.enterFunction(this, "tick");
-		//
-		// Ticker t = new Ticker();
-		// SkeletonUI.addObject(t, "ticker", true);
-		//
-		// List<EnemyUnit> l = new ArrayList<EnemyUnit>();
-		// SkeletonUI.addObject(l, "enemylist", false);
-		//
-		// if(SkeletonUI.stringQuestion("Hogy dugnád (Orálisan, Análisan, Vaginálisan)?",
-		// "O", "a", "v").equals("V"))
-		// t.remove(l);
-		//
-		// SkeletonUI.leaveFunction();
+		SkeletonUI.enterFunction(this, "tick");
+
+		List<EnemyUnit> l = new ArrayList<EnemyUnit>();
+		SkeletonUI.addObject(l, "enemylist", false);
+
+		String answer = SkeletonUI
+				.stringQuestion(
+						"Do you want any kind of enemy to start? (Dwarf/Elf/Hobbit/Man/None)?",
+						"D", "E", "H", "M", "N");
+		if (answer.equals("D")) {
+			Dwarf d = new Dwarf(this);
+			SkeletonUI.addObject(d, "d", true);
+			ticker.Skeleton_addUnit(d);
+		} else if (answer.equals("E")) {
+			Elf e = new Elf(this);
+			SkeletonUI.addObject(e, "e", true);
+			ticker.Skeleton_addUnit(e);
+		} else if (answer.equals("H")) {
+			Hobbit h = new Hobbit(this);
+			SkeletonUI.addObject(h, "h", true);
+			ticker.Skeleton_addUnit(h);
+		} else if (answer.equals("M")) {
+			Man m = new Man(this);
+			SkeletonUI.addObject(m, "m", true);
+			ticker.Skeleton_addUnit(m);
+		}
+
+		/* ... */
+
+		SkeletonUI.leaveFunction();
 	}
 
 	public void notifyIfDead(EnemyUnit e) {

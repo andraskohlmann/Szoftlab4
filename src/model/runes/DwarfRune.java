@@ -10,14 +10,13 @@
 //
 package model.runes;
 
-
 public class DwarfRune extends Rune {
 
-//	public void modifyProjectile(Projectile p) {
-//
-//	}
-//
-//	public void modifySlime(Slime s) {
-//
-//	}
+	// public void modifyProjectile(Projectile p) {
+	//
+	// }
+	//
+	// public void modifySlime(Slime s) {
+	//
+	// }
 }
