@@ -10,6 +10,7 @@ import model.enemies.Man;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.mapitem.Field;
+import model.mapitem.FinishedRoad;
 import model.mapitem.Map;
 import model.mapitem.Road;
 import model.runes.Rune;
@@ -90,7 +91,50 @@ public class SkeletonManager {
 		r.Skeleton_SwampSetter(s);
 		r.Skeleton_addTower(t);
 
-		g.tick();
+		g.Skeleton_tick_FirstSegment();
+
+		if (SkeletonUI.booleanQuestion("Is there a tower on the map?")) {
+			ticker.Skeleton_addUnit(t);
+			TowerTick(ticker, t, g);
+			ticker.Skeleton_remove(t);
+		}
+
+		if (SkeletonUI.booleanQuestion("Is there a swamp on the map?")) {
+			ticker.Skeleton_addUnit(s);
+			SwampTick(ticker, s);
+			ticker.Skeleton_remove(s);
+		}
+
+		EnemyUnit e = null;
+
+		String answer = SkeletonUI
+				.stringQuestion(
+						"Are there any  kind of enemy on the map? (Dwarf/Elf/Hobbit/Man/None)?",
+						"D", "E", "H", "M", "N");
+		if (answer.equals("D")) {
+			e = new Dwarf(g);
+			SkeletonUI.addObject(e, "e", false);
+			ticker.Skeleton_remove(e);
+		} else if (answer.equals("E")) {
+			e = new Elf(g);
+			SkeletonUI.addObject(e, "e", false);
+		} else if (answer.equals("H")) {
+			e = new Hobbit(g);
+			SkeletonUI.addObject(e, "e", false);
+		} else if (answer.equals("M")) {
+			e = new Man(g);
+			SkeletonUI.addObject(e, "e", false);
+		}
+
+		if (!answer.equals("N")) {
+			ticker.addUnit(e);
+			EnemyUnitTick(ticker, e);
+			ticker.Skeleton_remove(e);
+		}
+
+		m.Skeleton_FinishedRoadSetter(new FinishedRoad());
+
+		g.Skeleton_tick_SecondSegment();
 
 	}
 
@@ -117,15 +161,15 @@ public class SkeletonManager {
 			SkeletonUI.addObject(d, "d", true);
 			t.Skeleton_addUnit(d);
 		} else if (answer.equals("E")) {
-			Elf e = new Elf(g);
+			Elf e = new Elf(rd, g);
 			SkeletonUI.addObject(e, "e", true);
 			t.Skeleton_addUnit(e);
 		} else if (answer.equals("H")) {
-			Hobbit h = new Hobbit(g);
+			Hobbit h = new Hobbit(rd, g);
 			SkeletonUI.addObject(h, "h", true);
 			t.Skeleton_addUnit(h);
 		} else if (answer.equals("M")) {
-			Man m = new Man(g);
+			Man m = new Man(rd, g);
 			SkeletonUI.addObject(m, "m", true);
 			t.Skeleton_addUnit(m);
 		}
@@ -171,7 +215,6 @@ public class SkeletonManager {
 		SkeletonUI.addObject(to, "to", true);
 		from.Skeleton_addNextRoad(to);
 
-		ticker.Skeleton_addUnit(e);
 		e.setRoad(from);
 
 		Tower t = new Tower();
@@ -180,7 +223,7 @@ public class SkeletonManager {
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
 
-		if (SkeletonUI.booleanQuestion("Are there a swamps on the road?")) {
+		if (SkeletonUI.booleanQuestion("Are there a swamp on the road?")) {
 			from.Skeleton_SwampSetter(s);
 			to.Skeleton_SwampSetter(s);
 		}

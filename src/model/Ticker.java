@@ -30,7 +30,7 @@ public class Ticker {
 		SkeletonUI.leaveFunction();
 	}
 	
-	public void Skeleton_remove(EnemyUnit e) {
+	public void Skeleton_remove(ActiveUnit e) {
 		unitList.remove(e);
 	}
 

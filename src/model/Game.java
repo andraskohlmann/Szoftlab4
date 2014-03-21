@@ -27,38 +27,6 @@ public class Game {
 	public void tick() {
 		SkeletonUI.enterFunction(this, "tick");
 
-		List<EnemyUnit> l = new ArrayList<EnemyUnit>();
-		SkeletonUI.addObject(l, "enemylist", false);
-		
-		EnemyUnit e = null;
-		
-		String answer = SkeletonUI
-				.stringQuestion(
-						"Do you want any kind of enemy to start? (Dwarf/Elf/Hobbit/Man/None)?",
-						"D", "E", "H", "M", "N");
-		if (answer.equals("D")) {
-			e = new Dwarf(this);
-			SkeletonUI.addObject(e, "e", true);
-			ticker.Skeleton_remove(e);
-		} else if (answer.equals("E")) {
-			e = new Elf(this);
-			SkeletonUI.addObject(e, "e", true);
-		} else if (answer.equals("H")) {
-			e = new Hobbit(this);
-			SkeletonUI.addObject(e, "e", true);
-		} else if (answer.equals("M")) {
-			e = new Man(this);
-			SkeletonUI.addObject(e, "e", true);
-		}
-		
-		if (!answer.equals("N")) {
-			map.addUnit(e);
-			ticker.Skeleton_remove(e);
-			ticker.addUnit(e);
-		}
-		
-		
-
 		/* ... */
 
 		SkeletonUI.leaveFunction();
@@ -118,5 +86,53 @@ public class Game {
 
 	public void Skeleton_addTicker(Ticker t) {
 		ticker = t;
+	}
+
+	public void Skeleton_tick_FirstSegment() {
+		SkeletonUI.enterFunction(this, "tick");
+		
+		List<EnemyUnit> l = new ArrayList<EnemyUnit>();
+		SkeletonUI.addObject(l, "enemylist", false);
+		
+		EnemyUnit e = null;
+		
+		String answer = SkeletonUI
+				.stringQuestion(
+						"Do you want any kind of enemy to start? (Dwarf/Elf/Hobbit/Man/None)?",
+						"D", "E", "H", "M", "N");
+		if (answer.equals("D")) {
+			e = new Dwarf(this);
+			SkeletonUI.addObject(e, "e", true);
+			ticker.Skeleton_remove(e);
+		} else if (answer.equals("E")) {
+			e = new Elf(this);
+			SkeletonUI.addObject(e, "e", true);
+		} else if (answer.equals("H")) {
+			e = new Hobbit(this);
+			SkeletonUI.addObject(e, "e", true);
+		} else if (answer.equals("M")) {
+			e = new Man(this);
+			SkeletonUI.addObject(e, "e", true);
+		}
+		
+		if (!answer.equals("N")) {
+			map.addUnit(e);
+			ticker.addUnit(e);
+			ticker.Skeleton_remove(e);
+		}
+		
+		
+	}
+
+
+	public void Skeleton_tick_SecondSegment() {
+		
+		List<EnemyUnit> unitList = map.getFinishedUnits();
+		
+		map.deleteFinishedUnits();
+		
+		ticker.remove(unitList);
+		
+		SkeletonUI.leaveFunction();
 	}
 }

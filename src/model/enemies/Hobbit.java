@@ -1,6 +1,7 @@
 package model.enemies;
 
 import model.Game;
+import model.mapitem.Road;
 import model.runes.Projectile;
 import model.runes.Slime;
 import control.SkeletonUI;
@@ -17,7 +18,12 @@ import control.SkeletonUI;
 //
 
 public class Hobbit extends EnemyUnit {
-
+	
+	public Hobbit(Road r, Game g) {
+		roadToNotice = r;
+		gameToNotice = g;
+	}
+	
 	public Hobbit(Game g) {
 		gameToNotice = g;
 	}

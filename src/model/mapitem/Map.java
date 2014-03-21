@@ -24,6 +24,7 @@ public class Map {
 	private Field field;
 	private Road road;
 	private String Skeleton_answer;
+	private FinishedRoad finishedRoad;
 
 	public void Skeleton_FieldSetter(Field f) {
 		field = f;
@@ -31,6 +32,10 @@ public class Map {
 
 	public void Skeleton_RoadSetter(Road r) {
 		road = r;
+	}
+	
+	public void Skeleton_FinishedRoadSetter(FinishedRoad f) {
+		finishedRoad = f;
 	}
 
 	public boolean checkTower(int x, int y) {
@@ -117,12 +122,18 @@ public class Map {
 	}
 
 	public List<EnemyUnit> getFinishedUnits() {
-		return null;
-
+		SkeletonUI.enterFunction(this, "getFinishedUnits");
+		
+		List<EnemyUnit> unitList = finishedRoad.getFinishedUnits();
+		
+		SkeletonUI.leaveFunction(unitList);
+		return unitList;
 	}
 
 	public void deleteFinishedUnits() {
-
+		SkeletonUI.enterFunction(this, "deleteFinishedUnits");
+		finishedRoad.deleteFinishedUnits();
+		SkeletonUI.leaveFunction();
 	}
 
 	public void addUnit(EnemyUnit e) {
