@@ -19,6 +19,8 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	public void tick() {
 		SkeletonUI.enterFunction(this, "tick");
 
+		// Itt inkább azt kéne megkérdezni, hogy látja-e AZ enemyt
+		// nem azt, hogy van-e enemy akire lõ - Kohlmann
 		if (SkeletonUI.booleanQuestion("Are there any enemies to shoot?")) {
 
 			Projectile p = new Projectile();

@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import model.enemies.Dwarf;
@@ -26,8 +25,6 @@ public class Game {
 
 	public void tick() {
 		SkeletonUI.enterFunction(this, "tick");
-
-		/* ... */
 
 		SkeletonUI.leaveFunction();
 	}
@@ -91,14 +88,11 @@ public class Game {
 	public void Skeleton_tick_FirstSegment() {
 		SkeletonUI.enterFunction(this, "tick");
 
-		List<EnemyUnit> l = new ArrayList<EnemyUnit>();
-		SkeletonUI.addObject(l, "enemylist", false);
-
 		EnemyUnit e = null;
 
 		String answer = SkeletonUI
 				.stringQuestion(
-						"Do you want any kind of enemy to start? (Dwarf/Elf/Hobbit/Man/None)?",
+						"Do you want any kind of enemy to enter the game? (Dwarf/Elf/Hobbit/Man/Nop)?",
 						"D", "E", "H", "M", "N");
 		if (answer.equals("D")) {
 			e = new Dwarf(this);

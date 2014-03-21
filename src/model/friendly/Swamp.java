@@ -63,7 +63,7 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public void removeUnit(EnemyUnit e) {
-		// TODO Auto-generated method stub
+		// Ez nem baj, ha meg van implementálva - Kohlmann
 		SkeletonUI.enterFunction(this, "removeUnit", e);
 
 		SkeletonUI.leaveFunction();

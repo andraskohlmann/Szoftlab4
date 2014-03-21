@@ -75,11 +75,12 @@ public class Road extends Tile {
 
 		enemyList.add(e);
 
-		if (SkeletonUI.booleanQuestion("Are there any towers to notify?"))
+		if (SkeletonUI
+				.booleanQuestion("Are there any towers to notify on the new road?"))
 			for (Tower t : towersToNotify)
 				t.addUnit(e);
 
-		if (SkeletonUI.booleanQuestion("Is there a swamp on the road?"))
+		if (SkeletonUI.booleanQuestion("Is there a swamp on the new road?"))
 			swamp.addUnit(e);
 
 		e.setRoad(this);
@@ -90,6 +91,11 @@ public class Road extends Tile {
 	public void stepMe(EnemyUnit enemyUnit) {
 		SkeletonUI.enterFunction(this, "stepMe", enemyUnit);
 
+		/*
+		 * Ezek a cselekvések mind legyenek megkérdezve, hogy van-e tower, és
+		 * hogy van e swamp még kint, és attól függõen történjen ez meg. -
+		 * Kohlmann
+		 */
 		for (Tower t : towersToNotify)
 			t.removeUnit(enemyUnit);
 		swamp.removeUnit(enemyUnit);
