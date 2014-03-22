@@ -40,7 +40,8 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 		String answer = SkeletonUI
 				.stringQuestion(
-						"What kind of rune is in the tower? (Default, dWarf, Elf, Man, Hobbit, Range, reLoad) /Rune can be put only to tower with default rune./",
+						"What kind of rune is in the tower? (Default, dWarf, Elf, Man, Hobbit, Range, reLoad) \n" +
+						"/Rune can be put only to tower with default rune./",
 						"D", "W", "E", "M", "H", "R", "L");
 
 		boolean available = (answer.equals("D"));
