@@ -21,13 +21,12 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 		if (SkeletonUI.booleanQuestion("Is the tower ready to shoot?")) {
 			if (SkeletonUI.booleanQuestion("Does the tower see the previous target?")) {
-	
-				lastTarget = enemyUnits.get(0);
-				
+					
 				Projectile p = new Projectile();
 				SkeletonUI.addObject(p, "p", true);
 				rune.modifyProjectile(p);
-	
+				
+				lastTarget = enemyUnits.get(0);	
 				lastTarget.gotHit(p);
 			}
 			else if (SkeletonUI.booleanQuestion("Does it see any target?")) {
