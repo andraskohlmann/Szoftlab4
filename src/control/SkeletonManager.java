@@ -140,8 +140,6 @@ public class SkeletonManager {
 
 	public static void TowerTick(Ticker ticker, Tower t, Game g) {
 
-		// Ezeknek a kreálásánál biztos, hogy mindnél szükséges
-		// a loud = true? Szerintem nem - Kohlmann
 		Rune r = new Rune();
 		SkeletonUI.addObject(r, "r", true);
 		t.Skeleton_addRune(r);
@@ -151,15 +149,10 @@ public class SkeletonManager {
 
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
+		rd.Skeleton_SwampSetter(s);
 
-		// Szerintem ez a kérdés, és a swamp beállítás itt tök fölösleges -
-		// Kohlmann
-		if (SkeletonUI.booleanQuestion("Do you want a swamp on the road?"))
-			rd.Skeleton_SwampSetter(s);
-
-		// Itt mondjuk lehetne egy értelmes kérdés - Kohlmann
 		String answer = SkeletonUI.stringQuestion(
-				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?",
+				"What kind of enemy is approaching? (Dwarf/Elf/Hobbit/Man)?",
 				"D", "E", "H", "M");
 		if (answer.equals("D")) {
 			Dwarf d = new Dwarf(rd, g);
@@ -188,9 +181,8 @@ public class SkeletonManager {
 		SkeletonUI.addObject(r, "r", true);
 		s.Skeleton_addRune(r);
 
-		// Szintén, ide is értelmes kérdés kéne - Kohlmann
 		String answer = SkeletonUI.stringQuestion(
-				"What kind of enemy would you create (Dwarf/Elf/Hobbit/Man)?",
+				"What kind of enemy is approaching? (Dwarf/Elf/Hobbit/Man)?",
 				"D", "E", "H", "M");
 		if (answer.equals("D")) {
 			Dwarf d = new Dwarf();
@@ -220,37 +212,24 @@ public class SkeletonManager {
 		Road to = new Road();
 		SkeletonUI.addObject(to, "to", true);
 		from.Skeleton_addNextRoad(to);
-
-		// Innen utólagos engedéllyel kiszedtem a ticker.Skeleton_addUnit(e)-t
-		// mert már ilyen állapotban kapja a paramétereket a gameticktõl -
-		// Kohlmann
 		e.setRoad(from);
 
-		// Ezek szerintem nem loud=true-k - Kohlmann
 		Tower t = new Tower();
 		SkeletonUI.addObject(t, "t", true);
-
+		to.Skeleton_addTower(t);
+		
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", true);
-
-		// Is* - grammar nazi out - Kohlmann
-		if (SkeletonUI.booleanQuestion("Are there a swamp on the road?")) {
+		to.Skeleton_SwampSetter(s);
+		
+		if (SkeletonUI.booleanQuestion("Is there a swamp on the road?")) {
 			from.Skeleton_SwampSetter(s);
-			// Itt még csak a fromnak kell odaadni a swampot, a to-ra majd
-			// késõbb kérdezel rá, hogy van e ott swamp - Kohlmann
-			to.Skeleton_SwampSetter(s);
 		}
 
-		/*
-		 * Itt kell megkérdezni azt, hogy van-e tower ugyanúgy ahogy a komment
-		 * felett megkérdezed, hogy van-e swamp.
-		 * 
-		 * És attól függõen skeletonsetterrel odaadod a fromnak a towert és a
-		 * towerbe skeletonsetterrel beleteszed az e-t
-		 * 
-		 * - Kohlmann
-		 */
-
+		if (SkeletonUI.booleanQuestion("Is there a tower near the road?")) {
+			from.Skeleton_addTower(t);
+		}
+		
 		ticker.tick();
 
 	}
