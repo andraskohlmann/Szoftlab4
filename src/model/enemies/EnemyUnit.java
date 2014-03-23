@@ -26,9 +26,9 @@ public abstract class EnemyUnit implements ActiveUnit {
 	public void tick() {
 		SkeletonUI.enterFunction(this, "tick");
 
-		// Itt meg lehetne kérdezni, hogy akar e lépni az enemyunit,
-		// és attól függõvé tenni ezt a stepme-t - Kohlmann
-		roadToNotice.stepMe(this);
+		if (SkeletonUI.booleanQuestion("Is the enemy ready to step?")) {
+			roadToNotice.stepMe(this);
+		}
 
 		SkeletonUI.leaveFunction();
 	}
