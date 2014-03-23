@@ -37,7 +37,8 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 		String answer = SkeletonUI
 				.stringQuestion(
-						"What kind of rune is in the swamp? (Default, dWarf, Elf, Man, Hobbit) /Rune can be put only to swamp with default rune./",
+						"What kind of rune is in the swamp? (Default, dWarf, Elf, Man, Hobbit) \n" +
+						"/Rune can be put only to swamp with default rune./",
 						"D", "W", "E", "M", "H");
 
 		boolean available = (answer.equals("D"));
