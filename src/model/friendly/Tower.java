@@ -19,17 +19,27 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	public void tick() {
 		SkeletonUI.enterFunction(this, "tick");
 
-		// Itt inkább azt kéne megkérdezni, hogy látja-e AZ enemyt
-		// nem azt, hogy van-e enemy akire lõ - Kohlmann
-		if (SkeletonUI.booleanQuestion("Are there any enemies to shoot?")) {
-
-			Projectile p = new Projectile();
-			SkeletonUI.addObject(p, "p", true);
-			rune.modifyProjectile(p);
-
-			enemyUnits.get(0).gotHit(p);
+		if (SkeletonUI.booleanQuestion("Is the tower ready to shoot?")) {
+			if (SkeletonUI.booleanQuestion("Does the tower see the previous target?")) {
+	
+				lastTarget = enemyUnits.get(0);
+				
+				Projectile p = new Projectile();
+				SkeletonUI.addObject(p, "p", true);
+				rune.modifyProjectile(p);
+	
+				lastTarget.gotHit(p);
+			}
+			else if (SkeletonUI.booleanQuestion("Does it see any target?")) {
+				
+				Projectile p = new Projectile();
+				SkeletonUI.addObject(p, "p", true);
+				rune.modifyProjectile(p);
+				
+				enemyUnits.get(0).gotHit(p);
+			}
 		}
-
+		
 		SkeletonUI.leaveFunction();
 	}
 
