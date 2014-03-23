@@ -22,18 +22,7 @@ public class SkeletonManager {
 	 */
 	public static void main(String[] args) {
 
-		/*
-		 * Na az a nagy helyzet, hogy ez itt pl egy tipikus szûkös erõforrás
-		 * mindenki ide írogat amikor tesztel, így committelésnél csúnyán
-		 * összeakadunk. Szóval ha debuggolsz, akk utána töröld ki innen, amit
-		 * írtál, vagy mentsd el magadnak vagy valami, a lényeg h a commitban NE
-		 * legyen benne.
-		 */
-
-		// INNEN A KITÖRLENDÕ KÓD
 		menu();
-		// IDÁIG
-
 		SkeletonUI.cleanUp();
 	}
 
