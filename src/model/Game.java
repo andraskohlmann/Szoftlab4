@@ -145,4 +145,10 @@ public class Game {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+	public void addUnit(EnemyUnit enemyUnit) {
+		ticker.addUnit(enemyUnit);
+		enemyUnit.setGame(this);
+	}
 }
