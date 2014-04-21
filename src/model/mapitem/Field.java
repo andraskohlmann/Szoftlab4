@@ -42,6 +42,9 @@ public class Field extends Tile {
 	}
 	
 	public void addFog(Fog f) {
+		if(tower == null)
+			return;
+		
 		
 	}
 }

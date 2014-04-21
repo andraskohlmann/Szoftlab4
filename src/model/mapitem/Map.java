@@ -123,12 +123,82 @@ public class Map {
 			if (found) break;
 		}
 		
-		found = false;
-		while (!found) {
-			if () {
-				lines[x-1].charAt(index) 
+		findNext(x, y, 0);
+	}
+	
+	private boolean findNext(int i, int j, int prev, String lines[]) {
+		boolean dotFound = false;
+		if (j < lines[i].length() - 1 && prev != 3) {
+			if (lines[i].charAt(j+1) == '.') dotFound = true;
+			if (lines[i].charAt(j+1) == 'A') {
+				tiles[i][j].addNextRoad(tiles[i][j+1]);
+				return true;
 			}
 		}
+		if (i < lines.length - 1 && prev != 4) {
+			if (lines[i+1].charAt(j) == '.') dotFound = true;
+			if (lines[i+1].charAt(j) == 'A') {
+				tiles[i][j].addNextRoad(tiles[i+1][j]);
+				return true;
+			}
+		}
+		if (j > 0 && prev != 1) {
+			if (lines[i].charAt(j-1) == '.') dotFound = true;
+			if (lines[i].charAt(j-1) == 'A') {
+				tiles[i][j].addNextRoad(tiles[i][j-1]);
+				return true;
+			}
+		}
+		if (i > 0 && prev != 2) {
+			if (lines[i-1].charAt(j) == '.') dotFound = true;
+			if (lines[i-1].charAt(j) == 'A') {
+				tiles[i][j].addNextRoad(tiles[i-1][j]);
+				return true;
+			}
+		}
+		
+		// !!!
+		if (j < lines[i].length() - 1 && prev != 1) {
+			if (lines[i].charAt(j+1) == '.') {
+				tiles[i][j].addNextRoad(tiles[i][j+1]);
+				if (findNext(i, j+1, 3, lines)) return true;
+			}
+			if (lines[i].charAt(j+1) == ' ' && !dotFound) {
+				tiles[i][j].addNextRoad(tiles[i][j+1]);
+				if (findNext(i, j+1, 3, lines)) return true;
+			}
+		}
+		if (i < lines.length - 1 && prev != 2) {
+			if (lines[i+1].charAt(j) == '.') {
+				tiles[i][j].addNextRoad(tiles[i+1][j]);
+				if (findNext(i+1, j, 2, lines)) return true;
+			}
+			if (lines[i+1].charAt(j) == ' ' && !dotFound) {
+				tiles[i][j].addNextRoad(tiles[i+1][j]);
+				if (findNext(i+1, j, 2, lines)) return true;
+			}
+		}
+		if (j > 0 && prev != 1) {
+			if (lines[i].charAt(j-1) == '.') {
+				tiles[i][j].addNextRoad(tiles[i][j-1]);
+				if (findNext(i, j-1, 1, lines)) return true;
+			}
+			if (lines[i].charAt(j-1) == ' ') {
+				tiles[i][j].addNextRoad(tiles[i][j-1]);
+				if (findNext(i, j-1, 1, lines)) return true;
+			}
+		}
+		if (i > 0 && prev != 2) {
+			if (lines[i-1].charAt(j) == '.') {
+				tiles[i][j].addNextRoad(tiles[i-1][j]);
+				if (findNext(i-1, j, 2, lines)) return true;
+			}
+			if (lines[i-1].charAt(j) == ' ') {
+				tiles[i][j].addNextRoad(tiles[i-1][j]);
+				if (findNext(i-1, j, 2, lines)) return true;
+			}
+		}
+		return false;
 	}
 
 	public List<EnemyUnit> getFinishedUnits() {
