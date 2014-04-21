@@ -31,7 +31,7 @@ public class Dwarf extends EnemyUnit {
 
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
-			Dwarf newHalf = new Dwarf();
+			Dwarf newHalf = new Dwarf(this);
 			
 			roadToNotice.addUnit(newHalf);
 			

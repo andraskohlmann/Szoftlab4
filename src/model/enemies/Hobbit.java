@@ -31,7 +31,7 @@ public class Hobbit extends EnemyUnit {
 
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
-			Hobbit newHalf = new Hobbit();
+			Hobbit newHalf = new Hobbit(this);
 			
 			roadToNotice.addUnit(newHalf);
 			

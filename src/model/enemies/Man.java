@@ -31,7 +31,7 @@ public class Man extends EnemyUnit {
 
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
-			Man newHalf = new Man();
+			Man newHalf = new Man(this);
 			
 			roadToNotice.addUnit(newHalf);
 			

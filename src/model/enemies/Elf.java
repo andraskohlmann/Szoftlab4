@@ -31,7 +31,7 @@ public class Elf extends EnemyUnit {
 
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
-			Elf newHalf = new Elf();
+			Elf newHalf = new Elf(this);
 			
 			roadToNotice.addUnit(newHalf);
 			
