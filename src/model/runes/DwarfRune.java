@@ -1,9 +1,11 @@
 package model.runes;
 
+import model.Common;
+
 public class DwarfRune extends Rune {
 
 	public DwarfRune() {
 		super();
-		dmgDwarf = 20;
+		dmgDwarf = Common.specialdmgDwarf;
 	}
 }

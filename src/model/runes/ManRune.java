@@ -1,10 +1,12 @@
 package model.runes;
 
+import model.Common;
+
 public class ManRune extends Rune {
 
 	public ManRune() {
 		super();
-		dmgMan = 20;
+		dmgMan = Common.specialdmgMan;
 	}
 	
 }

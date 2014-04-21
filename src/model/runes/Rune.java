@@ -1,5 +1,6 @@
 package model.runes;
 
+import model.Common;
 import control.SkeletonUI;
 
 public class Rune {
@@ -14,14 +15,14 @@ public class Rune {
 	public int dmgMan;
 
 	public Rune() {
-		distance = 4;
+		distance = Common.distance;
 		
-		reloadTime = 10;
+		reloadTime = Common.reloadTime;
 		
-		dmgDwarf = 10;
-		dmgHobbit = 10;
-		dmgElf = 10;
-		dmgMan = 10;
+		dmgDwarf = Common.dmgDwarf;
+		dmgHobbit = Common.dmgHobbit;
+		dmgElf = Common.dmgElf;
+		dmgMan = Common.dmgMan;
 	}
 
 	public void modifyProjectile(Projectile p) {
