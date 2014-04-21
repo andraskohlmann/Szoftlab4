@@ -54,9 +54,7 @@ public class Road extends Tile {
 	}
 
 	public void putSwamp(Swamp s) {
-		SkeletonUI.enterFunction(this, "putSwamp", s);
-		Skeleton_SwampSetter(s);
-		SkeletonUI.leaveFunction();
+		swamp = s;
 	}
 
 	public void addUnit(EnemyUnit e) {
