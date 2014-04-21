@@ -3,6 +3,7 @@ package model.mapitem;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.enemies.EnemyUnit;
@@ -253,6 +254,16 @@ public class Map {
 				else if (lines[i].charAt(j) == ' ') tiles[i][j] = new Road();
 				else if (lines[i].charAt(j) == '.') tiles[i][j] = new Road();
 				else if (lines[i].charAt(j) == 'A') tiles[i][j] = new FinishedRoad();
+			}
+		}
+		for (int i = 0; i < numberOfRows; i++) {
+			for (int j = 0; j < numberOfColumns; j++) {
+				List<Tile> neighbours = new ArrayList<Tile>();
+				if (i > 0) neighbours.add(tiles[i-1][j]);
+				if (i < numberOfRows - 1) neighbours.add(tiles[i+1][j]);
+				if (j > 0) neighbours.add(tiles[i][j-1]);
+				if (j < numberOfColumns) neighbours.add(tiles[i][j+1]);
+				tiles[i][j].addNeighbours(neighbours);
 			}
 		}
 		setConnections(lines);
