@@ -110,8 +110,25 @@ public class Map {
 		SkeletonUI.leaveFunction();
 	}
 
-	public void setConnections() {
+	public void setConnections(String lines[]) {
+		boolean found = false;
+		int x, y;
 		
+		for (int i = 0; i < lines.length; i++) {
+			for (int j = 0; j < lines[i].length(); j++) {
+				if (lines[i].charAt(j) == '-') {
+					x = i; y = j; found = true; break;
+				}
+			}
+			if (found) break;
+		}
+		
+		found = false;
+		while (!found) {
+			if () {
+				lines[x-1].charAt(index) 
+			}
+		}
 	}
 
 	public List<EnemyUnit> getFinishedUnits() {
@@ -135,6 +152,10 @@ public class Map {
 		SkeletonUI.leaveFunction();
 	}
 
+	public Map(String filename) {
+		buildMap(filename);
+	}
+	
 	private void buildMap(String filename) {
 		String lines[] = null;
 		int numberOfColumns = 0;
@@ -171,6 +192,7 @@ public class Map {
 				else if (lines[i].charAt(j) == 'A') tiles[i][j] = new FinishedRoad();
 			}
 		}
+		setConnections(lines);
 	}
 	
 }
