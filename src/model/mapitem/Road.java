@@ -32,7 +32,8 @@ public class Road extends Tile {
 	}
 
 	public void addTower(int distance, Tower t) {
-
+		towersToNotify.add(t);
+		super.addTower(distance - 1, t);
 	}
 
 	public void putRune(Rune r) {
