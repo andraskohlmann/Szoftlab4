@@ -4,7 +4,6 @@ import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
 import model.enemies.Man;
-import control.SkeletonUI;
 
 public class Projectile {
 
@@ -32,7 +31,10 @@ public class Projectile {
 	}
 
 	public void setDamage(Rune r) {
-		// TODO
+		dmgToDwarf = r.dmgDwarf;
+		dmgToHobbit = r.dmgHobbit;
+		dmgToElf = r.dmgElf;
+		dmgToMan = r.dmgMan;
 	}
 
 	public boolean isSplitter() {
