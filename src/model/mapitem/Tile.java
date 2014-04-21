@@ -37,9 +37,6 @@ public abstract class Tile {
 	public abstract void putRune(Rune r);
 
 	public boolean checkSwamp() {
-		SkeletonUI.enterFunction(this, "checkSwamp");
-
-		SkeletonUI.leaveFunction(false);
 		return false;
 	}
 
