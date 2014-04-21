@@ -18,7 +18,7 @@ import control.SkeletonUI;
 //
 //
 
-public class Tile {
+public abstract class Tile {
 	public boolean checkTower() {
 		SkeletonUI.enterFunction(this, "checkTower");
 
@@ -34,9 +34,7 @@ public class Tile {
 		return false;
 	}
 
-	public void putRune(Rune r) {
-
-	}
+	public abstract void putRune(Rune r);
 
 	public boolean checkSwamp() {
 		SkeletonUI.enterFunction(this, "checkSwamp");
