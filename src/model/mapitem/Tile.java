@@ -62,4 +62,8 @@ public abstract class Tile {
 	public void setSucceedingRoads(List<Tile> nextRoads) {
 
 	}
+
+	public void removeFog(Fog fog) {
+		// TODO: zsoltiii <3
+	}
 }

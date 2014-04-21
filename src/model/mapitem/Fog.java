@@ -4,7 +4,9 @@ import model.ActiveUnit;
 
 public class Fog implements ActiveUnit {
 
-	Tile tileToNotify;
+	private Tile tileToNotify;
+	
+	private int timeToLeave;
 
 	public int getDistanceReduction() {
 		return 0;
@@ -12,8 +14,10 @@ public class Fog implements ActiveUnit {
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
-
+		timeToLeave--;
+		if (timeToLeave == 0) {
+			tileToNotify.removeFog(this);
+		}
 	}
 
 }
