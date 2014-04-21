@@ -22,16 +22,12 @@ public class Dwarf extends EnemyUnit {
 	}
 
 	public void gotHit(Projectile p) {
-		SkeletonUI.enterFunction(this, "gotHit", p);
-
-		p.damageMe(this);
-
-		if (SkeletonUI.booleanQuestion("Is the enemy unit dead?")) {
+		health -= p.damageMe(this);
+		
+		if (health <= 0) {
 			roadToNotice.deadNotice(this);
 			gameToNotice.notifyIfDead(this);
 		}
-
-		SkeletonUI.leaveFunction();
 	}
 
 	public void gotSlowed(Slime s) {

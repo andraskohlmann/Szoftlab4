@@ -10,6 +10,7 @@ import model.runes.Slime;
 public abstract class EnemyUnit implements ActiveUnit {
 	protected Road roadToNotice;
 	protected Game gameToNotice;
+	protected int health;
 
 	public abstract void gotHit(Projectile p);
 
