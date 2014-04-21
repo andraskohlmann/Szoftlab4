@@ -61,21 +61,17 @@ public class Road extends Tile {
 	}
 
 	public void addUnit(EnemyUnit e) {
-		SkeletonUI.enterFunction(this, "addUnit", e);
-
 		enemyList.add(e);
 
-		if (SkeletonUI
-				.booleanQuestion("Are there any towers to notify on the new road?"))
-			for (Tower t : towersToNotify)
-				t.addUnit(e);
+		for (Tower t : towersToNotify) {
+			t.addUnit(e);
+		}
 
-		if (SkeletonUI.booleanQuestion("Is there a swamp on the new road?"))
+		if (swamp != null) {
 			swamp.addUnit(e);
+		}
 
 		e.setRoad(this);
-
-		SkeletonUI.leaveFunction();
 	}
 
 	public void stepMe(EnemyUnit enemyUnit) {
