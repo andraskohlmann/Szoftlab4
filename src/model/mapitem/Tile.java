@@ -19,6 +19,9 @@ import control.SkeletonUI;
 //
 
 public abstract class Tile {
+	
+	private List<Tile> neighbours;
+	
 	public boolean checkTower() {
 		SkeletonUI.enterFunction(this, "checkTower");
 
@@ -45,13 +48,11 @@ public abstract class Tile {
 	}
 
 	public void addTower(int distance, Tower t) {
-		SkeletonUI.enterFunction(this, "addTower", distance, t);
-
-		SkeletonUI.leaveFunction();
+		
 	}
 
 	public void addNeighbours(List<Tile> neighbourList) {
-
+		neighbours = neighbourList;
 	}
 
 	public void setSucceedingRoads(List<Tile> nextRoads) {
