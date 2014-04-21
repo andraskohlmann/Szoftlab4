@@ -1,5 +1,6 @@
 package model.mapitem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import model.friendly.Swamp;
@@ -21,6 +22,11 @@ import control.SkeletonUI;
 public abstract class Tile {
 	
 	private List<Tile> neighbours;
+	private List<Road> nextRoad = new ArrayList<Road>();
+	
+	public void addNextRoad(Road next) {
+		nextRoad.add(next);
+	}
 	
 	public boolean checkTower() {
 		SkeletonUI.enterFunction(this, "checkTower");
