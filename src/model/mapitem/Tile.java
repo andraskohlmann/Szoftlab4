@@ -58,6 +58,14 @@ public abstract class Tile {
 			neighbour.addTower(distance - 1, t);
 		}
 	}
+	
+	public void removeTower(int distance, Tower t) {
+		if(distance <= 1)
+			return;
+		for (Tile neighbour : neighbours) {
+			neighbour.removeTower(distance - 1, t);
+		}
+	}
 
 	public void addNeighbours(List<Tile> neighbourList) {
 		neighbours = neighbourList;
