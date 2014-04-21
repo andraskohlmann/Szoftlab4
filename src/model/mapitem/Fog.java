@@ -20,4 +20,9 @@ public class Fog implements ActiveUnit {
 		}
 	}
 
+	public void setTile(Field field) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
