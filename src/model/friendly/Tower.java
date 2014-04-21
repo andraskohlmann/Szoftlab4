@@ -57,10 +57,8 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public void putRune(Rune r) {
-		// TODO Auto-generated method stub
-		SkeletonUI.enterFunction(this, "putRune", r);
-
-		SkeletonUI.leaveFunction();
+		rune = r;
+		isUpgraded = true;
 	}
 
 	@Override
