@@ -64,6 +64,6 @@ public abstract class Tile {
 	}
 
 	public void removeFog(Fog fog) {
-		// TODO: zsoltiii <3
+		// TODO: Zsoltiii <3
 	}
 }
