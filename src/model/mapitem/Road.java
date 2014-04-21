@@ -44,15 +44,12 @@ public class Road extends Tile {
 	}
 
 	public void deadNotice(EnemyUnit e) {
-		SkeletonUI.enterFunction(this, "deadNotice");
-
 		for (Tower t : towersToNotify)
 			t.removeUnit(e);
 
-		if (SkeletonUI.booleanQuestion("Is there a swamp to notify?"))
+		if (swamp != null) {
 			swamp.removeUnit(e);
-
-		SkeletonUI.leaveFunction();
+		}
 	}
 
 	public boolean checkRune() {
