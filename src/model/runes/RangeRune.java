@@ -1,10 +1,12 @@
 package model.runes;
 
+import model.Common;
+
 public class RangeRune extends Rune {
 
 	public RangeRune() {
 		super();
-		distance = 6;
+		distance = Common.rangedistance;
 	}
 	
 }

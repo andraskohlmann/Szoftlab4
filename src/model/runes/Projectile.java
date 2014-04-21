@@ -1,5 +1,6 @@
 package model.runes;
 
+import control.ProtoManager;
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
@@ -12,7 +13,15 @@ public class Projectile {
 	private int dmgToElf = 0;
 	private int dmgToMan = 0;
 
-	private boolean isSplitter = false;
+	private boolean isSplitter;
+	
+	public Projectile() {
+		if (ProtoManager.randomSplitting) {
+			isSplitter = ProtoManager.randomBoolean(10);
+		} else {
+			isSplitter = false;
+		}
+	}
 
 	public int damageMe(Dwarf d) {
 		return dmgToDwarf;

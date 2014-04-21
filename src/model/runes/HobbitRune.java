@@ -1,10 +1,12 @@
 package model.runes;
 
+import model.Common;
+
 public class HobbitRune extends Rune {
 
 	public HobbitRune() {
 		super();
-		dmgHobbit = 20;
+		dmgHobbit = Common.specialdmgHobbit;
 	}
 	
 }
