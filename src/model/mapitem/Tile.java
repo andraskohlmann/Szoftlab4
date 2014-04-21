@@ -41,7 +41,7 @@ public abstract class Tile {
 	}
 
 	public void putSwamp(Swamp s) {
-
+		return;
 	}
 
 	public void addTower(int distance, Tower t) {
