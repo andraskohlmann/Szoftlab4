@@ -24,6 +24,7 @@ public class Elf extends EnemyUnit {
 	}
 	
 	public Elf(Elf e) {
+		this(e.gameToNotice);
 		e.health *= 0.5;
 		this.gameToNotice = e.gameToNotice;
 		this.health = e.health;
@@ -31,7 +32,7 @@ public class Elf extends EnemyUnit {
 
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
-			Elf newHalf = new Elf();
+			Elf newHalf = new Elf(this);
 			
 			roadToNotice.addUnit(newHalf);
 			

@@ -35,6 +35,10 @@ public class Road extends Tile {
 		super.addTower(distance - 1, t);
 	}
 
+	public void removeTower(int distance, Tower t) {
+		towersToNotify.remove(t);
+		super.removeTower(distance, t);
+	}
 
 	public void putRune(Rune r) {
 		swamp.putRune(r);

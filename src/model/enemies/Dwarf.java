@@ -24,6 +24,7 @@ public class Dwarf extends EnemyUnit {
 	}
 	
 	public Dwarf(Dwarf d) {
+		this(d.gameToNotice);
 		d.health *= 0.5;
 		this.gameToNotice = d.gameToNotice;
 		this.health = d.health;
@@ -31,7 +32,7 @@ public class Dwarf extends EnemyUnit {
 
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
-			Dwarf newHalf = new Dwarf();
+			Dwarf newHalf = new Dwarf(this);
 			
 			roadToNotice.addUnit(newHalf);
 			
