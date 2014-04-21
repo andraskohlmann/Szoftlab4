@@ -1,22 +1,32 @@
 package model.runes;
 
+import model.Common;
 import control.SkeletonUI;
 
 public class Rune {
 
-	private int distance;
+	protected int distance;
+	
+	protected int reloadTime;
+	
+	public int dmgDwarf;
+	public int dmgHobbit;
+	public int dmgElf;
+	public int dmgMan;
 
-	// Csak default konstruktor! További módosítás szükséges!!!
 	public Rune() {
-		distance = 4;
+		distance = Common.distance;
+		
+		reloadTime = Common.reloadTime;
+		
+		dmgDwarf = Common.dmgDwarf;
+		dmgHobbit = Common.dmgHobbit;
+		dmgElf = Common.dmgElf;
+		dmgMan = Common.dmgMan;
 	}
 
 	public void modifyProjectile(Projectile p) {
-		SkeletonUI.enterFunction(this, "modifyProjectile", p);
-
 		p.setDamage(this);
-
-		SkeletonUI.leaveFunction();
 	}
 
 	public void modifySlime(Slime s) {

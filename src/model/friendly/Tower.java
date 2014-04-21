@@ -14,10 +14,10 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
 	private Rune rune;
 	private EnemyUnit lastTarget;
-	
+
 	private int tickDivider;
 	private int counter;
-	
+
 	public Tower() {
 		tickDivider = 10;
 		counter = 0;
@@ -28,22 +28,21 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 		counter++;
 		if (counter == tickDivider) {
 			counter = 0;
-			
+
 			/* következõ célpont kiválasztása */
 			if (lastTarget == null || !enemyUnits.contains(lastTarget)) {
 				if (enemyUnits.size() > 0) {
 					lastTarget = enemyUnits.get(0);
-				}
-				else {
+				} else {
 					lastTarget = null;
-				}		
+				}
 			}
-			
+
 			/* ha van végülis lehetséges célpont */
 			if (lastTarget != null) {
 				Projectile projectile = new Projectile();
 				rune.modifyProjectile(projectile);
-				
+
 				lastTarget.gotHit(projectile);
 			}
 		}
@@ -56,8 +55,8 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 		String answer = SkeletonUI
 				.stringQuestion(
-						"What kind of rune is in the tower? (Default, dWarf, Elf, Man, Hobbit, Range, reLoad) \n" +
-						"/Rune can be put only to tower with default rune./",
+						"What kind of rune is in the tower? (Default, dWarf, Elf, Man, Hobbit, Range, reLoad) \n"
+								+ "/Rune can be put only to tower with default rune./",
 						"D", "W", "E", "M", "H", "R", "L");
 
 		boolean available = (answer.equals("D"));
@@ -76,19 +75,12 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public void addUnit(EnemyUnit enemyUnit) {
-		SkeletonUI.enterFunction(this, "addUnit", enemyUnit);
-
 		enemyUnits.add(enemyUnit);
-
-		SkeletonUI.leaveFunction();
 	}
 
 	@Override
 	public void removeUnit(EnemyUnit e) {
-		// TODO Auto-generated method stub
-		SkeletonUI.enterFunction(this, "removeUnit", e);
-
-		SkeletonUI.leaveFunction();
+		enemyUnits.remove(e);
 	}
 
 	public void Skeleton_addUnit(EnemyUnit enemyUnit) {

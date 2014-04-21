@@ -19,6 +19,23 @@ public class Game {
 
 	private Ticker ticker;
 
+	public void putTower(int x, int y)
+	{
+		
+	}
+	public void putRune(int x,int y,String runeType)
+	{
+		
+	}
+	public void putSwamp(int x, int y)
+	{
+		
+	}
+	public void putFog(int x, int y)
+	{
+		
+	}
+	
 	public void Skeleton_MapSetter(Map m) {
 		map = m;
 	}
@@ -26,7 +43,8 @@ public class Game {
 	public void tick() {
 		ticker.tick();
 		
-		// TODO: beértek elkérése
+		ticker.remove(map.getFinishedUnits());
+		map.deleteFinishedUnits();
 	}
 
 	public void notifyIfDead(EnemyUnit e) {
@@ -122,5 +140,16 @@ public class Game {
 		ticker.remove(unitList);
 
 		SkeletonUI.leaveFunction();
+	}
+
+	public void loadMap(String filename) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void addUnit(EnemyUnit enemyUnit) {
+		ticker.addUnit(enemyUnit);
+		enemyUnit.setGame(this);
 	}
 }

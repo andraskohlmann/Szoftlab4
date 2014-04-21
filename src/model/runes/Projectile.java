@@ -1,45 +1,52 @@
 package model.runes;
 
+import control.ProtoManager;
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
 import model.enemies.Man;
-import control.SkeletonUI;
 
 public class Projectile {
-	public int damageMe(Dwarf d) {
-		SkeletonUI.enterFunction(this, "damageMe", d);
 
-		SkeletonUI.leaveFunction(0);
-		return 0;
+	private int dmgToDwarf = 0;
+	private int dmgToHobbit = 0;
+	private int dmgToElf = 0;
+	private int dmgToMan = 0;
+
+	private boolean isSplitter;
+	
+	public Projectile() {
+		if (ProtoManager.randomSplitting) {
+			isSplitter = ProtoManager.randomBoolean(10);
+		} else {
+			isSplitter = false;
+		}
+	}
+
+	public int damageMe(Dwarf d) {
+		return dmgToDwarf;
 	}
 
 	public int damageMe(Hobbit h) {
-		SkeletonUI.enterFunction(this, "damageMe", h);
-
-		SkeletonUI.leaveFunction(0);
-		return 0;
+		return dmgToHobbit;
 	}
 
 	public int damageMe(Elf e) {
-		SkeletonUI.enterFunction(this, "damageMe", e);
-
-		SkeletonUI.leaveFunction(0);
-		return 0;
+		return dmgToElf;
 	}
 
 	public int damageMe(Man m) {
-		SkeletonUI.enterFunction(this, "damageMe", m);
-
-		SkeletonUI.leaveFunction(0);
-		return 0;
-
+		return dmgToMan;
 	}
 
 	public void setDamage(Rune r) {
-		SkeletonUI.enterFunction(this, "setDamage");
+		dmgToDwarf = r.dmgDwarf;
+		dmgToHobbit = r.dmgHobbit;
+		dmgToElf = r.dmgElf;
+		dmgToMan = r.dmgMan;
+	}
 
-		SkeletonUI.leaveFunction(0);
-
+	public boolean isSplitter() {
+		return isSplitter;
 	}
 }

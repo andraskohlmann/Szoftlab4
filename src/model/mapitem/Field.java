@@ -40,4 +40,11 @@ public class Field extends Tile {
 	public boolean checkRune() {
 		return tower.checkRune();
 	}
+	
+	public void addFog(Fog f) {
+		if(tower == null)
+			return;
+		
+		
+	}
 }

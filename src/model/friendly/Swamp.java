@@ -13,7 +13,7 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
 	private Rune rune;
-	
+
 	private int tickDivider;
 	private int counter;
 
@@ -22,16 +22,16 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		counter++;
 		if (counter == tickDivider) {
 			counter = 0;
-			
+
 			if (enemyUnits.size() > 0) {
-				
+
 				Slime slime = new Slime();
 				rune.modifySlime(slime);
-				
+
 				for (EnemyUnit enemy : enemyUnits) {
 					enemy.gotSlowed(slime);
 				}
-				
+
 			}
 		}
 	}
@@ -41,11 +41,10 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		// TODO Auto-generated method stub
 		SkeletonUI.enterFunction(this, "checkRune");
 
-		String answer = SkeletonUI
-				.stringQuestion(
-						"What kind of rune is in the swamp? (Default, dWarf, Elf, Man, Hobbit) \n" +
-						"/Rune can be put only to swamp with default rune./",
-						"D", "W", "E", "M", "H");
+		String answer = SkeletonUI.stringQuestion(
+				"What kind of rune is in the swamp? (Default, dWarf, Elf, Man, Hobbit) \n"
+						+ "/Rune can be put only to swamp with default rune./",
+				"D", "W", "E", "M", "H");
 
 		boolean available = (answer.equals("D"));
 
@@ -63,17 +62,12 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public void addUnit(EnemyUnit enemyUnit) {
-		SkeletonUI.enterFunction(this, "addUnit", enemyUnit);
 		enemyUnits.add(enemyUnit);
-		SkeletonUI.leaveFunction();
 	}
 
 	@Override
 	public void removeUnit(EnemyUnit e) {
-		// Ez nem baj, ha meg van implementálva - Kohlmann
-		SkeletonUI.enterFunction(this, "removeUnit", e);
-
-		SkeletonUI.leaveFunction();
+		enemyUnits.remove(e);
 	}
 
 	public void Skeleton_addUnit(EnemyUnit e) {

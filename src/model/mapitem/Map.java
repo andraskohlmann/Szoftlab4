@@ -202,18 +202,11 @@ public class Map {
 	}
 
 	public List<EnemyUnit> getFinishedUnits() {
-		SkeletonUI.enterFunction(this, "getFinishedUnits");
-
-		List<EnemyUnit> unitList = finishedRoad.getFinishedUnits();
-
-		SkeletonUI.leaveFunction(unitList);
-		return unitList;
+		return finishedRoad.getFinishedUnits();
 	}
 
 	public void deleteFinishedUnits() {
-		SkeletonUI.enterFunction(this, "deleteFinishedUnits");
 		finishedRoad.deleteFinishedUnits();
-		SkeletonUI.leaveFunction();
 	}
 
 	public void addUnit(EnemyUnit e) {

@@ -18,7 +18,10 @@ import control.SkeletonUI;
 //
 //
 
-public class Tile {
+public abstract class Tile {
+	
+	private List<Tile> neighbours;
+	
 	public boolean checkTower() {
 		SkeletonUI.enterFunction(this, "checkTower");
 
@@ -27,39 +30,52 @@ public class Tile {
 	}
 
 	public void putTower(Tower t) {
-
+		return;
 	}
 
 	public boolean checkRune() {
 		return false;
 	}
-
-	public void putRune(Rune r) {
-
+	
+	public void addFog(Fog f){
+		return;
 	}
 
-	public boolean checkSwamp() {
-		SkeletonUI.enterFunction(this, "checkSwamp");
+	public abstract void putRune(Rune r);
 
-		SkeletonUI.leaveFunction(false);
+	public boolean checkSwamp() {
 		return false;
 	}
 
 	public void putSwamp(Swamp s) {
-
+		return;
 	}
 
 	public void addTower(int distance, Tower t) {
-		SkeletonUI.enterFunction(this, "addTower", distance, t);
-
-		SkeletonUI.leaveFunction();
+		if(distance <= 1)
+			return;
+		for (Tile neighbour : neighbours) {
+			neighbour.addTower(distance - 1, t);
+		}
+	}
+	
+	public void removeTower(int distance, Tower t) {
+		if(distance <= 1)
+			return;
+		for (Tile neighbour : neighbours) {
+			neighbour.removeTower(distance - 1, t);
+		}
 	}
 
 	public void addNeighbours(List<Tile> neighbourList) {
-
+		neighbours = neighbourList;
 	}
 
 	public void setSucceedingRoads(List<Tile> nextRoads) {
 
+	}
+
+	public void removeFog(Fog fog) {
+		// TODO: Zsoltiii <3
 	}
 }
