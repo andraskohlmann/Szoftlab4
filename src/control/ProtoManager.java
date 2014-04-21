@@ -1,7 +1,6 @@
 package control;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -9,8 +8,14 @@ import java.io.PrintWriter;
 public class ProtoManager {
 	
 	private static boolean outputStd = true;
-	private static PrintWriter pw;
+	private static PrintWriter pw = null;
 
+	public static void main(String[] args) 
+	{
+       ProtoManager.codeTranslate();
+	}
+	
+	
 	public static void print(String printableDoc)
 	{
 		if(outputStd)
@@ -28,6 +33,10 @@ public class ProtoManager {
 				System.out.println("Cannot write to file, because no outputfile was added. Please insert saveGame code with appropriate parameters");
 			}
 		}
+	}
+	public static void Problem()
+	{
+	  System.out.println("Some of the parameters, or the codes were inserted incorrectly");
 	}
 	
 	public static void codeTranslate()
@@ -49,8 +58,25 @@ public class ProtoManager {
 				String[] codes = inputCode.split(" ");
 				if(codes[0].equals("switchOutput")) 
 				{
+				   if(codes.length!= 2)
+						ProtoManager.Problem();
+				   else
+				   {
+						
 					
-				}
+					   if(codes[1].equals("std")) 
+					   {
+						 ProtoManager.print("Output to standard output");
+						 ProtoManager.outputStd = true;
+					   }
+					   else if(codes[1].equals("file"))
+					   {
+						   ProtoManager.outputStd = false;
+						   ProtoManager.print("Output to file");
+					   }	
+					   		else ProtoManager.Problem();
+				   }
+				} 
 				else if(codes[0].equals("loadMap"))
 				{
 					
@@ -114,6 +140,10 @@ public class ProtoManager {
 				else if(codes[0].equals("printMap"))
 				{
 					
+				}
+				else if(codes[0].equals("exit"))
+				{
+					break;
 				}
 			}
 			
