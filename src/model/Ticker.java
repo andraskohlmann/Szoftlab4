@@ -11,11 +11,9 @@ public class Ticker {
 	private List<ActiveUnit> unitList = new ArrayList<ActiveUnit>();
 
 	public void tick() {
-		SkeletonUI.enterFunction(this, "tick");
-
-		unitList.get(0).tick();
-
-		SkeletonUI.leaveFunction();
+		for (ActiveUnit unit : unitList) {
+			unit.tick();
+		}
 	}
 
 	public void remove(List<EnemyUnit> unitList) {

@@ -24,9 +24,9 @@ public class Game {
 	}
 
 	public void tick() {
-		SkeletonUI.enterFunction(this, "tick");
-
-		SkeletonUI.leaveFunction();
+		ticker.tick();
+		
+		// TODO: beértek elkérése
 	}
 
 	public void notifyIfDead(EnemyUnit e) {
