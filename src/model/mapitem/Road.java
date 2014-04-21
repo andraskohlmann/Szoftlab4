@@ -14,8 +14,8 @@ public class Road extends Tile {
 	private List<EnemyUnit> enemyList = new ArrayList<EnemyUnit>();
 	private Swamp swamp;
 	private List<Tower> towersToNotify = new ArrayList<Tower>();
-	private Road nextRoad;
-
+	private List<Road> nextRoad = new ArrayList<Road>();
+	
 	public void Skeleton_SwampSetter(Swamp s) {
 		swamp = s;
 	}
@@ -103,5 +103,10 @@ public class Road extends Tile {
 
 	public void Skeleton_addNextRoad(Road next) {
 		nextRoad = next;
+	}
+
+	public boolean hasNext() {
+		if (nextRoad.isEmpty()) return false;
+		return true;
 	}
 }
