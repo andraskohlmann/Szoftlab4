@@ -41,9 +41,7 @@ public class Field extends Tile {
 	}
 
 	public void putTower(Tower t) {
-		SkeletonUI.enterFunction(this, "putTower", t);
-		Skeleton_TowerSetter(t);
-		SkeletonUI.leaveFunction();
+		tower = t;
 	}
 
 	public boolean checkRune() {
