@@ -90,4 +90,8 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	public void Skeleton_addRune(Rune r) {
 		rune = r;
 	}
+	
+	public Rune getRune() {
+		return rune;
+	}
 }
