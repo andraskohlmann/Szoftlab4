@@ -35,11 +35,7 @@ public class Road extends Tile {
 	}
 
 	public void putRune(Rune r) {
-		SkeletonUI.enterFunction(this, "putRune", r);
-
 		swamp.putRune(r);
-
-		SkeletonUI.leaveFunction();
 	}
 
 	public void deadNotice(EnemyUnit e) {
