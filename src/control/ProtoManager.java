@@ -13,9 +13,9 @@ public class ProtoManager {
 	private static boolean outputStd = true;
 	private static PrintWriter pw = null;
 
-	public static boolean randomSplitting;
-	public static boolean randomRouting;
-	public static boolean randomFog;
+	public static boolean randomSplitting = false;
+	public static boolean randomRouting = false;
+	public static boolean randomFog = false;
 	public static int ticked = 0;
 
 	public static String mapName = new String();
