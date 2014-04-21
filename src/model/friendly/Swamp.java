@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.ActiveUnit;
+import model.Common;
 import model.enemies.EnemyUnit;
 import model.runes.Rune;
 import model.runes.Slime;
@@ -14,7 +15,7 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
 	private Rune rune;
 
-	private int tickDivider;
+	private int tickDivider = Common.swamp_counter;
 	private int counter;
 
 	@Override
