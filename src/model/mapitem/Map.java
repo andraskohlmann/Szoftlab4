@@ -33,23 +33,7 @@ public class Map {
 	}
 
 	public boolean checkTower(int x, int y) {
-		SkeletonUI.enterFunction(this, "checkTower", x, y);
-
-		boolean available = false;
-
-		Skeleton_answer = SkeletonUI
-				.stringQuestion(
-						"Is that tile a Field or a Road? you want to put a Tower on it",
-						"F", "R");
-
-		if (Skeleton_answer.equals("F"))
-			available = field.checkTower();
-		else
-			available = road.checkTower();
-
-		SkeletonUI.leaveFunction(available);
-		return available;
-
+		return tiles[x][y].checkTower();
 	}
 
 	public void putTower(int x, int y, Tower t) {
