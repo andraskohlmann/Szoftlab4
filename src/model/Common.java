@@ -35,4 +35,16 @@ public final class Common {
 	public static int tickHobbit = 50;
 	public static int tickElf = 30;
 	public static int tickMan = 60;
+
+	public static int life = 200;
+
+	public static int start_mTz = 100;
+	public static int kill_mTz = 2;
+	
+	public static int tower_mTz = 20;
+	public static int swamp_mTz = 30;
+	public static int rune_mTz = 10;
+	
+	public static int fog_timetoleave = 1000;
+	
 }

@@ -19,8 +19,8 @@ public class Game {
 	private Map map;
 	private Ticker ticker;
 
-	private int life;
-	private int magitzka;
+	private int life = Common.life;
+	private int magitzka = Common.start_mTz;
 
 	public int getLife() {
 		return life;
@@ -47,7 +47,7 @@ public class Game {
 	}
 
 	public void putFog(int x, int y) {
-		Fog fog = new Fog(this, /* randomszám, Kohlmann! */10);
+		Fog fog = new Fog(this, Common.fog_timetoleave);
 		ticker.addUnit(fog);
 	}
 	
@@ -68,6 +68,7 @@ public class Game {
 
 	public void notifyIfDead(EnemyUnit e) {
 		ticker.remove(e);
+		magitzka += Common.kill_mTz;
 	}
 
 	public void Skeleton_MouseOnTile_Rune() {
