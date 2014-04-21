@@ -19,6 +19,12 @@ public class Game {
 
 	private Ticker ticker;
 
+	public void putTower(int x, int y)
+	{
+		
+	}
+	
+	
 	public void Skeleton_MapSetter(Map m) {
 		map = m;
 	}
@@ -122,5 +128,10 @@ public class Game {
 		ticker.remove(unitList);
 
 		SkeletonUI.leaveFunction();
+	}
+
+	public void loadMap(String filename) {
+		// TODO Auto-generated method stub
+		
 	}
 }

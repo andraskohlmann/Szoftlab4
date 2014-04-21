@@ -12,6 +12,10 @@ public class ProtoManager {
 	private static boolean outputStd = true;
 	private static PrintWriter pw = null;
 
+	public static boolean randomSplitting;
+	public static boolean randomRouting;
+	public static boolean randomFog;
+	
 	private static Game g = new Game();
 	
 	
@@ -105,7 +109,14 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("putRune"))
 				{
-					
+					if(codes.length!= 2)
+						ProtoManager.Problem();
+				    else
+				    {
+				  
+				    	g.loadMap(codes[1]);
+				    	
+				    }
 				}
 				else if(codes[0].equals("putSwamp"))
 				{

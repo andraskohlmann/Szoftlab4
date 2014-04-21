@@ -23,7 +23,7 @@ public class SkeletonManager {
 	
 
 	public static void menu() {
-		boolean isLoop = true;
+		/*boolean isLoop = true;
 
 		while (isLoop) {
 			switch (SkeletonUI.menuQuestion("What do you want to do?",
@@ -46,17 +46,17 @@ public class SkeletonManager {
 				isLoop = false;
 				break;
 			}
-		}
+		}*/
 
 	}
 
 	public static void GameTick() {
 
-		Game g = new Game();
+	/*	Game g = new Game();
 		SkeletonUI.addObject(g, "g", true);
 
-		Map m = new Map();
-		SkeletonUI.addObject(m, "m", true);
+		//Map m = new Map();
+		//SkeletonUI.addObject(m, "m", true);
 
 		Road r = new Road();
 		SkeletonUI.addObject(r, "r", true);
@@ -70,9 +70,9 @@ public class SkeletonManager {
 		Swamp s = new Swamp();
 		SkeletonUI.addObject(s, "s", false);
 
-		g.Skeleton_MapSetter(m);
+	//	g.Skeleton_MapSetter(m);
 		g.Skeleton_addTicker(ticker);
-		m.Skeleton_RoadSetter(r);
+	//	m.Skeleton_RoadSetter(r);
 		r.Skeleton_SwampSetter(s);
 		r.Skeleton_addTower(t);
 
@@ -118,15 +118,15 @@ public class SkeletonManager {
 			ticker.Skeleton_remove(e);
 		}
 
-		m.Skeleton_FinishedRoadSetter(new FinishedRoad());
+	//	m.Skeleton_FinishedRoadSetter(new FinishedRoad());
 
-		g.Skeleton_tick_SecondSegment();
+		g.Skeleton_tick_SecondSegment();*/
 
 	}
 
 	public static void TowerTick(Ticker ticker, Tower t, Game g) {
 
-		Rune r = new Rune();
+		/*Rune r = new Rune();
 		SkeletonUI.addObject(r, "r", true);
 		t.Skeleton_addRune(r);
 
@@ -158,12 +158,12 @@ public class SkeletonManager {
 			t.Skeleton_addUnit(m);
 		}
 
-		ticker.tick();
+		ticker.tick();*/
 	}
 
 	public static void SwampTick(Ticker ticker, Swamp s) {
 
-		Rune r = new Rune();
+		/*Rune r = new Rune();
 		SkeletonUI.addObject(r, "r", true);
 		s.Skeleton_addRune(r);
 
@@ -188,11 +188,11 @@ public class SkeletonManager {
 			s.Skeleton_addUnit(m);
 		}
 
-		ticker.tick();
+		ticker.tick();*/
 	}
 
 	public static void EnemyUnitTick(Ticker ticker, EnemyUnit e) {
-
+/*
 		Road from = new Road();
 		SkeletonUI.addObject(from, "from", true);
 		Road to = new Road();
@@ -216,12 +216,12 @@ public class SkeletonManager {
 			from.Skeleton_addTower(t);
 		}
 		
-		ticker.tick();
+		ticker.tick();*/
 
 	}
 
 	public static void PutRune() {
-
+/*
 		Game g = new Game();
 		SkeletonUI.addObject(g, "g", true);
 
@@ -248,14 +248,14 @@ public class SkeletonManager {
 		f.Skeleton_TowerSetter(t);
 		r.Skeleton_SwampSetter(s);
 
-		g.Skeleton_MouseOnTile_Rune();
+		g.Skeleton_MouseOnTile_Rune();*/
 	}
 
 	public static void PutSwamp() {
-		Game g = new Game();
+	/*	Game g = new Game();
 		SkeletonUI.addObject(g, "g", true);
 
-		Map m = new Map();
+	//	Map m = new Map();
 		SkeletonUI.addObject(m, "m", true);
 		g.Skeleton_MapSetter(m);
 
@@ -267,15 +267,15 @@ public class SkeletonManager {
 		SkeletonUI.addObject(r, "r", true);
 		m.Skeleton_RoadSetter(r);
 
-		g.Skeleton_MouseOnTile_Swamp();
+		g.Skeleton_MouseOnTile_Swamp();*/
 	}
 
 	public static void PutTower() {
-		Game g = new Game();
+	/*	Game g = new Game();
 		SkeletonUI.addObject(g, "g", true);
 
-		Map m = new Map();
-		SkeletonUI.addObject(m, "m", true);
+	//	Map m = new Map();
+	//	SkeletonUI.addObject(m, "m", true);
 		g.Skeleton_MapSetter(m);
 
 		Field f = new Field();
@@ -286,7 +286,7 @@ public class SkeletonManager {
 		SkeletonUI.addObject(r, "r", true);
 		m.Skeleton_RoadSetter(r);
 
-		g.Skeleton_MouseOnTile_Tower();
+		g.Skeleton_MouseOnTile_Tower();*/
 	}
 
 }
