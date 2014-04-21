@@ -13,21 +13,27 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
 	private Rune rune;
+	
+	private int tickDivider;
+	private int counter;
 
 	@Override
 	public void tick() {
-		SkeletonUI.enterFunction(this, "tick");
-
-		if (SkeletonUI.booleanQuestion("Are there any units in the swamp?")) {
-
-			Slime s = new Slime();
-			SkeletonUI.addObject(s, "s", true);
-			rune.modifySlime(s);
-
-			enemyUnits.get(0).gotSlowed(s);
+		counter++;
+		if (counter == tickDivider) {
+			counter = 0;
+			
+			if (enemyUnits.size() > 0) {
+				
+				Slime slime = new Slime();
+				rune.modifySlime(slime);
+				
+				for (EnemyUnit enemy : enemyUnits) {
+					enemy.gotSlowed(slime);
+				}
+				
+			}
 		}
-
-		SkeletonUI.leaveFunction();
 	}
 
 	@Override
