@@ -16,7 +16,6 @@ public class Road extends Tile {
 	private List<EnemyUnit> enemyList = new ArrayList<EnemyUnit>();
 	private Swamp swamp;
 	private List<Tower> towersToNotify = new ArrayList<Tower>();
-	private List<Road> nextRoad = new ArrayList<Road>();
 
 	public void Skeleton_SwampSetter(Swamp s) {
 		swamp = s;
@@ -37,6 +36,10 @@ public class Road extends Tile {
 		super.addTower(distance - 1, t);
 	}
 
+	public void removeTower(int distance, Tower t) {
+		towersToNotify.remove(t);
+		super.removeTower(distance, t);
+	}
 
 	public void putRune(Rune r) {
 		swamp.putRune(r);
@@ -95,7 +98,8 @@ public class Road extends Tile {
 		nextRoad.get(which).addUnit(enemyUnit);
 	}
 
-	public void Skeleton_addNextRoad(Road next) {
+	public void addNextRoad(Road next) {
+		nextRoad.add(next);
 	}
 
 	public boolean hasNext() {

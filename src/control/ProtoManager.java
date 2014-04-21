@@ -1,6 +1,8 @@
 package control;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -43,7 +45,14 @@ public class ProtoManager {
 			}
 			else
 			{
-				System.out.println("Cannot write to file, because no outputfile was added. Please insert saveGame code with appropriate parameters");
+				try {
+					pw = new PrintWriter(new File("log.txt"));
+					pw.println(printableDoc);
+					System.out.println("Writed to log.txt default file, Please insert saveGame code with appropriate parameters to save in another file");
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 	}
@@ -169,7 +178,18 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("tick"))
 				{
-					
+					if(codes.length!= 2)
+						ProtoManager.Problem();
+				    else
+				    {
+				        for(ticked = 0;ticked < Integer.parseInt(codes[1]); ticked++)
+				        {
+				        	g.tick();
+				        }
+				    	
+				    	print("Game ticked "+ticked+" times");
+				    	
+				    }
 				}
 				else if(codes[0].equals("listUnits"))
 				{
@@ -185,6 +205,9 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("clear"))
 				{
+					
+					g = null;
+					print("Game cleared");
 					
 				}
 				else if(codes[0].equals("turnRndOn"))
