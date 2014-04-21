@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Random;
 
 import model.Game;
 
@@ -178,7 +179,12 @@ public class ProtoManager {
 			
 		}
 	}
-	
+	public static int randomInt(int max)
+	{
+		Random r = new Random();
+		return r.nextInt(max);
+		
+	}
 	
 }
 
