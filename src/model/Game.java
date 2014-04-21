@@ -30,11 +30,7 @@ public class Game {
 	}
 
 	public void notifyIfDead(EnemyUnit e) {
-		SkeletonUI.enterFunction(this, "notifyIfDead", e);
-
 		ticker.remove(e);
-
-		SkeletonUI.leaveFunction();
 	}
 
 	public void Skeleton_MouseOnTile_Rune() {
