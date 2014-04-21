@@ -13,9 +13,9 @@ public class ProtoManager {
 	private static boolean outputStd = true;
 	private static PrintWriter pw = null;
 
-	public static boolean randomSplitting = false;
-	public static boolean randomRouting = false;
-	public static boolean randomFog = false;
+	public static RandomStates randomSplitting = RandomStates.off;
+	public static RandomStates randomRouting = RandomStates.off;
+	public static RandomStates randomFog = RandomStates.off;
 	public static int ticked = 0;
 
 	public static String mapName = new String();
@@ -141,14 +141,26 @@ public class ProtoManager {
 					print("Magitzka: "+g.getMagitzka()+"\n");
 					print("Ticked: "+ticked+"\n");
 					
-					if(randomFog) print("Random mode fog: on");
-					else print("Random mode fog: off");
+					switch (randomFog)
+					{
+						case on: print("Random mode fog: on"); break;
+						case off: print("Random mode fog: off"); break;
+						case random: print("Random mode fog: random"); break;
+					}
 					
-					if(randomSplitting) print("Random mode splitting: on");
-					else print("Random mode splitting: off");
-					
-					if(randomRouting) print("Random mode routing: on");
-					else print("Random mode routing: off");
+					switch (randomSplitting)
+					{
+						case on: print("Random mode splitting: on"); break;
+						case off: print("Random mode splitting: off"); break;
+						case random: print("Random mode splitting: random"); break;
+					}
+				
+					switch (randomRouting)
+					{
+						case on: print("Random mode routing: on"); break;
+						case off: print("Random mode routing: off"); break;
+						case random: print("Random mode routing: random"); break;
+					}
 					
 				}
 				else if(codes[0].equals("saveGame"))
@@ -177,7 +189,30 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("turnRndOn"))
 				{
-					
+
+					if(codes.length!= 2)
+						ProtoManager.Problem();
+				    else
+				    {
+				    	if(codes[1].equals("fog"))
+				    	{
+				    		randomFog = RandomStates.on;
+				    		print("Random mode fog: on");
+				    		
+				    	}
+				    	if(codes[1].equals("splitting"))
+				    	{
+				    		randomSplitting = RandomStates.on;
+				    		print("Random mode splitting: on");
+				    		
+				    	}
+				    	if(codes[1].equals("routing"))
+				    	{
+				    		randomRouting = RandomStates.on;
+				    		print("Random mode routing: on");
+				    		
+				    	}	
+				    }
 				}
 				else if(codes[0].equals("putFog"))
 				{
@@ -191,11 +226,55 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("turnRndOff"))
 				{
-					
+					if(codes.length!= 2)
+						ProtoManager.Problem();
+				    else
+				    {
+				    	if(codes[1].equals("fog"))
+				    	{
+				    		randomFog = RandomStates.off;
+				    		print("Random mode fog: off");
+				    		
+				    	}
+				    	if(codes[1].equals("splitting"))
+				    	{
+				    		randomSplitting = RandomStates.off;
+				    		print("Random mode splitting: off");
+				    		
+				    	}
+				    	if(codes[1].equals("routing"))
+				    	{
+				    		randomRouting = RandomStates.off;
+				    		print("Random mode routing: off");
+				    		
+				    	}	
+				    }
 				}
 				else if(codes[0].equals("turnRndRnd"))
 				{
-					
+					if(codes.length!= 2)
+						ProtoManager.Problem();
+				    else
+				    {
+				    	if(codes[1].equals("fog"))
+				    	{
+				    		randomFog = RandomStates.random;
+				    		print("Random mode fog: random");
+				    		
+				    	}
+				    	if(codes[1].equals("splitting"))
+				    	{
+				    		randomSplitting = RandomStates.random;
+				    		print("Random mode splitting: random");
+				    		
+				    	}
+				    	if(codes[1].equals("routing"))
+				    	{
+				    		randomRouting = RandomStates.random;
+				    		print("Random mode routing: random");
+				    		
+				    	}	
+				    }
 				}
 				else if(codes[0].equals("printMap"))
 				{
@@ -222,5 +301,8 @@ public class ProtoManager {
 		if (number<50) return true;
 		else return false;
 	}
+	
+	
+	
 }
 
