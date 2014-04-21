@@ -46,6 +46,12 @@ public class Field extends Tile {
 			return;
 		removeTower(tower.getRune().getDistance(), tower);
 		addTower(tower.getRune().getDistance() - f.getDistanceReduction(), tower);
+		f.setTile(this);
+	}
+	
+	public void removeFog(Fog f) {
+		removeTower(tower.getRune().getDistance() - f.getDistanceReduction(), tower);
+		addTower(tower.getRune().getDistance(), tower);
 	}
 	public boolean hasTower()
 	{

@@ -29,9 +29,6 @@ public abstract class Tile {
 	}
 	
 	public boolean checkTower() {
-		SkeletonUI.enterFunction(this, "checkTower");
-
-		SkeletonUI.leaveFunction(false);
 		return false;
 	}
 
@@ -82,6 +79,6 @@ public abstract class Tile {
 	}
 
 	public void removeFog(Fog fog) {
-		// TODO: Zsoltiii <3
+		return;
 	}
 }

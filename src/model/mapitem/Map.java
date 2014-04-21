@@ -3,6 +3,7 @@ package model.mapitem;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.enemies.EnemyUnit;
@@ -32,46 +33,15 @@ public class Map {
 	}
 
 	public boolean checkTower(int x, int y) {
-		SkeletonUI.enterFunction(this, "checkTower", x, y);
-
-		boolean available = false;
-
-		Skeleton_answer = SkeletonUI
-				.stringQuestion(
-						"Is that tile a Field or a Road? you want to put a Tower on it",
-						"F", "R");
-
-		if (Skeleton_answer.equals("F"))
-			available = field.checkTower();
-		else
-			available = road.checkTower();
-
-		SkeletonUI.leaveFunction(available);
-		return available;
-
+		return tiles[x][y].checkTower();
 	}
 
 	public void putTower(int x, int y, Tower t) {
-		SkeletonUI.enterFunction(this, "putTower", x, y, t);
-		field.putTower(t);
-		SkeletonUI.leaveFunction();
+		tiles[x][y].putTower(t);
 	}
 
 	public boolean checkRune(int x, int y) {
-		SkeletonUI.enterFunction(this, "checkRune", x, y);
-
-		Skeleton_answer = SkeletonUI.stringQuestion(
-				"Is that tile a Field or a Road?", "F", "R");
-		boolean available = false;
-
-		if (Skeleton_answer.equals("F"))
-			available = field.checkRune();
-		else
-			available = road.checkRune();
-
-		SkeletonUI.leaveFunction(available);
-		return available;
-
+		return tiles[x][y].checkRune();
 	}
 
 	public void putRune(int x, int y, Rune r) {
@@ -253,6 +223,16 @@ public class Map {
 				else if (lines[i].charAt(j) == ' ') tiles[i][j] = new Road();
 				else if (lines[i].charAt(j) == '.') tiles[i][j] = new Road();
 				else if (lines[i].charAt(j) == 'A') tiles[i][j] = new FinishedRoad();
+			}
+		}
+		for (int i = 0; i < numberOfRows; i++) {
+			for (int j = 0; j < numberOfColumns; j++) {
+				List<Tile> neighbours = new ArrayList<Tile>();
+				if (i > 0) neighbours.add(tiles[i-1][j]);
+				if (i < numberOfRows - 1) neighbours.add(tiles[i+1][j]);
+				if (j > 0) neighbours.add(tiles[i][j-1]);
+				if (j < numberOfColumns) neighbours.add(tiles[i][j+1]);
+				tiles[i][j].addNeighbours(neighbours);
 			}
 		}
 		setConnections(lines);

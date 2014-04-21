@@ -17,10 +17,12 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 	private int tickDivider;
 	private int counter;
+	private boolean isUpgraded;
 
 	public Tower() {
 		tickDivider = 10;
 		counter = 0;
+		isUpgraded = false;
 	}
 
 	@Override
@@ -50,27 +52,13 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public boolean checkRune() {
-		// TODO Auto-generated method stub
-		SkeletonUI.enterFunction(this, "checkRune");
-
-		String answer = SkeletonUI
-				.stringQuestion(
-						"What kind of rune is in the tower? (Default, dWarf, Elf, Man, Hobbit, Range, reLoad) \n"
-								+ "/Rune can be put only to tower with default rune./",
-						"D", "W", "E", "M", "H", "R", "L");
-
-		boolean available = (answer.equals("D"));
-
-		SkeletonUI.leaveFunction(available);
-		return available;
+		return !isUpgraded;
 	}
 
 	@Override
 	public void putRune(Rune r) {
-		// TODO Auto-generated method stub
-		SkeletonUI.enterFunction(this, "putRune", r);
-
-		SkeletonUI.leaveFunction();
+		rune = r;
+		isUpgraded = true;
 	}
 
 	@Override
