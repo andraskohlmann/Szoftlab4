@@ -48,7 +48,11 @@ public abstract class Tile {
 	}
 
 	public void addTower(int distance, Tower t) {
-		
+		if(distance <= 1)
+			return;
+		for (Tile neighbour : neighbours) {
+			neighbour.addTower(distance - 1, t);
+		}
 	}
 
 	public void addNeighbours(List<Tile> neighbourList) {
