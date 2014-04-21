@@ -20,11 +20,20 @@ public class Elf extends EnemyUnit {
 	}
 
 	public void gotHit(Projectile p) {
-		health -= p.damageMe(this);
+		if (p.isSplitter()) {
+			Elf newHalf = new Elf();
+			
+			roadToNotice.addUnit(newHalf);
+			
+			gameToNotice.addUnit(newHalf);
+		}
+		else {
+			health -= p.damageMe(this);
 
-		if (health <= 0) {
-			roadToNotice.deadNotice(this);
-			gameToNotice.notifyIfDead(this);
+			if (health <= 0) {
+				roadToNotice.deadNotice(this);
+				gameToNotice.notifyIfDead(this);
+			}
 		}
 	}
 
