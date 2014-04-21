@@ -17,15 +17,11 @@ public class Ticker {
 	}
 
 	public void remove(List<EnemyUnit> unitList) {
-		SkeletonUI.enterFunction(this, "remove", unitList);
-
-		SkeletonUI.leaveFunction();
+		this.unitList.removeAll(unitList);
 	}
 
-	public void remove(EnemyUnit e) {
-		SkeletonUI.enterFunction(this, "remove", e);
+	public void remove(ActiveUnit e) {
 		unitList.remove(e);
-		SkeletonUI.leaveFunction();
 	}
 
 	public void Skeleton_remove(ActiveUnit e) {
@@ -36,10 +32,8 @@ public class Ticker {
 		unitList.add(a);
 	}
 
-	public void addUnit(EnemyUnit e) {
-		SkeletonUI.enterFunction(this, "addUnit", e);
+	public void addUnit(ActiveUnit e) {
 		unitList.add(e);
-		SkeletonUI.leaveFunction();
 	}
 
 }

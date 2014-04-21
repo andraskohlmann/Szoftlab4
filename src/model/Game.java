@@ -9,6 +9,7 @@ import model.enemies.Hobbit;
 import model.enemies.Man;
 import model.friendly.Swamp;
 import model.friendly.Tower;
+import model.mapitem.Fog;
 import model.mapitem.Map;
 import model.runes.Rune;
 import control.SkeletonUI;
@@ -17,46 +18,50 @@ public class Game {
 
 	private Map map;
 	private Ticker ticker;
-	
+
 	private int life;
 	private int magitzka;
-	
+
 	public int getLife() {
 		return life;
 	}
-	
+
 	public int getMagitzka() {
 		return magitzka;
 	}
-	
+
 	public Map getMap() {
 		return map;
 	}
 
-	public void putTower(int x, int y)
-	{
-		
+	public void putTower(int x, int y) {
+
 	}
-	public void putRune(int x,int y, String runeType)
-	{
-		
+
+	public void putRune(int x, int y, String runeType) {
+
 	}
-	public void putSwamp(int x, int y)
-	{
-		
+
+	public void putSwamp(int x, int y) {
+
 	}
-	public void putFog(int x, int y)
-	{
-		
+
+	public void putFog(int x, int y) {
+		Fog fog = new Fog(this, /* randomszám, Kohlmann! */10);
+		ticker.addUnit(fog);
 	}
 	
+	public void removeFog(Fog fog) {
+		ticker.remove(fog);
+	}
+
 	public void Skeleton_MapSetter(Map m) {
 		map = m;
 	}
 
 	public void tick() {
 		ticker.tick();
-		
+
 		ticker.remove(map.getFinishedUnits());
 		map.deleteFinishedUnits();
 	}
@@ -158,9 +163,8 @@ public class Game {
 
 	public void loadMap(String filename) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 
 	public void addUnit(EnemyUnit enemyUnit) {
 		ticker.addUnit(enemyUnit);
