@@ -37,9 +37,7 @@ public class Map {
 	}
 
 	public void putTower(int x, int y, Tower t) {
-		SkeletonUI.enterFunction(this, "putTower", x, y, t);
-		field.putTower(t);
-		SkeletonUI.leaveFunction();
+		tiles[x][y].putTower(t);
 	}
 
 	public boolean checkRune(int x, int y) {
