@@ -20,11 +20,7 @@ public class SkeletonManager {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-
-		menu();
-		SkeletonUI.cleanUp();
-	}
+	
 
 	public static void menu() {
 		boolean isLoop = true;
