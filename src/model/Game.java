@@ -23,6 +23,14 @@ public class Game {
 	{
 		
 	}
+	public void putRune(int x,int y,String runeType)
+	{
+		
+	}
+	public void putSwamp(int x, int y)
+	{
+		
+	}
 	
 	
 	public void Skeleton_MapSetter(Map m) {

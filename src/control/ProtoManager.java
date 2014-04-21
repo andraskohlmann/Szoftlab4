@@ -16,6 +16,9 @@ public class ProtoManager {
 	public static boolean randomSplitting;
 	public static boolean randomRouting;
 	public static boolean randomFog;
+	public static int ticked = 0;
+
+	public static String mapName = new String();
 	
 	private static Game g = new Game();
 	
@@ -93,7 +96,7 @@ public class ProtoManager {
 						ProtoManager.Problem();
 				    else
 				    {
-				  
+				        mapName = codes[1];
 				    	g.loadMap(codes[1]);
 				    	
 				    }
@@ -110,21 +113,42 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("putRune"))
 				{
-					if(codes.length!= 2)
+					if(codes.length!= 4)
 						ProtoManager.Problem();
 				    else
 				    {
 				  
-				    	g.loadMap(codes[1]);
+				    	g.putRune(Integer.parseInt(codes[1]),Integer.parseInt(codes[2]),codes[3]);
 				    	
 				    }
 				}
 				else if(codes[0].equals("putSwamp"))
 				{
+					if(codes.length!= 3)
+						ProtoManager.Problem();
+				    else
+				    {
+				  
+				    	g.putSwamp(Integer.parseInt(codes[1]),Integer.parseInt(codes[2]));
+				    	
+				    }
 					
 				}
 				else if(codes[0].equals("gameInfo"))
 				{
+					print("Map name: "+mapName+"\n");
+					print("Life: "+g.getLife()+"\n");
+					print("Magitzka: "+g.getMagitzka()+"\n");
+					print("Ticked: "+ticked+"\n");
+					
+					if(randomFog) print("Random mode fog: on");
+					else print("Random mode fog: off");
+					
+					if(randomSplitting) print("Random mode splitting: on");
+					else print("Random mode splitting: off");
+					
+					if(randomRouting) print("Random mode routing: on");
+					else print("Random mode routing: off");
 					
 				}
 				else if(codes[0].equals("saveGame"))
