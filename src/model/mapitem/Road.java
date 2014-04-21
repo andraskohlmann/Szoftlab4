@@ -8,6 +8,7 @@ import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
 import control.ProtoManager;
+import control.RandomStates;
 import control.SkeletonUI;
 
 public class Road extends Tile {
@@ -88,7 +89,7 @@ public class Road extends Tile {
 			swamp.removeUnit(enemyUnit);
 		}
 
-		int which = ProtoManager.randomRouting ? ProtoManager
+		int which = ( ProtoManager.randomRouting == RandomStates.on ) ? ProtoManager
 				.randomInt(nextRoad.size()) : 0;
 
 		nextRoad.get(which).addUnit(enemyUnit);
