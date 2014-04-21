@@ -23,11 +23,9 @@ public class Field extends Tile {
 	}
 
 	public boolean checkTower() {
-		SkeletonUI.enterFunction(this, "checkTower");
-
-		SkeletonUI.leaveFunction(true);
-		return true;
-
+		if(tower == null)
+			return true;
+		return false;
 	}
 
 	public void putRune(Rune r) {
