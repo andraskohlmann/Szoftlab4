@@ -24,4 +24,15 @@ public final class Common {
 	public static int specialdmgElf = 20;
 	public static int specialdmgMan = 20;
 	
+	// Enemy life
+	
+	public static int lifeDwarf = 150;
+	public static int lifeHobbit = 40;
+	public static int lifeElf = 80;
+	public static int lifeMan = 100;
+
+	public static int tickDwarf = 100;
+	public static int tickHobbit = 50;
+	public static int tickElf = 30;
+	public static int tickMan = 60;
 }

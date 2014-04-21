@@ -1,5 +1,6 @@
 package model.enemies;
 
+import model.Common;
 import model.Game;
 import model.mapitem.Road;
 import model.runes.Projectile;
@@ -14,9 +15,18 @@ public class Man extends EnemyUnit {
 
 	public Man(Game g) {
 		gameToNotice = g;
+		health = Common.lifeDwarf;
+		tickDivider = Common.tickDwarf;
+		counter = 0;
 	}
 
 	public Man() {
+	}
+	
+	public Man(Man m) {
+		m.health *= 0.5;
+		this.gameToNotice = m.gameToNotice;
+		this.health = m.health;
 	}
 
 	public void gotHit(Projectile p) {
