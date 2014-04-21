@@ -31,7 +31,10 @@ public class Game {
 	{
 		
 	}
-	
+	public void putFog(int x, int y)
+	{
+		
+	}
 	
 	public void Skeleton_MapSetter(Map m) {
 		map = m;

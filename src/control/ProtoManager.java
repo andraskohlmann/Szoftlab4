@@ -181,7 +181,13 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("putFog"))
 				{
-					
+					if(codes.length!= 3)
+						ProtoManager.Problem();
+				    else
+				    {
+				    	g.putFog(Integer.parseInt(codes[1]),Integer.parseInt(codes[2]));
+				    	
+				    }
 				}
 				else if(codes[0].equals("turnRndOff"))
 				{
@@ -209,6 +215,12 @@ public class ProtoManager {
 		return r.nextInt(max);
 		
 	}
-	
+	public static boolean randomBoolean(int percentage)
+	{
+		Random r = new Random();
+		int number = r.nextInt(100);
+		if (number<50) return true;
+		else return false;
+	}
 }
 
