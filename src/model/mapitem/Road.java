@@ -25,49 +25,36 @@ public class Road extends Tile {
 	}
 
 	public boolean checkSwamp() {
-		SkeletonUI.enterFunction(this, "checkSwamp");
-
-		SkeletonUI.leaveFunction(true);
-		return true;
+		if(swamp == null)
+			return true;
+		return false;
 	}
 
 	public void addTower(int distance, Tower t) {
-
+		
 	}
 
 	public void putRune(Rune r) {
-		SkeletonUI.enterFunction(this, "putRune", r);
-
 		swamp.putRune(r);
-
-		SkeletonUI.leaveFunction();
 	}
 
 	public void deadNotice(EnemyUnit e) {
-		SkeletonUI.enterFunction(this, "deadNotice");
-
 		for (Tower t : towersToNotify)
 			t.removeUnit(e);
 
-		if (SkeletonUI.booleanQuestion("Is there a swamp to notify?"))
+		if (swamp != null) {
 			swamp.removeUnit(e);
-
-		SkeletonUI.leaveFunction();
+		}
 	}
 
 	public boolean checkRune() {
-		SkeletonUI.enterFunction(this, "checkRune");
-
-		boolean available = swamp.checkRune();
-
-		SkeletonUI.leaveFunction(available);
-		return available;
+		if(!checkSwamp())
+			return false;
+		return swamp.checkRune();
 	}
 
 	public void putSwamp(Swamp s) {
-		SkeletonUI.enterFunction(this, "putSwamp", s);
-		Skeleton_SwampSetter(s);
-		SkeletonUI.leaveFunction();
+		swamp = s;
 	}
 
 	public void addUnit(EnemyUnit e) {

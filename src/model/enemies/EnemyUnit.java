@@ -10,6 +10,11 @@ import model.runes.Slime;
 public abstract class EnemyUnit implements ActiveUnit {
 	protected Road roadToNotice;
 	protected Game gameToNotice;
+	
+	protected int health;
+	
+	protected int tickDivider;
+	protected int counter;
 
 	public abstract void gotHit(Projectile p);
 
@@ -24,12 +29,11 @@ public abstract class EnemyUnit implements ActiveUnit {
 	}
 
 	public void tick() {
-		SkeletonUI.enterFunction(this, "tick");
-
-		if (SkeletonUI.booleanQuestion("Is the enemy ready to step?")) {
+		counter++;
+		if (counter == tickDivider) {
+			counter = 0;
+			
 			roadToNotice.stepMe(this);
 		}
-
-		SkeletonUI.leaveFunction();
 	}
 }

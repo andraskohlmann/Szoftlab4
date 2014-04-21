@@ -1,11 +1,9 @@
-
 package model.enemies;
 
 import model.Game;
 import model.mapitem.Road;
 import model.runes.Projectile;
 import model.runes.Slime;
-import control.SkeletonUI;
 
 public class Dwarf extends EnemyUnit {
 
@@ -22,23 +20,15 @@ public class Dwarf extends EnemyUnit {
 	}
 
 	public void gotHit(Projectile p) {
-		SkeletonUI.enterFunction(this, "gotHit", p);
+		health -= p.damageMe(this);
 
-		p.damageMe(this);
-
-		if (SkeletonUI.booleanQuestion("Is the enemy unit dead?")) {
+		if (health <= 0) {
 			roadToNotice.deadNotice(this);
 			gameToNotice.notifyIfDead(this);
 		}
-
-		SkeletonUI.leaveFunction();
 	}
 
 	public void gotSlowed(Slime s) {
-		SkeletonUI.enterFunction(this, "gotSlowed", s);
-
-		s.slowMe(this);
-
-		SkeletonUI.leaveFunction();
+		counter -= s.slowMe(this);
 	}
 }

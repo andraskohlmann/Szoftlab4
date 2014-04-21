@@ -14,32 +14,39 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
 	private Rune rune;
 	private EnemyUnit lastTarget;
+	
+	private int tickDivider;
+	private int counter;
+	
+	public Tower() {
+		tickDivider = 10;
+		counter = 0;
+	}
 
 	@Override
 	public void tick() {
-		SkeletonUI.enterFunction(this, "tick");
-
-		if (SkeletonUI.booleanQuestion("Is the tower ready to shoot?")) {
-			if (SkeletonUI.booleanQuestion("Does the tower see the previous target?")) {
-					
-				Projectile p = new Projectile();
-				SkeletonUI.addObject(p, "p", true);
-				rune.modifyProjectile(p);
-				
-				lastTarget = enemyUnits.get(0);	
-				lastTarget.gotHit(p);
+		counter++;
+		if (counter == tickDivider) {
+			counter = 0;
+			
+			/* következõ célpont kiválasztása */
+			if (lastTarget == null || !enemyUnits.contains(lastTarget)) {
+				if (enemyUnits.size() > 0) {
+					lastTarget = enemyUnits.get(0);
+				}
+				else {
+					lastTarget = null;
+				}		
 			}
-			else if (SkeletonUI.booleanQuestion("Does it see any target?")) {
+			
+			/* ha van végülis lehetséges célpont */
+			if (lastTarget != null) {
+				Projectile projectile = new Projectile();
+				rune.modifyProjectile(projectile);
 				
-				Projectile p = new Projectile();
-				SkeletonUI.addObject(p, "p", true);
-				rune.modifyProjectile(p);
-				
-				enemyUnits.get(0).gotHit(p);
+				lastTarget.gotHit(projectile);
 			}
 		}
-		
-		SkeletonUI.leaveFunction();
 	}
 
 	@Override
