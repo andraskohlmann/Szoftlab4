@@ -27,7 +27,7 @@ public class Tile {
 	}
 
 	public void putTower(Tower t) {
-
+		return;
 	}
 
 	public boolean checkRune() {
