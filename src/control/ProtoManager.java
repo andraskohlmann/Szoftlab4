@@ -5,11 +5,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
+import model.Game;
+
 public class ProtoManager {
 	
 	private static boolean outputStd = true;
 	private static PrintWriter pw = null;
 
+	private static Game g = new Game();
+	
+	
 	public static void main(String[] args) 
 	{
        ProtoManager.codeTranslate();
@@ -79,11 +84,24 @@ public class ProtoManager {
 				} 
 				else if(codes[0].equals("loadMap"))
 				{
-					
+					if(codes.length!= 2)
+						ProtoManager.Problem();
+				    else
+				    {
+				  
+				    	g.loadMap(codes[1]);
+				    	
+				    }
 				}
 				else if(codes[0].equals("putTower"))
 				{
-					
+					if(codes.length!= 3)
+						ProtoManager.Problem();
+				    else
+				    {
+				    	g.putTower(Integer.parseInt(codes[1]),Integer.parseInt(codes[2]));
+				    	
+				    }
 				}
 				else if(codes[0].equals("putRune"))
 				{
