@@ -4,21 +4,24 @@ import control.SkeletonUI;
 
 public class Rune {
 
-	private int distance;
+	protected int distance;
+	
+	protected int reloadTime;
 	
 	public int dmgDwarf;
 	public int dmgHobbit;
 	public int dmgElf;
 	public int dmgMan;
 
-	// Csak default konstruktor! További módosítás szükséges!!!
 	public Rune() {
 		distance = 4;
 		
-		dmgDwarf = 30;
-		dmgHobbit = 40;
-		dmgElf = 50;
-		dmgMan = 50;
+		reloadTime = 10;
+		
+		dmgDwarf = 10;
+		dmgHobbit = 10;
+		dmgElf = 10;
+		dmgMan = 10;
 	}
 
 	public void modifyProjectile(Projectile p) {
