@@ -25,14 +25,13 @@ public class Road extends Tile {
 	}
 
 	public boolean checkSwamp() {
-		SkeletonUI.enterFunction(this, "checkSwamp");
-
-		SkeletonUI.leaveFunction(true);
-		return true;
+		if(swamp == null)
+			return true;
+		return false;
 	}
 
 	public void addTower(int distance, Tower t) {
-
+		
 	}
 
 	public void putRune(Rune r) {
