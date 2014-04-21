@@ -7,6 +7,7 @@ import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
+import control.ProtoManager;
 import control.SkeletonUI;
 
 public class Road extends Tile {
@@ -15,7 +16,7 @@ public class Road extends Tile {
 	private Swamp swamp;
 	private List<Tower> towersToNotify = new ArrayList<Tower>();
 	private List<Road> nextRoad = new ArrayList<Road>();
-	
+
 	public void Skeleton_SwampSetter(Swamp s) {
 		swamp = s;
 	}
@@ -25,13 +26,13 @@ public class Road extends Tile {
 	}
 
 	public boolean checkSwamp() {
-		if(swamp == null)
+		if (swamp == null)
 			return true;
 		return false;
 	}
 
 	public void addTower(int distance, Tower t) {
-		
+
 	}
 
 	public void putRune(Rune r) {
@@ -45,10 +46,12 @@ public class Road extends Tile {
 		if (swamp != null) {
 			swamp.removeUnit(e);
 		}
+
+		enemyList.remove(e);
 	}
 
 	public boolean checkRune() {
-		if(!checkSwamp())
+		if (!checkSwamp())
 			return false;
 		return swamp.checkRune();
 	}
@@ -62,7 +65,8 @@ public class Road extends Tile {
 
 		enemyList.add(e);
 
-		if (SkeletonUI.booleanQuestion("Are there any towers to notify on the new road?"))
+		if (SkeletonUI
+				.booleanQuestion("Are there any towers to notify on the new road?"))
 			for (Tower t : towersToNotify)
 				t.addUnit(e);
 
@@ -70,30 +74,34 @@ public class Road extends Tile {
 			swamp.addUnit(e);
 
 		e.setRoad(this);
-		
+
 		SkeletonUI.leaveFunction();
 	}
 
 	public void stepMe(EnemyUnit enemyUnit) {
-		SkeletonUI.enterFunction(this, "stepMe", enemyUnit);
 
-		if (SkeletonUI.booleanQuestion("Were ther any tower near the road?"))
-			for (Tower t : towersToNotify)
-				t.removeUnit(enemyUnit);
-		if (SkeletonUI.booleanQuestion("Was there a swamp on the road?"))
+		enemyList.remove(enemyUnit);
+
+		for (Tower t : towersToNotify) {
+			t.removeUnit(enemyUnit);
+		}
+
+		if (swamp != null) {
 			swamp.removeUnit(enemyUnit);
+		}
 
-		nextRoad.addUnit(enemyUnit);
+		int which = ProtoManager.randomRouting ? ProtoManager
+				.randomInt(nextRoad.size()) : 0;
 
-		SkeletonUI.leaveFunction();
+		nextRoad.get(which).addUnit(enemyUnit);
 	}
 
 	public void Skeleton_addNextRoad(Road next) {
-		nextRoad = next;
 	}
 
 	public boolean hasNext() {
-		if (nextRoad.isEmpty()) return false;
+		if (nextRoad.isEmpty())
+			return false;
 		return true;
 	}
 }
