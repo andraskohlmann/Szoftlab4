@@ -29,12 +29,11 @@ public abstract class EnemyUnit implements ActiveUnit {
 	}
 
 	public void tick() {
-		SkeletonUI.enterFunction(this, "tick");
-
-		if (SkeletonUI.booleanQuestion("Is the enemy ready to step?")) {
+		counter++;
+		if (counter == tickDivider) {
+			counter = 0;
+			
 			roadToNotice.stepMe(this);
 		}
-
-		SkeletonUI.leaveFunction();
 	}
 }
