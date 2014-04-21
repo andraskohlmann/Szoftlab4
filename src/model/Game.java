@@ -43,7 +43,8 @@ public class Game {
 	public void tick() {
 		ticker.tick();
 		
-		// TODO: beértek elkérése
+		ticker.remove(map.getFinishedUnits());
+		map.deleteFinishedUnits();
 	}
 
 	public void notifyIfDead(EnemyUnit e) {
