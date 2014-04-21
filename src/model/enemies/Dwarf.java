@@ -24,6 +24,7 @@ public class Dwarf extends EnemyUnit {
 	}
 	
 	public Dwarf(Dwarf d) {
+		this(d.gameToNotice);
 		d.health *= 0.5;
 		this.gameToNotice = d.gameToNotice;
 		this.health = d.health;
