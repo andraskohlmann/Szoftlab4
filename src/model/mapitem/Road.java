@@ -48,12 +48,9 @@ public class Road extends Tile {
 	}
 
 	public boolean checkRune() {
-		SkeletonUI.enterFunction(this, "checkRune");
-
-		boolean available = swamp.checkRune();
-
-		SkeletonUI.leaveFunction(available);
-		return available;
+		if(!checkSwamp())
+			return false;
+		return swamp.checkRune();
 	}
 
 	public void putSwamp(Swamp s) {
