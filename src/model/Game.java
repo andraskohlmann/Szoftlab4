@@ -16,14 +16,28 @@ import control.SkeletonUI;
 public class Game {
 
 	private Map map;
-
 	private Ticker ticker;
+	
+	private int life;
+	private int magitzka;
+	
+	public int getLife() {
+		return life;
+	}
+	
+	public int getMagitzka() {
+		return magitzka;
+	}
+	
+	public Map getMap() {
+		return map;
+	}
 
 	public void putTower(int x, int y)
 	{
 		
 	}
-	public void putRune(int x,int y,String runeType)
+	public void putRune(int x,int y, String runeType)
 	{
 		
 	}
