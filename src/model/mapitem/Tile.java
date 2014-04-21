@@ -36,6 +36,10 @@ public abstract class Tile {
 	public boolean checkRune() {
 		return false;
 	}
+	
+	public void addFog(Fog f){
+		return;
+	}
 
 	public abstract void putRune(Rune r);
 
