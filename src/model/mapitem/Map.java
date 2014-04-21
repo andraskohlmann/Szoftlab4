@@ -41,20 +41,7 @@ public class Map {
 	}
 
 	public boolean checkRune(int x, int y) {
-		SkeletonUI.enterFunction(this, "checkRune", x, y);
-
-		Skeleton_answer = SkeletonUI.stringQuestion(
-				"Is that tile a Field or a Road?", "F", "R");
-		boolean available = false;
-
-		if (Skeleton_answer.equals("F"))
-			available = field.checkRune();
-		else
-			available = road.checkRune();
-
-		SkeletonUI.leaveFunction(available);
-		return available;
-
+		return tiles[x][y].checkRune();
 	}
 
 	public void putRune(int x, int y, Rune r) {
