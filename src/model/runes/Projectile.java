@@ -1,6 +1,7 @@
 package model.runes;
 
 import control.ProtoManager;
+import control.RandomStates;
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
@@ -16,8 +17,10 @@ public class Projectile {
 	private boolean isSplitter;
 	
 	public Projectile() {
-		if (ProtoManager.randomSplitting) {
+		if (ProtoManager.randomSplitting == RandomStates.random) {
 			isSplitter = ProtoManager.randomBoolean(10);
+		} else if (ProtoManager.randomSplitting == RandomStates.on) {
+			isSplitter = true;
 		} else {
 			isSplitter = false;
 		}
