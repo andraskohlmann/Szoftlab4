@@ -9,6 +9,11 @@ import java.io.PrintWriter;
 import java.util.Random;
 
 import model.Game;
+import model.mapitem.Field;
+import model.mapitem.FinishedRoad;
+import model.mapitem.Map;
+import model.mapitem.Road;
+import model.mapitem.Tile;
 
 public class ProtoManager {
 	
@@ -168,13 +173,14 @@ public class ProtoManager {
 					{
 						case on: print("Random mode routing: on"); break;
 						case off: print("Random mode routing: off"); break;
-						case random: print("Random mode routing: random"); break;
 					}
 					
 				}
 				else if(codes[0].equals("saveGame"))
 				{
-					
+					listTowers();
+					listSwamps();
+					listUnits();
 				}
 				else if(codes[0].equals("tick"))
 				{
@@ -293,16 +299,48 @@ public class ProtoManager {
 				    	}
 				    	if(codes[1].equals("routing"))
 				    	{
-				    		randomRouting = RandomStates.random;
-				    		print("Random mode routing: random");
+				    		Problem();
 				    		
 				    	}	
 				    }
 				}
 				else if(codes[0].equals("printMap"))
 				{
+					Map m = g.getMap();
+					Tile[][] tiles = m.Prototype_getTiles();
+					for (int i = 0; i < tiles.length; i++) 
+					{
+						String line = new String();
+						for (int j = 0; j < tiles[i].length; j++) 
+						{
+							Class cl = tiles[i][j].getClass();
+							if(cl.getName().equals("Field"))  
+							{
+								if(((Field) tiles[i][j]).hasTower())
+									line = line+"T";
+								else
+									line = line+"#";
+							}
+							else if(cl.getName().equals("Road"))
+							{
+								if(i==0) line = line+"-";
+								else
+								{
+									if(((Road) tiles[i][j]).hasSwamp())
+										line = line+"S";
+									else
+										line = line+" ";
+								}
+							}
+							else if(cl.getName().equals("FinishedRoad"))
+							{
+								line = line+"A";
+							}
 					
-				}
+				        }
+						print(line);
+				    }
+				}	
 				else if(codes[0].equals("exit"))
 				{
 					break;
@@ -311,6 +349,19 @@ public class ProtoManager {
 			
 		}
 	}
+	public static void listTowers()
+	{
+		
+	}
+	public static void listSwamps()
+	{
+		
+	}
+	public static void listUnits()
+	{
+		
+	}
+	
 	public static int randomInt(int max)
 	{
 		Random r = new Random();

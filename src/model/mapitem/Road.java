@@ -107,4 +107,10 @@ public class Road extends Tile {
 			return false;
 		return true;
 	}
+	public boolean hasSwamp()
+	{
+		if (swamp!= null) return true;
+		else return false;
+		
+	}
 }

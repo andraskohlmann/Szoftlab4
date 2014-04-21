@@ -47,4 +47,10 @@ public class Field extends Tile {
 		removeTower(tower.getRune().getDistance(), tower);
 		addTower(tower.getRune().getDistance() - f.getDistanceReduction(), tower);
 	}
+	public boolean hasTower()
+	{
+		if (tower!= null) return true;
+		else return false;
+		
+	}
 }
