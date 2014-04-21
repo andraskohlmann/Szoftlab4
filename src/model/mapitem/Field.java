@@ -23,21 +23,14 @@ public class Field extends Tile {
 	}
 
 	public boolean checkTower() {
-		SkeletonUI.enterFunction(this, "checkTower");
-
-		SkeletonUI.leaveFunction(true);
-		return true;
-
+		if (tower == null)
+			return true;
+		return false;
 	}
 
 	public void putRune(Rune r) {
-		SkeletonUI.enterFunction(this, "putRune", r);
-
 		tower.putRune(r);
-		int distance = r.getDistance();
-		this.addTower(distance, tower);
-
-		SkeletonUI.leaveFunction();
+		addTower(r.getDistance(), tower);
 	}
 
 	public void putTower(Tower t) {
@@ -45,13 +38,6 @@ public class Field extends Tile {
 	}
 
 	public boolean checkRune() {
-		SkeletonUI.enterFunction(this, "checkRune");
-
-		boolean available = tower.checkRune();
-
-		SkeletonUI.leaveFunction(available);
-		return available;
-
+		return tower.checkRune();
 	}
-
 }
