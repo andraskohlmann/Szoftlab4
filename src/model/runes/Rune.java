@@ -8,10 +8,15 @@ public class Rune {
 
 	protected int reloadTime;
 
-	public int dmgDwarf;
-	public int dmgHobbit;
-	public int dmgElf;
-	public int dmgMan;
+	protected int dmgDwarf;
+	protected int dmgHobbit;
+	protected int dmgElf;
+	protected int dmgMan;
+
+	protected int slowDwarf;
+	protected int slowHobbit;
+	protected int slowElf;
+	protected int slowMan;
 
 	public Rune() {
 		distance = Common.distance;
@@ -22,15 +27,19 @@ public class Rune {
 		dmgHobbit = Common.dmgHobbit;
 		dmgElf = Common.dmgElf;
 		dmgMan = Common.dmgMan;
+
+		slowDwarf = Common.swamp_slowvalue;
+		slowHobbit = Common.swamp_slowvalue;
+		slowElf = Common.swamp_slowvalue;
+		slowMan = Common.swamp_slowvalue;
 	}
 
 	public void modifyProjectile(Projectile p) {
-		p.setDamage(this);
+		p.setDamage(dmgDwarf, dmgHobbit, dmgElf, dmgMan);
 	}
 
 	public void modifySlime(Slime s) {
-		s.setNumbers(Common.swamp_slowvalue, Common.swamp_slowvalue,
-				Common.swamp_slowvalue, Common.swamp_slowvalue);
+		s.setNumbers(slowDwarf, slowHobbit, slowElf, slowMan);
 	}
 
 	public int getDistance() {

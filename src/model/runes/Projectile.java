@@ -42,11 +42,11 @@ public class Projectile {
 		return dmgToMan;
 	}
 
-	public void setDamage(Rune r) {
-		dmgToDwarf = r.dmgDwarf;
-		dmgToHobbit = r.dmgHobbit;
-		dmgToElf = r.dmgElf;
-		dmgToMan = r.dmgMan;
+	public void setDamage(int d, int h, int e, int m) {
+		dmgToDwarf = d;
+		dmgToHobbit = h;
+		dmgToElf = e;
+		dmgToMan = m;
 	}
 
 	public boolean isSplitter() {

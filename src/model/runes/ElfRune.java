@@ -7,10 +7,7 @@ public class ElfRune extends Rune {
 	public ElfRune() {
 		super();
 		dmgElf = Common.specialdmgElf;
+		slowElf = Common.swamp_specialslow;
 	}
-	
-	public void modifySlime(Slime s) {
-		s.setNumbers(Common.swamp_slowvalue, Common.swamp_slowvalue,
-				Common.swamp_specialslow, Common.swamp_slowvalue);
-	}
+
 }
