@@ -51,16 +51,13 @@ public class ProtoManager {
 			if (pw != null) {
 				pw.println(printableDoc);
 			} else {
-					try {
-						pw = new PrintWriter(new BufferedWriter(new FileWriter("log.txt", true)));
-						pw.println(printableDoc);
-						System.out
-								.println("Writed to log.txt default file, Please insert saveGame code with appropriate parameters to save in another file");
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-				
-			}
+				try {
+					pw = new PrintWriter(new BufferedWriter(new FileWriter("log.txt", true)));
+					pw.println(printableDoc);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		}
 	 }	
 	}
@@ -232,19 +229,13 @@ public class ProtoManager {
 					}
 
 				} else if (codes[0].equals("saveGame")) {
-					if (codes.length != 2)
+					if (codes.length != 1)
 						ProtoManager.Problem();
 					else {
 						
-							try {
-								pw = new PrintWriter(new BufferedWriter(new FileWriter(codes[1]+".txt", true)));
-								listTowers();
-								listSwamps();
-								listUnits();
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+							listTowers();
+							listSwamps();
+							listUnits();
 						
 					}
 				} else if (codes[0].equals("tick")) {
@@ -367,6 +358,7 @@ public class ProtoManager {
 						print(line.toString());
 					}
 				} else if (codes[0].equals("exit")) {
+					if(pw!= null) pw.close();
 					break;
 				}
 			}
