@@ -47,6 +47,8 @@ public class Game {
 		if (map.checkTower(x, y)) {
 			Tower tower = new Tower();
 			tower.ProtoType_setName(name);
+			Rune rune = new Rune();
+			tower.putFirstRune(rune);
 			ticker.addUnit(tower);
 			map.putTower(x, y, tower);
 			return true;
@@ -93,6 +95,8 @@ public class Game {
 		if (map.checkSwamp(x, y)) {
 			Swamp swamp = new Swamp();
 			swamp.ProtoType_setName(name);
+			Rune rune = new Rune();
+			swamp.putFirstRune(rune);
 			ticker.addUnit(swamp);
 			map.putSwamp(x, y, swamp);
 			return true;

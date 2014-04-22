@@ -55,7 +55,11 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		rune = r;
 		isUpgraded = true;
 	}
-
+	public void putFirstRune(Rune r) {
+		rune = r;
+		isUpgraded = false;
+	}
+	
 	@Override
 	public void addUnit(EnemyUnit enemyUnit) {
 		enemyUnits.add(enemyUnit);

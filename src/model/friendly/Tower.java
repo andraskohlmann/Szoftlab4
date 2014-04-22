@@ -60,6 +60,10 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 		isUpgraded = true;
 	}
 
+	public void putFirstRune(Rune r) {
+		rune = r;
+		isUpgraded = false;
+	}
 	@Override
 	public void addUnit(EnemyUnit enemyUnit) {
 		enemyUnits.add(enemyUnit);
@@ -93,7 +97,7 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	public String ProtoType_getRune() {
 		Class<?> cl = rune.getClass();
 
-		return cl.getName();
+		return cl.getSimpleName();
 	}
 
 	public int ProtoType_getRuneDistance() {

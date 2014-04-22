@@ -109,7 +109,7 @@ public class ProtoManager {
 						ProtoManager.Problem();
 					else {
 						  towerCnt++;
-						 String name = new String();
+						  String name = new String("Tower");
 						 
 						if (g.putTower(Integer.parseInt(codes[1]),
 								Integer.parseInt(codes[2]), name + Integer.toString(towerCnt))) {
@@ -176,7 +176,7 @@ public class ProtoManager {
 						ProtoManager.Problem();
 					else {
 						swampCnt++;
-						 String name = new String();
+						 String name = new String("Swamp");
 						if (g.putSwamp(Integer.parseInt(codes[1]),
 								Integer.parseInt(codes[2]),name+Integer.toString(swampCnt)))
 							print("Swamp put to " + codes[1] + " " + codes[2]);
@@ -435,7 +435,7 @@ public class ProtoManager {
 						String line = new String();
 						line = e.ProtoType_getName() + " "
 								+ Integer.toString(i) + " "
-								+ Integer.toString(j) + " " + cls.getName()
+								+ Integer.toString(j) + " " + cls.getSimpleName()
 								+ " "
 								+ Integer.toString(e.ProtoType_getHealth())
 								+ " "
