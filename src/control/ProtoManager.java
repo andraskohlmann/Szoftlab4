@@ -168,7 +168,8 @@ public class ProtoManager {
 						} 
 						unitCnt++;
 						g.addUnit(type,name+Integer.toString(unitCnt));
-
+						
+						print("Unit added");
 					}
 				} 
 				else if (codes[0].equals("putSwamp")) {
