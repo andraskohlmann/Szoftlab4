@@ -23,6 +23,7 @@ public class Field extends Tile {
 
 	public void putTower(Tower t) {
 		tower = t;
+		addTower(t.getRune().getDistance(), t);
 	}
 
 	public boolean checkRune(Rune r) {

@@ -4,7 +4,7 @@ public final class Common {
 
 	// Basic Rune values
 
-	public static int distance = 4;
+	public static int distance = 2;
 
 	public static int reloadTime = 10;
 

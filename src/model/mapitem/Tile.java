@@ -53,7 +53,7 @@ public abstract class Tile {
 	}
 
 	public void addTower(int distance, Tower t) {
-		if (distance <= 1)
+		if (distance < 1)
 			return;
 		for (Tile neighbour : neighbours) {
 			neighbour.addTower(distance - 1, t);
@@ -61,7 +61,7 @@ public abstract class Tile {
 	}
 
 	public void removeTower(int distance, Tower t) {
-		if (distance <= 1)
+		if (distance < 1)
 			return;
 		for (Tile neighbour : neighbours) {
 			neighbour.removeTower(distance - 1, t);
