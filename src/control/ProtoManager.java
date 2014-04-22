@@ -376,6 +376,9 @@ public class ProtoManager {
 					if (((Field) tiles[i][j]).hasTower()) {
 						Tower t = ((Field) tiles[i][j]).Prototype_getTower();
 						String line = new String();
+						String fogState = new String();
+						if(tiles[i][j].hasFog() == true) fogState = "yes";
+						else fogState = "no";
 						line = t.ProtoType_getName()
 								+ " "
 								+ Integer.toString(i)
@@ -387,7 +390,7 @@ public class ProtoManager {
 								+ Integer.toString(t
 										.ProtoType_getRuneDistance()) + " "
 								+ Integer.toString(t.ProtoType_getCounter())
-								+ " ";
+								+ " "+fogState;
 						print(line);
 					}
 				}
