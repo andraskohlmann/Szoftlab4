@@ -50,8 +50,17 @@ public class ProtoManager {
 		} else {
 			if (pw != null) {
 				pw.println(printableDoc);
-			} else {System.out.println("Insert a correct file to save");
-				//	pw.println(printableDoc);
+			} else {
+					try {
+						pw = new PrintWriter(new BufferedWriter(new FileWriter("log.txt", true)));
+						pw.println(printableDoc);
+						System.out
+								.println("Writed to log.txt default file, Please insert saveGame code with appropriate parameters to save in another file");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+				
+			}
 		}
 	 }	
 	}
@@ -95,7 +104,7 @@ public class ProtoManager {
 						print("Map cannot be loaded");
 					else {
 						mapName = codes[1];
-						g.loadMap(codes[1]);
+						g.loadMap(codes[1] + ".map");
 						print("Map loaded");
 					}
 				} else if (codes[0].equals("putTower")) {
@@ -136,7 +145,10 @@ public class ProtoManager {
 						}
 
 						if (g.putRune(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]), type));
+								Integer.parseInt(codes[2]), type))
+							print("Rune put on " + codes[1] + " " + codes[2]);
+						else
+							print("Rune cannot be put on " + codes[1] + " " + codes[2]);
 							
 
 					}
@@ -162,7 +174,8 @@ public class ProtoManager {
 						} 
 						unitCnt++;
 						g.addUnit(type,name+Integer.toString(unitCnt));
-
+						
+						print("Unit added");
 					}
 				} 
 				else if (codes[0].equals("putSwamp")) {
