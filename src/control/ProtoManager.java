@@ -152,18 +152,21 @@ public class ProtoManager {
 					else {
 
 						EnemyType type;
-
+                         String name = new String("Unit");
 						if (codes[1].equals("dwarf")) {
 							type = EnemyType.dwarf;
+							
 						} else if (codes[1].equals("elf")) {
+							
 							type = EnemyType.elf;
 						} else if (codes[1].equals("hobbit")) {
+							
 							type = EnemyType.hobbit;
 						} else {
+						
 							type = EnemyType.man;
 						} 
 						unitCnt++;
-						 String name = new String();
 						g.addUnit(type,name+Integer.toString(unitCnt));
 
 					}
@@ -181,10 +184,10 @@ public class ProtoManager {
 					}
 
 				} else if (codes[0].equals("gameInfo")) {
-					print("Map name: " + mapName + "\n");
-					print("Life: " + g.getLife() + "\n");
-					print("Magitzka: " + g.getMagitzka() + "\n");
-					print("Ticked: " + ticked + "\n");
+					print("Map name: " + mapName);
+					print("Life: " + g.getLife());
+					print("Magitzka: " + g.getMagitzka());
+					print("Ticked: " + ticked);
 
 					switch (randomFog) {
 					case on:
@@ -239,10 +242,11 @@ public class ProtoManager {
 					if (codes.length != 2)
 						ProtoManager.Problem();
 					else {
-						for (ticked = 0; ticked < Integer.parseInt(codes[1]); ticked++) {
+	                         int i = 0;					
+						for (i = 0; i < Integer.parseInt(codes[1]); i++) {
 							g.tick();
 						}
-
+                        ticked = ticked + i;
 						print("Game ticked " + ticked + " times");
 
 					}

@@ -135,7 +135,6 @@ public class Game {
 
 	public void addUnit(EnemyType type,String name) {
 		EnemyUnit newEnemy;
-		
 		switch (type) {
 		case dwarf:
 			newEnemy = new Dwarf(this);
