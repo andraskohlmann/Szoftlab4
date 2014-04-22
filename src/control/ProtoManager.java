@@ -28,6 +28,11 @@ public class ProtoManager {
 	public static RandomStates randomFog = RandomStates.off;
 	public static int ticked = 0;
 
+	public static int unitCnt;
+	public static int swampCnt;
+	public static int towerCnt;
+	
+	
 	public static String mapName = new String();
 
 	private static Game g = new Game();
@@ -132,24 +137,23 @@ public class ProtoManager {
 
 					}
 				}else if (codes[0].equals("putUnit")) {
-					if (codes.length != 4)
+					if (codes.length != 2)
 						ProtoManager.Problem();
 					else {
 
 						EnemyType type;
 
-						if (codes[3].equals("dwarf")) {
+						if (codes[1].equals("dwarf")) {
 							type = EnemyType.dwarf;
-						} else if (codes[3].equals("elf")) {
+						} else if (codes[1].equals("elf")) {
 							type = EnemyType.elf;
-						} else if (codes[3].equals("hobbit")) {
+						} else if (codes[1].equals("hobbit")) {
 							type = EnemyType.hobbit;
 						} else {
 							type = EnemyType.man;
 						} 
 
-						g.addUnit(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]), type);
+						g.addUnit(type);
 
 					}
 				} 

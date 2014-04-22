@@ -106,7 +106,7 @@ public class Game {
 		enemyUnit.setGame(this);
 	}
 
-	public void addUnit(int parseInt, int parseInt2, EnemyType type) {
+	public void addUnit(EnemyType type) {
 		// TODO Auto-generated method stub
 		
 	}
