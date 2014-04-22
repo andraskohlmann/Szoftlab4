@@ -13,7 +13,7 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
 	private Rune rune;
 	private EnemyUnit lastTarget;
-
+    private String name = new String();
 	private int tickDivider;
 	private int counter;
 	private boolean isUpgraded;
@@ -80,5 +80,22 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	
 	public Rune getRune() {
 		return rune;
+	}
+	public String ProtoType_getName(){
+		return name;
+	}
+	public String ProtoType_getRune()
+	{
+		Class cl = rune.getClass();
+		
+		return cl.getName();
+	}
+	public int ProtoType_getRuneDistance()
+	{
+		return rune.getDistance();
+	}
+	public int ProtoType_getCounter()
+	{
+		return counter;
 	}
 }
