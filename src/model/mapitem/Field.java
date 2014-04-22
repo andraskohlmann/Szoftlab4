@@ -26,7 +26,9 @@ public class Field extends Tile {
 	}
 
 	public boolean checkRune(Rune r) {
-		return tower.checkRune(r);
+		if (tower != null)
+			return tower.checkRune(r);
+		return false;
 	}
 
 	public void addFog(Fog f) {
