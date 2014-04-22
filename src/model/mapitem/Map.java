@@ -21,8 +21,8 @@ public class Map {
 	private Road firstRoad;
 	
 	
-	public boolean checkTower(int x, int y) {
-		return tiles[x][y].checkTower();
+	public boolean checkTower(int x, int y, Rune r) {
+		return tiles[x][y].checkTower(r);
 	}
 
 	public void putTower(int x, int y, Tower t) {

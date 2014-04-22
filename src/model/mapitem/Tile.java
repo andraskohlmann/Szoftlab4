@@ -18,7 +18,7 @@ public abstract class Tile {
 		nextRoad.add(next);
 	}
 
-	public boolean checkTower() {
+	public boolean checkTower(Rune r) {
 		return false;
 	}
 

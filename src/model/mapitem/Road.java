@@ -55,10 +55,10 @@ public class Road extends Tile {
 		enemyList.remove(e);
 	}
 
-	public boolean checkRune() {
+	public boolean checkRune(Rune r) {
 		if (!checkSwamp())
 			return false;
-		return swamp.checkRune();
+		return swamp.checkRune(r);
 	}
 
 	public void putSwamp(Swamp s) {

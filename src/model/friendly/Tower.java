@@ -50,7 +50,7 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	}
 
 	@Override
-	public boolean checkRune() {
+	public boolean checkRune(Rune r) {
 		return !isUpgraded;
 	}
 

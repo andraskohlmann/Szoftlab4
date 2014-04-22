@@ -44,7 +44,9 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	}
 
 	@Override
-	public boolean checkRune() {
+	public boolean checkRune(Rune r) {
+		if(!r.availableForSwamp())
+			return false;
 		return !isUpgraded;
 	}
 

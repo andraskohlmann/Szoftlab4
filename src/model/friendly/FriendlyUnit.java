@@ -16,7 +16,7 @@ import model.runes.Rune;
 //
 
 public interface FriendlyUnit extends ActiveUnit {
-	public boolean checkRune();
+	public boolean checkRune(Rune r);
 
 	public void putRune(Rune r);
 
