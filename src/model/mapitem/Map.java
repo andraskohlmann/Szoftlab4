@@ -49,28 +49,11 @@ public class Map {
 	}
 
 	public boolean checkSwamp(int x, int y) {
-		SkeletonUI.enterFunction(this, "checkSwamp", x, y);
-
-		boolean available = false;
-
-		Skeleton_answer = SkeletonUI
-				.stringQuestion(
-						"Is that tile a Field or a Road? you want to put a Swamp on it",
-						"F", "R");
-
-		if (Skeleton_answer.equals("F"))
-			available = field.checkSwamp();
-		else
-			available = road.checkSwamp();
-
-		SkeletonUI.leaveFunction(available);
-		return available;
+		return tiles[x][y].checkSwamp();
 	}
 
 	public void putSwamp(int x, int y, Swamp s) {
-		SkeletonUI.enterFunction(this, "putSwamp", x, y, s);
-		road.putSwamp(s);
-		SkeletonUI.leaveFunction();
+		tiles[x][y].putSwamp(s);
 	}
 
 	public void setConnections(String lines[]) {
