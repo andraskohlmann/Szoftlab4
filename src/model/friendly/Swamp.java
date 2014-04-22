@@ -48,7 +48,8 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public void putRune(Rune r) {
-		// TODO Auto-generated method stub
+		rune = r;
+		isUpgraded = true;
 	}
 
 	@Override
