@@ -1,66 +1,66 @@
 package model;
 
-public final class Common {
+public class Common {
 
 	// Basic Rune values
+	public static final int distance = 2;
 
-	public static int distance = 2;
+	public static final int reloadTime = 10;
 
-	public static int reloadTime = 10;
-
-	public static int dmgDwarf = 10;
-	public static int dmgHobbit = 10;
-	public static int dmgElf = 10;
-	public static int dmgMan = 10;
+	public static final int dmgDwarf = 10;
+	public static final int dmgHobbit = 10;
+	public static final int dmgElf = 10;
+	public static final int dmgMan = 10;
 
 	// Special values
 
-	public static int rangedistance = 6;
+	public static final int rangedistance = 6;
 
-	public static int reloadrunereloadtime = 8;
+	public static final int reloadrunereloadtime = 8;
 
-	public static int specialdmgDwarf = 20;
-	public static int specialdmgHobbit = 20;
-	public static int specialdmgElf = 20;
-	public static int specialdmgMan = 20;
+	public static final int specialdmgDwarf = 20;
+	public static final int specialdmgHobbit = 20;
+	public static final int specialdmgElf = 20;
+	public static final int specialdmgMan = 20;
 
 	// Enemy life
 
-	public static int lifeDwarf = 150;
-	public static int lifeHobbit = 40;
-	public static int lifeElf = 80;
-	public static int lifeMan = 100;
+	public static final int lifeDwarf = 150;
+	public static final int lifeHobbit = 40;
+	public static final int lifeElf = 80;
+	public static final int lifeMan = 100;
 
 	// Enemy tix
 
-	public static int tickDwarf = 100;
-	public static int tickHobbit = 50;
-	public static int tickElf = 30;
-	public static int tickMan = 60;
+	public static final int tickDwarf = 100;
+	public static final int tickHobbit = 50;
+	public static final int tickElf = 30;
+	public static final int tickMan = 60;
 
 	// Swamp values
 
-	public static int swamp_counter = 10;
-	public static int swamp_toadd = 2;
-	public static int swamp_toadd_special = 4;
+	public static final int swamp_counter = 10;
+	public static final int swamp_toadd = 2;
+	public static final int swamp_toadd_special = 4;
 
-	public static int swamp_slowvalue = 2;
+	public static final int swamp_slowvalue = 2;
 
-	public static int swamp_specialslow = 4;
+	public static final int swamp_specialslow = 4;
 
 	// Prices
 
-	public static int start_mTz = 100;
-	public static int kill_mTz = 2;
+	public static final int start_mTz = 100;
+	public static final int kill_mTz = 2;
 
-	public static int tower_mTz = 20;
-	public static int swamp_mTz = 30;
-	public static int rune_mTz = 10;
+	public static final int tower_mTz = 20;
+	public static final int swamp_mTz = 30;
+	public static final int rune_mTz = 10;
 
 	// Global values
 
-	public static int life = 200;
-	public static int fog_timetoleave = 1000;
-	public static int fog_distancereduction = 2;
+	public static final int life = 200;
+	public static final int damagePerUnit = 10;
+	public static final int fog_timetoleave = 1000;
+	public static final int fog_distancereduction = 2;
 
 }

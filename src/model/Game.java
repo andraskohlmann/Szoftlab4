@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.EnemyUnit;
@@ -119,8 +121,12 @@ public class Game {
 
 	public void tick() {
 		ticker.tick();
+		
+		List<EnemyUnit> finished = map.getFinishedUnits();
+		
+		life -= Common.damagePerUnit * finished.size();
 
-		ticker.remove(map.getFinishedUnits());
+		ticker.remove(finished);
 		map.deleteFinishedUnits();
 	}
 
