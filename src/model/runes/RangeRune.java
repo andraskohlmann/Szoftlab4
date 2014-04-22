@@ -9,4 +9,9 @@ public class RangeRune extends Rune {
 		distance = Common.rangedistance;
 	}
 
+	@Override
+	public boolean availableForSwamp() {
+		return false;
+	}
+	
 }

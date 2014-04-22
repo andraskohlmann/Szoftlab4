@@ -8,5 +8,10 @@ public class ReloadRune extends Rune {
 		super();
 		reloadTime = Common.reloadrunereloadtime;
 	}
+	
+	@Override
+	public boolean availableForSwamp() {
+		return false;
+	}
 
 }
