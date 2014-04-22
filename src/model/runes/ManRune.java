@@ -9,4 +9,8 @@ public class ManRune extends Rune {
 		dmgMan = Common.specialdmgMan;
 	}
 	
+	public void modifySlime(Slime s) {
+		s.setNumbers(Common.swamp_slowvalue, Common.swamp_slowvalue,
+				Common.swamp_slowvalue, Common.swamp_specialslow);
+	}
 }

@@ -5,9 +5,9 @@ import model.Common;
 public class Rune {
 
 	protected int distance;
-	
+
 	protected int reloadTime;
-	
+
 	public int dmgDwarf;
 	public int dmgHobbit;
 	public int dmgElf;
@@ -15,9 +15,9 @@ public class Rune {
 
 	public Rune() {
 		distance = Common.distance;
-		
+
 		reloadTime = Common.reloadTime;
-		
+
 		dmgDwarf = Common.dmgDwarf;
 		dmgHobbit = Common.dmgHobbit;
 		dmgElf = Common.dmgElf;
@@ -29,7 +29,8 @@ public class Rune {
 	}
 
 	public void modifySlime(Slime s) {
-		s.setNumbers(this);
+		s.setNumbers(Common.swamp_slowvalue, Common.swamp_slowvalue,
+				Common.swamp_slowvalue, Common.swamp_slowvalue);
 	}
 
 	public int getDistance() {

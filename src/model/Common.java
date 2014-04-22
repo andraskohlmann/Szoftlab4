@@ -44,6 +44,10 @@ public final class Common {
 	public static int swamp_toadd = 2;
 	public static int swamp_toadd_special = 4;
 	
+	public static int swamp_slowvalue = 2;
+	
+	public static int swamp_specialslow = 4; 
+	
 	// Prices
 	
 	public static int start_mTz = 100;
