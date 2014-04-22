@@ -97,11 +97,11 @@ public class ProtoManager {
 					}
 				} else if (codes[0].equals("loadMap")) {
 					if (codes.length != 2)
-						ProtoManager.Problem();
+						print("Map cannot be loaded");
 					else {
 						mapName = codes[1];
 						g.loadMap(codes[1]);
-
+						print("Map loaded");
 					}
 				} else if (codes[0].equals("putTower")) {
 					if (codes.length != 3)
