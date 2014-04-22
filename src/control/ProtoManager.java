@@ -52,7 +52,7 @@ public class ProtoManager {
 				pw.println(printableDoc);
 			} else {
 				try {
-					pw = new PrintWriter(new BufferedWriter(new FileWriter("log.txt", true)));
+					pw = new PrintWriter(new BufferedWriter(new FileWriter("log.txt")));
 					pw.println(printableDoc);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
