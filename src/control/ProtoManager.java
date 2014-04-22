@@ -14,6 +14,7 @@ import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.mapitem.Field;
+import model.mapitem.FinishedRoad;
 import model.mapitem.Map;
 import model.mapitem.Road;
 import model.mapitem.Tile;
@@ -331,12 +332,12 @@ public class ProtoManager {
 						String line = new String();
 						for (int j = 0; j < tiles[i].length; j++) {
 							Class<?> cl = tiles[i][j].getClass();
-							if (cl.getName().equals("Field")) {
+							if (cl.equals(Field.class)) {
 								if (((Field) tiles[i][j]).hasTower())
 									line = line + "T";
 								else
 									line = line + "#";
-							} else if (cl.getName().equals("Road")) {
+							} else if (cl.equals(Road.class)) {
 								if (i == 0)
 									line = line + "-";
 								else {
@@ -345,7 +346,7 @@ public class ProtoManager {
 									else
 										line = line + " ";
 								}
-							} else if (cl.getName().equals("FinishedRoad")) {
+							} else if (cl.equals(FinishedRoad.class)) {
 								line = line + "A";
 							}
 
@@ -367,7 +368,7 @@ public class ProtoManager {
 		for (int i = 0; i < tiles.length; i++) {
 			for (int j = 0; j < tiles[i].length; j++) {
 				Class<?> cl = tiles[i][j].getClass();
-				if (cl.getName().equals("Field")) {
+				if (cl.equals(Field.class)) {
 					if (((Field) tiles[i][j]).hasTower()) {
 						Tower t = ((Field) tiles[i][j]).Prototype_getTower();
 						String line = new String();
