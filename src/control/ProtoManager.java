@@ -101,7 +101,7 @@ public class ProtoManager {
 						print("Map cannot be loaded");
 					else {
 						mapName = codes[1];
-						g.loadMap(codes[1]);
+						g.loadMap(codes[1] + ".map");
 						print("Map loaded");
 					}
 				} else if (codes[0].equals("putTower")) {
