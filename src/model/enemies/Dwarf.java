@@ -2,25 +2,16 @@ package model.enemies;
 
 import model.Common;
 import model.Game;
-import model.mapitem.Road;
 import model.runes.Projectile;
 import model.runes.Slime;
 
 public class Dwarf extends EnemyUnit {
-
-	public Dwarf(Road r, Game g) {
-		roadToNotice = r;
-		gameToNotice = g;
-	}
 
 	public Dwarf(Game g) {
 		gameToNotice = g;
 		health = Common.lifeDwarf;
 		tickDivider = Common.tickDwarf;
 		counter = 0;
-	}
-
-	public Dwarf() {
 	}
 
 	public Dwarf(Dwarf d) {

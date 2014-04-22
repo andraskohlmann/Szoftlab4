@@ -2,25 +2,16 @@ package model.enemies;
 
 import model.Common;
 import model.Game;
-import model.mapitem.Road;
 import model.runes.Projectile;
 import model.runes.Slime;
 
 public class Hobbit extends EnemyUnit {
-
-	public Hobbit(Road r, Game g) {
-		roadToNotice = r;
-		gameToNotice = g;
-	}
 
 	public Hobbit(Game g) {
 		gameToNotice = g;
 		health = Common.lifeDwarf;
 		tickDivider = Common.tickDwarf;
 		counter = 0;
-	}
-
-	public Hobbit() {
 	}
 
 	public Hobbit(Hobbit h) {

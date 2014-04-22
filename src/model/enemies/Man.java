@@ -2,25 +2,16 @@ package model.enemies;
 
 import model.Common;
 import model.Game;
-import model.mapitem.Road;
 import model.runes.Projectile;
 import model.runes.Slime;
 
 public class Man extends EnemyUnit {
-
-	public Man(Road r, Game g) {
-		roadToNotice = r;
-		gameToNotice = g;
-	}
 
 	public Man(Game g) {
 		gameToNotice = g;
 		health = Common.lifeDwarf;
 		tickDivider = Common.tickDwarf;
 		counter = 0;
-	}
-
-	public Man() {
 	}
 
 	public Man(Man m) {
