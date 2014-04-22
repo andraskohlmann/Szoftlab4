@@ -29,7 +29,7 @@ public class Map {
 		tiles[x][y].putTower(t);
 	}
 
-	public boolean checkRune(int x, int y) {
+	public boolean checkRune(int x, int y, Rune rune) {
 		return tiles[x][y].checkRune();
 	}
 

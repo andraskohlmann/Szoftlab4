@@ -53,28 +53,30 @@ public class Game {
 	}
 
 	public boolean putRune(int x, int y, RuneType runeType) {
-		if (map.checkRune(x, y)) {
-			Rune rune;
-			switch (runeType) {
-			case Dwarf:
-				rune = new DwarfRune();
-				break;
-			case Elf:
-				rune = new ElfRune();
-				break;
-			case Hobbit:
-				rune = new HobbitRune();
-				break;
-			case Man:
-				rune = new ManRune();
-				break;
-			case Range:
-				rune = new RangeRune();
-				break;
-			default:
-				rune = new ReloadRune();
-				break;
-			}
+		Rune rune;
+		
+		switch (runeType) {
+		case Dwarf:
+			rune = new DwarfRune();
+			break;
+		case Elf:
+			rune = new ElfRune();
+			break;
+		case Hobbit:
+			rune = new HobbitRune();
+			break;
+		case Man:
+			rune = new ManRune();
+			break;
+		case Range:
+			rune = new RangeRune();
+			break;
+		default:
+			rune = new ReloadRune();
+			break;
+		}
+		
+		if (map.checkRune(x, y, rune)) {
 			map.putRune(x, y, rune);
 			return true;
 		}
