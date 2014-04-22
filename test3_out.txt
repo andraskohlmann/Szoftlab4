@@ -1,0 +1,69 @@
+Output to file
+Map loaded
+Swamp put to 1 1
+Unit added
+Game ticked 120 times
+Unit1 1 1 Dwarf 150 16
+Game ticked 500 times
+Rune put on 1 1
+Unit added
+Game ticked 120 times
+Unit2 1 1 Dwarf 150 12
+Game ticked 500 times
+Game cleared
+Map loaded
+Swamp put to 1 1
+Unit added
+Game ticked 50 times
+Unit3 1 1 Elf 80 16
+Game ticked 200 times
+Rune put on 1 1
+Unit added
+Game ticked 50 times
+Unit4 1 1 Elf 80 12
+Game ticked 200 times
+Game cleared
+Map loaded
+Swamp put to 1 1
+Unit added
+Game ticked 80 times
+Unit5 1 1 Man 100 16
+Game ticked 300 times
+Rune put on 1 1
+Unit added
+Game ticked 80 times
+Unit6 1 1 Man 100 12
+Game ticked 300 times
+Game cleared
+Map loaded
+Swamp put to 1 1
+Unit added
+Game ticked 70 times
+Unit7 1 1 Hobbit 40 16
+Game ticked 400 times
+Rune put on 1 1
+Unit added
+Game ticked 70 times
+Unit8 1 1 Man 100 8
+Game ticked 400 times
+Game cleared
+Map loaded
+Tower created on 1 0
+Rune put on 1 0
+Unit added
+Unit added
+Unit added
+Unit added
+Game ticked 110 times
+Unit11 2 1 Man 90 50
+Unit12 2 2 Hobbit 20 10
+Game cleared
+Map loaded
+Tower created on 1 0
+Random mode fog: on
+Unit added
+Game ticked 60 times
+Rune put on 1 0
+Unit added
+Game ticked 60 times
+Unit14 2 2 Elf 20 0

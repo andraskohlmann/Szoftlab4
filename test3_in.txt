@@ -1,0 +1,71 @@
+switchOutput file
+loadMap 1a
+putSwamp 1 1
+putUnit dwarf
+tick 120
+listUnits
+tick 500
+putRune 1 1 dwarfRune
+putUnit dwarf
+tick 120
+listUnits
+tick 500
+clear
+loadMap 1a
+putSwamp 1 1
+putUnit elf
+tick 50
+listUnits
+tick 200
+putRune 1 1 elfRune
+putUnit elf
+tick 50
+listUnits
+tick 200
+clear
+loadMap 1a
+putSwamp 1 1
+putUnit man
+tick 80
+listUnits
+tick 300
+putRune 1 1 manRune
+putUnit man
+tick 80
+listUnits
+tick 300
+clear
+loadMap 1a
+putSwamp 1 1
+putUnit hobbit
+tick 70
+listUnits
+tick 400
+putRune 1 1 hobbitRune
+putUnit man
+tick 70
+listUnits
+tick 400
+clear
+loadMap 3b
+putTower 1 0
+putRune 1 0 dwarfRune
+putUnit dwarf
+putUnit elf
+putUnit man
+putUnit hobbit
+tick 110
+listUnits
+clear
+loadMap 3b
+putTower 1 0
+turnRndOn fog
+putFog 1 0
+putUnit elf
+tick 60
+litUnits
+putRune 1 0 rangeRune
+putUnit elf
+tick 60
+listUnits
+exit

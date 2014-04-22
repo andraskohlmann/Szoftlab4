@@ -1,0 +1,12 @@
+switchOutput file
+loadMap 2a
+putUnit dwarf
+putUnit elf
+putUnit hobbit
+putUnit man
+tick 140
+listUnits
+tick 15
+gameInfo
+saveGame
+exit
