@@ -16,7 +16,6 @@ import control.ProtoManager;
 
 public class Map {
 
-	private Road road;
 	private Tile tiles[][] = null;
 	private FinishedRoad finishedRoad;
 
@@ -167,10 +166,6 @@ public class Map {
 
 	public void deleteFinishedUnits() {
 		finishedRoad.deleteFinishedUnits();
-	}
-
-	public void addUnit(EnemyUnit e) {
-		road.addUnit(e);
 	}
 
 	public Map(String filename) {
