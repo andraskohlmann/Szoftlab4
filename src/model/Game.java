@@ -72,8 +72,7 @@ public class Game {
 
 
 	public void loadMap(String filename) {
-		// TODO Auto-generated method stub
-
+		map = new Map (filename);
 	}
 
 	public void addUnit(EnemyUnit enemyUnit) {
