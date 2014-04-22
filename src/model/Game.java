@@ -1,6 +1,7 @@
 package model;
 
 import model.enemies.EnemyUnit;
+import model.friendly.Tower;
 import model.mapitem.Fog;
 import model.mapitem.Map;
 
@@ -25,7 +26,9 @@ public class Game {
 	}
 
 	public void putTower(int x, int y) {
-
+		Tower tower = new Tower();
+		ticker.addUnit(tower);
+		map.putTower(x, y, tower);
 	}
 
 	public void putRune(int x, int y, String runeType) {
