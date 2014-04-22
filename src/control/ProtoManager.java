@@ -135,7 +135,9 @@ public class ProtoManager {
 				    else
 				    {
 				  
-				    	g.putRune(Integer.parseInt(codes[1]),Integer.parseInt(codes[2]),codes[3]);
+				    	RuneType type = RuneType.Dwarf;
+				    	
+				    	g.putRune(Integer.parseInt(codes[1]),Integer.parseInt(codes[2]),type);
 				    	
 				    }
 				}

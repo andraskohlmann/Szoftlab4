@@ -6,6 +6,7 @@ import model.friendly.Tower;
 import model.mapitem.Fog;
 import model.mapitem.Map;
 import model.runes.Rune;
+import control.RuneType;
 
 public class Game {
 
@@ -34,7 +35,7 @@ public class Game {
 		map.putTower(x, y, tower);
 	}
 
-	public void putRune(int x, int y, String runeType) {
+	public void putRune(int x, int y, RuneType runeType) {
 		map.checkRune(x, y);
 		Rune rune = new Rune();
 		map.putRune(x, y, rune);
