@@ -117,7 +117,7 @@ public class Game {
 		enemyUnit.setGame(this);
 	}
 
-	public void addUnit(EnemyType type) {
+	public void addUnit(EnemyType type,String name) {
 		EnemyUnit newEnemy;
 		
 		switch (type) {
@@ -134,7 +134,7 @@ public class Game {
 			newEnemy = new Man(this);
 			break;
 		}
-		
+		newEnemy.ProtoType_setName(name);
 		map.getFirstRoad().addUnit(newEnemy);
 	}
 	

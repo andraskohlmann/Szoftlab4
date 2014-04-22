@@ -155,8 +155,9 @@ public class ProtoManager {
 						} else {
 							type = EnemyType.man;
 						} 
-
-						g.addUnit(type);
+						unitCnt++;
+						 String name = new String();
+						g.addUnit(type,name+Integer.toString(unitCnt));
 
 					}
 				} 
