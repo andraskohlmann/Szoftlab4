@@ -1,6 +1,10 @@
 package model;
 
+import model.enemies.Dwarf;
+import model.enemies.Elf;
 import model.enemies.EnemyUnit;
+import model.enemies.Hobbit;
+import model.enemies.Man;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.mapitem.Fog;
@@ -107,8 +111,24 @@ public class Game {
 	}
 
 	public void addUnit(EnemyType type) {
-		// TODO Auto-generated method stub
+		EnemyUnit newEnemy;
 		
+		switch (type) {
+		case dwarf:
+			newEnemy = new Dwarf(this);
+			break;
+		case elf:
+			newEnemy = new Elf(this);
+			break;
+		case hobbit:
+			newEnemy = new Hobbit(this);
+			break;
+		default:
+			newEnemy = new Man(this);
+			break;
+		}
+		
+		map.getFirstRoad().addUnit(newEnemy);
 	}
 	
 }
