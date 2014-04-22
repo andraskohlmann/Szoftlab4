@@ -329,29 +329,29 @@ public class ProtoManager {
 					Map m = g.getMap();
 					Tile[][] tiles = m.Prototype_getTiles();
 					for (int i = 0; i < tiles.length; i++) {
-						String line = new String();
+						StringBuilder line = new StringBuilder();
 						for (int j = 0; j < tiles[i].length; j++) {
 							Class<?> cl = tiles[i][j].getClass();
 							if (cl.equals(Field.class)) {
 								if (((Field) tiles[i][j]).hasTower())
-									line = line + "T";
+									line.append("T");
 								else
-									line = line + "#";
+									line.append("#");
 							} else if (cl.equals(Road.class)) {
-								if (i == 0)
-									line = line + "-";
+								if (tiles[i][j].equals(m.getFirstRoad()))
+									line.append("-");
 								else {
 									if (((Road) tiles[i][j]).hasSwamp())
-										line = line + "S";
+										line.append("S");
 									else
-										line = line + " ";
+										line.append(" ");
 								}
 							} else if (cl.equals(FinishedRoad.class)) {
-								line = line + "A";
+								line.append("A");
 							}
 
 						}
-						print(line);
+						print(line.toString());
 					}
 				} else if (codes[0].equals("exit")) {
 					break;
@@ -399,7 +399,7 @@ public class ProtoManager {
 		for (int i = 0; i < tiles.length; i++) {
 			for (int j = 0; j < tiles[i].length; j++) {
 				Class<?> cl = tiles[i][j].getClass();
-				if (cl.getName().equals("Road")) {
+				if (cl.equals(Road.class)) {
 					if (((Road) tiles[i][j]).hasSwamp()) {
 						Swamp s = ((Road) tiles[i][j]).Prototype_getSwamp();
 						String line = new String();
@@ -422,7 +422,7 @@ public class ProtoManager {
 		for (int i = 0; i < tiles.length; i++) {
 			for (int j = 0; j < tiles[i].length; j++) {
 				Class<?> cl = tiles[i][j].getClass();
-				if (cl.getName().equals("Road")) {
+				if (cl.equals(Road.class)) {
 					List<EnemyUnit> enemyList = ((Road) tiles[i][j])
 							.ProtoType_getList();
 					for (int p = 0; p < enemyList.size(); p++) {

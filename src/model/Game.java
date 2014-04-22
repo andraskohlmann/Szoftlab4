@@ -26,6 +26,10 @@ public class Game {
 
 	private int life = Common.life;
 	private int magitzka = Common.start_mTz;
+	
+	public Game() {
+		ticker = new Ticker();
+	}
 
 	public int getLife() {
 		return life;
@@ -147,7 +151,9 @@ public class Game {
 			break;
 		}
 		newEnemy.ProtoType_setName(name);
+		
 		map.getFirstRoad().addUnit(newEnemy);
+		ticker.addUnit(newEnemy);
 	}
 	
 }
