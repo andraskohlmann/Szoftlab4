@@ -197,9 +197,20 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("saveGame"))
 				{
-					listTowers();
-					listSwamps();
-					listUnits();
+					if(codes.length!= 2)
+						ProtoManager.Problem();
+				    else
+				    {
+				    	try {
+							pw = new PrintWriter(new File(codes[1]));
+							listTowers();
+					    	listSwamps();
+					    	listUnits();
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+				    }
 				}
 				else if(codes[0].equals("tick"))
 				{
