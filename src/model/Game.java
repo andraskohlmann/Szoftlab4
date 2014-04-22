@@ -1,9 +1,11 @@
 package model;
 
 import model.enemies.EnemyUnit;
+import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.mapitem.Fog;
 import model.mapitem.Map;
+import model.runes.Rune;
 
 public class Game {
 
@@ -32,11 +34,14 @@ public class Game {
 	}
 
 	public void putRune(int x, int y, String runeType) {
-
+		Rune rune = new Rune();
+		map.putRune(x, y, rune);
 	}
 
 	public void putSwamp(int x, int y) {
-
+		Swamp swamp = new Swamp();
+		ticker.addUnit(swamp);
+		map.putSwamp(x, y, swamp);
 	}
 
 	public void putFog(int x, int y) {

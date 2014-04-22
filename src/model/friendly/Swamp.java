@@ -19,6 +19,8 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	private boolean isUpgraded;
 	
 	public Swamp() {
+		tickDivider = 10;
+		counter = 0;
 		isUpgraded = false;
 	}
 
