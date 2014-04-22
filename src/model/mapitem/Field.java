@@ -46,11 +46,14 @@ public class Field extends Tile {
 		super.removeFog(f);
 	}
 
-	public boolean hasTower() {
-		if (tower != null)
-			return true;
-		else
-			return false;
-
+	public boolean hasTower()
+	{
+		if (tower!= null) return true;
+		else return false;
+		
+	}
+	public Tower Prototype_getTower()
+	{
+		return tower;
 	}
 }
