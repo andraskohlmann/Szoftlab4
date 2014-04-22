@@ -78,12 +78,17 @@ public class Game {
 		map.putRune(x, y, rune);
 	}
 
-	public void putSwamp(int x, int y,String name) {
-		map.checkSwamp(x, y);
-		Swamp swamp = new Swamp();
-		swamp.ProtoType_setName(name);
-		ticker.addUnit(swamp);
-		map.putSwamp(x, y, swamp);
+	public boolean putSwamp(int x, int y,String name) {
+		if (map.checkSwamp(x, y)) {
+			Swamp swamp = new Swamp();
+			swamp.ProtoType_setName(name);
+			ticker.addUnit(swamp);
+			map.putSwamp(x, y, swamp);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public void putFog(int x, int y) {
