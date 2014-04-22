@@ -33,7 +33,7 @@ public class Road extends Tile {
 	public void addTower(int distance, Tower t) {
 		if (!towersToNotify.contains(t)) {
 			towersToNotify.add(t);
-			super.addTower(distance - 1, t);
+			super.addTower(distance, t);
 		}
 	}
 
