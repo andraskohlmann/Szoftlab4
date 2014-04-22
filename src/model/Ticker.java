@@ -15,10 +15,10 @@ public class Ticker {
 		for (ActiveUnit unit : unitList) {
 			unit.tick();
 		}
-		
+
 		unitList.removeAll(removable);
 		removable.clear();
-		
+
 		unitList.addAll(toAdd);
 		toAdd.clear();
 	}

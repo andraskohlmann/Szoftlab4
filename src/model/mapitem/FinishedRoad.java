@@ -21,5 +21,5 @@ public class FinishedRoad extends Road {
 	public void deleteFinishedUnits() {
 		unitList.clear();
 	}
-	
+
 }

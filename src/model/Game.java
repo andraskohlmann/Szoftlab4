@@ -29,7 +29,7 @@ public class Game {
 
 	private int life = Common.life;
 	private int magitzka = Common.start_mTz;
-	
+
 	public Game() {
 		ticker = new Ticker();
 	}
@@ -55,15 +55,14 @@ public class Game {
 			ticker.addUnit(tower);
 			map.putTower(x, y, tower);
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
 
 	public boolean putRune(int x, int y, RuneType runeType) {
 		Rune rune;
-		
+
 		switch (runeType) {
 		case Dwarf:
 			rune = new DwarfRune();
@@ -84,17 +83,16 @@ public class Game {
 			rune = new ReloadRune();
 			break;
 		}
-		
+
 		if (map.checkRune(x, y, rune)) {
 			map.putRune(x, y, rune);
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
 
-	public boolean putSwamp(int x, int y,String name) {
+	public boolean putSwamp(int x, int y, String name) {
 		if (map.checkSwamp(x, y)) {
 			Swamp swamp = new Swamp();
 			swamp.ProtoType_setName(name);
@@ -103,8 +101,7 @@ public class Game {
 			ticker.addUnit(swamp);
 			map.putSwamp(x, y, swamp);
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -121,9 +118,9 @@ public class Game {
 
 	public void tick() {
 		ticker.tick();
-		
+
 		List<EnemyUnit> finished = map.getFinishedUnits();
-		
+
 		life -= Common.damagePerUnit * finished.size();
 
 		ticker.remove(finished);
@@ -145,7 +142,7 @@ public class Game {
 		enemyUnit.ProtoType_setName(ProtoManager.getUnitName());
 	}
 
-	public void addUnit(EnemyType type,String name) {
+	public void addUnit(EnemyType type, String name) {
 		EnemyUnit newEnemy;
 		switch (type) {
 		case dwarf:
@@ -162,9 +159,9 @@ public class Game {
 			break;
 		}
 		newEnemy.ProtoType_setName(name);
-		
+
 		map.getFirstRoad().addUnit(newEnemy);
 		ticker.addUnit(newEnemy);
 	}
-	
+
 }

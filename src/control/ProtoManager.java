@@ -2,8 +2,6 @@ package control;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -34,8 +32,7 @@ public class ProtoManager {
 	public static int unitCnt;
 	public static int swampCnt;
 	public static int towerCnt;
-	
-	
+
 	public static String mapName = new String();
 
 	private static Game g = new Game();
@@ -52,14 +49,15 @@ public class ProtoManager {
 				pw.println(printableDoc);
 			} else {
 				try {
-					pw = new PrintWriter(new BufferedWriter(new FileWriter("log.txt")));
+					pw = new PrintWriter(new BufferedWriter(new FileWriter(
+							"log.txt")));
 					pw.println(printableDoc);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			}
 		}
-	 }	
 	}
 
 	public static void Problem() {
@@ -108,15 +106,17 @@ public class ProtoManager {
 					if (codes.length != 3)
 						ProtoManager.Problem();
 					else {
-						  towerCnt++;
-						  String name = new String("Tower");
-						 
+						towerCnt++;
+						String name = new String("Tower");
+
 						if (g.putTower(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]), name + Integer.toString(towerCnt))) {
-							print("Tower created on " + codes[1] + " " + codes[2]);
-						}
-						else  {
-							print("Tower cannot be created on " + codes[1] + " " + codes[2]);
+								Integer.parseInt(codes[2]),
+								name + Integer.toString(towerCnt))) {
+							print("Tower created on " + codes[1] + " "
+									+ codes[2]);
+						} else {
+							print("Tower cannot be created on " + codes[1]
+									+ " " + codes[2]);
 						}
 
 					}
@@ -145,44 +145,44 @@ public class ProtoManager {
 								Integer.parseInt(codes[2]), type))
 							print("Rune put on " + codes[1] + " " + codes[2]);
 						else
-							print("Rune cannot be put on " + codes[1] + " " + codes[2]);
-							
+							print("Rune cannot be put on " + codes[1] + " "
+									+ codes[2]);
 
 					}
-				}else if (codes[0].equals("putUnit")) {
+				} else if (codes[0].equals("putUnit")) {
 					if (codes.length != 2)
 						ProtoManager.Problem();
 					else {
 
 						EnemyType type;
-                         String name = new String("Unit");
+						String name = new String("Unit");
 						if (codes[1].equals("dwarf")) {
 							type = EnemyType.dwarf;
-							
+
 						} else if (codes[1].equals("elf")) {
-							
+
 							type = EnemyType.elf;
 						} else if (codes[1].equals("hobbit")) {
-							
+
 							type = EnemyType.hobbit;
 						} else {
-						
+
 							type = EnemyType.man;
-						} 
+						}
 						unitCnt++;
-						g.addUnit(type,name+Integer.toString(unitCnt));
-						
+						g.addUnit(type, name + Integer.toString(unitCnt));
+
 						print("Unit added");
 					}
-				} 
-				else if (codes[0].equals("putSwamp")) {
+				} else if (codes[0].equals("putSwamp")) {
 					if (codes.length != 3)
 						ProtoManager.Problem();
 					else {
 						swampCnt++;
-						 String name = new String("Swamp");
+						String name = new String("Swamp");
 						if (g.putSwamp(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]),name+Integer.toString(swampCnt)))
+								Integer.parseInt(codes[2]),
+								name + Integer.toString(swampCnt)))
 							print("Swamp put to " + codes[1] + " " + codes[2]);
 
 					}
@@ -232,21 +232,21 @@ public class ProtoManager {
 					if (codes.length != 1)
 						ProtoManager.Problem();
 					else {
-						
-							listTowers();
-							listSwamps();
-							listUnits();
-						
+
+						listTowers();
+						listSwamps();
+						listUnits();
+
 					}
 				} else if (codes[0].equals("tick")) {
 					if (codes.length != 2)
 						ProtoManager.Problem();
 					else {
-	                         int i = 0;					
+						int i = 0;
 						for (i = 0; i < Integer.parseInt(codes[1]); i++) {
 							g.tick();
 						}
-                        ticked = ticked + i;
+						ticked = ticked + i;
 						print("Game ticked " + codes[1] + " times");
 
 					}
@@ -365,8 +365,9 @@ public class ProtoManager {
 						print(line.toString());
 					}
 				} else if (codes[0].equals("exit")) {
-					if(pw!= null) pw.close();
-					
+					if (pw != null)
+						pw.close();
+
 					break;
 				}
 			}
@@ -386,8 +387,10 @@ public class ProtoManager {
 						Tower t = ((Field) tiles[i][j]).Prototype_getTower();
 						String line = new String();
 						String fogState = new String();
-						if(tiles[i][j].hasFog()) fogState = "yes";
-						else fogState = "no";
+						if (tiles[i][j].hasFog())
+							fogState = "yes";
+						else
+							fogState = "no";
 						line = t.ProtoType_getName()
 								+ " "
 								+ Integer.toString(i)
@@ -399,7 +402,7 @@ public class ProtoManager {
 								+ Integer.toString(t
 										.ProtoType_getRuneDistance()) + " "
 								+ Integer.toString(t.ProtoType_getCounter())
-								+ " "+fogState;
+								+ " " + fogState;
 						print(line);
 					}
 				}
@@ -447,8 +450,8 @@ public class ProtoManager {
 						String line = new String();
 						line = e.ProtoType_getName() + " "
 								+ Integer.toString(i) + " "
-								+ Integer.toString(j) + " " + cls.getSimpleName()
-								+ " "
+								+ Integer.toString(j) + " "
+								+ cls.getSimpleName() + " "
 								+ Integer.toString(e.ProtoType_getHealth())
 								+ " "
 								+ Integer.toString(e.ProtoType_getCounter());
@@ -474,9 +477,8 @@ public class ProtoManager {
 		else
 			return false;
 	}
-	
-	public static String getUnitName()
-	{
+
+	public static String getUnitName() {
 		unitCnt++;
 		return "Unit" + Integer.toString(unitCnt);
 	}

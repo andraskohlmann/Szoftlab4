@@ -45,7 +45,7 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public boolean checkRune(Rune r) {
-		if(!r.availableForSwamp())
+		if (!r.availableForSwamp())
 			return false;
 		return !isUpgraded;
 	}
@@ -55,11 +55,12 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		rune = r;
 		isUpgraded = true;
 	}
+
 	public void putFirstRune(Rune r) {
 		rune = r;
 		isUpgraded = false;
 	}
-	
+
 	@Override
 	public void addUnit(EnemyUnit enemyUnit) {
 		enemyUnits.add(enemyUnit);

@@ -45,7 +45,7 @@ public class Rune {
 	public int getDistance() {
 		return distance;
 	}
-	
+
 	public boolean availableForSwamp() {
 		return true;
 	}

@@ -9,7 +9,7 @@ import model.runes.Slime;
 public abstract class EnemyUnit implements ActiveUnit {
 	protected Road roadToNotice;
 	protected Game gameToNotice;
-    protected String n = new String();
+	protected String n = new String();
 	protected int health;
 	protected int tickDivider;
 	protected int counter;
@@ -46,7 +46,8 @@ public abstract class EnemyUnit implements ActiveUnit {
 	public int ProtoType_getCounter() {
 		return counter;
 	}
-	public void ProtoType_setName(String name){
-		n = name; 
+
+	public void ProtoType_setName(String name) {
+		n = name;
 	}
 }

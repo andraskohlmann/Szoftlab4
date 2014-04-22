@@ -13,5 +13,5 @@ public class RangeRune extends Rune {
 	public boolean availableForSwamp() {
 		return false;
 	}
-	
+
 }

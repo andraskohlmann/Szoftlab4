@@ -12,15 +12,13 @@ import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
-import control.ProtoManager;
 
 public class Map {
 
 	private Tile tiles[][] = null;
 	private FinishedRoad finishedRoad;
 	private Road firstRoad;
-	
-	
+
 	public boolean checkTower(int x, int y) {
 		return tiles[x][y].checkTower();
 	}
@@ -256,8 +254,7 @@ public class Map {
 				else if (lines[i].charAt(j) == '-') {
 					tiles[i][j] = new Road();
 					firstRoad = (Road) tiles[i][j];
-				}
-				else if (lines[i].charAt(j) == ' ')
+				} else if (lines[i].charAt(j) == ' ')
 					tiles[i][j] = new Road();
 				else if (lines[i].charAt(j) == '.')
 					tiles[i][j] = new Road();
@@ -283,7 +280,7 @@ public class Map {
 		}
 		setConnections(lines);
 	}
-	
+
 	public Road getFirstRoad() {
 		return firstRoad;
 	}
