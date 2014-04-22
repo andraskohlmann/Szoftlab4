@@ -12,6 +12,7 @@ import model.runes.ManRune;
 import model.runes.RangeRune;
 import model.runes.ReloadRune;
 import model.runes.Rune;
+import control.EnemyType;
 import control.RuneType;
 
 public class Game {
@@ -103,4 +104,10 @@ public class Game {
 		ticker.addUnit(enemyUnit);
 		enemyUnit.setGame(this);
 	}
+
+	public void addUnit(int parseInt, int parseInt2, EnemyType type) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

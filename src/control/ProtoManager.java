@@ -131,7 +131,29 @@ public class ProtoManager {
 								Integer.parseInt(codes[2]), type);
 
 					}
-				} else if (codes[0].equals("putSwamp")) {
+				}else if (codes[0].equals("putUnit")) {
+					if (codes.length != 4)
+						ProtoManager.Problem();
+					else {
+
+						EnemyType type;
+
+						if (codes[3].equals("dwarf")) {
+							type = EnemyType.dwarf;
+						} else if (codes[3].equals("elf")) {
+							type = EnemyType.elf;
+						} else if (codes[3].equals("hobbit")) {
+							type = EnemyType.hobbit;
+						} else {
+							type = EnemyType.man;
+						} 
+
+						g.addUnit(Integer.parseInt(codes[1]),
+								Integer.parseInt(codes[2]), type);
+
+					}
+				} 
+				else if (codes[0].equals("putSwamp")) {
 					if (codes.length != 3)
 						ProtoManager.Problem();
 					else {
