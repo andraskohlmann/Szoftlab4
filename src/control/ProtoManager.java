@@ -110,8 +110,13 @@ public class ProtoManager {
 						  towerCnt++;
 						 String name = new String();
 						 
-						g.putTower(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]),name+Integer.toString(towerCnt));
+						if (g.putTower(Integer.parseInt(codes[1]),
+								Integer.parseInt(codes[2]), name + Integer.toString(towerCnt))) {
+							print("Tower created on " + codes[1] + " " + codes[2]);
+						}
+						else  {
+							print("Tower cannot be created on " + codes[1] + " " + codes[2]);
+						}
 
 					}
 				} else if (codes[0].equals("putRune")) {
