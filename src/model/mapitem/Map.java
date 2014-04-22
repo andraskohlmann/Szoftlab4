@@ -294,7 +294,6 @@ public class Map {
 	}
 
 	public void putFog(int x, int y, Fog fog) {
-		// TODO Auto-generated method stub
-		
+		tiles[x][y].addFog(fog);
 	}
 }
