@@ -1,0 +1,17 @@
+switchOutput file
+loadMap 3a
+putUnit dwarf
+putUnit dwarf
+putTower 2 2
+putTower 1 4
+putTower 5 3
+gameInfo
+tick 200
+listUnits
+tick 60
+listUnits
+gameInfo
+turnRndOn splitting
+tick 10
+listUnits
+exit
