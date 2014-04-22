@@ -257,7 +257,14 @@ public class ProtoManager {
 				} else if (codes[0].equals("listSwamps")) {
 					listSwamps();
 				} else if (codes[0].equals("clear")) {
+					randomSplitting = RandomStates.off;
+					randomRouting = RandomStates.off;
+					randomFog = RandomStates.off;
+					ticked = 0;
 
+					unitCnt = 0;
+					swampCnt = 0;
+					towerCnt = 0;
 					g = new Game();
 					print("Game cleared");
 
@@ -359,6 +366,7 @@ public class ProtoManager {
 					}
 				} else if (codes[0].equals("exit")) {
 					if(pw!= null) pw.close();
+					
 					break;
 				}
 			}
