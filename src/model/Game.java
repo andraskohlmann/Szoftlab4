@@ -28,17 +28,20 @@ public class Game {
 	}
 
 	public void putTower(int x, int y) {
+		map.checkTower(x, y);
 		Tower tower = new Tower();
 		ticker.addUnit(tower);
 		map.putTower(x, y, tower);
 	}
 
 	public void putRune(int x, int y, String runeType) {
+		map.checkRune(x, y);
 		Rune rune = new Rune();
 		map.putRune(x, y, rune);
 	}
 
 	public void putSwamp(int x, int y) {
+		map.checkSwamp(x, y);
 		Swamp swamp = new Swamp();
 		ticker.addUnit(swamp);
 		map.putSwamp(x, y, swamp);
