@@ -39,9 +39,10 @@ public class Game {
 		return map;
 	}
 
-	public void putTower(int x, int y) {
+	public void putTower(int x, int y,String name) {
 		map.checkTower(x, y);
 		Tower tower = new Tower();
+		tower.ProtoType_setName(name);
 		ticker.addUnit(tower);
 		map.putTower(x, y, tower);
 	}
@@ -72,9 +73,10 @@ public class Game {
 		map.putRune(x, y, rune);
 	}
 
-	public void putSwamp(int x, int y) {
+	public void putSwamp(int x, int y,String name) {
 		map.checkSwamp(x, y);
 		Swamp swamp = new Swamp();
+		swamp.ProtoType_setName(name);
 		ticker.addUnit(swamp);
 		map.putSwamp(x, y, swamp);
 	}

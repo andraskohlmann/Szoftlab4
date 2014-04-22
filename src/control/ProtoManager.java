@@ -107,8 +107,11 @@ public class ProtoManager {
 					if (codes.length != 3)
 						ProtoManager.Problem();
 					else {
+						  towerCnt++;
+						 String name = new String();
+						 
 						g.putTower(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]));
+								Integer.parseInt(codes[2]),name+Integer.toString(towerCnt));
 
 					}
 				} else if (codes[0].equals("putRune")) {
@@ -161,9 +164,10 @@ public class ProtoManager {
 					if (codes.length != 3)
 						ProtoManager.Problem();
 					else {
-
+						swampCnt++;
+						 String name = new String();
 						g.putSwamp(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]));
+								Integer.parseInt(codes[2]),name+Integer.toString(swampCnt));
 
 					}
 
