@@ -52,30 +52,35 @@ public class Game {
 		}
 	}
 
-	public void putRune(int x, int y, RuneType runeType) {
-		map.checkRune(x, y);
-		Rune rune;
-		switch (runeType) {
-		case Dwarf:
-			rune = new DwarfRune();
-			break;
-		case Elf:
-			rune = new ElfRune();
-			break;
-		case Hobbit:
-			rune = new HobbitRune();
-			break;
-		case Man:
-			rune = new ManRune();
-			break;
-		case Range:
-			rune = new RangeRune();
-			break;
-		default:
-			rune = new ReloadRune();
-			break;
+	public boolean putRune(int x, int y, RuneType runeType) {
+		if (map.checkRune(x, y)) {
+			Rune rune;
+			switch (runeType) {
+			case Dwarf:
+				rune = new DwarfRune();
+				break;
+			case Elf:
+				rune = new ElfRune();
+				break;
+			case Hobbit:
+				rune = new HobbitRune();
+				break;
+			case Man:
+				rune = new ManRune();
+				break;
+			case Range:
+				rune = new RangeRune();
+				break;
+			default:
+				rune = new ReloadRune();
+				break;
+			}
+			map.putRune(x, y, rune);
+			return true;
 		}
-		map.putRune(x, y, rune);
+		else {
+			return false;
+		}
 	}
 
 	public boolean putSwamp(int x, int y,String name) {
