@@ -16,7 +16,6 @@ import control.ProtoManager;
 
 public class Map {
 
-	private Field field;
 	private Road road;
 	private Tile tiles[][] = null;
 	private FinishedRoad finishedRoad;
