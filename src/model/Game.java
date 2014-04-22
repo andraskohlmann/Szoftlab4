@@ -17,6 +17,7 @@ import model.runes.RangeRune;
 import model.runes.ReloadRune;
 import model.runes.Rune;
 import control.EnemyType;
+import control.ProtoManager;
 import control.RuneType;
 
 public class Game {
@@ -135,6 +136,7 @@ public class Game {
 	public void addUnit(EnemyUnit enemyUnit) {
 		ticker.concurrentAddUnit(enemyUnit);
 		enemyUnit.setGame(this);
+		enemyUnit.ProtoType_setName(ProtoManager.getUnitName());
 	}
 
 	public void addUnit(EnemyType type,String name) {

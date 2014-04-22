@@ -475,4 +475,9 @@ public class ProtoManager {
 			return false;
 	}
 
+	public static String getUnitName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
