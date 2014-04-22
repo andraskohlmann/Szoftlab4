@@ -18,7 +18,9 @@ public class Map {
 
 	private Tile tiles[][] = null;
 	private FinishedRoad finishedRoad;
-
+	private Road firstRoad;
+	
+	
 	public boolean checkTower(int x, int y) {
 		return tiles[x][y].checkTower();
 	}
@@ -252,8 +254,10 @@ public class Map {
 			for (int j = 0; j < numberOfColumns; j++) {
 				if (lines[i].charAt(j) == '#')
 					tiles[i][j] = new Field();
-				else if (lines[i].charAt(j) == '-')
+				else if (lines[i].charAt(j) == '-') {
 					tiles[i][j] = new Road();
+					firstRoad = (Road) tiles[i][j];
+				}
 				else if (lines[i].charAt(j) == ' ')
 					tiles[i][j] = new Road();
 				else if (lines[i].charAt(j) == '.')
@@ -279,6 +283,10 @@ public class Map {
 			}
 		}
 		setConnections(lines);
+	}
+	
+	public Road getFirstRoad() {
+		return firstRoad;
 	}
 
 	public Tile[][] Prototype_getTiles() {
