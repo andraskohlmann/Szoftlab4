@@ -11,7 +11,7 @@ public abstract class EnemyUnit implements ActiveUnit {
 	protected Game gameToNotice;
 	
 	protected int health;
-	
+	protected String name;
 	protected int tickDivider;
 	protected int counter;
 
@@ -34,5 +34,18 @@ public abstract class EnemyUnit implements ActiveUnit {
 			
 			roadToNotice.stepMe(this);
 		}
+	}
+	public int ProtoType_getHealth()
+	{
+		return health;
+	}
+	public String ProtoType_getName()
+	{
+		return name;
+	}
+	
+	public int ProtoType_getCounter()
+	{
+		return counter;
 	}
 }
