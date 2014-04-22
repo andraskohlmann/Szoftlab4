@@ -112,4 +112,13 @@ public class Road extends Tile {
 		else return false;
 		
 	}
+
+	public Swamp Prototype_getSwamp()
+	{
+		return swamp;
+	}
+	public List<EnemyUnit> ProtoType_getList()
+	{
+		return enemyList;
+	}
 }
