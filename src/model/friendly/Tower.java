@@ -85,6 +85,10 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	public String ProtoType_getName() {
 		return name;
 	}
+	
+	public void ProtoType_setName(String n) {
+		name = n;
+	}
 
 	public String ProtoType_getRune() {
 		Class<?> cl = rune.getClass();
