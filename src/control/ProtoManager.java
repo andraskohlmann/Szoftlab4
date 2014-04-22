@@ -1,8 +1,10 @@
 package control;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -49,17 +51,18 @@ public class ProtoManager {
 			if (pw != null) {
 				pw.println(printableDoc);
 			} else {
-				try {
-					pw = new PrintWriter(new File("log.txt"));
-					pw.println(printableDoc);
-					System.out
-							.println("Writed to log.txt default file, Please insert saveGame code with appropriate parameters to save in another file");
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+					try {
+						pw = new PrintWriter(new BufferedWriter(new FileWriter("log.txt", true)));
+						pw.println(printableDoc);
+						System.out
+								.println("Writed to log.txt default file, Please insert saveGame code with appropriate parameters to save in another file");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+				
 			}
 		}
+	 }	
 	}
 
 	public static void Problem() {
@@ -232,15 +235,17 @@ public class ProtoManager {
 					if (codes.length != 2)
 						ProtoManager.Problem();
 					else {
-						try {
-							pw = new PrintWriter(new File(codes[1]));
-							listTowers();
-							listSwamps();
-							listUnits();
-						} catch (FileNotFoundException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+						
+							try {
+								pw = new PrintWriter(new BufferedWriter(new FileWriter(codes[1]+".txt", true)));
+								listTowers();
+								listSwamps();
+								listUnits();
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						
 					}
 				} else if (codes[0].equals("tick")) {
 					if (codes.length != 2)
@@ -381,7 +386,7 @@ public class ProtoManager {
 						Tower t = ((Field) tiles[i][j]).Prototype_getTower();
 						String line = new String();
 						String fogState = new String();
-						if(tiles[i][j].hasFog() == true) fogState = "yes";
+						if(tiles[i][j].hasFog()) fogState = "yes";
 						else fogState = "no";
 						line = t.ProtoType_getName()
 								+ " "

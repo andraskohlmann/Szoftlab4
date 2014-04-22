@@ -39,7 +39,7 @@ public abstract class Tile {
 	}
 
 	public boolean hasFog() {
-		return fog == null;
+		return fog != null;
 	}
 
 	public abstract void putRune(Rune r);
