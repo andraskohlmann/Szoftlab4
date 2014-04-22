@@ -45,14 +45,7 @@ public class Map {
 	}
 
 	public void putRune(int x, int y, Rune r) {
-		SkeletonUI.enterFunction(this, "putRune", x, y, r);
-
-		if (Skeleton_answer.equals("F"))
-			field.putRune(r);
-		else
-			road.putRune(r);
-
-		SkeletonUI.leaveFunction();
+		tiles[x][y].putRune(r);
 	}
 
 	public boolean checkSwamp(int x, int y) {

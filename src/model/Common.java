@@ -57,5 +57,6 @@ public final class Common {
 	
 	public static int life = 200;
 	public static int fog_timetoleave = 1000;
+	public static int fog_distancereduction = 2;
 	
 }

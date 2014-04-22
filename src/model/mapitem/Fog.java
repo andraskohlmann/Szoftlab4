@@ -1,6 +1,7 @@
 package model.mapitem;
 
 import model.ActiveUnit;
+import model.Common;
 import model.Game;
 
 public class Fog implements ActiveUnit {
@@ -16,7 +17,7 @@ public class Fog implements ActiveUnit {
 	}
 
 	public int getDistanceReduction() {
-		return 0;
+		return Common.fog_distancereduction;
 	}
 
 	@Override
