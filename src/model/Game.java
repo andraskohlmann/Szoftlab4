@@ -5,6 +5,12 @@ import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.mapitem.Fog;
 import model.mapitem.Map;
+import model.runes.DwarfRune;
+import model.runes.ElfRune;
+import model.runes.HobbitRune;
+import model.runes.ManRune;
+import model.runes.RangeRune;
+import model.runes.ReloadRune;
 import model.runes.Rune;
 import control.RuneType;
 
@@ -37,7 +43,28 @@ public class Game {
 
 	public void putRune(int x, int y, RuneType runeType) {
 		map.checkRune(x, y);
-		Rune rune = new Rune();
+		Rune rune;
+		switch (runeType) {
+		case Dwarf:
+			rune = new DwarfRune();
+			break;
+		case Elf:
+			rune = new ElfRune();
+			break;
+		case Hobbit:
+			rune = new HobbitRune();
+			break;
+		case Man:
+			rune = new ManRune();
+			break;
+		case Range:
+			rune = new RangeRune();
+			break;
+		case Reload:
+			rune = new ReloadRune();
+			break;
+		}
+		rune = new Rune();
 		map.putRune(x, y, rune);
 	}
 
