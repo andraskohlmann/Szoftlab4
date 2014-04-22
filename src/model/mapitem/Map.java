@@ -19,20 +19,7 @@ public class Map {
 	private Field field;
 	private Road road;
 	private Tile tiles[][] = null;
-	private String Skeleton_answer;
 	private FinishedRoad finishedRoad;
-
-	public void Skeleton_FieldSetter(Field f) {
-		field = f;
-	}
-
-	public void Skeleton_RoadSetter(Road r) {
-		road = r;
-	}
-
-	public void Skeleton_FinishedRoadSetter(FinishedRoad f) {
-		finishedRoad = f;
-	}
 
 	public boolean checkTower(int x, int y) {
 		return tiles[x][y].checkTower();
@@ -224,7 +211,10 @@ public class Map {
 				else if (lines[i].charAt(j) == '-') tiles[i][j] = new Road();
 				else if (lines[i].charAt(j) == ' ') tiles[i][j] = new Road();
 				else if (lines[i].charAt(j) == '.') tiles[i][j] = new Road();
-				else if (lines[i].charAt(j) == 'A') tiles[i][j] = new FinishedRoad();
+				else if (lines[i].charAt(j) == 'A') {
+					tiles[i][j] = new FinishedRoad();
+					finishedRoad = (FinishedRoad)tiles[i][j];
+				}
 			}
 		}
 		for (int i = 0; i < numberOfRows; i++) {
