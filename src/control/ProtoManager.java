@@ -474,10 +474,11 @@ public class ProtoManager {
 		else
 			return false;
 	}
-
-	public static String getUnitName() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public static String getUnitName()
+	{
+		String name = new String("Unit"+Integer.toString(unitCnt));
+		return name;
 	}
 
 }
