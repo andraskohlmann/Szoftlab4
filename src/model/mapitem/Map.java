@@ -13,7 +13,6 @@ import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
 import control.ProtoManager;
-import control.SkeletonUI;
 
 public class Map {
 
@@ -185,9 +184,7 @@ public class Map {
 	}
 
 	public void addUnit(EnemyUnit e) {
-		SkeletonUI.enterFunction(this, "addUnit", e);
 		road.addUnit(e);
-		SkeletonUI.leaveFunction();
 	}
 
 	public Map(String filename) {
