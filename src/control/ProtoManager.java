@@ -167,8 +167,9 @@ public class ProtoManager {
 					else {
 						swampCnt++;
 						 String name = new String();
-						g.putSwamp(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]),name+Integer.toString(swampCnt));
+						if (g.putSwamp(Integer.parseInt(codes[1]),
+								Integer.parseInt(codes[2]),name+Integer.toString(swampCnt)))
+							print("Swamp put to " + codes[1] + " " + codes[2]);
 
 					}
 
