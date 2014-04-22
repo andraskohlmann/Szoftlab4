@@ -9,8 +9,8 @@ public class Man extends EnemyUnit {
 
 	public Man(Game g) {
 		gameToNotice = g;
-		health = Common.lifeDwarf;
-		tickDivider = Common.tickDwarf;
+		health = Common.lifeMan;
+		tickDivider = Common.tickMan;
 		counter = 0;
 	}
 

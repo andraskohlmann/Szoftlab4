@@ -9,8 +9,8 @@ public class Elf extends EnemyUnit {
 
 	public Elf(Game g) {
 		gameToNotice = g;
-		health = Common.lifeDwarf;
-		tickDivider = Common.tickDwarf;
+		health = Common.lifeElf;
+		tickDivider = Common.tickElf;
 		counter = 0;
 	}
 

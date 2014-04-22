@@ -9,8 +9,8 @@ public class Hobbit extends EnemyUnit {
 
 	public Hobbit(Game g) {
 		gameToNotice = g;
-		health = Common.lifeDwarf;
-		tickDivider = Common.tickDwarf;
+		health = Common.lifeHobbit;
+		tickDivider = Common.tickHobbit;
 		counter = 0;
 	}
 
