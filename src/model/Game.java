@@ -78,6 +78,7 @@ public class Game {
 	public void putFog(int x, int y) {
 		Fog fog = new Fog(this, Common.fog_timetoleave);
 		ticker.addUnit(fog);
+		map.putFog(x, y, fog);
 	}
 
 	public void removeFog(Fog fog) {

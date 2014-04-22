@@ -292,4 +292,9 @@ public class Map {
 	public Tile[][] Prototype_getTiles() {
 		return tiles;
 	}
+
+	public void putFog(int x, int y, Fog fog) {
+		// TODO Auto-generated method stub
+		
+	}
 }
