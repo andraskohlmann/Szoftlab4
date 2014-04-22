@@ -16,6 +16,11 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	private int tickDivider = Common.swamp_counter;
 	private int counter;
+	private boolean isUpgraded;
+	
+	public Swamp() {
+		isUpgraded = false;
+	}
 
 	@Override
 	public void tick() {
@@ -38,8 +43,7 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	@Override
 	public boolean checkRune() {
-		// TODO Auto-generated method stub
-		return false;
+		return !isUpgraded;
 	}
 
 	@Override
