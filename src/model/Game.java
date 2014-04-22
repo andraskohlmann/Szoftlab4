@@ -133,7 +133,7 @@ public class Game {
 	}
 
 	public void addUnit(EnemyUnit enemyUnit) {
-		ticker.addUnit(enemyUnit);
+		ticker.concurrentAddUnit(enemyUnit);
 		enemyUnit.setGame(this);
 	}
 
