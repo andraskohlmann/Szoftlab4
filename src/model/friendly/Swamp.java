@@ -72,6 +72,10 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		return name;
 	}
 
+	public void ProtoType_setName(String n) {
+		name = n;
+	}
+
 	public String ProtoType_getRune() {
 		Class<?> cl = rune.getClass();
 
