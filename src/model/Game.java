@@ -60,11 +60,10 @@ public class Game {
 		case Range:
 			rune = new RangeRune();
 			break;
-		case Reload:
+		default:
 			rune = new ReloadRune();
 			break;
 		}
-		rune = new Rune();
 		map.putRune(x, y, rune);
 	}
 
