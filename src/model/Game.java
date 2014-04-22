@@ -39,12 +39,17 @@ public class Game {
 		return map;
 	}
 
-	public void putTower(int x, int y,String name) {
-		map.checkTower(x, y);
-		Tower tower = new Tower();
-		tower.ProtoType_setName(name);
-		ticker.addUnit(tower);
-		map.putTower(x, y, tower);
+	public boolean putTower(int x, int y, String name) {
+		if (map.checkTower(x, y)) {
+			Tower tower = new Tower();
+			tower.ProtoType_setName(name);
+			ticker.addUnit(tower);
+			map.putTower(x, y, tower);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public void putRune(int x, int y, RuneType runeType) {
