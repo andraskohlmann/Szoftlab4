@@ -477,8 +477,8 @@ public class ProtoManager {
 	
 	public static String getUnitName()
 	{
-		String name = new String("Unit"+Integer.toString(unitCnt));
-		return name;
+		unitCnt++;
+		return "Unit" + Integer.toString(unitCnt);
 	}
 
 }
