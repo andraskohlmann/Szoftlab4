@@ -258,7 +258,7 @@ public class ProtoManager {
 					listSwamps();
 				} else if (codes[0].equals("clear")) {
 
-					g = null;
+					g = new Game();
 					print("Game cleared");
 
 				} else if (codes[0].equals("turnRndOn")) {
