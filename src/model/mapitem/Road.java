@@ -56,7 +56,7 @@ public class Road extends Tile {
 	}
 
 	public boolean checkRune(Rune r) {
-		if (!checkSwamp())
+		if (checkSwamp())
 			return false;
 		return swamp.checkRune(r);
 	}
