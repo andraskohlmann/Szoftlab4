@@ -74,7 +74,6 @@ public class Map {
 				}
 			}
 		}
-		ProtoManager.print("Map loaded.");
 	}
 
 	private boolean findNext(int i, int j, int prev, String lines[]) {
@@ -277,7 +276,7 @@ public class Map {
 					neighbours.add(tiles[i + 1][j]);
 				if (j > 0)
 					neighbours.add(tiles[i][j - 1]);
-				if (j < numberOfColumns)
+				if (j < numberOfColumns - 1)
 					neighbours.add(tiles[i][j + 1]);
 				tiles[i][j].addNeighbours(neighbours);
 			}

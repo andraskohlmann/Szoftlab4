@@ -140,8 +140,9 @@ public class ProtoManager {
 							type = RuneType.Range;
 						}
 
-						g.putRune(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]), type);
+						if (g.putRune(Integer.parseInt(codes[1]),
+								Integer.parseInt(codes[2]), type));
+							
 
 					}
 				}else if (codes[0].equals("putUnit")) {
