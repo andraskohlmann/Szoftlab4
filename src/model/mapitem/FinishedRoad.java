@@ -9,6 +9,11 @@ public class FinishedRoad extends Road {
 
 	List<EnemyUnit> unitList = new ArrayList<EnemyUnit>();
 
+	@Override
+	public void addUnit(EnemyUnit e) {
+		unitList.add(e);
+	}
+
 	public List<EnemyUnit> getFinishedUnits() {
 		return unitList;
 	}
@@ -16,4 +21,5 @@ public class FinishedRoad extends Road {
 	public void deleteFinishedUnits() {
 		unitList.clear();
 	}
+	
 }
