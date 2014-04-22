@@ -10,7 +10,6 @@ import java.util.Random;
 
 import model.Game;
 import model.mapitem.Field;
-import model.mapitem.FinishedRoad;
 import model.mapitem.Map;
 import model.mapitem.Road;
 import model.mapitem.Tile;

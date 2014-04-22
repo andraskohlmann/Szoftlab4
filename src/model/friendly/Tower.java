@@ -7,7 +7,6 @@ import model.ActiveUnit;
 import model.enemies.EnemyUnit;
 import model.runes.Projectile;
 import model.runes.Rune;
-import control.SkeletonUI;
 
 public class Tower implements ActiveUnit, FriendlyUnit {
 

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.enemies.EnemyUnit;
-import control.SkeletonUI;
 
 public class Ticker {
 
@@ -22,14 +21,6 @@ public class Ticker {
 
 	public void remove(ActiveUnit e) {
 		unitList.remove(e);
-	}
-
-	public void Skeleton_remove(ActiveUnit e) {
-		unitList.remove(e);
-	}
-
-	public void Skeleton_addUnit(ActiveUnit a) {
-		unitList.add(a);
 	}
 
 	public void addUnit(ActiveUnit e) {

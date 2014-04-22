@@ -9,7 +9,6 @@ import model.friendly.Tower;
 import model.runes.Rune;
 import control.ProtoManager;
 import control.RandomStates;
-import control.SkeletonUI;
 
 public class Road extends Tile {
 

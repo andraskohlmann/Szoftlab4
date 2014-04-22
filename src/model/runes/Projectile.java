@@ -1,11 +1,11 @@
 package model.runes;
 
-import control.ProtoManager;
-import control.RandomStates;
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
 import model.enemies.Man;
+import control.ProtoManager;
+import control.RandomStates;
 
 public class Projectile {
 

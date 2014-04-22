@@ -8,7 +8,6 @@ import model.Common;
 import model.enemies.EnemyUnit;
 import model.runes.Rune;
 import model.runes.Slime;
-import control.SkeletonUI;
 
 public class Swamp implements ActiveUnit, FriendlyUnit {
 
@@ -40,25 +39,12 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	@Override
 	public boolean checkRune() {
 		// TODO Auto-generated method stub
-		SkeletonUI.enterFunction(this, "checkRune");
-
-		String answer = SkeletonUI.stringQuestion(
-				"What kind of rune is in the swamp? (Default, dWarf, Elf, Man, Hobbit) \n"
-						+ "/Rune can be put only to swamp with default rune./",
-				"D", "W", "E", "M", "H");
-
-		boolean available = (answer.equals("D"));
-
-		SkeletonUI.leaveFunction(available);
-		return available;
+		return false;
 	}
 
 	@Override
 	public void putRune(Rune r) {
 		// TODO Auto-generated method stub
-		SkeletonUI.enterFunction(this, "putRune", r);
-
-		SkeletonUI.leaveFunction();
 	}
 
 	@Override
@@ -75,7 +61,4 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 		enemyUnits.add(e);
 	}
 
-	public void Skeleton_addRune(Rune r) {
-		rune = r;
-	}
 }

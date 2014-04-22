@@ -1,7 +1,6 @@
 package model.runes;
 
 import model.Common;
-import control.SkeletonUI;
 
 public class Rune {
 
@@ -30,17 +29,10 @@ public class Rune {
 	}
 
 	public void modifySlime(Slime s) {
-		SkeletonUI.enterFunction(this, "modifySlime", s);
-
 		s.setNumbers(this);
-
-		SkeletonUI.leaveFunction();
 	}
 
 	public int getDistance() {
-		SkeletonUI.enterFunction(this, "getDistance");
-
-		SkeletonUI.leaveFunction(distance);
 		return distance;
 	}
 }
