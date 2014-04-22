@@ -198,15 +198,15 @@ public class ProtoManager {
 				}
 				else if(codes[0].equals("listUnits"))
 				{
-					
+					listUnits();
 				}
 				else if(codes[0].equals("listTowers"))
 				{
-					
+					listTowers();
 				}
 				else if(codes[0].equals("listSwamps"))
 				{
-					
+					listSwamps();
 				}
 				else if(codes[0].equals("clear"))
 				{
@@ -350,15 +350,79 @@ public class ProtoManager {
 	}
 	public static void listTowers()
 	{
+		Map m = g.getMap();
+		Tile[][] tiles = m.Prototype_getTiles();
 		
-	}
+		for (int i = 0; i < tiles.length; i++) 
+		{
+			for (int j = 0; j < tiles[i].length; j++) 
+			{
+				Class cl = tiles[i][j].getClass();
+				if(cl.getName().equals("Field"))  
+				{
+					if(((Field) tiles[i][j]).hasTower())
+					{
+						Tower t = ((Field) tiles[i][j]).Prototype_getTower();
+						String line = new String();
+						line = t.ProtoType_getName()+" "+Integer.toString(i)+" "+Integer.toString(j)+" "+t.ProtoType_getRune()+" "+
+						Integer.toString(t.ProtoType_getRuneDistance())+" "+Integer.toString(t.ProtoType_getCounter())+" ";
+						print(line);
+					}	
+				}
+	      }
+		
+	   }
+	}	
 	public static void listSwamps()
 	{
+		Map m = g.getMap();
+		Tile[][] tiles = m.Prototype_getTiles();
 		
+		for (int i = 0; i < tiles.length; i++) 
+		{
+			for (int j = 0; j < tiles[i].length; j++) 
+			{
+				Class cl = tiles[i][j].getClass();
+				if(cl.getName().equals("Road"))  
+				{
+					if(((Road) tiles[i][j]).hasSwamp())
+					{
+						Swamp s = ((Road) tiles[i][j]).Prototype_getSwamp();
+						String line = new String();
+						line = s.ProtoType_getName()+" "+Integer.toString(i)+" "+Integer.toString(j)+" "+s.ProtoType_getRune();
+						print(line);
+					}	
+				}
+	      }
+		
+	   }
 	}
 	public static void listUnits()
 	{
+		Map m = g.getMap();
+		Tile[][] tiles = m.Prototype_getTiles();
 		
+		for (int i = 0; i < tiles.length; i++) 
+		{
+			for (int j = 0; j < tiles[i].length; j++) 
+			{
+				Class cl = tiles[i][j].getClass();
+				if(cl.getName().equals("Road"))  
+				{
+					List<EnemyUnit> enemyList = ((Road) tiles[i][j]).ProtoType_getList();
+					for(int p = 0; p< enemyList.size(); p++)
+					{
+						EnemyUnit e = enemyList.get(p);
+						Class cls = e.getClass();
+						String line = new String();
+						line = e.ProtoType_getName()+" "+Integer.toString(i)+" "+Integer.toString(j)+" "
+						+cls.getName()+" "+Integer.toString(e.ProtoType_getHealth())+" "+Integer.toString(e.ProtoType_getCounter());
+						print(line);
+					}	
+				}
+	      }
+		
+	   }
 	}
 	
 	public static int randomInt(int max)
