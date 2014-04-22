@@ -22,7 +22,7 @@ public class Hobbit extends EnemyUnit {
 
 	public Hobbit() {
 	}
-	
+
 	public Hobbit(Hobbit h) {
 		this(h.gameToNotice);
 		h.health *= 0.5;
@@ -33,12 +33,11 @@ public class Hobbit extends EnemyUnit {
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
 			Hobbit newHalf = new Hobbit(this);
-			
+
 			roadToNotice.addUnit(newHalf);
-			
+
 			gameToNotice.addUnit(newHalf);
-		}
-		else {
+		} else {
 			health -= p.damageMe(this);
 
 			if (health <= 0) {

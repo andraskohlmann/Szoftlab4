@@ -22,7 +22,7 @@ public class Man extends EnemyUnit {
 
 	public Man() {
 	}
-	
+
 	public Man(Man m) {
 		this(m.gameToNotice);
 		m.health *= 0.5;
@@ -33,12 +33,11 @@ public class Man extends EnemyUnit {
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
 			Man newHalf = new Man(this);
-			
+
 			roadToNotice.addUnit(newHalf);
-			
+
 			gameToNotice.addUnit(newHalf);
-		}
-		else {
+		} else {
 			health -= p.damageMe(this);
 
 			if (health <= 0) {

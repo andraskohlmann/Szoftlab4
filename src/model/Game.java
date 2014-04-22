@@ -79,11 +79,10 @@ public class Game {
 		Fog fog = new Fog(this, Common.fog_timetoleave);
 		ticker.addUnit(fog);
 	}
-	
+
 	public void removeFog(Fog fog) {
 		ticker.remove(fog);
 	}
-
 
 	public void tick() {
 		ticker.tick();
@@ -97,9 +96,8 @@ public class Game {
 		magitzka += Common.kill_mTz;
 	}
 
-
 	public void loadMap(String filename) {
-		map = new Map (filename);
+		map = new Map(filename);
 	}
 
 	public void addUnit(EnemyUnit enemyUnit) {

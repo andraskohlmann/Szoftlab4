@@ -6,14 +6,13 @@ import model.enemies.Elf;
 import model.enemies.Hobbit;
 import model.enemies.Man;
 
-
 public class Slime {
-	
+
 	private int slowDwarf = Common.swamp_slowvalue;
 	private int slowHobbit = Common.swamp_slowvalue;
 	private int slowElf = Common.swamp_slowvalue;
 	private int slowMan = Common.swamp_slowvalue;
-	
+
 	public int slowMe(Dwarf d) {
 		return slowDwarf;
 	}
@@ -36,5 +35,5 @@ public class Slime {
 	public int slowMe(Man m) {
 		return slowMan;
 	}
-	
+
 }

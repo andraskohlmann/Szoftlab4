@@ -13,11 +13,11 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 	private List<EnemyUnit> enemyUnits = new ArrayList<EnemyUnit>();
 	private Rune rune;
-    private String name = new String();
+	private String name = new String();
 	private int tickDivider = Common.swamp_counter;
 	private int counter;
 	private boolean isUpgraded;
-	
+
 	public Swamp() {
 		tickDivider = 10;
 		counter = 0;
@@ -67,13 +67,14 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	public void Skeleton_addUnit(EnemyUnit e) {
 		enemyUnits.add(e);
 	}
-	public String ProtoType_getName(){
+
+	public String ProtoType_getName() {
 		return name;
 	}
-	public String ProtoType_getRune()
-	{
+
+	public String ProtoType_getRune() {
 		Class<?> cl = rune.getClass();
-		
+
 		return cl.getName();
 	}
 

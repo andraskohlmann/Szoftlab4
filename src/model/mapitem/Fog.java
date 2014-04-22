@@ -8,7 +8,7 @@ public class Fog implements ActiveUnit {
 
 	private Tile tileToNotify;
 	private Game gameToNotify;
-	
+
 	private int timeToLeave;
 
 	public Fog(Game game, int ttl) {

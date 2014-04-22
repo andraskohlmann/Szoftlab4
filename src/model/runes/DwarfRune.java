@@ -9,5 +9,5 @@ public class DwarfRune extends Rune {
 		dmgDwarf = Common.specialdmgDwarf;
 		slowDwarf = Common.swamp_specialslow;
 	}
-	
+
 }

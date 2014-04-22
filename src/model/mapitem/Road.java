@@ -91,7 +91,7 @@ public class Road extends Tile {
 			swamp.removeUnit(enemyUnit);
 		}
 
-		int which = ( ProtoManager.randomRouting == RandomStates.on ) ? ProtoManager
+		int which = (ProtoManager.randomRouting == RandomStates.on) ? ProtoManager
 				.randomInt(nextRoad.size()) : 0;
 
 		nextRoad.get(which).addUnit(enemyUnit);
@@ -106,19 +106,20 @@ public class Road extends Tile {
 			return false;
 		return true;
 	}
-	public boolean hasSwamp()
-	{
-		if (swamp!= null) return true;
-		else return false;
-		
+
+	public boolean hasSwamp() {
+		if (swamp != null)
+			return true;
+		else
+			return false;
+
 	}
 
-	public Swamp Prototype_getSwamp()
-	{
+	public Swamp Prototype_getSwamp() {
 		return swamp;
 	}
-	public List<EnemyUnit> ProtoType_getList()
-	{
+
+	public List<EnemyUnit> ProtoType_getList() {
 		return enemyList;
 	}
 }

@@ -8,5 +8,5 @@ public class ReloadRune extends Rune {
 		super();
 		reloadTime = Common.reloadrunereloadtime;
 	}
-	
+
 }

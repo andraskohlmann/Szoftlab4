@@ -8,5 +8,5 @@ public class RangeRune extends Rune {
 		super();
 		distance = Common.rangedistance;
 	}
-	
+
 }

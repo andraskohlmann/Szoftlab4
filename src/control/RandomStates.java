@@ -1,5 +1,5 @@
 package control;
 
 public enum RandomStates {
-  on,off,random
+	on, off, random
 }

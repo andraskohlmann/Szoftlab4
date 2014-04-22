@@ -15,7 +15,7 @@ public class Projectile {
 	private int dmgToMan = 0;
 
 	private boolean isSplitter;
-	
+
 	public Projectile() {
 		if (ProtoManager.randomSplitting == RandomStates.random) {
 			isSplitter = ProtoManager.randomBoolean(10);
