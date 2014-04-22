@@ -135,7 +135,21 @@ public class ProtoManager {
 				    else
 				    {
 				  
-				    	RuneType type = RuneType.Dwarf;
+				    	RuneType type;
+				    	
+				    	if (codes[3].equals("dwarfRune")) {
+				    		type = RuneType.Dwarf;
+				    	} else if (codes[3].equals("elfRune")) {
+				    		type = RuneType.Elf;
+				    	} else if (codes[3].equals("hobbitRune")) {
+				    		type = RuneType.Hobbit;
+				    	} else if (codes[3].equals("manRune")) {
+				    		type = RuneType.Man;
+				    	} else if (codes[3].equals("reloadRune")) {
+				    		type = RuneType.Reload;
+				    	} else {
+				    		type = RuneType.Range;
+				    	}
 				    	
 				    	g.putRune(Integer.parseInt(codes[1]),Integer.parseInt(codes[2]),type);
 				    	
