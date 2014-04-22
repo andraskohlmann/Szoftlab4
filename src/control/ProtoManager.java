@@ -256,7 +256,7 @@ public class ProtoManager {
 							g.tick();
 						}
                         ticked = ticked + i;
-						print("Game ticked " + ticked + " times");
+						print("Game ticked " + codes[1] + " times");
 
 					}
 				} else if (codes[0].equals("listUnits")) {
