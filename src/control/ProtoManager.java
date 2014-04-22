@@ -142,7 +142,10 @@ public class ProtoManager {
 						}
 
 						if (g.putRune(Integer.parseInt(codes[1]),
-								Integer.parseInt(codes[2]), type));
+								Integer.parseInt(codes[2]), type))
+							print("Rune put on " + codes[1] + " " + codes[2]);
+						else
+							print("Rune cannot be put on " + codes[1] + " " + codes[2]);
 							
 
 					}
