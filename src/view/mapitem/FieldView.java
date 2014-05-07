@@ -33,7 +33,7 @@ public class FieldView extends TileView {
 
 	protected void paintMe(Graphics g) {
 		g.setColor(Color.GREEN);
-		g.fillRect(x, y, 20, 20);
+		g.fillRect(x*20, y*20, 20, 20);
 
 		if (towerView != null)
 			towerView.draw(g);
