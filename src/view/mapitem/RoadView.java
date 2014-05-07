@@ -10,6 +10,8 @@ public class RoadView extends ViewBase implements View {
 	}
 	
 	public void draw(Graphics g) {
-	
+		if (needToRepaint){
+			
+		}
 	}
 }
