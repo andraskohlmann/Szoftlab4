@@ -10,15 +10,15 @@ import view.mapitem.TileView;
 
 public class ViewFactory {
 	
-	public static TileView createView(Road r){
+	public static TileView createView(Road r, int x, int y){
 		return new RoadView(r);
 	}
 	
-	public static TileView createView(Field f){
+	public static TileView createView(Field f, int x, int y){
 		return new FieldView(f);
 	}
 	
-	public static ViewBase createView(FinishedRoad f){
+	public static ViewBase createView(FinishedRoad f, int x, int y){
 		return new FinishedRoadView();
 	}
 
