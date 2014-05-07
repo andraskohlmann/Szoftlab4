@@ -9,9 +9,9 @@ public class Field extends Tile {
 	private Tower tower;
 	private View view;
 
-    public Field(FieldView v)
+    public void setView(FieldView fw)
     {
-    	view = v;
+    	view = fw;
     }
 	public boolean checkTower() {
 		if (tower == null)

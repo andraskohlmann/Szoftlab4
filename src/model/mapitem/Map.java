@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import view.GameView;
+import view.ViewFactory;
 import view.mapitem.FieldView;
 import view.mapitem.FinishedRoadView;
 import view.mapitem.RoadView;
@@ -220,11 +222,11 @@ public class Map {
 		finishedRoad.deleteFinishedUnits();
 	}
 
-	public Map(String filename) {
-		buildMap(filename);
+	public Map(String filename,GameView gameView) {
+		buildMap(filename,gameView);
 	}
 
-	private void buildMap(String filename) {
+	private void buildMap(String filename,GameView gameView) {
 		String lines[] = null;
 		int numberOfColumns = 0;
 		int numberOfRows = 0;
@@ -254,7 +256,13 @@ public class Map {
 		for (int i = 0; i < numberOfRows; i++) {
 			for (int j = 0; j < numberOfColumns; j++) {
 				if (lines[i].charAt(j) == '#')
-					tiles[i][j] = new Field(new FieldView());
+				  {	
+					Field f = new Field();
+					//FieldView fView = ViewFactory.createView(f);
+					tiles[i][j] = f;
+					//f.setView(fView);
+					//gameView.addView(fView);
+				  }
 				else if (lines[i].charAt(j) == '-') {
 					tiles[i][j] = new Road(new RoadView());
 					firstRoad = (Road) tiles[i][j];
@@ -263,7 +271,7 @@ public class Map {
 				else if (lines[i].charAt(j) == '.')
 					tiles[i][j] = new Road(new RoadView());
 				else if (lines[i].charAt(j) == 'A') {
-					tiles[i][j] = new FinishedRoad(new FinishedRoadView());
+					tiles[i][j] = new FinishedRoad();
 					finishedRoad = (FinishedRoad) tiles[i][j];
 				}
 			}
