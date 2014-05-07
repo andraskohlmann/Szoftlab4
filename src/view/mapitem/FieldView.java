@@ -17,6 +17,9 @@ public class FieldView extends ViewBase implements View {
 	}
 	
 	public void draw(Graphics g) {
-		
+		if(towerView != null)
+			towerView.draw(g);
+		if(fogView != null)
+			fogView.draw(g);
 	}
 }
