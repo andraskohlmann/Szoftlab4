@@ -5,6 +5,7 @@ import java.util.List;
 
 import view.View;
 import view.mapitem.RoadView;
+import view.mapitem.TileView;
 
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
@@ -19,15 +20,10 @@ public class Road extends Tile {
 	private Swamp swamp;
 	private List<Tower> towersToNotify = new ArrayList<Tower>();
     private View view;
-	
-    public Road()
-    {
-    	
-    }
-    public Road(RoadView v)
-    {
-    	view = v;
-    }
+	public void setView(TileView tw)
+	{
+		view = tw;
+	}
 	public boolean checkSwamp() {
 		if (swamp == null)
 			return true;
