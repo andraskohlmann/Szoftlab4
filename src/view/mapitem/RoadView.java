@@ -1,4 +1,5 @@
 package view.mapitem;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.List;
 
@@ -29,5 +30,7 @@ public class RoadView extends ViewBase implements View {
 				euv.draw(g);
 			}
 		}
+		g.setColor(Color.ORANGE);
+		
 	}
 }
