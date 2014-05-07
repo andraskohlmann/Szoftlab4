@@ -1,15 +1,18 @@
 package model.mapitem;
 
+import view.View;
+import view.mapitem.FieldView;
 import model.friendly.Tower;
 import model.runes.Rune;
 
 public class Field extends Tile {
 	private Tower tower;
+	private View view;
 
-	public void Skeleton_TowerSetter(Tower t) {
-		tower = t;
-	}
-
+    public Field(FieldView v)
+    {
+    	view = v;
+    }
 	public boolean checkTower() {
 		if (tower == null)
 			return true;
@@ -19,11 +22,13 @@ public class Field extends Tile {
 	public void putRune(Rune r) {
 		tower.putRune(r);
 		addTower(r.getDistance(), tower);
+		view.notifyView();
 	}
 
 	public void putTower(Tower t) {
 		tower = t;
 		addTower(t.getRune().getDistance(), t);
+		view.notifyView();
 	}
 
 	public boolean checkRune(Rune r) {
@@ -40,6 +45,7 @@ public class Field extends Tile {
 				tower);
 		f.setTile(this);
 		super.addFog(f);
+		view.notifyAll();
 	}
 
 	public void removeFog(Fog f) {
@@ -47,6 +53,7 @@ public class Field extends Tile {
 				tower);
 		addTower(tower.getRune().getDistance(), tower);
 		super.removeFog(f);
+		view.notifyView();
 	}
 
 	public boolean hasTower() {

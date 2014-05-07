@@ -8,6 +8,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import view.mapitem.FieldView;
+import view.mapitem.FinishedRoadView;
+import view.mapitem.RoadView;
+
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
@@ -250,16 +254,16 @@ public class Map {
 		for (int i = 0; i < numberOfRows; i++) {
 			for (int j = 0; j < numberOfColumns; j++) {
 				if (lines[i].charAt(j) == '#')
-					tiles[i][j] = new Field();
+					tiles[i][j] = new Field(new FieldView());
 				else if (lines[i].charAt(j) == '-') {
-					tiles[i][j] = new Road();
+					tiles[i][j] = new Road(new RoadView());
 					firstRoad = (Road) tiles[i][j];
 				} else if (lines[i].charAt(j) == ' ')
-					tiles[i][j] = new Road();
+					tiles[i][j] = new Road(new RoadView());
 				else if (lines[i].charAt(j) == '.')
-					tiles[i][j] = new Road();
+					tiles[i][j] = new Road(new RoadView());
 				else if (lines[i].charAt(j) == 'A') {
-					tiles[i][j] = new FinishedRoad();
+					tiles[i][j] = new FinishedRoad(new FinishedRoadView());
 					finishedRoad = (FinishedRoad) tiles[i][j];
 				}
 			}
