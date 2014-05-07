@@ -2,6 +2,7 @@ package model.mapitem;
 
 import view.View;
 import view.mapitem.FieldView;
+import view.mapitem.TileView;
 import model.friendly.Tower;
 import model.runes.Rune;
 
@@ -9,9 +10,9 @@ public class Field extends Tile {
 	private Tower tower;
 	private View view;
 
-    public void setView(FieldView fw)
+    public void setView(TileView tw)
     {
-    	view = fw;
+    	view = tw;
     }
 	public boolean checkTower() {
 		if (tower == null)

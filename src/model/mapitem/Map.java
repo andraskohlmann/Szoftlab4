@@ -9,10 +9,12 @@ import java.util.List;
 import java.util.Set;
 
 import view.GameView;
+import view.ViewBase;
 import view.ViewFactory;
 import view.mapitem.FieldView;
 import view.mapitem.FinishedRoadView;
 import view.mapitem.RoadView;
+import view.mapitem.TileView;
 
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
@@ -258,21 +260,41 @@ public class Map {
 				if (lines[i].charAt(j) == '#')
 				  {	
 					Field f = new Field();
-					//FieldView fView = ViewFactory.createView(f);
+					TileView tView = ViewFactory.createView(f);
 					tiles[i][j] = f;
-					//f.setView(fView);
-					//gameView.addView(fView);
+					f.setView(tView);
+					gameView.addView(tView);
 				  }
 				else if (lines[i].charAt(j) == '-') {
-					tiles[i][j] = new Road(new RoadView());
+					Road r = new Road();
+					tiles[i][j] = r;
 					firstRoad = (Road) tiles[i][j];
+					TileView tView = ViewFactory.createView(r);
+					gameView.addView(tView);
+					r.setView(tView);
 				} else if (lines[i].charAt(j) == ' ')
-					tiles[i][j] = new Road(new RoadView());
+				{
+					Road r = new Road();
+					tiles[i][j] = r;
+					TileView tView = ViewFactory.createView(r);
+					gameView.addView(tView);
+					r.setView(tView);
+				}	
 				else if (lines[i].charAt(j) == '.')
-					tiles[i][j] = new Road(new RoadView());
-				else if (lines[i].charAt(j) == 'A') {
-					tiles[i][j] = new FinishedRoad();
-					finishedRoad = (FinishedRoad) tiles[i][j];
+				{
+					Road r = new Road();
+					tiles[i][j] = r;
+					TileView tView = ViewFactory.createView(r);
+					gameView.addView(tView);
+					r.setView(tView);
+				}	
+				else if (lines[i].charAt(j) == 'A') 
+				{
+					FinishedRoad fr = new FinishedRoad();
+					tiles[i][j] = fr;
+					finishedRoad = fr;
+					ViewBase view = ViewFactory.createView(fr);
+					gameView.addView(view);
 				}
 			}
 		}
