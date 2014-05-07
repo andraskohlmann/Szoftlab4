@@ -9,14 +9,14 @@ import view.friendly.TowerView;
 public class FieldView extends ViewBase implements View {
 	
 	private Field field;
-	private TowerView towerview;
-	private FogView fogview;
+	private TowerView towerView;
+	private FogView fogView;
 	
 	public void notifyView() {
 	
 	}
 	
 	public void draw(Graphics g) {
-	
+		
 	}
 }
