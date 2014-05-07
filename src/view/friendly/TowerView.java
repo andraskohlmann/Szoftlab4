@@ -11,6 +11,10 @@ public class TowerView extends ViewBase {
 	private Tower tower;
 	private RuneView runeView;
 	
+	public TowerView(Tower t) {
+		tower = t;
+	}
+
 	public void draw(Graphics g) {
 		g.setColor(Color.GRAY);
 		g.fillOval(x + 2, y + 2, 16, 16);
