@@ -10,7 +10,7 @@ public abstract class TileView extends ViewBase implements View {
 	private boolean needToRepaint;
 
 	public TileView(int x, int y) {
-		super(x,  y);
+		super(x, y);
 		
 		needToRepaint = true;
 	}

@@ -8,18 +8,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import view.GameView;
-import view.ViewBase;
-import view.ViewFactory;
-import view.mapitem.FieldView;
-import view.mapitem.FinishedRoadView;
-import view.mapitem.RoadView;
-import view.mapitem.TileView;
-
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
+import view.GameView;
+import view.ViewBase;
+import view.ViewFactory;
+import view.mapitem.TileView;
 
 public class Map {
 
