@@ -4,11 +4,10 @@ import java.awt.Graphics;
 import java.util.List;
 
 import model.mapitem.Road;
-import view.View;
 import view.ViewBase;
 import view.friendly.SwampView;
 
-public class RoadView extends ViewBase implements View {
+public class RoadView extends TileView {
 	
 	private Road road;
 	private SwampView swampView;
