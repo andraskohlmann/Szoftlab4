@@ -2,9 +2,13 @@ package view.friendly;
 import java.awt.Graphics;
 
 import view.ViewBase;
+import view.runes.RuneView;
 
 public class SwampView extends ViewBase {
-	public void draw(Graphics g) {
 	
+	private RuneView runeView;
+	
+	public void draw(Graphics g) {
+		runeView.draw(g);
 	}
 }
