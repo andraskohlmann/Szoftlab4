@@ -19,7 +19,11 @@ public class RoadView extends TileView {
 	}
 
 	public void notifyView() {
-
+		if (swampView == null && road.hasSwamp()) {
+			swampView = new SwampView();
+		}
+		
+		super.notifyView();
 	}
 
 	protected void paintMe(Graphics g) {
