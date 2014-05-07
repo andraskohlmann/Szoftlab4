@@ -17,7 +17,7 @@ public class SwampView extends ViewBase {
 		super(x, y);
 		
 		swamp = s;
-		runeView = new RuneView();
+		runeView = new RuneView(x, y);
 	}
 
 	public void draw(Graphics g) {
