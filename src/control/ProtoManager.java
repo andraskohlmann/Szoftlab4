@@ -37,9 +37,9 @@ public class ProtoManager {
 
 	private static Game g = new Game();
 
-	public static void main(String[] args) {
-		ProtoManager.codeTranslate();
-	}
+	//	public static void main(String[] args) {
+	//		ProtoManager.codeTranslate();
+	//	}
 
 	public static void print(String printableDoc) {
 		if (outputStd) {
