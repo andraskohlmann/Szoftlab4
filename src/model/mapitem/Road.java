@@ -3,14 +3,11 @@ package model.mapitem;
 import java.util.ArrayList;
 import java.util.List;
 
-import view.View;
-import view.mapitem.RoadView;
-import view.mapitem.TileView;
-
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
+import view.View;
 import control.ProtoManager;
 import control.RandomStates;
 
@@ -19,11 +16,12 @@ public class Road extends Tile {
 	private List<EnemyUnit> enemyList = new ArrayList<EnemyUnit>();
 	private Swamp swamp;
 	private List<Tower> towersToNotify = new ArrayList<Tower>();
-    private View view;
-	public void setView(TileView tw)
-	{
+	private View view;
+
+	public void setView(View tw) {
 		view = tw;
 	}
+
 	public boolean checkSwamp() {
 		if (swamp == null)
 			return true;
@@ -56,9 +54,9 @@ public class Road extends Tile {
 		}
 
 		enemyList.remove(e);
-		
+
 		view.notifyView();
-		
+
 	}
 
 	public boolean checkRune(Rune r) {
@@ -125,6 +123,10 @@ public class Road extends Tile {
 	}
 
 	public Swamp Prototype_getSwamp() {
+		return swamp;
+	}
+	
+	public Swamp getSwamp() {
 		return swamp;
 	}
 
