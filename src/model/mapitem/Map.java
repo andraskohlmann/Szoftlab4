@@ -220,11 +220,11 @@ public class Map {
 		finishedRoad.deleteFinishedUnits();
 	}
 
-	public Map(String filename,GameView gameView) {
-		buildMap(filename,gameView);
+	public Map(String filename, GameView gameView) {
+		buildMap(filename, gameView);
 	}
 
-	private void buildMap(String filename,GameView gameView) {
+	private void buildMap(String filename, GameView gameView) {
 		String lines[] = null;
 		int numberOfColumns = 0;
 		int numberOfRows = 0;
@@ -253,43 +253,36 @@ public class Map {
 		tiles = new Tile[numberOfRows][numberOfColumns];
 		for (int i = 0; i < numberOfRows; i++) {
 			for (int j = 0; j < numberOfColumns; j++) {
-				if (lines[i].charAt(j) == '#')
-				  {	
+				if (lines[i].charAt(j) == '#') {
 					Field f = new Field();
-					TileView tView = ViewFactory.createView(f,j,i);
+					TileView tView = ViewFactory.createView(f, j, i);
 					tiles[i][j] = f;
 					f.setView(tView);
 					gameView.addView(tView);
-				  }
-				else if (lines[i].charAt(j) == '-') {
+				} else if (lines[i].charAt(j) == '-') {
 					Road r = new Road();
 					tiles[i][j] = r;
 					firstRoad = (Road) tiles[i][j];
-					TileView tView = ViewFactory.createView(r,j,i);
+					TileView tView = ViewFactory.createView(r, j, i);
 					gameView.addView(tView);
 					r.setView(tView);
-				} else if (lines[i].charAt(j) == ' ')
-				{
+				} else if (lines[i].charAt(j) == ' ') {
 					Road r = new Road();
 					tiles[i][j] = r;
-					TileView tView = ViewFactory.createView(r,j,i);
+					TileView tView = ViewFactory.createView(r, j, i);
 					gameView.addView(tView);
 					r.setView(tView);
-				}	
-				else if (lines[i].charAt(j) == '.')
-				{
+				} else if (lines[i].charAt(j) == '.') {
 					Road r = new Road();
 					tiles[i][j] = r;
-					TileView tView = ViewFactory.createView(r,j,i);
+					TileView tView = ViewFactory.createView(r, j, i);
 					gameView.addView(tView);
 					r.setView(tView);
-				}	
-				else if (lines[i].charAt(j) == 'A') 
-				{
+				} else if (lines[i].charAt(j) == 'A') {
 					FinishedRoad fr = new FinishedRoad();
 					tiles[i][j] = fr;
 					finishedRoad = fr;
-					ViewBase view = ViewFactory.createView(fr,j,i);
+					ViewBase view = ViewFactory.createView(fr, j, i);
 					gameView.addView(view);
 				}
 			}

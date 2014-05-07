@@ -15,7 +15,7 @@ public class FieldView extends TileView {
 
 	public FieldView(Field f, int x, int y) {
 		super(x, y);
-		
+
 		field = f;
 	}
 
@@ -23,7 +23,7 @@ public class FieldView extends TileView {
 		if (towerView == null && field.hasTower()) {
 			towerView = new TowerView(field.getTower(), x, y);
 		}
-		
+
 		if (fogView == null && field.hasFog()) {
 			fogView = new FogView();
 		} else if (fogView != null && !field.hasFog()) {
@@ -35,7 +35,7 @@ public class FieldView extends TileView {
 
 	protected void paintMe(Graphics g) {
 		g.setColor(Color.GREEN);
-		g.fillRect(x*20, y*20, 20, 20);
+		g.fillRect(x * 20, y * 20, 20, 20);
 
 		if (towerView != null)
 			towerView.draw(g);

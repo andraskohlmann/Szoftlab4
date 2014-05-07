@@ -2,8 +2,6 @@ package model;
 
 import java.util.List;
 
-import view.GameView;
-
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.EnemyUnit;
@@ -20,6 +18,7 @@ import model.runes.ManRune;
 import model.runes.RangeRune;
 import model.runes.ReloadRune;
 import model.runes.Rune;
+import view.GameView;
 import control.EnemyType;
 import control.ProtoManager;
 import control.RuneType;
@@ -28,7 +27,7 @@ public class Game {
 
 	private Map map;
 	private Ticker ticker;
-    private GameView gameView;
+	private GameView gameView;
 	private int life = Common.life;
 	private int magitzka = Common.start_mTz;
 
@@ -136,7 +135,7 @@ public class Game {
 	}
 
 	public void loadMap(String filename) {
-		map = new Map(filename,gameView);
+		map = new Map(filename, gameView);
 	}
 
 	public void addUnit(EnemyUnit enemyUnit) {
@@ -170,5 +169,5 @@ public class Game {
 	public GameView getView() {
 		return gameView;
 	}
-	
+
 }

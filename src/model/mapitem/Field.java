@@ -1,19 +1,18 @@
 package model.mapitem;
 
-import view.View;
-import view.mapitem.FieldView;
-import view.mapitem.TileView;
 import model.friendly.Tower;
 import model.runes.Rune;
+import view.View;
+import view.mapitem.TileView;
 
 public class Field extends Tile {
 	private Tower tower;
 	private View view;
 
-    public void setView(TileView tw)
-    {
-    	view = tw;
-    }
+	public void setView(TileView tw) {
+		view = tw;
+	}
+
 	public boolean checkTower() {
 		if (tower == null)
 			return true;
@@ -68,7 +67,7 @@ public class Field extends Tile {
 	public Tower Prototype_getTower() {
 		return tower;
 	}
-	
+
 	public Tower getTower() {
 		return tower;
 	}

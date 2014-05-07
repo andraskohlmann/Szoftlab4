@@ -50,7 +50,7 @@ public abstract class EnemyUnit implements ActiveUnit {
 	public void ProtoType_setName(String name) {
 		n = name;
 	}
-	
+
 	public int getParameters() {
 		return health;
 	}

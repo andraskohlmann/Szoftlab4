@@ -21,7 +21,7 @@ public class Board extends JFrame {
 		Game game = new Game();
 		game.loadMap("3a.map");
 		board.add(game.getView());
-		
+
 		game.putTower(6, 3, "Segglyuk");
 		game.putSwamp(1, 2, "PICSA");
 

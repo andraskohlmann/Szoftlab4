@@ -11,7 +11,7 @@ public abstract class TileView extends ViewBase implements View {
 
 	public TileView(int x, int y) {
 		super(x, y);
-		
+
 		needToRepaint = true;
 	}
 

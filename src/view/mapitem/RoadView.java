@@ -17,7 +17,7 @@ public class RoadView extends TileView {
 
 	public RoadView(Road r, int x, int y) {
 		super(x, y);
-		
+
 		road = r;
 		enemyUnitViews = new ArrayList<ViewBase>();
 	}
@@ -32,8 +32,8 @@ public class RoadView extends TileView {
 
 	protected void paintMe(Graphics g) {
 		g.setColor(Color.ORANGE);
-		g.fillRect(x*20, y*20, 20, 20);
-		
+		g.fillRect(x * 20, y * 20, 20, 20);
+
 		if (swampView != null)
 			swampView.draw(g);
 		for (ViewBase euv : enemyUnitViews) {

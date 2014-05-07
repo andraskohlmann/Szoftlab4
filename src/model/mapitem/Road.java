@@ -125,7 +125,7 @@ public class Road extends Tile {
 	public Swamp Prototype_getSwamp() {
 		return swamp;
 	}
-	
+
 	public Swamp getSwamp() {
 		return swamp;
 	}
