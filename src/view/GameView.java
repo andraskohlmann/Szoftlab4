@@ -24,15 +24,15 @@ public class GameView extends JPanel {
 
 	@Override
 	public void paintComponent(Graphics graphics) {
-		Image img = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
+		//Image img = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
 		
-		Graphics g = img.getGraphics();
+		//Graphics g = img.getGraphics();
 		
 		for (ViewBase view : views) {
-			view.draw(g);
+			view.draw(graphics);
 		}
 		
-		graphics.drawImage(img, 0, 0, null);
+		//graphics.drawImage(img, 0, 0, null);
 		
 	}
 

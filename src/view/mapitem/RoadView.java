@@ -2,6 +2,7 @@ package view.mapitem;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.mapitem.Road;
@@ -16,6 +17,7 @@ public class RoadView extends TileView {
 
 	public RoadView(Road r) {
 		road = r;
+		enemyUnitViews = new ArrayList<ViewBase>();
 	}
 
 	public void notifyView() {

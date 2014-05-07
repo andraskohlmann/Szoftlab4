@@ -167,4 +167,8 @@ public class Game {
 		ticker.addUnit(newEnemy);
 	}
 
+	public GameView getView() {
+		return gameView;
+	}
+	
 }
