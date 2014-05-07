@@ -23,7 +23,7 @@ public class TowerView extends ViewBase {
 		
 		System.out.println("tower draw " + x + " " + y);
 		g.setColor(Color.GRAY);
-		g.fillOval(y * 20 + 2, x * 20 + 2 , 16, 16);
+		g.fillOval(x * 20 + 2, y * 20 + 2 , 16, 16);
 		runeView.draw(g);
 	}
 }

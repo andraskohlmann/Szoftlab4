@@ -12,8 +12,8 @@ public abstract class ViewBase {
 	}
 	
 	public ViewBase(int x, int y) {
-		this.x = y;
-		this.y = x;
+		this.x = x;
+		this.y = y;
 	}
 
 	public abstract void draw(Graphics g);
