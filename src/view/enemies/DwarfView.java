@@ -9,6 +9,6 @@ public class DwarfView extends ViewBase {
 	private Dwarf dwarf;
 	
 	public void draw(Graphics g) {
-		dwarf.getParameters();
+		int health = dwarf.getParameters();
 	}
 }
