@@ -13,7 +13,9 @@ public class FieldView extends TileView {
 	private ViewBase towerView;
 	private ViewBase fogView;
 
-	public FieldView(Field f) {
+	public FieldView(Field f, int x, int y) {
+		super(x, y);
+		
 		field = f;
 	}
 

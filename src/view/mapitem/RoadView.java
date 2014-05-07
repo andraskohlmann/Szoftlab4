@@ -15,7 +15,9 @@ public class RoadView extends TileView {
 	private SwampView swampView;
 	private List<ViewBase> enemyUnitViews;
 
-	public RoadView(Road r) {
+	public RoadView(Road r, int x, int y) {
+		super(x, y);
+		
 		road = r;
 		enemyUnitViews = new ArrayList<ViewBase>();
 	}

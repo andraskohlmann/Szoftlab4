@@ -2,14 +2,19 @@ package view;
 
 import java.awt.Graphics;
 
-public class ViewBase {
-	
+public abstract class ViewBase {
+
 	protected int x;
 	protected int y;
 	
-	protected boolean needToRepaint;
-
-	public void draw(Graphics g) {
-
+	public ViewBase() {
+		
 	}
+	
+	public ViewBase(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public abstract void draw(Graphics g);
 }
