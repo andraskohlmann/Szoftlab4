@@ -31,6 +31,6 @@ public class RoadView extends ViewBase implements View {
 			}
 		}
 		g.setColor(Color.ORANGE);
-		
+		g.fillRect(x, y, 20, 20);
 	}
 }
