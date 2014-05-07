@@ -12,6 +12,10 @@ public class FieldView extends ViewBase implements View {
 	private TowerView towerView;
 	private FogView fogView;
 	
+	public FieldView(Field f) {
+		field = f;
+	}
+
 	public void notifyView() {
 	
 	}
