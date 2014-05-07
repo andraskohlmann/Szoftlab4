@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +23,16 @@ public class GameView extends JPanel {
 	}
 
 	@Override
-	public void paint(Graphics g) {
+	public void paintComponent(Graphics graphics) {
+		Image img = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
+		
+		Graphics g = img.getGraphics();
 		
 		for (ViewBase view : views) {
 			view.draw(g);
 		}
+		
+		graphics.drawImage(img, 0, 0, null);
 		
 	}
 
