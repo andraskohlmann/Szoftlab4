@@ -1,4 +1,5 @@
 package view.mapitem;
+import java.awt.Color;
 import java.awt.Graphics;
 
 import model.mapitem.Field;
@@ -21,6 +22,8 @@ public class FieldView extends ViewBase implements View {
 	}
 	
 	public void draw(Graphics g) {
+		g.setColor(Color.GREEN);
+		g.drawRect(x, y, 20, 20);
 		if(towerView != null)
 			towerView.draw(g);
 		if(fogView != null)
