@@ -13,6 +13,10 @@ public class RoadView extends ViewBase implements View {
 	private SwampView swampView;
 	private List<ViewBase> enemyUnitViews; 
 
+	public RoadView(Road r) {
+		road = r;
+	}
+
 	public void notifyView() {
 	
 	}
