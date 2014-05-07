@@ -17,4 +17,6 @@ public abstract class ViewBase {
 	}
 
 	public abstract void draw(Graphics g);
+	
+	//public void draw(Graphics g, int x, int y) {}
 }

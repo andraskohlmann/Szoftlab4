@@ -24,20 +24,21 @@ public class RoadView extends TileView {
 
 	public void notifyView() {
 		if (swampView == null && road.hasSwamp()) {
-			swampView = new SwampView(road.getSwamp());
+			swampView = new SwampView(road.getSwamp(), x, y);
 		}
 
 		super.notifyView();
 	}
 
 	protected void paintMe(Graphics g) {
+		g.setColor(Color.ORANGE);
+		g.fillRect(x*20, y*20, 20, 20);
+		
 		if (swampView != null)
 			swampView.draw(g);
 		for (ViewBase euv : enemyUnitViews) {
 			euv.draw(g);
 		}
-		g.setColor(Color.ORANGE);
-		g.fillRect(x*20, y*20, 20, 20);
 	}
 
 }
