@@ -35,7 +35,7 @@ public class RoadView extends TileView {
 			euv.draw(g);
 		}
 		g.setColor(Color.ORANGE);
-		g.fillRect(x, y, 20, 20);
+		g.fillRect(x*20, y*20, 20, 20);
 	}
 
 }
