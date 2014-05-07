@@ -21,6 +21,12 @@ public class FieldView extends TileView {
 		if (towerView == null && field.hasTower()) {
 			towerView = new TowerView(field.getTower());
 		}
+		
+		if (fogView == null && field.hasFog()) {
+			fogView = new FogView();
+		} else if (fogView != null && !field.hasFog()) {
+			fogView = null;
+		}
 
 		super.notifyView();
 	}
