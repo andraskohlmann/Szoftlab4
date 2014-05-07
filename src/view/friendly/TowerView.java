@@ -1,4 +1,5 @@
 package view.friendly;
+import java.awt.Color;
 import java.awt.Graphics;
 
 import model.friendly.Tower;
@@ -11,6 +12,8 @@ public class TowerView extends ViewBase {
 	private RuneView runeView;
 	
 	public void draw(Graphics g) {
+		g.setColor(Color.GRAY);
+		g.fillOval(x + 2, y + 2, 16, 16);
 		runeView.draw(g);
 	}
 }
