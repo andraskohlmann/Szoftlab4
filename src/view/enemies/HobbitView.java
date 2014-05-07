@@ -2,6 +2,7 @@ package view.enemies;
 
 import java.awt.Graphics;
 
+import model.enemies.Hobbit;
 import view.ViewBase;
 
 public class HobbitView extends ViewBase {

@@ -2,6 +2,7 @@ package view.enemies;
 
 import java.awt.Graphics;
 
+import model.enemies.Elf;
 import view.ViewBase;
 
 public class ElfView extends ViewBase {
