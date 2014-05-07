@@ -3,6 +3,8 @@ package model.mapitem;
 import java.util.ArrayList;
 import java.util.List;
 
+import view.View;
+
 import model.enemies.EnemyUnit;
 import model.friendly.Swamp;
 import model.friendly.Tower;
@@ -15,15 +17,8 @@ public class Road extends Tile {
 	private List<EnemyUnit> enemyList = new ArrayList<EnemyUnit>();
 	private Swamp swamp;
 	private List<Tower> towersToNotify = new ArrayList<Tower>();
-
-	public void Skeleton_SwampSetter(Swamp s) {
-		swamp = s;
-	}
-
-	public void Skeleton_addTower(Tower t) {
-		towersToNotify.add(t);
-	}
-
+    private View view;
+	
 	public boolean checkSwamp() {
 		if (swamp == null)
 			return true;
@@ -44,6 +39,7 @@ public class Road extends Tile {
 
 	public void putRune(Rune r) {
 		swamp.putRune(r);
+		view.notifyView();
 	}
 
 	public void deadNotice(EnemyUnit e) {
@@ -55,6 +51,9 @@ public class Road extends Tile {
 		}
 
 		enemyList.remove(e);
+		
+		view.notifyView();
+		
 	}
 
 	public boolean checkRune(Rune r) {
@@ -65,6 +64,7 @@ public class Road extends Tile {
 
 	public void putSwamp(Swamp s) {
 		swamp = s;
+		view.notifyView();
 	}
 
 	public void addUnit(EnemyUnit e) {
@@ -79,6 +79,7 @@ public class Road extends Tile {
 		}
 
 		e.setRoad(this);
+		view.notifyView();
 	}
 
 	public void stepMe(EnemyUnit enemyUnit) {
@@ -97,6 +98,7 @@ public class Road extends Tile {
 				.randomInt(nextRoad.size()) : 0;
 
 		nextRoad.get(which).addUnit(enemyUnit);
+		view.notifyView();
 	}
 
 	public void addNextRoad(Road next) {
