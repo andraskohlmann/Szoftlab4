@@ -260,7 +260,7 @@ public class Map {
 				if (lines[i].charAt(j) == '#')
 				  {	
 					Field f = new Field();
-					TileView tView = ViewFactory.createView(f);
+					TileView tView = ViewFactory.createView(f,i,j);
 					tiles[i][j] = f;
 					f.setView(tView);
 					gameView.addView(tView);
@@ -269,14 +269,14 @@ public class Map {
 					Road r = new Road();
 					tiles[i][j] = r;
 					firstRoad = (Road) tiles[i][j];
-					TileView tView = ViewFactory.createView(r);
+					TileView tView = ViewFactory.createView(r,i,j);
 					gameView.addView(tView);
 					r.setView(tView);
 				} else if (lines[i].charAt(j) == ' ')
 				{
 					Road r = new Road();
 					tiles[i][j] = r;
-					TileView tView = ViewFactory.createView(r);
+					TileView tView = ViewFactory.createView(r,i,j);
 					gameView.addView(tView);
 					r.setView(tView);
 				}	
@@ -284,7 +284,7 @@ public class Map {
 				{
 					Road r = new Road();
 					tiles[i][j] = r;
-					TileView tView = ViewFactory.createView(r);
+					TileView tView = ViewFactory.createView(r,i,j);
 					gameView.addView(tView);
 					r.setView(tView);
 				}	
@@ -293,7 +293,7 @@ public class Map {
 					FinishedRoad fr = new FinishedRoad();
 					tiles[i][j] = fr;
 					finishedRoad = fr;
-					ViewBase view = ViewFactory.createView(fr);
+					ViewBase view = ViewFactory.createView(fr,i,j);
 					gameView.addView(view);
 				}
 			}
