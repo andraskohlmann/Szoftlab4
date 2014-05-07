@@ -13,6 +13,8 @@ public class TowerView extends ViewBase {
 	
 	public TowerView(Tower t) {
 		tower = t;
+		
+		runeView = new RuneView();
 	}
 
 	public void draw(Graphics g) {
