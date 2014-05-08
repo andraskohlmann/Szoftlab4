@@ -11,6 +11,10 @@ public class HobbitView implements RelativeViewBase {
 
 	private Hobbit hobbit;
 
+	public HobbitView(Hobbit h) {
+		hobbit = h;
+	}
+
 	public void draw(Graphics g, int x, int y) {
 		int health = hobbit.getParameters();
 

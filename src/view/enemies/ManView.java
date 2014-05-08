@@ -11,6 +11,10 @@ public class ManView implements RelativeViewBase {
 
 	private Man man;
 
+	public ManView(Man m) {
+		man = m;
+	}
+
 	public void draw(Graphics g, int x, int y) {
 		int health = man.getParameters();
 

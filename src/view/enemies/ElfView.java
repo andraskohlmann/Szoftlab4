@@ -11,6 +11,10 @@ public class ElfView implements RelativeViewBase {
 
 	private Elf elf;
 
+	public ElfView(Elf e) {
+		elf = e;
+	}
+
 	public void draw(Graphics g, int x, int y) {
 		int health = elf.getParameters();
 

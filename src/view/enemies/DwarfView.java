@@ -11,6 +11,10 @@ public class DwarfView implements RelativeViewBase {
 
 	private Dwarf dwarf;
 
+	public DwarfView(Dwarf d) {
+		dwarf = d;
+	}
+
 	public void draw(Graphics g, int x, int y) {
 		int health = dwarf.getParameters();
 
