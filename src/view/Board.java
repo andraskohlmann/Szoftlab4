@@ -26,8 +26,20 @@ public class Board extends JFrame {
 		game.putTower(6, 3, "Segglyuk");
 		game.putSwamp(1, 2, "PICSA");
 		
-		game.addUnit(EnemyType.hobbit, "Buzikám");
+		game.addUnit(EnemyType.elf, "Buzikám");
+		
 
 		board.setVisible(true);
+		
+		for (int i = 0; i < 1000; i++) {
+			game.tick();
+			
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 }
