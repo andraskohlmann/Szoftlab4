@@ -2,26 +2,22 @@ package view.mapitem;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.List;
 
+import model.enemies.EnemyUnit;
 import model.mapitem.Road;
 import view.RelativeViewBase;
-import view.ViewBase;
 import view.friendly.SwampView;
 
 public class RoadView extends TileViewBase {
 
 	private Road road;
-	
+
 	private RelativeViewBase swampView;
-	private List<ViewBase> enemyUnitViews;
 
 	public RoadView(Road r, int x, int y) {
 		super(x, y);
 
 		road = r;
-		enemyUnitViews = new ArrayList<ViewBase>();
 	}
 
 	public void notifyView() {
@@ -38,8 +34,8 @@ public class RoadView extends TileViewBase {
 
 		if (swampView != null)
 			swampView.draw(g, x * 20, y * 20);
-		for (ViewBase euv : enemyUnitViews) {
-			euv.draw(g);
+		for (EnemyUnit eu : road.getEnemyList()) {
+			((RelativeViewBase) eu.getView()).draw(g, x * 20, y * 20);
 		}
 	}
 

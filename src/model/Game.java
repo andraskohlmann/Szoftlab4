@@ -19,6 +19,7 @@ import model.runes.RangeRune;
 import model.runes.ReloadRune;
 import model.runes.Rune;
 import view.GameView;
+import view.ViewFactory;
 import control.EnemyType;
 import control.ProtoManager;
 import control.RuneType;
@@ -146,18 +147,27 @@ public class Game {
 
 	public void addUnit(EnemyType type, String name) {
 		EnemyUnit newEnemy;
+
 		switch (type) {
 		case dwarf:
-			newEnemy = new Dwarf(this);
+			Dwarf dwarf = new Dwarf(this);
+			dwarf.setView(ViewFactory.createView(dwarf));
+			newEnemy = dwarf;
 			break;
 		case elf:
-			newEnemy = new Elf(this);
+			Elf elf = new Elf(this);
+			elf.setView(ViewFactory.createView(elf));
+			newEnemy = elf;
 			break;
 		case hobbit:
-			newEnemy = new Hobbit(this);
+			Hobbit hobbit = new Hobbit(this);
+			hobbit.setView(ViewFactory.createView(hobbit));
+			newEnemy = hobbit;
 			break;
 		default:
-			newEnemy = new Man(this);
+			Man man = new Man(this);
+			man.setView(ViewFactory.createView(man));
+			newEnemy = man;
 			break;
 		}
 		newEnemy.ProtoType_setName(name);

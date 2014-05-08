@@ -7,12 +7,25 @@ import model.runes.Projectile;
 import model.runes.Slime;
 
 public abstract class EnemyUnit implements ActiveUnit {
+
 	protected Road roadToNotice;
 	protected Game gameToNotice;
+
 	protected String n = new String();
+
 	protected int health;
 	protected int tickDivider;
 	protected int counter;
+	
+	protected Object view;
+	
+	public void setView(Object v) {
+		view = v;
+	}
+	
+	public Object getView() {
+		return view;
+	}
 
 	public abstract void gotHit(Projectile p);
 

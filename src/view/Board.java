@@ -3,6 +3,7 @@ package view;
 import javax.swing.JFrame;
 
 import model.Game;
+import control.EnemyType;
 
 public class Board extends JFrame {
 
@@ -24,6 +25,8 @@ public class Board extends JFrame {
 
 		game.putTower(6, 3, "Segglyuk");
 		game.putSwamp(1, 2, "PICSA");
+		
+		game.addUnit(EnemyType.hobbit, "Buzikám");
 
 		board.setVisible(true);
 	}

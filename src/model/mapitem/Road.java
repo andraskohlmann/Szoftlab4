@@ -133,4 +133,8 @@ public class Road extends Tile {
 	public List<EnemyUnit> ProtoType_getList() {
 		return enemyList;
 	}
+	
+	public List<EnemyUnit> getEnemyList() {
+		return enemyList;
+	}
 }
