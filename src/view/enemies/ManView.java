@@ -5,24 +5,20 @@ import java.awt.Graphics;
 
 import model.Common;
 import model.enemies.Man;
-import view.RelativeViewBase;
 
-public class ManView implements RelativeViewBase {
-
-	private Man man;
+public class ManView extends EnemyUnitView {
 
 	public ManView(Man m) {
-		man = m;
+		super(m);
 	}
 
-	public void draw(Graphics g, int x, int y) {
-		int health = man.getParameters();
-
+	@Override
+	protected void setColor(Graphics g) {
 		g.setColor(Color.PINK);
-		g.fillOval(x, y, 10, 10);
-		g.setColor(Color.RED);
-		g.fillRect(x, y - 5, (int) (10 * (double) health / Common.lifeMan), 3);
-		g.setColor(Color.BLACK);
-		g.drawRect(x, y - 5, 10, 3);
+	}
+
+	@Override
+	protected int getMaxLife() {
+		return Common.lifeMan;
 	}
 }

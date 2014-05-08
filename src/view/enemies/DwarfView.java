@@ -5,24 +5,20 @@ import java.awt.Graphics;
 
 import model.Common;
 import model.enemies.Dwarf;
-import view.RelativeViewBase;
 
-public class DwarfView implements RelativeViewBase {
-
-	private Dwarf dwarf;
+public class DwarfView extends EnemyUnitView {
 
 	public DwarfView(Dwarf d) {
-		dwarf = d;
+		super(d);
 	}
 
-	public void draw(Graphics g, int x, int y) {
-		int health = dwarf.getParameters();
-
+	@Override
+	protected void setColor(Graphics g) {
 		g.setColor(Color.BLUE);
-		g.fillOval(x, y, 10, 10);
-		g.setColor(Color.RED);
-		g.fillRect(x, y - 5, (int) (10 * (double) health / Common.lifeDwarf), 3);
-		g.setColor(Color.BLACK);
-		g.drawRect(x, y - 5, 10, 3);
+	}
+
+	@Override
+	protected int getMaxLife() {
+		return Common.lifeDwarf;
 	}
 }
