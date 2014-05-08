@@ -3,10 +3,22 @@ package view.runes;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import model.runes.Rune;
+
 import view.RelativeViewBase;
 
 public class RuneView implements RelativeViewBase {
 	
+	private Rune rune;
+	
+	public RuneView(Rune r) {
+		rune = r;
+	}
+	
+	public Rune getRune() {
+		return rune;
+	}
+
 	protected void setColor(Graphics g) {
 		g.setColor(Color.YELLOW);
 	}
