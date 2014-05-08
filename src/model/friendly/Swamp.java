@@ -17,6 +17,16 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	private int tickDivider = Common.swamp_counter;
 	private int counter;
 	private boolean isUpgraded;
+	
+	private Object view;
+	
+	public void setView(Object v) {
+		view = v;
+	}
+	
+	public Object getView() {
+		return view;
+	}
 
 	public Swamp() {
 		tickDivider = 10;

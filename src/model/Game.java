@@ -53,6 +53,7 @@ public class Game {
 		if (map.checkTower(x, y)) {
 			Tower tower = new Tower();
 			tower.ProtoType_setName(name);
+			tower.setView(ViewFactory.createView(tower));
 			Rune rune = new Rune();
 			tower.putFirstRune(rune);
 			ticker.addUnit(tower);
@@ -98,6 +99,7 @@ public class Game {
 	public boolean putSwamp(int x, int y, String name) {
 		if (map.checkSwamp(x, y)) {
 			Swamp swamp = new Swamp();
+			swamp.setView(ViewFactory.createView(swamp));
 			swamp.ProtoType_setName(name);
 			Rune rune = new Rune();
 			swamp.putFirstRune(rune);
@@ -111,6 +113,7 @@ public class Game {
 
 	public void putFog(int x, int y) {
 		Fog fog = new Fog(this, Common.fog_timetoleave);
+		fog.setView(ViewFactory.createView(fog));
 		ticker.addUnit(fog);
 		map.putFog(x, y, fog);
 	}
@@ -128,7 +131,7 @@ public class Game {
 
 		ticker.remove(finished);
 		map.deleteFinishedUnits();
-		
+
 		gameView.repaint();
 	}
 

@@ -10,6 +10,16 @@ public class Fog implements ActiveUnit {
 	private Game gameToNotify;
 
 	private int timeToLeave;
+	
+	private Object view;
+	
+	public void setView(Object v) {
+		view = v;
+	}
+	
+	public Object getView() {
+		return view;
+	}
 
 	public Fog(Game game, int ttl) {
 		gameToNotify = game;

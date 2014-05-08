@@ -17,6 +17,16 @@ public class Rune {
 	protected int slowHobbit;
 	protected int slowElf;
 	protected int slowMan;
+	
+	private Object view;
+	
+	public void setView(Object v) {
+		view = v;
+	}
+	
+	public Object getView() {
+		return view;
+	}	
 
 	public Rune() {
 		distance = Common.distance;
