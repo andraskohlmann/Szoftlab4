@@ -55,6 +55,7 @@ public class Game {
 			tower.ProtoType_setName(name);
 			tower.setView(ViewFactory.createView(tower));
 			Rune rune = new Rune();
+			rune.setView(ViewFactory.createView(rune));
 			tower.putFirstRune(rune);
 			ticker.addUnit(tower);
 			map.putTower(x, y, tower);
@@ -102,6 +103,7 @@ public class Game {
 			swamp.setView(ViewFactory.createView(swamp));
 			swamp.ProtoType_setName(name);
 			Rune rune = new Rune();
+			rune.setView(ViewFactory.createView(rune));
 			swamp.putFirstRune(rune);
 			ticker.addUnit(swamp);
 			map.putSwamp(x, y, swamp);

@@ -98,5 +98,9 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 		return cl.getSimpleName();
 	}
+	
+	public Rune getRune() {
+		return rune;
+	}
 
 }
