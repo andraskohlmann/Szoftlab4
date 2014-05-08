@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 import model.Game;
 import control.EnemyType;
+import control.RuneType;
 
 public class Board extends JFrame {
 
@@ -27,6 +28,9 @@ public class Board extends JFrame {
 		game.putSwamp(1, 2, "PICSA");
 		
 		game.addUnit(EnemyType.elf, "Buzikám");
+		
+		game.putRune(6, 3, RuneType.Range);
+		game.putRune(1, 2, RuneType.Dwarf);
 		
 
 		board.setVisible(true);

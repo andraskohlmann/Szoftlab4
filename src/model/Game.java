@@ -70,22 +70,34 @@ public class Game {
 
 		switch (runeType) {
 		case Dwarf:
-			rune = new DwarfRune();
+			DwarfRune dwarfRune = new DwarfRune();
+			dwarfRune.setView(ViewFactory.createView(dwarfRune));
+			rune = dwarfRune;
 			break;
 		case Elf:
-			rune = new ElfRune();
+			ElfRune elfRune = new ElfRune();
+			elfRune.setView(ViewFactory.createView(elfRune));
+			rune = elfRune;
 			break;
 		case Hobbit:
-			rune = new HobbitRune();
+			HobbitRune hobbitRune = new HobbitRune();
+			hobbitRune.setView(ViewFactory.createView(hobbitRune));
+			rune = hobbitRune;
 			break;
 		case Man:
-			rune = new ManRune();
+			ManRune manRune = new ManRune();
+			manRune.setView(ViewFactory.createView(manRune));
+			rune = manRune;
 			break;
 		case Range:
-			rune = new RangeRune();
+			RangeRune rangeRune = new RangeRune();
+			rangeRune.setView(ViewFactory.createView(rangeRune));
+			rune = rangeRune;
 			break;
 		default:
-			rune = new ReloadRune();
+			ReloadRune reloadRune = new ReloadRune();
+			reloadRune.setView(ViewFactory.createView(reloadRune));
+			rune = reloadRune;
 			break;
 		}
 
