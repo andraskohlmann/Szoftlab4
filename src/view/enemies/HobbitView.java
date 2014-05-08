@@ -5,13 +5,13 @@ import java.awt.Graphics;
 
 import model.Common;
 import model.enemies.Hobbit;
-import view.ViewBase;
+import view.RelativeViewBase;
 
-public class HobbitView extends ViewBase {
+public class HobbitView implements RelativeViewBase {
 
 	private Hobbit hobbit;
 
-	public void draw(Graphics g) {
+	public void draw(Graphics g, int x, int y) {
 		int health = hobbit.getParameters();
 
 		g.setColor(Color.CYAN);

@@ -16,12 +16,12 @@ public class SwampView extends ViewBase {
 		super(x, y);
 
 		swamp = s;
-		runeView = new RuneView(x, y);
+		runeView = new RuneView();
 	}
 
 	public void draw(Graphics g) {
 		g.setColor(Color.MAGENTA);
 		g.fillRect(x * 20 + 2, y * 20 + 2, 16, 16);
-		runeView.draw(g);
+		runeView.draw(g, x * 20, y * 20);
 	}
 }

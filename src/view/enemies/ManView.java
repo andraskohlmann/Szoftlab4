@@ -5,13 +5,13 @@ import java.awt.Graphics;
 
 import model.Common;
 import model.enemies.Man;
-import view.ViewBase;
+import view.RelativeViewBase;
 
-public class ManView extends ViewBase {
+public class ManView implements RelativeViewBase {
 
 	private Man man;
 
-	public void draw(Graphics g) {
+	public void draw(Graphics g, int x, int y) {
 		int health = man.getParameters();
 
 		g.setColor(Color.PINK);

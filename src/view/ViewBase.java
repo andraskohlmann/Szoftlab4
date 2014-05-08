@@ -7,9 +7,7 @@ public abstract class ViewBase {
 	protected int x;
 	protected int y;
 
-	public ViewBase() {
-
-	}
+	//public ViewBase() {}
 
 	public ViewBase(int x, int y) {
 		this.x = x;
@@ -17,6 +15,4 @@ public abstract class ViewBase {
 	}
 
 	public abstract void draw(Graphics g);
-
-	// public void draw(Graphics g, int x, int y) {}
 }

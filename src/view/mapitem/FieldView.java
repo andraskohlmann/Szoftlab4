@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import model.mapitem.Field;
+import view.RelativeViewBase;
 import view.ViewBase;
 import view.friendly.TowerView;
 
@@ -11,7 +12,7 @@ public class FieldView extends TileViewBase {
 
 	private Field field;
 	private ViewBase towerView;
-	private ViewBase fogView;
+	private RelativeViewBase fogView;
 
 	public FieldView(Field f, int x, int y) {
 		super(x, y);
@@ -41,6 +42,6 @@ public class FieldView extends TileViewBase {
 			towerView.draw(g);
 
 		if (fogView != null)
-			fogView.draw(g);
+			fogView.draw(g, x * 20, y * 20);
 	}
 }

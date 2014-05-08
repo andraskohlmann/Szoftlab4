@@ -5,13 +5,13 @@ import java.awt.Graphics;
 
 import model.Common;
 import model.enemies.Dwarf;
-import view.ViewBase;
+import view.RelativeViewBase;
 
-public class DwarfView extends ViewBase {
+public class DwarfView implements RelativeViewBase {
 
 	private Dwarf dwarf;
 
-	public void draw(Graphics g) {
+	public void draw(Graphics g, int x, int y) {
 		int health = dwarf.getParameters();
 
 		g.setColor(Color.BLUE);

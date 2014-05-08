@@ -3,17 +3,17 @@ package view.runes;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import view.ViewBase;
+import view.RelativeViewBase;
 
-public class RuneView extends ViewBase {
-
-	public RuneView(int x, int y) {
-		super(x, y);
+public class RuneView implements RelativeViewBase {
+	
+	protected void setColor(Graphics g) {
+		g.setColor(Color.YELLOW);
 	}
 
-	public void draw(Graphics g) {
-		g.setColor(Color.YELLOW);
-		g.fillPolygon(new int[] { x*20 + 5, x*20 + 10, x*20 + 15, x*20 + 10 }, new int[] {
-				y*20 + 10, y*20 + 15, y*20 + 10, y*20 + 5 }, 4);
+	public void draw(Graphics g, int x, int y) {
+		setColor(g);
+		g.fillPolygon(new int[] { x + 5, x + 10, x + 15, x + 10 }, new int[] {
+				y + 10, y + 15, y + 10, y + 5 }, 4);
 	}
 }

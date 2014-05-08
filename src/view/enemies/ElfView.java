@@ -5,13 +5,13 @@ import java.awt.Graphics;
 
 import model.Common;
 import model.enemies.Elf;
-import view.ViewBase;
+import view.RelativeViewBase;
 
-public class ElfView extends ViewBase {
+public class ElfView implements RelativeViewBase {
 
 	private Elf elf;
 
-	public void draw(Graphics g) {
+	public void draw(Graphics g, int x, int y) {
 		int health = elf.getParameters();
 
 		g.setColor(Color.WHITE);
