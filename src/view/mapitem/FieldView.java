@@ -5,13 +5,13 @@ import java.awt.Graphics;
 
 import model.mapitem.Field;
 import view.RelativeViewBase;
-import view.ViewBase;
 import view.friendly.TowerView;
 
 public class FieldView extends TileViewBase {
 
 	private Field field;
-	private ViewBase towerView;
+	
+	private RelativeViewBase towerView;
 	private RelativeViewBase fogView;
 
 	public FieldView(Field f, int x, int y) {
@@ -22,7 +22,7 @@ public class FieldView extends TileViewBase {
 
 	public void notifyView() {
 		if (towerView == null && field.hasTower()) {
-			towerView = new TowerView(field.getTower(), x, y);
+			towerView = new TowerView(field.getTower());
 		}
 
 		if (fogView == null && field.hasFog()) {
@@ -39,7 +39,7 @@ public class FieldView extends TileViewBase {
 		g.fillRect(x * 20, y * 20, 20, 20);
 
 		if (towerView != null)
-			towerView.draw(g);
+			towerView.draw(g, x * 20, y * 20);
 
 		if (fogView != null)
 			fogView.draw(g, x * 20, y * 20);

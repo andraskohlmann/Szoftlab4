@@ -6,13 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.mapitem.Road;
+import view.RelativeViewBase;
 import view.ViewBase;
 import view.friendly.SwampView;
 
 public class RoadView extends TileViewBase {
 
 	private Road road;
-	private SwampView swampView;
+	
+	private RelativeViewBase swampView;
 	private List<ViewBase> enemyUnitViews;
 
 	public RoadView(Road r, int x, int y) {
@@ -24,7 +26,7 @@ public class RoadView extends TileViewBase {
 
 	public void notifyView() {
 		if (swampView == null && road.hasSwamp()) {
-			swampView = new SwampView(road.getSwamp(), x, y);
+			swampView = new SwampView(road.getSwamp());
 		}
 
 		super.notifyView();
@@ -35,7 +37,7 @@ public class RoadView extends TileViewBase {
 		g.fillRect(x * 20, y * 20, 20, 20);
 
 		if (swampView != null)
-			swampView.draw(g);
+			swampView.draw(g, x * 20, y * 20);
 		for (ViewBase euv : enemyUnitViews) {
 			euv.draw(g);
 		}

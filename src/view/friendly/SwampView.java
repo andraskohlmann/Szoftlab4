@@ -4,24 +4,22 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import model.friendly.Swamp;
-import view.ViewBase;
+import view.RelativeViewBase;
 import view.runes.RuneView;
 
-public class SwampView extends ViewBase {
+public class SwampView implements RelativeViewBase {
 
 	private RuneView runeView;
 	private Swamp swamp;
 
-	public SwampView(Swamp s, int x, int y) {
-		super(x, y);
-
+	public SwampView(Swamp s) {
 		swamp = s;
 		runeView = new RuneView();
 	}
 
-	public void draw(Graphics g) {
+	public void draw(Graphics g, int x, int y) {
 		g.setColor(Color.MAGENTA);
-		g.fillRect(x * 20 + 2, y * 20 + 2, 16, 16);
-		runeView.draw(g, x * 20, y * 20);
+		g.fillRect(x + 2, y + 2, 16, 16);
+		runeView.draw(g, x , y);
 	}
 }
