@@ -23,8 +23,13 @@ public abstract class EnemyUnitView implements RelativeViewBase {
 
 		setColor(g);
 		g.fillOval(x + 5, y + 6, 10, 10);
-		g.setColor(Color.RED);
+		g.setColor(Color.GREEN);
 		g.fillRect(x + 5, y + 1, (int) (10 * (double) health / getMaxLife()), 3);
+		g.setColor(Color.RED);
+		g.fillRect(x + 15
+				- (int) (10 * (double) (getMaxLife() - health) / getMaxLife()),
+				y + 1,
+				(int) (10 * (double) (getMaxLife() - health) / getMaxLife()), 3);
 		g.setColor(Color.BLACK);
 		g.drawRect(x + 5, y + 1, 10, 3);
 	}
