@@ -21,8 +21,6 @@ public class TowerView extends ViewBase {
 	}
 
 	public void draw(Graphics g) {
-
-		System.out.println("tower draw " + x + " " + y);
 		g.setColor(Color.GRAY);
 		g.fillOval(x * 20 + 2, y * 20 + 2, 16, 16);
 		runeView.draw(g);
