@@ -15,7 +15,7 @@ import model.runes.Rune;
 import view.GameView;
 import view.ViewBase;
 import view.ViewFactory;
-import view.mapitem.TileView;
+import view.mapitem.TileViewBase;
 
 public class Map {
 
@@ -255,7 +255,7 @@ public class Map {
 			for (int j = 0; j < numberOfColumns; j++) {
 				if (lines[i].charAt(j) == '#') {
 					Field f = new Field();
-					TileView tView = ViewFactory.createView(f, j, i);
+					TileViewBase tView = ViewFactory.createView(f, j, i);
 					tiles[i][j] = f;
 					f.setView(tView);
 					gameView.addView(tView);
@@ -263,19 +263,19 @@ public class Map {
 					Road r = new Road();
 					tiles[i][j] = r;
 					firstRoad = (Road) tiles[i][j];
-					TileView tView = ViewFactory.createView(r, j, i);
+					TileViewBase tView = ViewFactory.createView(r, j, i);
 					gameView.addView(tView);
 					r.setView(tView);
 				} else if (lines[i].charAt(j) == ' ') {
 					Road r = new Road();
 					tiles[i][j] = r;
-					TileView tView = ViewFactory.createView(r, j, i);
+					TileViewBase tView = ViewFactory.createView(r, j, i);
 					gameView.addView(tView);
 					r.setView(tView);
 				} else if (lines[i].charAt(j) == '.') {
 					Road r = new Road();
 					tiles[i][j] = r;
-					TileView tView = ViewFactory.createView(r, j, i);
+					TileViewBase tView = ViewFactory.createView(r, j, i);
 					gameView.addView(tView);
 					r.setView(tView);
 				} else if (lines[i].charAt(j) == 'A') {

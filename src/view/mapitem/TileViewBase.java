@@ -5,11 +5,11 @@ import java.awt.Graphics;
 import view.View;
 import view.ViewBase;
 
-public abstract class TileView extends ViewBase implements View {
+public abstract class TileViewBase extends ViewBase implements View {
 
 	private boolean needToRepaint;
 
-	public TileView(int x, int y) {
+	public TileViewBase(int x, int y) {
 		super(x, y);
 
 		needToRepaint = true;

@@ -9,7 +9,7 @@ import model.mapitem.Road;
 import view.ViewBase;
 import view.friendly.SwampView;
 
-public class RoadView extends TileView {
+public class RoadView extends TileViewBase {
 
 	private Road road;
 	private SwampView swampView;

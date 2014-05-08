@@ -3,13 +3,12 @@ package model.mapitem;
 import model.friendly.Tower;
 import model.runes.Rune;
 import view.View;
-import view.mapitem.TileView;
 
 public class Field extends Tile {
 	private Tower tower;
 	private View view;
 
-	public void setView(TileView tw) {
+	public void setView(View tw) {
 		view = tw;
 	}
 

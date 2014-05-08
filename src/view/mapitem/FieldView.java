@@ -7,7 +7,7 @@ import model.mapitem.Field;
 import view.ViewBase;
 import view.friendly.TowerView;
 
-public class FieldView extends TileView {
+public class FieldView extends TileViewBase {
 
 	private Field field;
 	private ViewBase towerView;

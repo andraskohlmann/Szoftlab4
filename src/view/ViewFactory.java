@@ -6,15 +6,15 @@ import model.mapitem.Road;
 import view.mapitem.FieldView;
 import view.mapitem.FinishedRoadView;
 import view.mapitem.RoadView;
-import view.mapitem.TileView;
+import view.mapitem.TileViewBase;
 
 public class ViewFactory {
 
-	public static TileView createView(Road r, int x, int y) {
+	public static TileViewBase createView(Road r, int x, int y) {
 		return new RoadView(r, x, y);
 	}
 
-	public static TileView createView(Field f, int x, int y) {
+	public static TileViewBase createView(Field f, int x, int y) {
 		return new FieldView(f, x, y);
 	}
 
