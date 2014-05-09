@@ -62,5 +62,9 @@ public class Common {
 	public static final int damagePerUnit = 10;
 	public static final int fog_timetoleave = 1000;
 	public static final int fog_distancereduction = 2;
+	
+	// View values
+	
+	public static final int tileWidth = 20;
 
 }
