@@ -36,11 +36,17 @@ import view.runes.RangeRuneView;
 import view.runes.ReloadRuneView;
 import view.runes.RuneView;
 
+/**
+ * 
+ * Factory tervezési minta szerinti ViewFactory osztály. Felelõssége a view beli
+ * elemek létrehozása
+ * 
+ */
 public class ViewFactory {
 
-	//////////////////////////////////////////////////////////////
+	// ////////////////////////////////////////////////////////////
 	// MAPITEMS
-	
+
 	public static TileViewBase createView(Road r, int x, int y) {
 		return new RoadView(r, x, y);
 	}
@@ -52,68 +58,68 @@ public class ViewFactory {
 	public static ViewBase createView(FinishedRoad f, int x, int y) {
 		return new FinishedRoadView(x, y);
 	}
-	
-	///////////////////////////////////////////////////////////////
+
+	// /////////////////////////////////////////////////////////////
 	// ENEMY UNITS
-	
+
 	public static Object createView(Dwarf d) {
 		return new DwarfView(d);
 	}
-	
+
 	public static Object createView(Elf e) {
 		return new ElfView(e);
 	}
-	
+
 	public static Object createView(Hobbit h) {
 		return new HobbitView(h);
 	}
-	
+
 	public static Object createView(Man m) {
 		return new ManView(m);
 	}
-	
-	////////////////////////////////////////////////////////////////
+
+	// //////////////////////////////////////////////////////////////
 	// FRIENDLY + FOG
-	
+
 	public static Object createView(Fog f) {
 		return new FogView();
 	}
-	
+
 	public static Object createView(Swamp s) {
 		return new SwampView(s);
 	}
-	
+
 	public static Object createView(Tower t) {
 		return new TowerView(t);
 	}
-	
-	/////////////////////////////////////////////////////////////////
+
+	// ///////////////////////////////////////////////////////////////
 	// RUNES
-	
+
 	public static Object createView(Rune r) {
 		return new RuneView(r);
 	}
-	
+
 	public static Object createView(DwarfRune r) {
 		return new DwarfRuneView(r);
 	}
-	
+
 	public static Object createView(ElfRune r) {
 		return new ElfRuneView(r);
 	}
-	
+
 	public static Object createView(HobbitRune r) {
 		return new HobbitRuneView(r);
 	}
-	
+
 	public static Object createView(ManRune r) {
 		return new ManRuneView(r);
 	}
-	
+
 	public static Object createView(RangeRune r) {
 		return new RangeRuneView(r);
 	}
-	
+
 	public static Object createView(ReloadRune r) {
 		return new ReloadRuneView(r);
 	}

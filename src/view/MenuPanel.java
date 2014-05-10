@@ -7,8 +7,15 @@ import javax.swing.JPanel;
 
 import control.Control;
 
+/**
+ * 
+ * A játék menüjét megvalósító objektum
+ * 
+ */
 public class MenuPanel extends JPanel {
-
+	/**
+	 * Az egyes gombok a menüpanelen
+	 */
 	private JButton towerButton;
 	private JButton swampButton;
 	private JButton elfRuneButton;
@@ -17,46 +24,52 @@ public class MenuPanel extends JPanel {
 	private JButton hobbitRuneButton;
 	private JButton rangeRuneButton;
 	private JButton reloadRuneButton;
-	
+
+	/**
+	 * Konstruktor, inicializálja a gombok mûködését,tulajdonságait.
+	 * 
+	 * @param control
+	 *            Control - eseményvezérlõ objektum átadása
+	 */
 	public MenuPanel(Control control) {
-		setLayout(new GridLayout(0,1));
-		
+		setLayout(new GridLayout(0, 1));
+
 		System.out.println("haho");
 		towerButton = new JButton("Tower");
 		towerButton.setActionCommand("tower");
 		towerButton.addActionListener(control);
 		add(towerButton);
-		
+
 		swampButton = new JButton("Swamp");
 		swampButton.setActionCommand("swamp");
 		swampButton.addActionListener(control);
 		add(swampButton);
-		
+
 		elfRuneButton = new JButton("ElfRune");
 		elfRuneButton.setActionCommand("elfrune");
 		elfRuneButton.addActionListener(control);
 		add(elfRuneButton);
-		
+
 		manRuneButton = new JButton("ManRune");
 		manRuneButton.setActionCommand("manrune");
 		manRuneButton.addActionListener(control);
 		add(manRuneButton);
-		
+
 		dwarfRuneButton = new JButton("DwarfRune");
 		dwarfRuneButton.setActionCommand("dwarfrune");
 		dwarfRuneButton.addActionListener(control);
 		add(dwarfRuneButton);
-		
+
 		hobbitRuneButton = new JButton("HobbitRune");
 		hobbitRuneButton.setActionCommand("hobbitrune");
 		hobbitRuneButton.addActionListener(control);
 		add(hobbitRuneButton);
-		
+
 		rangeRuneButton = new JButton("RangeRune");
 		rangeRuneButton.setActionCommand("rangerune");
 		rangeRuneButton.addActionListener(control);
 		add(rangeRuneButton);
-		
+
 		reloadRuneButton = new JButton("ReloadRune");
 		reloadRuneButton.setActionCommand("reloadrune");
 		reloadRuneButton.addActionListener(control);

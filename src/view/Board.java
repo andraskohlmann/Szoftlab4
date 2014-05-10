@@ -8,11 +8,17 @@ import model.Game;
 import control.Control;
 import control.EnemyType;
 import control.RuneType;
-
+/**
+ * 
+ * A játék alapértelmezetten megjelenõ ablaka, ezen történik minden esemény.
+ *
+ */
 public class Board extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-
+/**
+ * Konstruktor, az ablak méretének, tulajdonságainak inicializálása.
+ */
 	public Board() {
 		setSize(600, 600);
 		setResizable(false);
@@ -20,7 +26,10 @@ public class Board extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocation(100, 50);
 	}
-
+/**
+ * Main függvény
+ * @param args
+ */
 	public static void main(String[] args) {
 		Game game = new Game();
 		Control control = new Control(game);
