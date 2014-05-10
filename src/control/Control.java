@@ -54,31 +54,31 @@ public class Control implements ActionListener, MouseListener, MouseMotionListen
 				clickState = clickState.none;
 		}
 		else if (clickState == clickState.swamp)
-			if (game.putSwamp(x, y, "s0000"))
+			if (game.putSwamp(y, x, "s0000"))
 				clickState = clickState.none;
 		
 		else if (clickState == clickState.elf)
-			if (game.putRune(x, y, RuneType.Elf))
+			if (game.putRune(y, x, RuneType.Elf))
 				clickState = clickState.none;
 		
 		else if (clickState == clickState.dwarf)
-			if (game.putRune(x, y, RuneType.Dwarf))
+			if (game.putRune(y, x, RuneType.Dwarf))
 				clickState = clickState.none;
 		
 		else if (clickState == clickState.hobbit)
-			if (game.putRune(x, y, RuneType.Hobbit))
+			if (game.putRune(y, x, RuneType.Hobbit))
 				clickState = clickState.none;
 		
 		else if (clickState == clickState.man)
-			if (game.putRune(x, y, RuneType.Man))
+			if (game.putRune(y, x, RuneType.Man))
 				clickState = clickState.none;
 		
 		else if (clickState == clickState.range)
-			if (game.putRune(x, y, RuneType.Range))
+			if (game.putRune(y, x, RuneType.Range))
 				clickState = clickState.none;
 		
 		else if (clickState == clickState.reload)
-			if (game.putRune(x, y, RuneType.Reload))
+			if (game.putRune(y, x, RuneType.Reload))
 				clickState = clickState.none;
 	}
 	
