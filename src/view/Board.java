@@ -1,8 +1,11 @@
 package view;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 
 import model.Game;
+import control.Control;
 import control.EnemyType;
 import control.RuneType;
 
@@ -19,10 +22,14 @@ public class Board extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		Board board = new Board();
 		Game game = new Game();
+		Control control = new Control(game);
+		Board board = new Board();
+		MenuPanel menu = new MenuPanel(control);
+		
 		game.loadMap("3a.map");
-		board.add(game.getView());
+		board.add(game.getView(), BorderLayout.CENTER);
+		board.add(menu, BorderLayout.EAST);
 
 		game.putTower(6, 3, "Segglyuk");
 		game.putSwamp(1, 2, "PICSA");
