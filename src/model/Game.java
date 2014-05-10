@@ -64,6 +64,10 @@ public class Game {
 			return false;
 		}
 	}
+	
+	public boolean checkTower(int x, int y) {
+		return map.checkTower(x, y);
+	}
 
 	public boolean putRune(int x, int y, RuneType runeType) {
 		Rune rune;
@@ -125,6 +129,10 @@ public class Game {
 		}
 	}
 
+	public boolean checkSwamp(int x, int y) {
+		return map.checkSwamp(x, y);
+	}
+	
 	public void putFog(int x, int y) {
 		Fog fog = new Fog(this, Common.fog_timetoleave);
 		fog.setView(ViewFactory.createView(fog));
