@@ -8,16 +8,42 @@ import model.enemies.EnemyUnit;
 import model.mapitem.Road;
 import view.RelativeViewBase;
 
+/**
+ * 
+ * A játékban szereplõ Road objektumok megjelenítéséért felelõs objektum, mely
+ * leszármazik az általánosabb TileViewBase objektumból
+ * 
+ */
 public class RoadView extends TileViewBase {
-
+	/**
+	 * Megjelenítendõ Road objektum
+	 */
 	private Road road;
 
+	/**
+	 * Konstruktor
+	 * 
+	 * @param r
+	 *            Road - kirajzolandó objektum
+	 * @param x
+	 *            int - x koordináta
+	 * @param y
+	 *            int - y koordináta
+	 */
 	public RoadView(Road r, int x, int y) {
 		super(x, y);
 
 		road = r;
 	}
 
+	/**
+	 * A Road objektum kirajzolását végzõ függvény. Kirajzolja a megfelelõ
+	 * helyre, valamint ha található rajta mocsár vagy ellenséges egység, ugy
+	 * mindre meghívja a megfelelõ kirajzoló függvényt.
+	 * 
+	 * @param g
+	 *            Graphics
+	 */
 	protected void paintMe(Graphics g) {
 		g.setColor(Color.ORANGE);
 		g.fillRect(x, y, Common.tileWidth, Common.tileWidth);
