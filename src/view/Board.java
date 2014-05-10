@@ -44,7 +44,7 @@ public class Board extends JFrame {
 
 		board.setVisible(true);
 		
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 100000; i++) {
 			game.tick();
 			
 			try {

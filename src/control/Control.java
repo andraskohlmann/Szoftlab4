@@ -31,8 +31,10 @@ public class Control implements ActionListener, MouseListener, MouseMotionListen
 			clickState = ClickState.swamp;
 		else if (arg0.getActionCommand().equals("elfrune"))
 			clickState = ClickState.elf;
-		else if (arg0.getActionCommand().equals("manrune"))
+		else if (arg0.getActionCommand().equals("manrune")) {
 			clickState = ClickState.man;
+			System.out.println("MAN!");
+		}
 		else if (arg0.getActionCommand().equals("dwarfrune"))
 			clickState = ClickState.dwarf;
 		else if (arg0.getActionCommand().equals("hobbitrune"))
@@ -48,38 +50,40 @@ public class Control implements ActionListener, MouseListener, MouseMotionListen
 		int y = arg0.getY() / Common.tileWidth;
 		System.out.println("X: " + arg0.getX() + " Y: " + arg0.getY());
 		System.out.println("X: " + x +  " Y: " + y);
-		if (clickState == clickState.tower) {
-			System.out.println("click Tower");
+		
+		if (clickState == ClickState.tower) {
 			if (game.putTower(y, x, "t0000"))
 				clickState = clickState.none;
 		}
-		else if (clickState == clickState.swamp)
+		else if (clickState == ClickState.swamp) {
 			if (game.putSwamp(y, x, "s0000"))
 				clickState = clickState.none;
-		
-		else if (clickState == clickState.elf)
+		}
+		else if (clickState == ClickState.elf) {
 			if (game.putRune(y, x, RuneType.Elf))
 				clickState = clickState.none;
-		
-		else if (clickState == clickState.dwarf)
+		}
+		else if (clickState == ClickState.dwarf) {
 			if (game.putRune(y, x, RuneType.Dwarf))
 				clickState = clickState.none;
-		
-		else if (clickState == clickState.hobbit)
+		}
+		else if (clickState == ClickState.hobbit) {
 			if (game.putRune(y, x, RuneType.Hobbit))
 				clickState = clickState.none;
-		
-		else if (clickState == clickState.man)
+		}
+		else if (clickState == ClickState.man) {
+			System.out.println("MAN RUNE");
 			if (game.putRune(y, x, RuneType.Man))
 				clickState = clickState.none;
-		
-		else if (clickState == clickState.range)
+		}
+		else if (clickState == ClickState.range) {
 			if (game.putRune(y, x, RuneType.Range))
 				clickState = clickState.none;
-		
-		else if (clickState == clickState.reload)
+		}
+		else if (clickState == ClickState.reload) {
 			if (game.putRune(y, x, RuneType.Reload))
 				clickState = clickState.none;
+		}
 	}
 	
 	public void mouseMoved(MouseEvent arg0) {
