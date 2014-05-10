@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import control.Control;
+
 public class GameView extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -17,8 +19,11 @@ public class GameView extends JPanel {
 
 	private List<ViewBase> views;
 
-	public GameView() {
+	public GameView(Control control) {
 		views = new ArrayList<ViewBase>();
+		
+		addMouseListener(control);
+		//board.addMouseMotionListener(control);
 	}
 
 	public void addView(ViewBase view) {

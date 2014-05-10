@@ -34,7 +34,6 @@ public class Game {
 
 	public Game() {
 		ticker = new Ticker();
-		gameView = new GameView();
 	}
 
 	public int getLife() {
@@ -50,7 +49,9 @@ public class Game {
 	}
 
 	public boolean putTower(int x, int y, String name) {
+		System.out.println("putTower");
 		if (map.checkTower(x, y)) {
+			System.out.println("puting");
 			Tower tower = new Tower();
 			tower.ProtoType_setName(name);
 			tower.setView(ViewFactory.createView(tower));
@@ -205,6 +206,11 @@ public class Game {
 
 	public GameView getView() {
 		return gameView;
+	}
+
+	
+	public void setView(GameView gameView2) {
+		gameView = gameView2;
 	}
 
 }

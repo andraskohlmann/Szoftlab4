@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+import model.Common;
 import model.Game;
 
 public class Control implements ActionListener, MouseListener, MouseMotionListener {
@@ -23,6 +24,7 @@ public class Control implements ActionListener, MouseListener, MouseMotionListen
 	}
 	
 	public void actionPerformed(ActionEvent arg0) {
+		System.out.println(arg0.getActionCommand());
 		if (arg0.getActionCommand().equals("tower"))
 			clickState = ClickState.tower;
 		else if (arg0.getActionCommand().equals("swamp"))
@@ -42,13 +44,15 @@ public class Control implements ActionListener, MouseListener, MouseMotionListen
 	}
 
 	public void mouseClicked(MouseEvent arg0) {
-		int x = arg0.getX();
-		int y = arg0.getY();
-		
-		if (clickState == clickState.tower)
-			if (game.putTower(x, y, "t0000"))
+		int x = arg0.getX() / Common.tileWidth;
+		int y = arg0.getY() / Common.tileWidth;
+		System.out.println("X: " + arg0.getX() + " Y: " + arg0.getY());
+		System.out.println("X: " + x +  " Y: " + y);
+		if (clickState == clickState.tower) {
+			System.out.println("click Tower");
+			if (game.putTower(y, x, "t0000"))
 				clickState = clickState.none;
-		
+		}
 		else if (clickState == clickState.swamp)
 			if (game.putSwamp(x, y, "s0000"))
 				clickState = clickState.none;
@@ -82,8 +86,7 @@ public class Control implements ActionListener, MouseListener, MouseMotionListen
 		mouseX = arg0.getX();
 		mouseY = arg0.getY();
 		
-		boolean available = false;
-		
+		System.out.println("mX: " + mouseX + " mY: " + mouseY);	
 	}
 
 	public void mouseEntered(MouseEvent arg0) {}

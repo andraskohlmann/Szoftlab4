@@ -24,9 +24,11 @@ public class Board extends JFrame {
 	public static void main(String[] args) {
 		Game game = new Game();
 		Control control = new Control(game);
+		GameView gameView = new GameView(control);
+		game.setView(gameView);
 		Board board = new Board();
 		MenuPanel menu = new MenuPanel(control);
-		
+			
 		game.loadMap("3a.map");
 		board.add(game.getView(), BorderLayout.CENTER);
 		board.add(menu, BorderLayout.EAST);
