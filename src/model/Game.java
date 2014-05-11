@@ -51,7 +51,7 @@ public class Game {
 	}
 
 	public boolean putTower(int x, int y) {
-		if (map.checkTower(x, y) && magitzka > Common.tower_mTz) {
+		if (map.checkTower(x, y) && magitzka >= Common.tower_mTz) {
 			Tower tower = new Tower();
 			tower.setView(ViewFactory.createView(tower));
 			Rune rune = new Rune();
@@ -111,7 +111,7 @@ public class Game {
 			break;
 		}
 
-		if (map.checkRune(x, y, rune)) {
+		if (map.checkRune(x, y, rune) && magitzka >= Common.rune_mTz) {
 			map.putRune(x, y, rune);
 			magitzka -= Common.rune_mTz;
 			return true;
@@ -121,7 +121,7 @@ public class Game {
 	}
 
 	public boolean putSwamp(int x, int y) {
-		if (map.checkSwamp(x, y)) {
+		if (map.checkSwamp(x, y) && magitzka >= Common.swamp_mTz) {
 			Swamp swamp = new Swamp();
 			swamp.setView(ViewFactory.createView(swamp));
 			Rune rune = new Rune();
