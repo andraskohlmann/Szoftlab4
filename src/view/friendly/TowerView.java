@@ -2,6 +2,11 @@ package view.friendly;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import model.friendly.Tower;
 import view.RelativeViewBase;
@@ -17,6 +22,7 @@ public class TowerView implements RelativeViewBase {
 	 * A kirajzolandó objektum tárolása
 	 */
 	private Tower tower;
+	private static BufferedImage image;
 
 	/**
 	 * Konstruktor
@@ -26,6 +32,11 @@ public class TowerView implements RelativeViewBase {
 	 */
 	public TowerView(Tower t) {
 		tower = t;
+		try {
+			image = ImageIO.read(new File("textures//tower.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -40,8 +51,7 @@ public class TowerView implements RelativeViewBase {
 	 *            int - y koordináta
 	 */
 	public void draw(Graphics g, int x, int y) {
-		g.setColor(Color.GRAY);
-		g.fillOval(x + 2, y + 2, 16, 16);
+		g.drawImage(image, x, y, null);
 
 		((RelativeViewBase) tower.getRune().getView()).draw(g, x, y);
 	}

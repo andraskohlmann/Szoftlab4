@@ -2,6 +2,11 @@ package view.mapitem;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import view.ViewBase;
 
@@ -14,6 +19,8 @@ import common.Common;
  * 
  */
 public class FinishedRoadView extends ViewBase {
+	
+	private static BufferedImage image;
 	/**
 	 * Konstruktor, mely beállítja a kirajzolás helyét
 	 * 
@@ -22,6 +29,12 @@ public class FinishedRoadView extends ViewBase {
 	 */
 	public FinishedRoadView(int x, int y) {
 		super(x, y);
+		
+		try {
+			image = ImageIO.read(new File("textures//mount.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -31,7 +44,6 @@ public class FinishedRoadView extends ViewBase {
 	 *            Graphics
 	 */
 	public void draw(Graphics g) {
-		g.setColor(Color.BLACK);
-		g.fillRect(x, y, Common.tileWidth, Common.tileWidth);
+		g.drawImage(image, x, y, null);
 	}
 }

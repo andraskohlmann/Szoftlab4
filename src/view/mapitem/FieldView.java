@@ -41,7 +41,7 @@ public class FieldView extends TileViewBase {
 		try {
 			image = ImageIO.read(new File("textures//field.png"));
 		} catch (IOException e) {
-			System.out.println("HIBA: Képfájl hiányzik!");
+			e.printStackTrace();
 		}
 	}
 
@@ -54,7 +54,6 @@ public class FieldView extends TileViewBase {
 	 *            Graphics
 	 */
 	protected void paintMe(Graphics g) {
-		g.setColor(Color.GRAY);
 		g.drawImage(image, x, y, null);
 
 		if (field.hasTower()) {

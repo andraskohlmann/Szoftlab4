@@ -42,7 +42,7 @@ public class RoadView extends TileViewBase {
 		try {
 			image = ImageIO.read(new File("textures//road.png"));
 		} catch (IOException e) {
-			System.out.println("HIBA: Képfájl hiányzik!");
+			e.printStackTrace();
 		}
 	}
 
@@ -55,7 +55,6 @@ public class RoadView extends TileViewBase {
 	 *            Graphics
 	 */
 	protected void paintMe(Graphics g) {
-		g.setColor(Color.ORANGE);
 		g.drawImage(image, x, y, null);
 
 		if (road.hasSwamp()) {

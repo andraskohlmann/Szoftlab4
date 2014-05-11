@@ -2,6 +2,11 @@ package view.friendly;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import model.friendly.Swamp;
 import view.RelativeViewBase;
@@ -17,6 +22,7 @@ public class SwampView implements RelativeViewBase {
 	 * A kirajzolandó objektum tárolása
 	 */
 	private Swamp swamp;
+	private static BufferedImage image;
 
 	/**
 	 * Konstruktor
@@ -26,6 +32,11 @@ public class SwampView implements RelativeViewBase {
 	 */
 	public SwampView(Swamp s) {
 		swamp = s;
+		try {
+			image = ImageIO.read(new File("textures//swamp.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -40,8 +51,7 @@ public class SwampView implements RelativeViewBase {
 	 *            int - y koordináta
 	 */
 	public void draw(Graphics g, int x, int y) {
-		g.setColor(Color.MAGENTA);
-		g.fillRect(x + 2, y + 2, 16, 16);
+		g.drawImage(image, x, y, null);
 
 		((RelativeViewBase) swamp.getRune().getView()).draw(g, x, y);
 	}
