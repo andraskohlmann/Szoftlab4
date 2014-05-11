@@ -32,6 +32,7 @@ public abstract class Tile {
 
 	public void addFog(Fog f) {
 		fog = f;
+		fog.setTile(this);
 	}
 
 	public void removeFog(Fog f) {

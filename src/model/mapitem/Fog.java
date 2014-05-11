@@ -35,7 +35,11 @@ public class Fog implements ActiveUnit {
 	public void tick() {
 		timeToLeave--;
 		if (timeToLeave == 0) {
-			tileToNotify.removeFog(this);
+			if (tileToNotify != null) {
+				tileToNotify.removeFog(this);
+			} else {
+				System.out.println("Szar van a betonkeverõben!");
+			}
 			gameToNotify.removeFog(this);
 		}
 	}

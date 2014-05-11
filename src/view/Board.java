@@ -52,10 +52,10 @@ public class Board extends JFrame {
 		// game.putTower(6, 3);
 		// game.putSwamp(1, 2);
         
-		game.addUnit(EnemyType.elf);
-		game.addUnit(EnemyType.dwarf);
-		game.addUnit(EnemyType.hobbit);
-		game.addUnit(EnemyType.man);
+//		game.addUnit(EnemyType.elf);
+//		game.addUnit(EnemyType.dwarf);
+//		game.addUnit(EnemyType.hobbit);
+//		game.addUnit(EnemyType.man);
 		// game.putRune(6, 3, RuneType.Range);
 		// game.putRune(1, 2, RuneType.Dwarf);
 		board.setVisible(true);

@@ -30,6 +30,14 @@ public class Map {
 			return false;
 		}
 	}
+	
+	public int getWidth() {
+		return tiles[0].length;
+	}
+	
+	public int getHeight() {
+		return tiles.length;
+	}
 
 	public void putTower(int x, int y, Tower t) {
 		tiles[x][y].putTower(t);
