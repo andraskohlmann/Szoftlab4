@@ -44,6 +44,8 @@ public class GameView extends JPanel {
 
 	private Game game;
 	
+	private StatusPanel statusPanel = new StatusPanel();
+	
 
 	/**
 	 * Konstruktor, eseménykezelõ objektum hozzáadása
@@ -80,7 +82,9 @@ public class GameView extends JPanel {
 	 */
 	@Override
 	public void paintComponent(Graphics graphics) {
-		
+		statusPanel.setMagitzka(game.getMagitzka());
+		statusPanel.repaint();
+	
 		if (bottomLayer == null) {
 			initBottomLayer();
 		}
@@ -171,10 +175,10 @@ public class GameView extends JPanel {
 		g.fillRect(0, 0, getWidth(), getHeight());
 	}
 
-	public int getMagitzka()
-	{
-		System.out.println(game.getMagitzka());
-		return game.getMagitzka();
-	}
-
+    public StatusPanel getStatusPanel()
+    {
+    	return statusPanel;
+    }
+	
+	
 }

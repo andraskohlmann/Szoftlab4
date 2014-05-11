@@ -113,6 +113,7 @@ public class Game {
 
 		if (map.checkRune(x, y, rune)) {
 			map.putRune(x, y, rune);
+			magitzka -= Common.rune_mTz;
 			return true;
 		} else {
 			return false;
@@ -128,6 +129,7 @@ public class Game {
 			swamp.putFirstRune(rune);
 			ticker.addUnit(swamp);
 			map.putSwamp(x, y, swamp);
+			magitzka -= Common.swamp_mTz;
 			return true;
 		} else {
 			return false;

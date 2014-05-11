@@ -41,11 +41,11 @@ public class Board extends JFrame {
 		GameView gameView = new GameView(control, game);
 		game.setView(gameView);
 		Board board = new Board();
-		MenuPanel menu = new MenuPanel(control);
+		SidePanel side = new SidePanel(gameView.getStatusPanel(),control);
 
 		game.loadMap("map1.txt");
 		board.add(game.getView(), BorderLayout.CENTER);
-		board.add(menu, BorderLayout.EAST);
+		board.add(side, BorderLayout.EAST);
 
 		// game.putTower(6, 3);
 		// game.putSwamp(1, 2);
@@ -56,7 +56,6 @@ public class Board extends JFrame {
 		game.addUnit(EnemyType.man);
 		// game.putRune(6, 3, RuneType.Range);
 		// game.putRune(1, 2, RuneType.Dwarf);
-        menu.setMagitzka(gameView.getMagitzka());
 		board.setVisible(true);
 		for (int i = 0; i < 100000; i++) {
 			if (i % 200 == 0)
