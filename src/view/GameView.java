@@ -179,6 +179,12 @@ public class GameView extends JPanel {
 						Common.tileWidth, Common.tileWidth);
 			}
 		}
+		
+		if (game.isGameOver()) {
+			graphics.drawImage(gameOverScreen, 0, 0, null);
+			return;
+		}
+
 	}
 
 	/**

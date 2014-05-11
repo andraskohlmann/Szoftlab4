@@ -35,6 +35,10 @@ public class Strategy implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 
 		ticks++;
+		if (game.isGameOver()) {
+			return;
+		}
+		
 		game.tick();
 
 		if (waves > maxWaves) {

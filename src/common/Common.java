@@ -59,8 +59,8 @@ public class Common {
 	// Global values
 
 	public static final int life = 200;
-	public static final int damagePerUnit = 10;
-	public static final int fog_timetoleave = 200;
+	public static final int damagePerUnit = 1;
+	public static final int fog_timetoleave = 20;
 	public static final int fog_distancereduction = 1;
 	public static final int fog_simultaniousfognumber = 4;
 
