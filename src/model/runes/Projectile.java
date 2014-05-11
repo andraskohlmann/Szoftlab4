@@ -4,6 +4,9 @@ import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
 import model.enemies.Man;
+
+import common.Randomizer;
+
 import control.ProtoManager;
 import control.RandomStates;
 
@@ -18,7 +21,7 @@ public class Projectile {
 
 	public Projectile() {
 		if (ProtoManager.randomSplitting == RandomStates.random) {
-			isSplitter = ProtoManager.randomBoolean(10);
+			isSplitter = Randomizer.randomBoolean(10);
 		} else if (ProtoManager.randomSplitting == RandomStates.on) {
 			isSplitter = true;
 		} else {

@@ -9,6 +9,9 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import common.Common;
+
+import model.Game;
 import control.Control;
 
 /**
@@ -28,17 +31,24 @@ public class GameView extends JPanel {
 	 */
 	private List<ViewBase> views;
 
+	private Control control;
+	
+	private Game game;
+	
 	/**
 	 * Konstruktor, eseménykezelõ objektum hozzáadása
 	 * 
 	 * @param control
 	 *            Control
 	 */
-	public GameView(Control control) {
+	public GameView(Control c, Game g) {
 		views = new ArrayList<ViewBase>();
-
-		addMouseListener(control);
-		// board.addMouseMotionListener(control);
+		
+		game = g;
+		control = c;
+		
+		addMouseListener(c);
+		addMouseMotionListener(c);
 	}
 
 	/**
@@ -71,7 +81,22 @@ public class GameView extends JPanel {
 		}
 
 		graphics.drawImage(bottomLayer, 0, 0, null);
-
+		
+		if (control.getState() == Control.ClickState.tower) {
+			int x = control.getMouseX();
+			int y = control.getMouseY();
+			
+			if (x < Common.mapHeight && y < Common.mapWidth && game.checkTower(x, y)) { 
+				graphics.setColor(Color.GREEN);
+				graphics.fillRect(y*Common.tileWidth, x*Common.tileWidth, Common.tileWidth, Common.tileWidth);
+			}
+			else if (x < Common.mapHeight && y < Common.mapWidth) {
+				graphics.setColor(Color.RED);
+				graphics.fillRect(y*Common.tileWidth, x*Common.tileWidth, Common.tileWidth, Common.tileWidth);
+			}
+		}
+		
+		
 	}
 
 	/**

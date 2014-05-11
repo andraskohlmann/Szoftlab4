@@ -1,7 +1,8 @@
 package model.mapitem;
 
+import common.Common;
+
 import model.ActiveUnit;
-import model.Common;
 import model.Game;
 
 public class Fog implements ActiveUnit {

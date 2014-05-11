@@ -3,7 +3,8 @@ package view.enemies;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import model.Common;
+import common.Common;
+
 import model.enemies.Dwarf;
 
 /**

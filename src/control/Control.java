@@ -6,14 +6,15 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import model.Common;
+import common.Common;
+
 import model.Game;
 
 public class Control implements ActionListener, MouseListener, MouseMotionListener {
 
 	private Game game;
 	
-	private enum ClickState {tower, swamp, elf, dwarf, hobbit, man, range, reload, none};
+	public enum ClickState {tower, swamp, elf, dwarf, hobbit, man, range, reload, none};
 	private ClickState clickState = ClickState.none;
 	
 	private int mouseX;
@@ -87,10 +88,20 @@ public class Control implements ActionListener, MouseListener, MouseMotionListen
 	}
 	
 	public void mouseMoved(MouseEvent arg0) {
-		mouseX = arg0.getX();
-		mouseY = arg0.getY();
-		
-		System.out.println("mX: " + mouseX + " mY: " + mouseY);	
+		mouseY = arg0.getX() / Common.tileWidth;
+		mouseX = arg0.getY() / Common.tileWidth;
+	}
+	
+	public int getMouseX() {
+		return mouseX;
+	}
+	
+	public int getMouseY() {
+		return mouseY;
+	}
+	
+	public ClickState getState() {
+		return clickState;
 	}
 
 	public void mouseEntered(MouseEvent arg0) {}

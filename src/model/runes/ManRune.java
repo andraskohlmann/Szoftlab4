@@ -1,6 +1,6 @@
 package model.runes;
 
-import model.Common;
+import common.Common;
 
 public class ManRune extends Rune {
 

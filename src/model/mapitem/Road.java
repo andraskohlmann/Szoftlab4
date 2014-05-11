@@ -8,6 +8,9 @@ import model.friendly.Swamp;
 import model.friendly.Tower;
 import model.runes.Rune;
 import view.View;
+
+import common.Randomizer;
+
 import control.ProtoManager;
 import control.RandomStates;
 
@@ -97,8 +100,7 @@ public class Road extends Tile {
 			swamp.removeUnit(enemyUnit);
 		}
 
-		int which = (ProtoManager.randomRouting == RandomStates.on) ? ProtoManager
-				.randomInt(nextRoad.size()) : 0;
+		int which = Randomizer.randomInt(nextRoad.size());
 
 		nextRoad.get(which).addUnit(enemyUnit);
 		view.notifyView();

@@ -1,6 +1,7 @@
 package model.enemies;
 
-import model.Common;
+import common.Common;
+
 import model.Game;
 import model.runes.Projectile;
 import model.runes.Slime;

@@ -2,6 +2,8 @@ package model;
 
 import java.util.List;
 
+import common.Common;
+
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.EnemyUnit;

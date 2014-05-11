@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
+import common.Common;
+
 import model.Game;
 import control.Control;
 import control.EnemyType;
@@ -33,7 +35,7 @@ public class Board extends JFrame {
 	public static void main(String[] args) {
 		Game game = new Game();
 		Control control = new Control(game);
-		GameView gameView = new GameView(control);
+		GameView gameView = new GameView(control, game);
 		game.setView(gameView);
 		Board board = new Board();
 		MenuPanel menu = new MenuPanel(control);
@@ -42,18 +44,19 @@ public class Board extends JFrame {
 		board.add(game.getView(), BorderLayout.CENTER);
 		board.add(menu, BorderLayout.EAST);
 
-		game.putTower(6, 3, "Segglyuk");
-		game.putSwamp(1, 2, "PICSA");
+		//game.putTower(6, 3, "Segglyuk");
+		//game.putSwamp(1, 2, "PICSA");
 		
 		game.addUnit(EnemyType.elf, "Buzikám");
 		
-		game.putRune(6, 3, RuneType.Range);
-		game.putRune(1, 2, RuneType.Dwarf);
+		//game.putRune(6, 3, RuneType.Range);
+		//game.putRune(1, 2, RuneType.Dwarf);
 		
 
 		board.setVisible(true);
 		
 		for (int i = 0; i < 100000; i++) {
+			if (i % Common.tickElf == 0) game.addUnit(EnemyType.elf, "Buzikám");
 			game.tick();
 			
 			try {

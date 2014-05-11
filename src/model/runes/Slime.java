@@ -1,6 +1,7 @@
 package model.runes;
 
-import model.Common;
+import common.Common;
+
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;

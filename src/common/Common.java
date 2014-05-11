@@ -1,4 +1,4 @@
-package model;
+package common;
 
 public class Common {
 
@@ -66,5 +66,10 @@ public class Common {
 	// View values
 	
 	public static final int tileWidth = 20;
-
+	
+	
+	// Map values
+	
+	public static final int mapHeight = 7;
+	public static final int mapWidth = 11;
 }

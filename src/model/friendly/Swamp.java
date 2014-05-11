@@ -3,8 +3,9 @@ package model.friendly;
 import java.util.ArrayList;
 import java.util.List;
 
+import common.Common;
+
 import model.ActiveUnit;
-import model.Common;
 import model.enemies.EnemyUnit;
 import model.runes.Rune;
 import model.runes.Slime;
