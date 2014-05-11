@@ -26,8 +26,7 @@ public class Map {
 	public boolean checkTower(int x, int y) {
 		if (x < tiles.length && y < tiles[0].length) {
 			return tiles[x][y].checkTower();
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -37,7 +36,10 @@ public class Map {
 	}
 
 	public boolean checkRune(int x, int y, Rune rune) {
-		return tiles[x][y].checkRune(rune);
+		if (x < tiles.length && y < tiles[0].length) {
+			return tiles[x][y].checkRune(rune);
+		} else
+			return false;
 	}
 
 	public void putRune(int x, int y, Rune r) {
@@ -45,7 +47,10 @@ public class Map {
 	}
 
 	public boolean checkSwamp(int x, int y) {
-		return tiles[x][y].checkSwamp();
+		if (x < tiles.length && y < tiles[0].length) {
+			return tiles[x][y].checkSwamp();
+		} else
+			return false;
 	}
 
 	public void putSwamp(int x, int y, Swamp s) {
@@ -316,4 +321,5 @@ public class Map {
 	public void putFog(int x, int y, Fog fog) {
 		tiles[x][y].addFog(fog);
 	}
+	
 }

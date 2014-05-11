@@ -16,6 +16,7 @@ import model.runes.HobbitRune;
 import model.runes.ManRune;
 import model.runes.RangeRune;
 import model.runes.ReloadRune;
+import model.runes.Rune;
 
 import common.Common;
 
@@ -93,12 +94,11 @@ public class GameView extends JPanel {
 		int y = control.getMouseY();
 		if (control.getState() == Control.ClickState.tower) {
 
-			if (x < Common.mapHeight && y < Common.mapWidth
-					&& game.checkTower(x, y)) {
+			if (game.checkTower(x, y)) {
 				graphics.setColor(Color.GREEN);
 				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
 						Common.tileWidth, Common.tileWidth);
-			} else if (x < Common.mapHeight && y < Common.mapWidth) {
+			} else {
 				graphics.setColor(Color.RED);
 				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
 						Common.tileWidth, Common.tileWidth);
@@ -107,12 +107,11 @@ public class GameView extends JPanel {
 		if (control.getState() == Control.ClickState.swamp) {
 
 
-			if (x < Common.mapHeight && y < Common.mapWidth
-					&& game.checkSwamp(x, y)) {
+			if (game.checkSwamp(x, y)) {
 				graphics.setColor(Color.GREEN);
 				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
 						Common.tileWidth, Common.tileWidth);
-			} else if (x < Common.mapHeight && y < Common.mapWidth) {
+			} else {
 				graphics.setColor(Color.RED);
 				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
 						Common.tileWidth, Common.tileWidth);
@@ -120,87 +119,25 @@ public class GameView extends JPanel {
 		}
 
 		// /RUNES
+		Rune rune = new Rune();
 		ClickState clickState = control.getState();
 		switch(clickState)
 		{
-		 case man: { 
-			    if (x < Common.mapHeight && y < Common.mapWidth
-					&& game.checkRune(x, y,new ManRune())) {
-				graphics.setColor(Color.GREEN);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			} else if (x < Common.mapHeight && y < Common.mapWidth) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			}
-		  break;
-		 }
-		 case hobbit: { 
-			    if (x < Common.mapHeight && y < Common.mapWidth
-					&& game.checkRune(x, y,new HobbitRune())) {
-				graphics.setColor(Color.GREEN);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			} else if (x < Common.mapHeight && y < Common.mapWidth) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			}
-		  break;
-		 }
-		 case elf: { 
-			    if (x < Common.mapHeight && y < Common.mapWidth
-					&& game.checkRune(x, y,new ElfRune())) {
-				graphics.setColor(Color.GREEN);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			} else if (x < Common.mapHeight && y < Common.mapWidth) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			}
-		  break;
-		 }
-		 case dwarf: { 
-			    if (x < Common.mapHeight && y < Common.mapWidth
-					&& game.checkRune(x, y,new DwarfRune())) {
-				graphics.setColor(Color.GREEN);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			} else if (x < Common.mapHeight && y < Common.mapWidth) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			}
-		  break;
-		 }
-		 case reload: { 
-			    if (x < Common.mapHeight && y < Common.mapWidth
-					&& game.checkRune(x, y,new ReloadRune())) {
-				graphics.setColor(Color.GREEN);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			} else if (x < Common.mapHeight && y < Common.mapWidth) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			}
-		  break;
-		 }
-		 case range: { 
-			    if (x < Common.mapHeight && y < Common.mapWidth
-					&& game.checkRune(x, y,new RangeRune())) {
-				graphics.setColor(Color.GREEN);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			} else if (x < Common.mapHeight && y < Common.mapWidth) {
-				graphics.setColor(Color.RED);
-				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-						Common.tileWidth, Common.tileWidth);
-			}
-		  break;
-		 }
+		 case man: {rune = new ManRune(); break;}
+		 case hobbit: {rune = new HobbitRune(); break;}
+		 case elf: {rune = new ElfRune(); break;}
+		 case dwarf: {rune = new DwarfRune(); break;}
+		 case reload: {rune = new ReloadRune(); break;}
+		 case range: {rune = new RangeRune(); break;}
+		}
+		if (game.checkRune(x, y,rune)) {
+			graphics.setColor(Color.GREEN);
+			graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
+					Common.tileWidth, Common.tileWidth);
+		} else {
+			graphics.setColor(Color.RED);
+			graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
+					Common.tileWidth, Common.tileWidth);
 		}
 	}
 
