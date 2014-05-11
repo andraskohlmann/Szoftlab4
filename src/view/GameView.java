@@ -43,6 +43,7 @@ public class GameView extends JPanel {
 	private Control control;
 
 	private Game game;
+	
 
 	/**
 	 * Konstruktor, eseménykezelõ objektum hozzáadása
@@ -79,6 +80,7 @@ public class GameView extends JPanel {
 	 */
 	@Override
 	public void paintComponent(Graphics graphics) {
+		
 		if (bottomLayer == null) {
 			initBottomLayer();
 		}
@@ -167,6 +169,12 @@ public class GameView extends JPanel {
 		Graphics g = bottomLayer.getGraphics();
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, getWidth(), getHeight());
+	}
+
+	public int getMagitzka()
+	{
+		System.out.println(game.getMagitzka());
+		return game.getMagitzka();
 	}
 
 }

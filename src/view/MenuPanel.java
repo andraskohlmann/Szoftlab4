@@ -3,7 +3,10 @@ package view;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import common.Common;
 
 import control.Control;
 
@@ -19,6 +22,8 @@ public class MenuPanel extends JPanel {
 	/**
 	 * Az egyes gombok a menüpanelen
 	 */
+	private JLabel magitzkaLevel;
+	private JLabel magitzkaLevelDisplay;
 	private JButton towerButton;
 	private JButton swampButton;
 	private JButton elfRuneButton;
@@ -36,7 +41,14 @@ public class MenuPanel extends JPanel {
 	 */
 	public MenuPanel(Control control) {
 		setLayout(new GridLayout(0, 1));
-
+        
+		
+		magitzkaLevel = new JLabel("Magitzka:");
+		add(magitzkaLevel);
+		
+		magitzkaLevelDisplay = new JLabel(Integer.toString(Common.start_mTz));
+		add(magitzkaLevelDisplay);
+		
 		towerButton = new JButton("Tower");
 		towerButton.setActionCommand("tower");
 		towerButton.addActionListener(control);
@@ -77,4 +89,10 @@ public class MenuPanel extends JPanel {
 		reloadRuneButton.addActionListener(control);
 		add(reloadRuneButton);
 	}
+	public void setMagitzka(int magitzka)
+	{
+		magitzkaLevelDisplay.setText(Integer.toString(magitzka));
+		this.repaint();
+	}
+	
 }

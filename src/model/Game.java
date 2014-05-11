@@ -158,7 +158,7 @@ public class Game {
 
 		ticker.remove(finished);
 		map.deleteFinishedUnits();
-
+		
 		gameView.repaint();
 	}
 
