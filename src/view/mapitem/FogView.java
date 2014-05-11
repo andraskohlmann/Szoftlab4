@@ -1,6 +1,11 @@
 package view.mapitem;
 
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import view.RelativeViewBase;
 
@@ -11,6 +16,17 @@ import view.RelativeViewBase;
  * 
  */
 public class FogView implements RelativeViewBase {
+
+	private static BufferedImage image;
+	
+	public FogView() {
+		try {
+			image = ImageIO.read(new File("textures//fog.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	/**
 	 * Kirajzolja a ködöt a megfelelõ helyre a pályán.
 	 * 
@@ -23,8 +39,8 @@ public class FogView implements RelativeViewBase {
 	 */
 	@Override
 	public void draw(Graphics g, int x, int y) {
-		// TODO Auto-generated method stub
 
+		g.drawImage(image, x, y, null);
 	}
 
 }
