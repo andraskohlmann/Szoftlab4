@@ -24,7 +24,7 @@ public class Dwarf extends EnemyUnit {
 	}
 
 	public void gotHit(Projectile p) {
-		if (p.isSplitter()) {
+		if (p.isSplitter() && health > 1) {
 			Dwarf newHalf = new Dwarf(this);
 			newHalf.setView(ViewFactory.createView(newHalf));
 

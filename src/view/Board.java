@@ -51,14 +51,16 @@ public class Board extends JFrame {
 		// game.putSwamp(1, 2);
 
 		game.addUnit(EnemyType.elf);
-
+		game.addUnit(EnemyType.dwarf);
+		game.addUnit(EnemyType.hobbit);
+		game.addUnit(EnemyType.man);
 		// game.putRune(6, 3, RuneType.Range);
 		// game.putRune(1, 2, RuneType.Dwarf);
 
 		board.setVisible(true);
 
 		for (int i = 0; i < 100000; i++) {
-			if (i % Common.tickElf == 0) game.addUnit(EnemyType.elf);
+			//if (i % Common.tickElf == 0) game.addUnit(EnemyType.elf);
 			game.tick();
 
 			try {

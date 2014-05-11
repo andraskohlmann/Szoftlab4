@@ -24,7 +24,7 @@ public class Man extends EnemyUnit {
 	}
 
 	public void gotHit(Projectile p) {
-		if (p.isSplitter()) {
+		if (p.isSplitter() && health > 1) {
 			Man newHalf = new Man(this);
 			newHalf.setView(ViewFactory.createView(newHalf));
 

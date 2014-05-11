@@ -24,7 +24,7 @@ public class Hobbit extends EnemyUnit {
 	}
 
 	public void gotHit(Projectile p) {
-		if (p.isSplitter()) {
+		if (p.isSplitter() && health > 1) {
 			Hobbit newHalf = new Hobbit(this);
 			newHalf.setView(ViewFactory.createView(newHalf));
 
