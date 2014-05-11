@@ -5,11 +5,11 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
+import model.Game;
+
 import common.Strategy;
 
-import model.Game;
 import control.Control;
-import control.EnemyType;
 
 /**
  * 
