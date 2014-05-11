@@ -24,7 +24,12 @@ public class Map {
 	private Road firstRoad;
 
 	public boolean checkTower(int x, int y) {
-		return tiles[x][y].checkTower();
+		if (x < tiles.length && y < tiles[0].length) {
+			return tiles[x][y].checkTower();
+		}
+		else {
+			return false;
+		}
 	}
 
 	public void putTower(int x, int y, Tower t) {
