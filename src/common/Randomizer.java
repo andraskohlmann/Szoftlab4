@@ -4,8 +4,6 @@ import java.util.Random;
 
 public class Randomizer {
 
-	
-	
 	public static int randomInt(int max) {
 		Random r = new Random();
 		return r.nextInt(max);

@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 import common.Common;
 
-
 /**
  * 
  * Õsosztály mely a koordináták kezeléséhez nyújt segítséget

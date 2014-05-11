@@ -3,11 +3,11 @@ package view.mapitem;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import common.Common;
-
 import model.enemies.EnemyUnit;
 import model.mapitem.Road;
 import view.RelativeViewBase;
+
+import common.Common;
 
 /**
  * 

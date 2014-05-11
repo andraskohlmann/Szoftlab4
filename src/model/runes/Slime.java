@@ -1,11 +1,11 @@
 package model.runes;
 
-import common.Common;
-
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.Hobbit;
 import model.enemies.Man;
+
+import common.Common;
 
 public class Slime {
 

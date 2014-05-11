@@ -41,7 +41,7 @@ public abstract class Tile {
 	public boolean hasFog() {
 		return fog != null;
 	}
-	
+
 	public Fog getFog() {
 		return fog;
 	}

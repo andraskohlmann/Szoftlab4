@@ -3,10 +3,9 @@ package view.mapitem;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import common.Common;
-
-
 import view.ViewBase;
+
+import common.Common;
 
 /**
  * 

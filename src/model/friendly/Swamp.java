@@ -3,12 +3,12 @@ package model.friendly;
 import java.util.ArrayList;
 import java.util.List;
 
-import common.Common;
-
 import model.ActiveUnit;
 import model.enemies.EnemyUnit;
 import model.runes.Rune;
 import model.runes.Slime;
+
+import common.Common;
 
 public class Swamp implements ActiveUnit, FriendlyUnit {
 
@@ -18,13 +18,13 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 	private int tickDivider = Common.swamp_counter;
 	private int counter;
 	private boolean isUpgraded;
-	
+
 	private Object view;
-	
+
 	public void setView(Object v) {
 		view = v;
 	}
-	
+
 	public Object getView() {
 		return view;
 	}
@@ -99,7 +99,7 @@ public class Swamp implements ActiveUnit, FriendlyUnit {
 
 		return cl.getSimpleName();
 	}
-	
+
 	public Rune getRune() {
 		return rune;
 	}

@@ -1,9 +1,9 @@
 package model.mapitem;
 
-import common.Common;
-
 import model.ActiveUnit;
 import model.Game;
+
+import common.Common;
 
 public class Fog implements ActiveUnit {
 
@@ -11,13 +11,13 @@ public class Fog implements ActiveUnit {
 	private Game gameToNotify;
 
 	private int timeToLeave;
-	
+
 	private Object view;
-	
+
 	public void setView(Object v) {
 		view = v;
 	}
-	
+
 	public Object getView() {
 		return view;
 	}

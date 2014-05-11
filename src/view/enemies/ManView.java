@@ -3,9 +3,10 @@ package view.enemies;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import model.enemies.Man;
+
 import common.Common;
 
-import model.enemies.Man;
 /**
  * 
  * Man ellenséges egység megjelenítéséért felelõs objektum, leszármazik az
@@ -22,6 +23,7 @@ public class ManView extends EnemyUnitView {
 	public ManView(Man m) {
 		super(m);
 	}
+
 	/**
 	 * A megfelelõ színt beállítja a kirajzoláshoz
 	 * 
@@ -32,6 +34,7 @@ public class ManView extends EnemyUnitView {
 	protected void setColor(Graphics g) {
 		g.setColor(Color.PINK);
 	}
+
 	/**
 	 * Visszaadja a Man egység sebzés nélküli életét.
 	 * 

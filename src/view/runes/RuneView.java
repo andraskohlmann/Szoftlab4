@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import model.runes.Rune;
-
 import view.RelativeViewBase;
 
 /**

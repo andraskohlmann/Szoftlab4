@@ -13,6 +13,9 @@ import control.Control;
  * 
  */
 public class MenuPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Az egyes gombok a menüpanelen
 	 */

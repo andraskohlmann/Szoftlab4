@@ -3,9 +3,10 @@ package view.enemies;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import model.enemies.Elf;
+
 import common.Common;
 
-import model.enemies.Elf;
 /**
  * 
  * Elf ellenséges egység megjelenítéséért felelõs objektum, leszármazik az
@@ -22,6 +23,7 @@ public class ElfView extends EnemyUnitView {
 	public ElfView(Elf e) {
 		super(e);
 	}
+
 	/**
 	 * A megfelelõ színt beállítja a kirajzoláshoz
 	 * 
@@ -32,6 +34,7 @@ public class ElfView extends EnemyUnitView {
 	protected void setColor(Graphics g) {
 		g.setColor(Color.WHITE);
 	}
+
 	/**
 	 * Visszaadja az Elf egység sebzés nélküli életét.
 	 * 

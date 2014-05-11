@@ -2,8 +2,6 @@ package model;
 
 import java.util.List;
 
-import common.Common;
-
 import model.enemies.Dwarf;
 import model.enemies.Elf;
 import model.enemies.EnemyUnit;
@@ -22,8 +20,10 @@ import model.runes.ReloadRune;
 import model.runes.Rune;
 import view.GameView;
 import view.ViewFactory;
+
+import common.Common;
+
 import control.EnemyType;
-import control.ProtoManager;
 import control.RuneType;
 
 public class Game {
@@ -66,7 +66,7 @@ public class Game {
 			return false;
 		}
 	}
-	
+
 	public boolean checkTower(int x, int y) {
 		return map.checkTower(x, y);
 	}
@@ -134,7 +134,7 @@ public class Game {
 	public boolean checkSwamp(int x, int y) {
 		return map.checkSwamp(x, y);
 	}
-	
+
 	public void putFog(int x, int y) {
 		Fog fog = new Fog(this, Common.fog_timetoleave);
 		fog.setView(ViewFactory.createView(fog));
@@ -208,7 +208,6 @@ public class Game {
 		return gameView;
 	}
 
-	
 	public void setView(GameView gameView2) {
 		gameView = gameView2;
 	}

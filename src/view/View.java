@@ -1,8 +1,9 @@
 package view;
+
 /**
  * 
  * Interfészt a notify-olható objektumok közös kezeléséhez
- *
+ * 
  */
 public interface View {
 	/**

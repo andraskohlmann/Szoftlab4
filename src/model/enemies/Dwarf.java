@@ -1,11 +1,11 @@
 package model.enemies;
 
-import view.ViewFactory;
-import common.Common;
-
 import model.Game;
 import model.runes.Projectile;
 import model.runes.Slime;
+import view.ViewFactory;
+
+import common.Common;
 
 public class Dwarf extends EnemyUnit {
 

@@ -11,9 +11,6 @@ import view.View;
 
 import common.Randomizer;
 
-import control.ProtoManager;
-import control.RandomStates;
-
 public class Road extends Tile {
 
 	private List<EnemyUnit> enemyList = new ArrayList<EnemyUnit>();
@@ -135,7 +132,7 @@ public class Road extends Tile {
 	public List<EnemyUnit> ProtoType_getList() {
 		return enemyList;
 	}
-	
+
 	public List<EnemyUnit> getEnemyList() {
 		return enemyList;
 	}

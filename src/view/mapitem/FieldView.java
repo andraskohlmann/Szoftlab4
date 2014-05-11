@@ -3,10 +3,10 @@ package view.mapitem;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import common.Common;
-
 import model.mapitem.Field;
 import view.RelativeViewBase;
+
+import common.Common;
 
 /**
  * 

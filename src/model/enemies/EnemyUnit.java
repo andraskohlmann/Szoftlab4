@@ -16,13 +16,13 @@ public abstract class EnemyUnit implements ActiveUnit {
 	protected int health;
 	protected int tickDivider;
 	protected int counter;
-	
+
 	protected Object view;
-	
+
 	public void setView(Object v) {
 		view = v;
 	}
-	
+
 	public Object getView() {
 		return view;
 	}

@@ -3,9 +3,10 @@ package view.enemies;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import model.enemies.Hobbit;
+
 import common.Common;
 
-import model.enemies.Hobbit;
 /**
  * 
  * Hobbit ellenséges egység megjelenítéséért felelõs objektum, leszármazik az
@@ -22,6 +23,7 @@ public class HobbitView extends EnemyUnitView {
 	public HobbitView(Hobbit h) {
 		super(h);
 	}
+
 	/**
 	 * A megfelelõ színt beállítja a kirajzoláshoz
 	 * 
@@ -32,6 +34,7 @@ public class HobbitView extends EnemyUnitView {
 	protected void setColor(Graphics g) {
 		g.setColor(Color.CYAN);
 	}
+
 	/**
 	 * Visszaadja a Hobbit egység sebzés nélküli életét.
 	 * 
