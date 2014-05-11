@@ -3,6 +3,9 @@ package view;
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
+import javax.swing.Timer;
+
+import common.Strategy;
 
 import model.Game;
 import control.Control;
@@ -35,6 +38,7 @@ public class Board extends JFrame {
 	 */
 	public static void main(String[] args) {
 		Game game = new Game();
+		Strategy strategy = new Strategy(game);
 		Control control = new Control(game);
 		GameView gameView = new GameView(control, game);
 		game.setView(gameView);
@@ -55,18 +59,21 @@ public class Board extends JFrame {
 		// game.putRune(6, 3, RuneType.Range);
 		// game.putRune(1, 2, RuneType.Dwarf);
 		board.setVisible(true);
-		for (int i = 0; i < 100000; i++) {
-			if (i % 200 == 0)
-				game.addUnit(EnemyType.elf);
-			game.tick();
-
-			try {
-				Thread.sleep(20);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+//		for (int i = 0; i < 100000; i++) {
+//			if (i % 200 == 0)
+//				game.addUnit(EnemyType.elf);
+//			game.tick();
+//
+//			try {
+//				Thread.sleep(20);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+		
+		Timer t = new Timer(20, strategy);
+		t.start();
 
 	}
 }
