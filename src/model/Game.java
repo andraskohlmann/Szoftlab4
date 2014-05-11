@@ -70,7 +70,11 @@ public class Game {
 	public boolean checkTower(int x, int y) {
 		return map.checkTower(x, y);
 	}
-
+    
+	public boolean checkRune(int x,int y, Rune r)
+	{
+		return map.checkRune(x, y,r);
+	}
 	public boolean putRune(int x, int y, RuneType runeType) {
 		Rune rune;
 
