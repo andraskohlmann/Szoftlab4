@@ -37,20 +37,23 @@ public class Field extends Tile {
 	}
 
 	public void addFog(Fog f) {
-		if (tower == null)
-			return;
-		tower.clearEnemies();
-		removeTower(tower.getRune().getDistance(), tower);
-		addTower(tower.getRune().getDistance() - f.getDistanceReduction(),
-				tower);
+		if (tower != null) {
+			tower.clearEnemies();
+			removeTower(tower.getRune().getDistance(), tower);
+			addTower(tower.getRune().getDistance() - f.getDistanceReduction(),
+					tower);
+		}
+
 		super.addFog(f);
 		view.notifyView();
 	}
 
 	public void removeFog(Fog f) {
-		removeTower(tower.getRune().getDistance() - f.getDistanceReduction(),
-				tower);
-		addTower(tower.getRune().getDistance(), tower);
+		if (tower != null) {
+			removeTower(tower.getRune().getDistance() - f.getDistanceReduction(),
+					tower);
+			addTower(tower.getRune().getDistance(), tower);
+		}
 		super.removeFog(f);
 		view.notifyView();
 	}

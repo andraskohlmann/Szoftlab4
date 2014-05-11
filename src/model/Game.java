@@ -143,8 +143,8 @@ public class Game {
 	public void putFog(int x, int y) {
 		Fog fog = new Fog(this, Common.fog_timetoleave);
 		fog.setView(ViewFactory.createView(fog));
-		ticker.addUnit(fog);
 		map.putFog(x, y, fog);
+		ticker.addUnit(fog);
 	}
 
 	public void removeFog(Fog fog) {
