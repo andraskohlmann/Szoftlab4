@@ -40,7 +40,8 @@ public class ProtoManager {
 	// public static void main(String[] args) {
 	// ProtoManager.codeTranslate();
 	// }
-
+	
+	/*
 	public static void print(String printableDoc) {
 		if (outputStd) {
 			System.out.println(printableDoc);
@@ -469,5 +470,5 @@ public class ProtoManager {
 		unitCnt++;
 		return "Unit" + Integer.toString(unitCnt);
 	}
-
+	*/
 }

@@ -1,5 +1,6 @@
 package model.enemies;
 
+import view.ViewFactory;
 import common.Common;
 
 import model.Game;
@@ -25,6 +26,7 @@ public class Man extends EnemyUnit {
 	public void gotHit(Projectile p) {
 		if (p.isSplitter()) {
 			Man newHalf = new Man(this);
+			newHalf.setView(ViewFactory.createView(newHalf));
 
 			roadToNotice.addUnit(newHalf);
 

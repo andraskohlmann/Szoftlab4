@@ -5,10 +5,8 @@ import model.enemies.Elf;
 import model.enemies.Hobbit;
 import model.enemies.Man;
 
+import common.Common;
 import common.Randomizer;
-
-import control.ProtoManager;
-import control.RandomStates;
 
 public class Projectile {
 
@@ -20,13 +18,7 @@ public class Projectile {
 	private boolean isSplitter;
 
 	public Projectile() {
-		if (ProtoManager.randomSplitting == RandomStates.random) {
-			isSplitter = Randomizer.randomBoolean(10);
-		} else if (ProtoManager.randomSplitting == RandomStates.on) {
-			isSplitter = true;
-		} else {
-			isSplitter = false;
-		}
+		isSplitter = Randomizer.randomBoolean(Common.splitChance);
 	}
 
 	public int damageMe(Dwarf d) {

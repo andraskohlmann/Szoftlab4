@@ -67,6 +67,7 @@ public class Common {
 	
 	public static final int tileWidth = 20;
 	
+	public static final int splitChance = 100;
 	
 	// Map values
 	

@@ -53,7 +53,7 @@ public class Control implements ActionListener, MouseListener, MouseMotionListen
 		System.out.println("X: " + x +  " Y: " + y);
 		
 		if (clickState == ClickState.tower) {
-			if (game.putTower(y, x, "t0000"))
+			if (game.putTower(y, x))
 				clickState = clickState.none;
 		}
 		else if (clickState == ClickState.swamp) {

@@ -15,7 +15,7 @@ public class Randomizer {
 	public static boolean randomBoolean(int percentage) {
 		Random r = new Random();
 		int number = r.nextInt(100);
-		if (number < 50)
+		if (number < percentage)
 			return true;
 		else
 			return false;

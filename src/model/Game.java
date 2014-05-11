@@ -50,18 +50,17 @@ public class Game {
 		return map;
 	}
 
-	public boolean putTower(int x, int y, String name) {
-		System.out.println("putTower");
-		if (map.checkTower(x, y)) {
-			System.out.println("puting");
+	public boolean putTower(int x, int y) {
+		if (map.checkTower(x, y) && magitzka > Common.tower_mTz) {
 			Tower tower = new Tower();
-			tower.ProtoType_setName(name);
 			tower.setView(ViewFactory.createView(tower));
 			Rune rune = new Rune();
 			rune.setView(ViewFactory.createView(rune));
 			tower.putFirstRune(rune);
 			ticker.addUnit(tower);
 			map.putTower(x, y, tower);
+			System.out.println(magitzka);
+			magitzka -= Common.tower_mTz;
 			return true;
 		} else {
 			return false;
@@ -172,7 +171,6 @@ public class Game {
 	public void addUnit(EnemyUnit enemyUnit) {
 		ticker.concurrentAddUnit(enemyUnit);
 		enemyUnit.setGame(this);
-		enemyUnit.ProtoType_setName(ProtoManager.getUnitName());
 	}
 
 	public void addUnit(EnemyType type, String name) {
