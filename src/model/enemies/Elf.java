@@ -24,7 +24,6 @@ public class Elf extends EnemyUnit {
 
 	public void gotHit(Projectile p) {
 		if (p.isSplitter() && health > 1) {
-			System.out.println("SPLIT");
 			Elf newHalf = new Elf(this);
 			newHalf.setView(ViewFactory.createView(newHalf));
 

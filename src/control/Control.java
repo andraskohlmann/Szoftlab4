@@ -29,7 +29,6 @@ public class Control implements ActionListener, MouseListener,
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println(arg0.getActionCommand());
 		if (arg0.getActionCommand().equals("tower"))
 			clickState = ClickState.tower;
 		else if (arg0.getActionCommand().equals("swamp"))
@@ -52,8 +51,6 @@ public class Control implements ActionListener, MouseListener,
 	public void mouseClicked(MouseEvent arg0) {
 		int x = arg0.getX() / Common.tileWidth;
 		int y = arg0.getY() / Common.tileWidth;
-		System.out.println("X: " + arg0.getX() + " Y: " + arg0.getY());
-		System.out.println("X: " + x + " Y: " + y);
 
 		if (clickState == ClickState.tower) {
 			if (game.putTower(y, x))

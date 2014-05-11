@@ -37,7 +37,6 @@ public class MenuPanel extends JPanel {
 	public MenuPanel(Control control) {
 		setLayout(new GridLayout(0, 1));
 
-		System.out.println("haho");
 		towerButton = new JButton("Tower");
 		towerButton.setActionCommand("tower");
 		towerButton.addActionListener(control);

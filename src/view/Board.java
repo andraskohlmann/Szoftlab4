@@ -5,7 +5,7 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 import common.Common;
-
+import common.Randomizer;
 import model.Game;
 import control.Control;
 import control.EnemyType;
@@ -60,7 +60,7 @@ public class Board extends JFrame {
 		board.setVisible(true);
 
 		for (int i = 0; i < 100000; i++) {
-			//if (i % Common.tickElf == 0) game.addUnit(EnemyType.elf);
+			if (i % 200 == 0) game.addUnit(EnemyType.elf);
 			game.tick();
 
 			try {

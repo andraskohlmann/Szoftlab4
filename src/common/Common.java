@@ -14,7 +14,7 @@ public class Common {
 
 	// Special values
 
-	public static final int rangedistance = 6;
+	public static final int rangedistance = 3;
 
 	public static final int reloadrunereloadtime = 8;
 
@@ -25,10 +25,10 @@ public class Common {
 
 	// Enemy life
 
-	public static final int lifeDwarf = 150;
-	public static final int lifeHobbit = 40;
-	public static final int lifeElf = 80;
-	public static final int lifeMan = 100;
+	public static final int lifeDwarf = 300;
+	public static final int lifeHobbit = 80;
+	public static final int lifeElf = 160;
+	public static final int lifeMan = 200;
 
 	// Enemy tix
 
@@ -60,8 +60,8 @@ public class Common {
 
 	public static final int life = 200;
 	public static final int damagePerUnit = 10;
-	public static final int fog_timetoleave = 1000;
-	public static final int fog_distancereduction = 2;
+	public static final int fog_timetoleave = 200;
+	public static final int fog_distancereduction = 1;
 
 	// View values
 
@@ -71,6 +71,6 @@ public class Common {
 
 	// Map values
 
-	public static final int mapHeight = 7;
-	public static final int mapWidth = 11;
+	public static final int mapHeight = 24;
+	public static final int mapWidth = 18;
 }
