@@ -18,8 +18,7 @@ public class Man extends EnemyUnit {
 
 	public Man(Man m) {
 		this(m.gameToNotice);
-		m.health *= 0.5;
-		this.gameToNotice = m.gameToNotice;
+		m.health /= 2;
 		this.health = m.health;
 	}
 

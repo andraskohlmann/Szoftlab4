@@ -18,8 +18,7 @@ public class Hobbit extends EnemyUnit {
 
 	public Hobbit(Hobbit h) {
 		this(h.gameToNotice);
-		h.health *= 0.5;
-		this.gameToNotice = h.gameToNotice;
+		h.health /= 2;
 		this.health = h.health;
 	}
 
