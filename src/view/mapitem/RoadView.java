@@ -62,22 +62,25 @@ public class RoadView extends TileViewBase {
 			((RelativeViewBase) road.getSwamp().getView()).draw(g, x, y);
 		}
 		
-		int squares;
-		for(squares = 1; squares * squares < road.getEnemyList().size(); squares++);
-			
-		int i = 0;
-		int j = 0;
-		for (EnemyUnit eu : road.getEnemyList()) {
-			
-			int unitX = x + i * (int)(Common.tileWidth / squares);
-			int unitY = y + j * (int)(Common.tileWidth / squares);
-			
-			((RelativeViewBase) eu.getView()).draw(g, unitX, unitY);
-			
-			i++;
-			if(squares <= i) {
-				i = 0;
-				j++;
+		if(road.getEnemyList().size() == 1)
+			((RelativeViewBase) road.getEnemyList().get(0).getView()).draw(g, x + 7, y + 7);
+		else {
+			int i = 0;
+			int j = 0;
+			for (EnemyUnit eu : road.getEnemyList()) {
+				
+				int unitX = x + i * (int)(Common.tileWidth / 2);
+				int unitY = y + j * (int)(Common.tileWidth / 2);
+				
+				((RelativeViewBase) eu.getView()).draw(g, unitX, unitY);
+				
+				i++;
+				if(2 <= i) {
+					i = 0;
+					j++;
+					if(2 <= j)
+						j = 0;
+				}
 			}
 		}
 	}
