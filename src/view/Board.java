@@ -24,7 +24,7 @@ public class Board extends JFrame {
 	 * Konstruktor, az ablak méretének, tulajdonságainak inicializálása.
 	 */
 	public Board() {
-		setSize(960, 540);
+		setSize(1000, 540);
 		setResizable(false);
 		setTitle("Tower Defense");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

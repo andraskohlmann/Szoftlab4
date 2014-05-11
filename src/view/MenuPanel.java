@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.ImageIcon;
@@ -40,6 +41,8 @@ public class MenuPanel extends JPanel {
 	public MenuPanel(Control control) {
 		setLayout(new GridLayout(0, 1));
 		setBackground(Color.BLACK);
+
+		setMaximumSize(new Dimension(240, 540));
 		
 		towerButton = new JButton(new ImageIcon("textures//towerbutton.png"));
 		towerButton.setBorderPainted(false);
