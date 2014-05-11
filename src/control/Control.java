@@ -68,7 +68,6 @@ public class Control implements ActionListener, MouseListener,
 			if (game.putRune(y, x, RuneType.Hobbit))
 				clickState = ClickState.none;
 		} else if (clickState == ClickState.man) {
-			System.out.println("MAN RUNE");
 			if (game.putRune(y, x, RuneType.Man))
 				clickState = ClickState.none;
 		} else if (clickState == ClickState.range) {
