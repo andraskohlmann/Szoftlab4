@@ -2,11 +2,14 @@ package view.mapitem;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import model.mapitem.Field;
 import view.RelativeViewBase;
-
-import common.Common;
 
 /**
  * 
@@ -19,6 +22,7 @@ public class FieldView extends TileViewBase {
 	 * Megjelenítendõ Field objektum tárolása
 	 */
 	private Field field;
+	private static BufferedImage image;
 
 	/**
 	 * Konstruktor
@@ -34,6 +38,11 @@ public class FieldView extends TileViewBase {
 		super(x, y);
 
 		field = f;
+		try {
+			image = ImageIO.read(new File("textures//field.png"));
+		} catch (IOException e) {
+			System.out.println("HIBA: Képfájl hiányzik!");
+		}
 	}
 
 	/**
@@ -46,7 +55,7 @@ public class FieldView extends TileViewBase {
 	 */
 	protected void paintMe(Graphics g) {
 		g.setColor(Color.GRAY);
-		g.fillRect(x, y, Common.tileWidth, Common.tileWidth);
+		g.drawImage(image, x, y, null);
 
 		if (field.hasTower()) {
 			((RelativeViewBase) field.getTower().getView()).draw(g, x, y);
