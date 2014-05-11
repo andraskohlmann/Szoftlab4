@@ -48,22 +48,6 @@ public abstract class EnemyUnit implements ActiveUnit {
 		}
 	}
 
-	public int ProtoType_getHealth() {
-		return health;
-	}
-
-	public String ProtoType_getName() {
-		return n;
-	}
-
-	public int ProtoType_getCounter() {
-		return counter;
-	}
-
-	public void ProtoType_setName(String name) {
-		n = name;
-	}
-
 	public int getParameters() {
 		return health;
 	}

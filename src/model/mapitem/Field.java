@@ -63,10 +63,6 @@ public class Field extends Tile {
 
 	}
 
-	public Tower Prototype_getTower() {
-		return tower;
-	}
-
 	public Tower getTower() {
 		return tower;
 	}

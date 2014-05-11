@@ -119,7 +119,6 @@ public class Game {
 		if (map.checkSwamp(x, y)) {
 			Swamp swamp = new Swamp();
 			swamp.setView(ViewFactory.createView(swamp));
-			swamp.ProtoType_setName(name);
 			Rune rune = new Rune();
 			rune.setView(ViewFactory.createView(rune));
 			swamp.putFirstRune(rune);

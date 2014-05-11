@@ -313,10 +313,6 @@ public class Map {
 		return firstRoad;
 	}
 
-	public Tile[][] Prototype_getTiles() {
-		return tiles;
-	}
-
 	public void putFog(int x, int y, Fog fog) {
 		tiles[x][y].addFog(fog);
 	}
