@@ -4,9 +4,12 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import model.Game;
@@ -17,9 +20,7 @@ import model.runes.ManRune;
 import model.runes.RangeRune;
 import model.runes.ReloadRune;
 import model.runes.Rune;
-
 import common.Common;
-
 import control.Control;
 import control.Control.ClickState;
 
@@ -45,6 +46,7 @@ public class GameView extends JPanel {
 	private Game game;
 	
 	private StatusPanel statusPanel = new StatusPanel();
+	private Image gameOverScreen;
 	
 
 	/**
@@ -58,9 +60,16 @@ public class GameView extends JPanel {
 
 		game = g;
 		control = c;
-
+		
 		addMouseListener(c);
 		addMouseMotionListener(c);
+		
+		try {
+			gameOverScreen = ImageIO.read(new File("textures//gameover.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -82,6 +91,12 @@ public class GameView extends JPanel {
 	 */
 	@Override
 	public void paintComponent(Graphics graphics) {
+		
+		if (game.isGameOver()) {
+			graphics.drawImage(gameOverScreen, 0, 0, null);
+			return;
+		}
+		
 		statusPanel.setMagitzka(game.getMagitzka());
 		statusPanel.setLife(game.getLife());
 		statusPanel.repaint();

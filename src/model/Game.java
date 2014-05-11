@@ -33,6 +33,7 @@ public class Game {
 	private GameView gameView;
 	private int life = Common.life;
 	private int magitzka = Common.start_mTz;
+	private boolean gameover = false;
 
 	public Game() {
 		ticker = new Ticker();
@@ -40,6 +41,10 @@ public class Game {
 
 	public int getLife() {
 		return life;
+	}
+	
+	public boolean isGameOver() {
+		return gameover;
 	}
 
 	public int getMagitzka() {
@@ -157,7 +162,9 @@ public class Game {
 		List<EnemyUnit> finished = map.getFinishedUnits();
 
 		life -= Common.damagePerUnit * finished.size();
-
+		if (life <= 0) {
+			gameover = true;
+		}
 		ticker.remove(finished);
 		map.deleteFinishedUnits();
 		
