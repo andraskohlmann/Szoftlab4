@@ -1,6 +1,5 @@
 package view.enemies;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 import model.enemies.Dwarf;
@@ -22,17 +21,24 @@ public class DwarfView extends EnemyUnitView {
 	 */
 	public DwarfView(Dwarf d) {
 		super(d);
+		
 	}
-
+	
 	/**
-	 * A megfelelõ színt beállítja a kirajzoláshoz
+	 * Az egység kirajzolása
 	 * 
 	 * @param g
 	 *            Graphics
+	 * @param x
+	 * 			  int - x koordináta
+	 * @param y
+	 * 			  int - y koordináta
+	 *            
 	 */
 	@Override
-	protected void setColor(Graphics g) {
-		g.setColor(Color.BLUE);
+	protected void drawUnit(Graphics g, int x, int y) {
+		//g.setColor(Color.BLUE);
+		g.drawImage(dwarf, x, y, null);
 	}
 
 	/**

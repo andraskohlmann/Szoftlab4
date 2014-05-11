@@ -1,6 +1,5 @@
 package view.enemies;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 import model.enemies.Man;
@@ -23,16 +22,22 @@ public class ManView extends EnemyUnitView {
 	public ManView(Man m) {
 		super(m);
 	}
-
+	
 	/**
-	 * A megfelelõ színt beállítja a kirajzoláshoz
+	 * Az egység kirajzolása
 	 * 
 	 * @param g
 	 *            Graphics
+	 * @param x
+	 * 			  int - x koordináta
+	 * @param y
+	 * 			  int - y koordináta
+	 *            
 	 */
 	@Override
-	protected void setColor(Graphics g) {
-		g.setColor(Color.PINK);
+	protected void drawUnit(Graphics g, int x, int y) {
+		//g.setColor(Color.BLUE);
+		g.drawImage(man, x, y, null);
 	}
 
 	/**
