@@ -23,7 +23,7 @@ public class Board extends JFrame {
 	 * Konstruktor, az ablak méretének, tulajdonságainak inicializálása.
 	 */
 	public Board() {
-		setSize(600, 600);
+		setSize(960, 540);
 		setResizable(false);
 		setTitle("Tower Defense");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -43,7 +43,7 @@ public class Board extends JFrame {
 		Board board = new Board();
 		MenuPanel menu = new MenuPanel(control);
 
-		game.loadMap("3a.map");
+		game.loadMap("map1.txt");
 		board.add(game.getView(), BorderLayout.CENTER);
 		board.add(menu, BorderLayout.EAST);
 
