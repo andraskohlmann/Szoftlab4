@@ -64,7 +64,6 @@ public class Game {
 			tower.putFirstRune(rune);
 			ticker.addUnit(tower);
 			map.putTower(x, y, tower);
-			System.out.println(magitzka);
 			magitzka -= Common.tower_mTz;
 			return true;
 		} else {
