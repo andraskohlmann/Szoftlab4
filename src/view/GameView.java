@@ -103,9 +103,7 @@ public class GameView extends JPanel {
 				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
 						Common.tileWidth, Common.tileWidth);
 			}
-		}
-		if (control.getState() == Control.ClickState.swamp) {
-
+		} else if (control.getState() == Control.ClickState.swamp) {
 
 			if (game.checkSwamp(x, y)) {
 				graphics.setColor(Color.GREEN);
@@ -116,28 +114,46 @@ public class GameView extends JPanel {
 				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
 						Common.tileWidth, Common.tileWidth);
 			}
-		}
+		} else if (control.getState() != ClickState.none) {
 
-		// /RUNES
-		Rune rune = new Rune();
-		ClickState clickState = control.getState();
-		switch(clickState)
-		{
-		 case man: {rune = new ManRune(); break;}
-		 case hobbit: {rune = new HobbitRune(); break;}
-		 case elf: {rune = new ElfRune(); break;}
-		 case dwarf: {rune = new DwarfRune(); break;}
-		 case reload: {rune = new ReloadRune(); break;}
-		 case range: {rune = new RangeRune(); break;}
-		}
-		if (game.checkRune(x, y,rune)) {
-			graphics.setColor(Color.GREEN);
-			graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-					Common.tileWidth, Common.tileWidth);
-		} else {
-			graphics.setColor(Color.RED);
-			graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
-					Common.tileWidth, Common.tileWidth);
+			// /RUNES
+			Rune rune = new Rune();
+			ClickState clickState = control.getState();
+			switch (clickState) {
+			case man: {
+				rune = new ManRune();
+				break;
+			}
+			case hobbit: {
+				rune = new HobbitRune();
+				break;
+			}
+			case elf: {
+				rune = new ElfRune();
+				break;
+			}
+			case dwarf: {
+				rune = new DwarfRune();
+				break;
+			}
+			case reload: {
+				rune = new ReloadRune();
+				break;
+			}
+			case range: {
+				rune = new RangeRune();
+				break;
+			}
+			}
+			if (game.checkRune(x, y, rune)) {
+				graphics.setColor(Color.GREEN);
+				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
+						Common.tileWidth, Common.tileWidth);
+			} else {
+				graphics.setColor(Color.RED);
+				graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
+						Common.tileWidth, Common.tileWidth);
+			}
 		}
 	}
 

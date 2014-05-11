@@ -60,7 +60,8 @@ public class Board extends JFrame {
 		board.setVisible(true);
 
 		for (int i = 0; i < 100000; i++) {
-			if (i % 200 == 0) game.addUnit(EnemyType.elf);
+			if (i % 200 == 0)
+				game.addUnit(EnemyType.elf);
 			game.tick();
 
 			try {

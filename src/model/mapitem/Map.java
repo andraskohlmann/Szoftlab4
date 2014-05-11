@@ -321,5 +321,5 @@ public class Map {
 	public void putFog(int x, int y, Fog fog) {
 		tiles[x][y].addFog(fog);
 	}
-	
+
 }

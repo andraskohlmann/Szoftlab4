@@ -45,7 +45,7 @@ public class FieldView extends TileViewBase {
 	 *            Graphics
 	 */
 	protected void paintMe(Graphics g) {
-		g.setColor(Color.GREEN);
+		g.setColor(Color.GRAY);
 		g.fillRect(x, y, Common.tileWidth, Common.tileWidth);
 
 		if (field.hasTower()) {
