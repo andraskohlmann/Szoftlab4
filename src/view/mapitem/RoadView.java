@@ -7,6 +7,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import common.Common;
+
 import model.enemies.EnemyUnit;
 import model.mapitem.Road;
 import view.RelativeViewBase;
@@ -59,8 +61,24 @@ public class RoadView extends TileViewBase {
 		if (road.hasSwamp()) {
 			((RelativeViewBase) road.getSwamp().getView()).draw(g, x, y);
 		}
+		
+		int squares;
+		for(squares = 1; squares * squares < road.getEnemyList().size(); squares++);
+			
+		int i = 0;
+		int j = 0;
 		for (EnemyUnit eu : road.getEnemyList()) {
-			((RelativeViewBase) eu.getView()).draw(g, x, y);
+			
+			int unitX = x + i * (int)(Common.tileWidth / squares);
+			int unitY = y + j * (int)(Common.tileWidth / squares);
+			
+			((RelativeViewBase) eu.getView()).draw(g, unitX, unitY);
+			
+			i++;
+			if(squares <= i) {
+				i = 0;
+				j++;
+			}
 		}
 	}
 
