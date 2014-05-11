@@ -45,10 +45,10 @@ public class Board extends JFrame {
 		board.add(game.getView(), BorderLayout.CENTER);
 		board.add(menu, BorderLayout.EAST);
 
-		// game.putTower(6, 3, "Segglyuk");
-		// game.putSwamp(1, 2, "PICSA");
+		// game.putTower(6, 3);
+		// game.putSwamp(1, 2);
 
-		game.addUnit(EnemyType.elf, "Buzikám");
+		game.addUnit(EnemyType.elf);
 
 		// game.putRune(6, 3, RuneType.Range);
 		// game.putRune(1, 2, RuneType.Dwarf);

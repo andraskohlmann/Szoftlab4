@@ -173,7 +173,7 @@ public class Game {
 		enemyUnit.setGame(this);
 	}
 
-	public void addUnit(EnemyType type, String name) {
+	public void addUnit(EnemyType type) {
 		EnemyUnit newEnemy;
 
 		switch (type) {
@@ -198,7 +198,6 @@ public class Game {
 			newEnemy = man;
 			break;
 		}
-		newEnemy.ProtoType_setName(name);
 
 		map.getFirstRoad().addUnit(newEnemy);
 		ticker.addUnit(newEnemy);
