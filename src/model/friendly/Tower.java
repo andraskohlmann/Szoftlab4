@@ -87,4 +87,8 @@ public class Tower implements ActiveUnit, FriendlyUnit {
 	public Rune getRune() {
 		return rune;
 	}
+
+	public void clearEnemies() {
+		enemyUnits.clear();
+	}
 }

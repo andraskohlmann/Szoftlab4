@@ -31,6 +31,9 @@ public class Road extends Tile {
 	public void addTower(int distance, Tower t) {
 		if (!towersToNotify.contains(t)) {
 			towersToNotify.add(t);
+			for (EnemyUnit e : enemyList) {
+				t.addUnit(e);
+			}
 			super.addTower(distance, t);
 		}
 	}
