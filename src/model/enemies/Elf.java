@@ -18,8 +18,7 @@ public class Elf extends EnemyUnit {
 
 	public Elf(Elf e) {
 		this(e.gameToNotice);
-		e.health *= 0.5;
-		this.gameToNotice = e.gameToNotice;
+		e.health /= 2;
 		this.health = e.health;
 	}
 
