@@ -37,8 +37,6 @@ public class Fog implements ActiveUnit {
 		if (timeToLeave == 0) {
 			if (tileToNotify != null) {
 				tileToNotify.removeFog(this);
-			} else {
-				System.out.println("Szar van a betonkeverõben!");
 			}
 			gameToNotify.removeFog(this);
 		}

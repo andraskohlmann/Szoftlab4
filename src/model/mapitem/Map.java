@@ -89,8 +89,6 @@ public class Map {
 					Set<Road> roadSet = new HashSet<Road>(tiles[i][j].nextRoad);
 					tiles[i][j].nextRoad.removeAll(tiles[i][j].nextRoad);
 					tiles[i][j].nextRoad.addAll(roadSet);
-					// for (int k = 0; k < tiles[i][j].nextRoad.size(); k++)
-					// System.out.println("tile " + i + " " + j + ": " + k);
 				}
 			}
 		}
