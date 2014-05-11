@@ -19,8 +19,11 @@ public class SidePanel extends JPanel{
 	public SidePanel(StatusPanel status,Control control)
 	{
 		menu = new MenuPanel(control);
-		this.status = status; 
-		add(menu,BorderLayout.SOUTH);
+		this.status = status;
+
+		setLayout(new BorderLayout());
+		
+		add(menu,BorderLayout.CENTER);
 		add(status,BorderLayout.NORTH);
 	}
 

@@ -150,6 +150,8 @@ public class GameView extends JPanel {
 				rune = new RangeRune();
 				break;
 			}
+			default:
+				break;
 			}
 			if (game.checkRune(x, y, rune)) {
 				graphics.setColor(Color.GREEN);

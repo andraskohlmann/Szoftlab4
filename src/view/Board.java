@@ -4,8 +4,6 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
-import common.Common;
-import common.Randomizer;
 import model.Game;
 import control.Control;
 import control.EnemyType;
