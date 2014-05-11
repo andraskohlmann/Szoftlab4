@@ -103,11 +103,7 @@ public class Map {
 				numberOfDots++;
 			}
 			if (lines[i].charAt(j + 1) == 'A') {
-				tiles[i][j].addNextRoad((Road) tiles[i][j + 1]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " right end");
-				return true;
+				tiles[i][j].addNextRoad((Road) tiles[i][j + 1]);
 			}
 		}
 		if (i < lines.length - 1 && prev != 2) {
@@ -116,10 +112,7 @@ public class Map {
 				numberOfDots++;
 			}
 			if (lines[i + 1].charAt(j) == 'A') {
-				tiles[i][j].addNextRoad((Road) tiles[i + 1][j]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " down end");
+				tiles[i][j].addNextRoad((Road) tiles[i + 1][j]);
 				return true;
 			}
 		}
@@ -129,10 +122,7 @@ public class Map {
 				numberOfDots++;
 			}
 			if (lines[i].charAt(j - 1) == 'A') {
-				tiles[i][j].addNextRoad((Road) tiles[i][j - 1]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " left end");
+				tiles[i][j].addNextRoad((Road) tiles[i][j - 1]);
 				return true;
 			}
 		}
@@ -142,10 +132,7 @@ public class Map {
 				numberOfDots++;
 			}
 			if (lines[i - 1].charAt(j) == 'A') {
-				tiles[i][j].addNextRoad((Road) tiles[i - 1][j]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " up end");
+				tiles[i][j].addNextRoad((Road) tiles[i - 1][j]);
 				return true;
 			}
 		}
@@ -153,72 +140,48 @@ public class Map {
 		int numberOfDotsVisited = 0;
 		if (j < lines[i].length() - 1 && prev != 1) {
 			if (lines[i].charAt(j + 1) == '.') {
-				tiles[i][j].addNextRoad((Road) tiles[i][j + 1]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " right dot");
+				tiles[i][j].addNextRoad((Road) tiles[i][j + 1]);
 				if (findNext(i, j + 1, 3, lines))
 					numberOfDotsVisited++;
 			}
 			if (lines[i].charAt(j + 1) == ' ' && !dotFound) {
-				tiles[i][j].addNextRoad((Road) tiles[i][j + 1]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " right space");
+				tiles[i][j].addNextRoad((Road) tiles[i][j + 1]);
 				if (findNext(i, j + 1, 3, lines))
 					return true;
 			}
 		}
 		if (i < lines.length - 1 && prev != 2) {
 			if (lines[i + 1].charAt(j) == '.') {
-				tiles[i][j].addNextRoad((Road) tiles[i + 1][j]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " down dot");
+				tiles[i][j].addNextRoad((Road) tiles[i + 1][j]);
 				if (findNext(i + 1, j, 4, lines))
 					numberOfDotsVisited++;
 			}
 			if (lines[i + 1].charAt(j) == ' ' && !dotFound) {
-				tiles[i][j].addNextRoad((Road) tiles[i + 1][j]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " down space");
+				tiles[i][j].addNextRoad((Road) tiles[i + 1][j]);
 				if (findNext(i + 1, j, 4, lines))
 					return true;
 			}
 		}
 		if (j > 0 && prev != 3) {
 			if (lines[i].charAt(j - 1) == '.') {
-				tiles[i][j].addNextRoad((Road) tiles[i][j - 1]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " left dot");
+				tiles[i][j].addNextRoad((Road) tiles[i][j - 1]);
 				if (findNext(i, j - 1, 1, lines))
 					numberOfDotsVisited++;
 			}
 			if (lines[i].charAt(j - 1) == ' ' && !dotFound) {
-				tiles[i][j].addNextRoad((Road) tiles[i][j - 1]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " left space");
+				tiles[i][j].addNextRoad((Road) tiles[i][j - 1]);
 				if (findNext(i, j - 1, 1, lines))
 					return true;
 			}
 		}
 		if (i > 0 && prev != 4) {
 			if (lines[i - 1].charAt(j) == '.') {
-				tiles[i][j].addNextRoad((Road) tiles[i - 1][j]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " up dot");
+				tiles[i][j].addNextRoad((Road) tiles[i - 1][j]);
 				if (findNext(i - 1, j, 2, lines))
 					numberOfDotsVisited++;
 			}
 			if (lines[i - 1].charAt(j) == ' ' && !dotFound) {
-				tiles[i][j].addNextRoad((Road) tiles[i - 1][j]); // System.out.println("Next road to "
-																	// + i + ":"
-																	// + j +
-																	// " up space");
+				tiles[i][j].addNextRoad((Road) tiles[i - 1][j]);
 				if (findNext(i - 1, j, 2, lines))
 					return true;
 			}
