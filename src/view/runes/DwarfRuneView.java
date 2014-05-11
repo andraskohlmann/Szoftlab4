@@ -1,6 +1,5 @@
 package view.runes;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 import model.runes.DwarfRune;
@@ -21,15 +20,20 @@ public class DwarfRuneView extends RuneView {
 	public DwarfRuneView(DwarfRune r) {
 		super(r);
 	}
-
+	
 	/**
-	 * A metódus beállítja a színt ami reprezentálja a DwarfRune-t a játékban
+	 * A rúna kirajzolása
 	 * 
 	 * @param g
-	 *            Graphics -
+	 *            Graphics
+	 * @param x
+	 * 			  int - x koordináta
+	 * @param y
+	 * 			  int - y koordináta
+	 *            
 	 */
-	protected void setColor(Graphics g) {
-		g.setColor(Color.BLACK);
+	@Override
+	protected void drawRune(Graphics g, int x, int y) {
+		g.drawImage(dwarf, x, y, null);
 	}
-
 }

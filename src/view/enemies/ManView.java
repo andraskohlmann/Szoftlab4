@@ -36,7 +36,6 @@ public class ManView extends EnemyUnitView {
 	 */
 	@Override
 	protected void drawUnit(Graphics g, int x, int y) {
-		//g.setColor(Color.BLUE);
 		g.drawImage(man, x, y, null);
 	}
 

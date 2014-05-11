@@ -1,7 +1,11 @@
 package view.runes;
 
-import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import model.runes.Rune;
 import view.RelativeViewBase;
@@ -13,6 +17,14 @@ import view.RelativeViewBase;
  * 
  */
 public class RuneView implements RelativeViewBase {
+	
+	protected static BufferedImage dwarf;
+	protected static BufferedImage elf;
+	protected static BufferedImage hobbit;
+	protected static BufferedImage man;
+	protected static BufferedImage reload;
+	protected static BufferedImage range;
+	
 	/**
 	 * Megvalósítandó Rune tárolása
 	 */
@@ -26,6 +38,17 @@ public class RuneView implements RelativeViewBase {
 	 */
 	public RuneView(Rune r) {
 		rune = r;
+		
+		try {
+			dwarf = ImageIO.read(new File("textures//dwarfrune.png"));
+			elf = ImageIO.read(new File("textures//elfrune.png"));
+			hobbit = ImageIO.read(new File("textures//hobbitrune.png"));
+			man = ImageIO.read(new File("textures//manrune.png"));
+			reload = ImageIO.read(new File("textures//reloadrune.png"));
+			range = ImageIO.read(new File("textures//rangerune.png"));
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
 	}
 
 	/**
@@ -36,16 +59,19 @@ public class RuneView implements RelativeViewBase {
 	public Rune getRune() {
 		return rune;
 	}
-
+	
 	/**
-	 * Az alap default Rune színét állítja be
+	 * Abstract metódus a rúnák kirajzolásához
 	 * 
 	 * @param g
 	 *            Graphics
+	 * @param x
+	 * 			  int - x koordináta
+	 * @param y
+	 * 			  int - y koordináta
+	 *            
 	 */
-	protected void setColor(Graphics g) {
-		g.setColor(Color.YELLOW);
-	}
+	protected void drawRune(Graphics g, int x, int y) {}
 
 	/**
 	 * Kirajzolja a Rune-t a paraméterben megkapott x,y koordinátákra
@@ -58,8 +84,6 @@ public class RuneView implements RelativeViewBase {
 	 *            int - y koordináta
 	 */
 	public void draw(Graphics g, int x, int y) {
-		setColor(g);
-		g.fillPolygon(new int[] { x + 5, x + 10, x + 15, x + 10 }, new int[] {
-				y + 10, y + 15, y + 10, y + 5 }, 4);
+		drawRune(g, x, y);
 	}
 }

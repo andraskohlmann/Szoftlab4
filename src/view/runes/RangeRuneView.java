@@ -1,6 +1,5 @@
 package view.runes;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 import model.runes.RangeRune;
@@ -21,16 +20,20 @@ public class RangeRuneView extends RuneView {
 	public RangeRuneView(RangeRune r) {
 		super(r);
 	}
-
+	
 	/**
-	 * A metódus beállítja a színt ami reprezentálja a RangeRune-t a játékban
+	 * A rúna kirajzolása
 	 * 
 	 * @param g
-	 *            Graphics -
+	 *            Graphics
+	 * @param x
+	 * 			  int - x koordináta
+	 * @param y
+	 * 			  int - y koordináta
+	 *            
 	 */
 	@Override
-	protected void setColor(Graphics g) {
-		g.setColor(Color.CYAN);
+	protected void drawRune(Graphics g, int x, int y) {
+		g.drawImage(range, x, y, null);
 	}
-
 }
