@@ -3,10 +3,7 @@ package view;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -34,8 +31,6 @@ public class MenuPanel extends JPanel {
 	private JButton hobbitRuneButton;
 	private JButton rangeRuneButton;
 	private JButton reloadRuneButton;
-	
-	private BufferedImage towerButtonImage;
 
 	/**
 	 * Konstruktor, inicializálja a gombok mûködését,tulajdonságait.

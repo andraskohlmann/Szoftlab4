@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Color;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -16,16 +18,23 @@ public class StatusPanel extends JPanel {
 	private JLabel lifeLevelDisplay;
 
 	public StatusPanel() {
+		
+		setBackground(Color.BLACK);
+		
 		lifeLevel = new JLabel("Life:");
+		lifeLevel.setForeground(Color.WHITE);
 		add(lifeLevel);
 		
 		lifeLevelDisplay = new JLabel(Integer.toString(Common.life));
+		lifeLevelDisplay.setForeground(Color.WHITE);
 		add(lifeLevelDisplay);
 		
 		magitzkaLevel = new JLabel("Magitzka:");
+		magitzkaLevel.setForeground(Color.WHITE);
 		add(magitzkaLevel);
 
 		magitzkaLevelDisplay = new JLabel(Integer.toString(Common.start_mTz));
+		magitzkaLevelDisplay.setForeground(Color.WHITE);
 		add(magitzkaLevelDisplay);
 	}
 
