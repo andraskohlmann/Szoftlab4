@@ -37,7 +37,6 @@ public class Control implements ActionListener, MouseListener,
 			clickState = ClickState.elf;
 		else if (arg0.getActionCommand().equals("manrune")) {
 			clickState = ClickState.man;
-			System.out.println("MAN!");
 		} else if (arg0.getActionCommand().equals("dwarfrune"))
 			clickState = ClickState.dwarf;
 		else if (arg0.getActionCommand().equals("hobbitrune"))
