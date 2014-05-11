@@ -98,6 +98,21 @@ public class GameView extends JPanel {
 						Common.tileWidth, Common.tileWidth);
 			}
 		}
+			if (control.getState() == Control.ClickState.swamp) {
+				int x = control.getMouseX();
+				int y = control.getMouseY();
+
+				if (x < Common.mapHeight && y < Common.mapWidth
+						&& game.checkSwamp(x, y)) {
+					graphics.setColor(Color.GREEN);
+					graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
+							Common.tileWidth, Common.tileWidth);
+				} else if (x < Common.mapHeight && y < Common.mapWidth) {
+					graphics.setColor(Color.RED);
+					graphics.fillRect(y * Common.tileWidth, x * Common.tileWidth,
+							Common.tileWidth, Common.tileWidth);
+				}
+		}
 
 	}
 
