@@ -40,12 +40,14 @@ public abstract class EnemyUnit implements ActiveUnit {
 	}
 
 	public void tick() {
-		counter++;
-		if (counter == tickDivider) {
-			counter = 0;
+		if (health > 0) {
+			counter++;
+			if (counter == tickDivider) {
+				counter = 0;
 
-			roadToNotice.stepMe(this);
-		}
+				roadToNotice.stepMe(this);
+			}
+		}	
 	}
 
 	public int getParameters() {
