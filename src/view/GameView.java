@@ -83,6 +83,7 @@ public class GameView extends JPanel {
 	@Override
 	public void paintComponent(Graphics graphics) {
 		statusPanel.setMagitzka(game.getMagitzka());
+		statusPanel.setLife(game.getLife());
 		statusPanel.repaint();
 	
 		if (bottomLayer == null) {
