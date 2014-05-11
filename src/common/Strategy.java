@@ -57,8 +57,7 @@ public class Strategy implements ActionListener {
 		
 		fogNumber++;
 		if (fogNumber > Common.fog_timetoleave) {
-			//game.putFog(Randomizer.randomInt(game.getMap().getWidth()), Randomizer.randomInt(game.getMap().getHeight()));
-			game.putFog(5,5);
+			game.putFog(Randomizer.randomInt(game.getMap().getWidth()), Randomizer.randomInt(game.getMap().getHeight()));
 			fogNumber = 0;
 		}
 		

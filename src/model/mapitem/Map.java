@@ -32,11 +32,11 @@ public class Map {
 	}
 	
 	public int getWidth() {
-		return tiles[0].length;
+		return tiles.length;
 	}
 	
 	public int getHeight() {
-		return tiles.length;
+		return tiles[0].length;
 	}
 
 	public void putTower(int x, int y, Tower t) {
