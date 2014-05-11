@@ -56,7 +56,7 @@ public class Control implements ActionListener, MouseListener,
 			if (game.putTower(y, x))
 				clickState = ClickState.none;
 		} else if (clickState == ClickState.swamp) {
-			if (game.putSwamp(y, x, "s0000"))
+			if (game.putSwamp(y, x))
 				clickState = ClickState.none;
 		} else if (clickState == ClickState.elf) {
 			if (game.putRune(y, x, RuneType.Elf))

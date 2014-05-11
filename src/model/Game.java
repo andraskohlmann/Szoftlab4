@@ -120,7 +120,7 @@ public class Game {
 		}
 	}
 
-	public boolean putSwamp(int x, int y, String name) {
+	public boolean putSwamp(int x, int y) {
 		if (map.checkSwamp(x, y)) {
 			Swamp swamp = new Swamp();
 			swamp.setView(ViewFactory.createView(swamp));
