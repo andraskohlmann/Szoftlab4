@@ -8,6 +8,7 @@ import java.awt.Graphics;
  * 
  */
 public interface RelativeViewBase {
+
 	/**
 	 * Kirajzolást megvalósító függvény
 	 * 

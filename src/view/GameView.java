@@ -32,10 +32,12 @@ import control.Control.ClickState;
 public class GameView extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Felsõ réteg a kirajzolásban
 	 */
 	private Image bottomLayer;
+
 	/**
 	 * Tárolva az egyes modellbeli objektumok kirajzolásért felelõs párjai
 	 */
@@ -44,10 +46,9 @@ public class GameView extends JPanel {
 	private Control control;
 
 	private Game game;
-	
+
 	private StatusPanel statusPanel = new StatusPanel();
 	private Image gameOverScreen;
-	
 
 	/**
 	 * Konstruktor, eseménykezelõ objektum hozzáadása
@@ -60,14 +61,13 @@ public class GameView extends JPanel {
 
 		game = g;
 		control = c;
-		
+
 		addMouseListener(c);
 		addMouseMotionListener(c);
-		
+
 		try {
 			gameOverScreen = ImageIO.read(new File("textures//gameover.png"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -91,16 +91,16 @@ public class GameView extends JPanel {
 	 */
 	@Override
 	public void paintComponent(Graphics graphics) {
-		
+
 		if (game.isGameOver()) {
 			graphics.drawImage(gameOverScreen, 0, 0, null);
 			return;
 		}
-		
+
 		statusPanel.setMagitzka(game.getMagitzka());
 		statusPanel.setLife(game.getLife());
 		statusPanel.repaint();
-	
+
 		if (bottomLayer == null) {
 			initBottomLayer();
 		}
@@ -193,10 +193,8 @@ public class GameView extends JPanel {
 		g.fillRect(0, 0, getWidth(), getHeight());
 	}
 
-    public StatusPanel getStatusPanel()
-    {
-    	return statusPanel;
-    }
-	
-	
+	public StatusPanel getStatusPanel() {
+		return statusPanel;
+	}
+
 }

@@ -43,35 +43,14 @@ public class Board extends JFrame {
 		GameView gameView = new GameView(control, game);
 		game.setView(gameView);
 		Board board = new Board();
-		SidePanel side = new SidePanel(gameView.getStatusPanel(),control);
+		SidePanel side = new SidePanel(gameView.getStatusPanel(), control);
 
 		game.loadMap("map1.txt");
 		board.add(game.getView(), BorderLayout.CENTER);
 		board.add(side, BorderLayout.EAST);
 
-		// game.putTower(6, 3);
-		// game.putSwamp(1, 2);
-        
-//		game.addUnit(EnemyType.elf);
-//		game.addUnit(EnemyType.dwarf);
-//		game.addUnit(EnemyType.hobbit);
-//		game.addUnit(EnemyType.man);
-		// game.putRune(6, 3, RuneType.Range);
-		// game.putRune(1, 2, RuneType.Dwarf);
 		board.setVisible(true);
-//		for (int i = 0; i < 100000; i++) {
-//			if (i % 200 == 0)
-//				game.addUnit(EnemyType.elf);
-//			game.tick();
-//
-//			try {
-//				Thread.sleep(20);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-		
+
 		Timer t = new Timer(20, strategy);
 		t.start();
 

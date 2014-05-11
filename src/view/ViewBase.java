@@ -10,10 +10,12 @@ import common.Common;
  * 
  */
 public abstract class ViewBase {
+
 	/**
 	 * x koordináta
 	 */
 	protected int x;
+
 	/**
 	 * y koordináta
 	 */

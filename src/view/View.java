@@ -6,6 +6,7 @@ package view;
  * 
  */
 public interface View {
+
 	/**
 	 * A változásokról való értesítést teszi lehetõvé.
 	 */
