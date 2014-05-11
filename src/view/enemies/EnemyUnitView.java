@@ -18,6 +18,7 @@ import view.RelativeViewBase;
  * 
  */
 public abstract class EnemyUnitView implements RelativeViewBase {
+	
 	/**
 	 * Kirajzolandó ellenséges egység
 	 */
@@ -35,7 +36,7 @@ public abstract class EnemyUnitView implements RelativeViewBase {
 	 */
 	public EnemyUnitView(EnemyUnit e) {
 		enemyUnit = e;
-		
+
 		try {
 			dwarf = ImageIO.read(new File("textures//dwarf.png"));
 			elf = ImageIO.read(new File("textures//elf.png"));
@@ -45,17 +46,17 @@ public abstract class EnemyUnitView implements RelativeViewBase {
 			ioe.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Abstract metódus az egységek kirajzolásához
 	 * 
 	 * @param g
 	 *            Graphics
 	 * @param x
-	 * 			  int - x koordináta
+	 *            int - x koordináta
 	 * @param y
-	 * 			  int - y koordináta
-	 *            
+	 *            int - y koordináta
+	 * 
 	 */
 	protected abstract void drawUnit(Graphics g, int x, int y);
 

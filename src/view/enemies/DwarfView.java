@@ -13,6 +13,7 @@ import common.Common;
  * 
  */
 public class DwarfView extends EnemyUnitView {
+
 	/**
 	 * Konstruktor
 	 * 
@@ -21,19 +22,19 @@ public class DwarfView extends EnemyUnitView {
 	 */
 	public DwarfView(Dwarf d) {
 		super(d);
-		
+
 	}
-	
+
 	/**
 	 * Az egység kirajzolása
 	 * 
 	 * @param g
 	 *            Graphics
 	 * @param x
-	 * 			  int - x koordináta
+	 *            int - x koordináta
 	 * @param y
-	 * 			  int - y koordináta
-	 *            
+	 *            int - y koordináta
+	 * 
 	 */
 	@Override
 	protected void drawUnit(Graphics g, int x, int y) {
