@@ -92,11 +92,6 @@ public class GameView extends JPanel {
 	@Override
 	public void paintComponent(Graphics graphics) {
 
-		if (game.isGameOver()) {
-			graphics.drawImage(gameOverScreen, 0, 0, null);
-			return;
-		}
-
 		statusPanel.setMagitzka(game.getMagitzka());
 		statusPanel.setLife(game.getLife());
 		statusPanel.repaint();
