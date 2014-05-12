@@ -14,6 +14,7 @@ public class Strategy implements ActionListener {
 	private int currentWave = firstWave;
 	private int currentRep = firstRep;
 	private int waves = 0;
+	private int iter = 1;
 	private int fogNumber = 0;
 
 	private static final int second = 50;
@@ -38,11 +39,11 @@ public class Strategy implements ActionListener {
 		if (game.isGameOver()) {
 			return;
 		}
-		
+
 		game.tick();
 
 		if (waves > maxWaves) {
-			return;
+			iterate();
 		}
 
 		if (ticks > currentDelay * second) {
@@ -57,42 +58,57 @@ public class Strategy implements ActionListener {
 				waves++;
 			}
 		}
-		
-		
+
 		fogNumber++;
-		if (fogNumber > Common.fog_timetoleave / Common.fog_simultaniousfognumber) {
-			game.putFog(Randomizer.randomInt(game.getMap().getWidth()), Randomizer.randomInt(game.getMap().getHeight()));
+		if (fogNumber > Common.fog_timetoleave
+				/ Common.fog_simultaniousfognumber) {
+			game.putFog(Randomizer.randomInt(game.getMap().getWidth()),
+					Randomizer.randomInt(game.getMap().getHeight()));
 			fogNumber = 0;
 		}
-		
+
+	}
+
+	private void iterate() {
+		currentDelay = firstDelay;
+		currentWave = firstWave;
+		currentRep = firstRep;
+		waves = 0;
+		iter++;
 	}
 
 	private void addRandomunit() {
 		if (waves == 3) {
-			game.addUnit(EnemyType.man);
+			addUnit(EnemyType.man);
 		} else if (waves == 5) {
-			game.addUnit(EnemyType.hobbit);
+			addUnit(EnemyType.hobbit);
 		} else if (waves == 7) {
-			game.addUnit(EnemyType.dwarf);
+			addUnit(EnemyType.dwarf);
 		} else if (waves == 9) {
-			game.addUnit(EnemyType.elf);
+			addUnit(EnemyType.elf);
 		} else {
 			switch (Randomizer.randomInt(4)) {
 			case 0:
-				game.addUnit(EnemyType.dwarf);
+				addUnit(EnemyType.dwarf);
 				break;
 			case 1:
-				game.addUnit(EnemyType.elf);
+				addUnit(EnemyType.elf);
 				break;
 			case 2:
-				game.addUnit(EnemyType.hobbit);
+				addUnit(EnemyType.hobbit);
 				break;
 			case 3:
-				game.addUnit(EnemyType.man);
+				addUnit(EnemyType.man);
 				break;
 			default:
 				break;
 			}
+		}
+	}
+
+	private void addUnit(EnemyType type) {
+		for (int i = 0; i < iter; i++) {
+			game.addUnit(type);
 		}
 	}
 }
