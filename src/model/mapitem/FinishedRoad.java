@@ -21,5 +21,8 @@ public class FinishedRoad extends Road {
 	public void deleteFinishedUnits() {
 		unitList.clear();
 	}
+	public boolean checkSwamp() {
+		return false;
+	}
 
 }
