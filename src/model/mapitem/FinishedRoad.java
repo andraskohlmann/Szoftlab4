@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.enemies.EnemyUnit;
+import model.runes.Rune;
 
 public class FinishedRoad extends Road {
 
@@ -21,7 +22,13 @@ public class FinishedRoad extends Road {
 	public void deleteFinishedUnits() {
 		unitList.clear();
 	}
+	
 	public boolean checkSwamp() {
+		return false;
+	}
+
+	@Override
+	public boolean checkRune(Rune r) {
 		return false;
 	}
 
